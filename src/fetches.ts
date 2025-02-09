@@ -115,6 +115,9 @@ export async function fetchImageInformationWithCache(
   }
   const url = dlcsImageBase + dlcsSpace + "/" + uuid;
   const resp = await fetch(url).then((resp) => resp.json());
+  if (resp?.status === 404) {
+    throw new Error(`Fetch failed for ${uuid}`);
+  }
   await saveJson(resp, uuid, cacheDir + "dlcs/");
   return resp;
 }
