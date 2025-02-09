@@ -40,10 +40,14 @@ for (const [index, record] of objects.entries()) {
         // Sort the images
         .sort((a: any, b: any) => a.sort - +b.sort)
         .map((i: any) => fetchImageInformationWithCache(i.uuid))
+        // Filter for successful responses
+        .filter((i: any) => i && i?.status !== 404)
     )) as IIIFImageInformation[];
-    const manifest = createManifest(imageInformation, metadata, uuid);
-    await saveJson(manifest, uuid, outputDir + "/manifests");
-    bar.update(index + 1);
+    if (imageInformation.length) {
+      const manifest = createManifest(imageInformation, metadata, uuid);
+      await saveJson(manifest, uuid, outputDir + "/manifests");
+      bar.update(index + 1);
+    }
   } else {
     console.log(`Record ${uuid} does not have any public images`);
   }
@@ -59,6 +63,7 @@ for (const collection of collections) {
   const metadata = collection.metadata[0]["qdc:dc"][0];
   const label = metadata["dc:title"][0];
   const uuid = metadata["dc:isVersionOf"][0];
+  // Todo: filter for images
   const records = metadata["dc:hasPart"]?.filter(
     (part) => part["dc:accessRights"][0] === "public_access"
   );
