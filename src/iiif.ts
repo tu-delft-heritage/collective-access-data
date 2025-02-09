@@ -1,6 +1,6 @@
 import { IIIFBuilder } from "@iiif/builder";
 import he from "he";
-import { manifestUriBase, labels } from "./constants";
+import { manifestUriBase, labels } from "./settings";
 import type { Metadata, IIIFImageInformation, Part } from "./types";
 
 function parseMetadata(props: Metadata) {

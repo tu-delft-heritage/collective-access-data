@@ -5,7 +5,7 @@ import {
   cacheDir,
   dlcsImageBase,
   dlcsSpace,
-} from "./constants";
+} from "./settings";
 
 async function fetchXML(
   type: string = "objects",

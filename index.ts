@@ -3,9 +3,9 @@ import {
   fetchRecords,
   fetchImageInformationWithCache,
   saveJson,
-} from "./src/functions";
-import { createManifest, createCollection } from "./src/functions-iiif";
-import { outputDir } from "./src/constants";
+} from "./src/fetches";
+import { createManifest, createCollection } from "./src/iiif";
+import { outputDir } from "./src/settings";
 
 import type { Record, Image, IIIFImageInformation } from "./src/types";
 
