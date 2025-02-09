@@ -1,46 +1,27 @@
-import type { Metadata, IIIFImageInformation, Part } from "./types";
 import { IIIFBuilder } from "@iiif/builder";
-import { manifestUriBase } from "./constants";
+import he from "he";
+import { manifestUriBase, labels } from "./constants";
+import type { Metadata, IIIFImageInformation, Part } from "./types";
 
 function parseMetadata(props: Metadata) {
-  return [
-    {
-      label: {
-        en: ["Title"],
-        nl: ["Titel"],
-      },
-      value: {
-        nl: props["dc:title"] || [""],
-      },
-    },
-    {
-      label: {
-        en: ["Description"],
-        nl: ["Beschrijving"],
-      },
-      value: {
-        nl: props["dc:description"] || [""],
-      },
-    },
-    {
-      label: {
-        en: ["Year"],
-        nl: ["Jaar"],
-      },
-      value: {
-        nl: props["dc:date"] || [""],
-      },
-    },
-    {
-      label: {
-        en: ["Format"],
-        nl: ["Formaat"],
-      },
-      value: {
-        nl: props["dc:format"] || [""],
-      },
-    },
-  ];
+  const metadata = new Array();
+  for (const [key, label] of Object.entries(labels)) {
+    const value = props[key] as string[];
+    if (value) {
+      metadata.push({
+        label,
+        value: {
+          // Decoding because of encoded ampersands in string
+          nl: value.map((i) => he.decode(i)),
+        },
+      });
+    }
+  }
+  return metadata;
+}
+
+function decodeLabel(label: string[]) {
+  return label.map((i) => he.decode(i));
 }
 
 export function createManifest(
@@ -51,7 +32,7 @@ export function createManifest(
   const builder = new IIIFBuilder();
   const uri = manifestUriBase + "manifests/" + uuid;
   const manifest = builder.createManifest(uri + ".json", (manifest) => {
-    manifest.setLabel({ nl: metadata["dc:title"] });
+    manifest.setLabel({ nl: decodeLabel(metadata["dc:title"]) });
     manifest.setMetadata(parseMetadata(metadata));
     if (images.length) {
       for (const [index, item] of images.entries()) {
@@ -96,7 +77,7 @@ export function createCollection(records: Part[], label: string, id: string) {
         collection.createManifest(
           manifestUriBase + "manifests/" + uuid + ".json",
           (manifest) => {
-            manifest.setLabel({ nl: item["dc:type"] });
+            manifest.setLabel({ nl: decodeLabel(item["dc:type"]) });
           }
         );
       }

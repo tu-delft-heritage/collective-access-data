@@ -3,7 +3,8 @@
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/he": "^1.2.3"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -11,6 +12,7 @@
   "dependencies": {
     "@iiif/builder": "^2.0.1",
     "cli-progress": "^3.12.0",
+    "he": "^1.2.0",
     "import": "^0.0.6",
     "xml2js": "^0.6.2"
   }

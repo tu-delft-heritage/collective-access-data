@@ -1,3 +1,7 @@
+export interface Vocabulary {
+  [key: string]: string;
+}
+
 export interface Record {
   header: {
     identifier: string[];
@@ -9,6 +13,7 @@ export interface Record {
 }
 
 export interface Metadata {
+  [index: string]: string[] | undefined | Image[] | Part[];
   "dc:isVersionOf": string[];
   "dc:title": string[];
   "dc:type"?: string[];
@@ -68,7 +73,3 @@ export type IIIFImageInformation = {
   extraFormats: string[];
   extraFeatures: string[];
 };
-
-export interface Vocabulary {
-  [key: string]: string;
-}
