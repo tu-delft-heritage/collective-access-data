@@ -1,0 +1,216 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/manifests/7cdc6179-2168-48b9-8155-ade6144010a3.json",
+    "type": "Manifest",
+    "label": {
+        "nl": [
+            "Monding van het Noorzeekanaal bij IJmuiden"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Monding van het Noorzeekanaal bij IJmuiden"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Object name"
+                ],
+                "nl": [
+                    "Objectnaam"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "schilderij"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Inventory number"
+                ],
+                "nl": [
+                    "Inventarisnummer"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "2002.0057.CTG"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dating"
+                ],
+                "nl": [
+                    "Datering"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1875 – 1878"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Maker"
+                ],
+                "nl": [
+                    "Maker"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Kannemans, Christiaan Cornelis  (maker)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dimensions"
+                ],
+                "nl": [
+                    "Afmetingen"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1.000,0 mm (h) x 3.800,0 mm (b) x 200,0 mm (d)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Material"
+                ],
+                "nl": [
+                    "Materiaal"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "olieverf",
+                    "linnen",
+                    "hout"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Place of manufacture"
+                ],
+                "nl": [
+                    "Plaats vervaardiging"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "<a href=\"https://www.geonames.org/2758400\">Breda, Nederland</a>"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Schilderij van de monding van het Noorzeekanaal bij IJmuiden door Christiaan Cornelis Kannemans (1812-1884). Het Noordzeekaneel (Amsterdam-IJmuiden) werd in 1876 geopend. Dit type schilderijen werd gemaakt in opdracht van Rijkswaterstaat na de afronding van een groot project."
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Documentation"
+                ],
+                "nl": [
+                    "Documentatie"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Giersbergen, Wilma van, \"Universitair cultureel erfgoed. Zes negentiende-eeuwse waterstaatswerken geschilderd door C.C. Kannemans en A.W. Stortenbeker\", in: 'Delft Integraal', nr. 4, 1998, pp. 22-25. "
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Related object"
+                ],
+                "nl": [
+                    "Gerelateerd object"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Spoorbrug over de Lek bij Culemborg;Monding van de Nieuwe Waterweg bij Hoek van Holland;Spoorbrug over het Hollands Diep bij Moerdijk;Spoorbrug over de Waal bij Nijmegen;Spoorbrug over de Waal bij Zaltbommel (CTG.2002.0052;CTG.2002.0053;CTG.2002.0054;CTG.2002.0055;CTG.2002.0056)"
+                ]
+            }
+        }
+    ],
+    "items": [
+        {
+            "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/manifests/7cdc6179-2168-48b9-8155-ade6144010a3/canvas/0",
+            "type": "Canvas",
+            "height": 2753,
+            "width": 9999,
+            "items": [
+                {
+                    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/manifests/7cdc6179-2168-48b9-8155-ade6144010a3/canvas/0/annotation-page",
+                    "type": "AnnotationPage",
+                    "items": [
+                        {
+                            "id": "https://dlc.services/iiif-img/v3/7/18/fe4830a3-0f00-4a1c-bf9a-d3e4194184fd",
+                            "type": "Annotation",
+                            "motivation": "painting",
+                            "target": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/manifests/7cdc6179-2168-48b9-8155-ade6144010a3/canvas/0",
+                            "body": {
+                                "id": "https://dlc.services/iiif-img/v3/7/18/fe4830a3-0f00-4a1c-bf9a-d3e4194184fd/full/max/0/default.jpg",
+                                "type": "Image",
+                                "format": "image/jpeg",
+                                "height": 2753,
+                                "width": 9999,
+                                "service": [
+                                    {
+                                        "@context": "http://iiif.io/api/image/3/context.json",
+                                        "id": "https://dlc.services/iiif-img/v3/7/18/fe4830a3-0f00-4a1c-bf9a-d3e4194184fd",
+                                        "type": "ImageService3",
+                                        "profile": "level2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

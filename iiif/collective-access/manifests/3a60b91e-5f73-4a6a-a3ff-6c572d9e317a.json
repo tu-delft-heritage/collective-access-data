@@ -1,0 +1,216 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/manifests/3a60b91e-5f73-4a6a-a3ff-6c572d9e317a.json",
+    "type": "Manifest",
+    "label": {
+        "nl": [
+            "Spoorbrug over de Waal bij Zaltbommel"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Spoorbrug over de Waal bij Zaltbommel"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Object name"
+                ],
+                "nl": [
+                    "Objectnaam"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "schilderij"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Inventory number"
+                ],
+                "nl": [
+                    "Inventarisnummer"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "2002.0056.CTG"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dating"
+                ],
+                "nl": [
+                    "Datering"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1870 – 1878"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Maker"
+                ],
+                "nl": [
+                    "Maker"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Kannemans, Christiaan Cornelis  (maker)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dimensions"
+                ],
+                "nl": [
+                    "Afmetingen"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1.250,0 mm (h) x 4.000,0 mm (b) x 200,0 mm (d)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Material"
+                ],
+                "nl": [
+                    "Materiaal"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "olieverf",
+                    "linnen",
+                    "hout"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Place of manufacture"
+                ],
+                "nl": [
+                    "Plaats vervaardiging"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "<a href=\"https://www.geonames.org/2758400\">Breda, Nederland</a>"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Schilderij van de spoorbrug over de Waal bij Zaltbommel door Christiaan Cornelis Kannemans (1812-1884). De stalen vakwerkbrug uit 1869 is 865 meter lang en maakt deel uit van het spoorwegtraject Utrecht – ’s Hertogenbosch. Hij wordt gesteund door 10 peilers waarbij 3 overspanningen van 125 meter en 8 van 61 meter ontstaan. Na de oorlog is de brug omgedoopt tot Dr. W. Hupkesbrug naar dr.ir. Willem Hupkes (1880-1965) oud directeur van de Nederlandse spoorwegen die uit verzet tegen de Duitsers in 1944 de spoorwegstaking organiseerde. Dit type schilderijen werd gemaakt in opdracht van Rijkswaterstaat na de afronding van een groot project."
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Documentation"
+                ],
+                "nl": [
+                    "Documentatie"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Giersbergen, Wilma van, \"Universitair cultureel erfgoed. Zes negentiende-eeuwse waterstaatswerken geschilderd door C.C. Kannemans en A.W. Stortenbeker\", in: 'Delft Integraal', nr. 4, 1998, pp. 22-25. "
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Related object"
+                ],
+                "nl": [
+                    "Gerelateerd object"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Monding van het Noorzeekanaal bij IJmuiden;Spoorbrug over de Lek bij Culemborg;Monding van de Nieuwe Waterweg bij Hoek van Holland;Spoorbrug over het Hollands Diep bij Moerdijk;Spoorbrug over de Waal bij Nijmegen (CTG.2002.0057;CTG.2002.0052;CTG.2002.0053;CTG.2002.0054;CTG.2002.0055)"
+                ]
+            }
+        }
+    ],
+    "items": [
+        {
+            "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/manifests/3a60b91e-5f73-4a6a-a3ff-6c572d9e317a/canvas/0",
+            "type": "Canvas",
+            "height": 2644,
+            "width": 9668,
+            "items": [
+                {
+                    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/manifests/3a60b91e-5f73-4a6a-a3ff-6c572d9e317a/canvas/0/annotation-page",
+                    "type": "AnnotationPage",
+                    "items": [
+                        {
+                            "id": "https://dlc.services/iiif-img/v3/7/18/5aa2a150-22cd-45ce-a5e2-f0d4ef916a74",
+                            "type": "Annotation",
+                            "motivation": "painting",
+                            "target": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/manifests/3a60b91e-5f73-4a6a-a3ff-6c572d9e317a/canvas/0",
+                            "body": {
+                                "id": "https://dlc.services/iiif-img/v3/7/18/5aa2a150-22cd-45ce-a5e2-f0d4ef916a74/full/max/0/default.jpg",
+                                "type": "Image",
+                                "format": "image/jpeg",
+                                "height": 2644,
+                                "width": 9668,
+                                "service": [
+                                    {
+                                        "@context": "http://iiif.io/api/image/3/context.json",
+                                        "id": "https://dlc.services/iiif-img/v3/7/18/5aa2a150-22cd-45ce-a5e2-f0d4ef916a74",
+                                        "type": "ImageService3",
+                                        "profile": "level2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
