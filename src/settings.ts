@@ -9,7 +9,7 @@ export const OAIBaseUrl =
 export const dlcsImageBase = "https://dlc.services/iiif-img/v3/7/";
 export const dlcsSpace = "18";
 export const manifestUriBase =
-  "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/";
+  "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/";
 
 export const types: Vocabulary = {
   objects: "dc_obj_erfgoed",

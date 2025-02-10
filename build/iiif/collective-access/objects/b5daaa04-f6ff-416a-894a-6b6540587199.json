@@ -1,6 +1,6 @@
 {
     "@context": "http://iiif.io/api/presentation/3/context.json",
-    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/b5daaa04-f6ff-416a-894a-6b6540587199.json",
+    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/b5daaa04-f6ff-416a-894a-6b6540587199.json",
     "type": "Manifest",
     "label": {
         "nl": [
@@ -132,20 +132,20 @@
     ],
     "items": [
         {
-            "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/b5daaa04-f6ff-416a-894a-6b6540587199/canvas/0",
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/b5daaa04-f6ff-416a-894a-6b6540587199/canvas/0",
             "type": "Canvas",
             "height": 2048,
             "width": 3072,
             "items": [
                 {
-                    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/b5daaa04-f6ff-416a-894a-6b6540587199/canvas/0/annotation-page",
+                    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/b5daaa04-f6ff-416a-894a-6b6540587199/canvas/0/annotation-page",
                     "type": "AnnotationPage",
                     "items": [
                         {
                             "id": "https://dlc.services/iiif-img/v3/7/18/31b3cb7c-2858-40d8-9b71-2c4a0378b6d6",
                             "type": "Annotation",
                             "motivation": "painting",
-                            "target": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/b5daaa04-f6ff-416a-894a-6b6540587199/canvas/0",
+                            "target": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/b5daaa04-f6ff-416a-894a-6b6540587199/canvas/0",
                             "body": {
                                 "id": "https://dlc.services/iiif-img/v3/7/18/31b3cb7c-2858-40d8-9b71-2c4a0378b6d6/full/max/0/default.jpg",
                                 "type": "Image",

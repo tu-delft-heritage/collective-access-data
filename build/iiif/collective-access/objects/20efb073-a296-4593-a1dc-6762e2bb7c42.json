@@ -1,6 +1,6 @@
 {
     "@context": "http://iiif.io/api/presentation/3/context.json",
-    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/20efb073-a296-4593-a1dc-6762e2bb7c42.json",
+    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/20efb073-a296-4593-a1dc-6762e2bb7c42.json",
     "type": "Manifest",
     "label": {
         "nl": [
@@ -176,20 +176,20 @@
     ],
     "items": [
         {
-            "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/20efb073-a296-4593-a1dc-6762e2bb7c42/canvas/0",
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/20efb073-a296-4593-a1dc-6762e2bb7c42/canvas/0",
             "type": "Canvas",
             "height": 2048,
             "width": 3072,
             "items": [
                 {
-                    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/20efb073-a296-4593-a1dc-6762e2bb7c42/canvas/0/annotation-page",
+                    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/20efb073-a296-4593-a1dc-6762e2bb7c42/canvas/0/annotation-page",
                     "type": "AnnotationPage",
                     "items": [
                         {
                             "id": "https://dlc.services/iiif-img/v3/7/18/dbc39932-79f6-491f-a7dd-18c51d022a03",
                             "type": "Annotation",
                             "motivation": "painting",
-                            "target": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/20efb073-a296-4593-a1dc-6762e2bb7c42/canvas/0",
+                            "target": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/20efb073-a296-4593-a1dc-6762e2bb7c42/canvas/0",
                             "body": {
                                 "id": "https://dlc.services/iiif-img/v3/7/18/dbc39932-79f6-491f-a7dd-18c51d022a03/full/max/0/default.jpg",
                                 "type": "Image",
@@ -211,20 +211,20 @@
             ]
         },
         {
-            "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/20efb073-a296-4593-a1dc-6762e2bb7c42/canvas/1",
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/20efb073-a296-4593-a1dc-6762e2bb7c42/canvas/1",
             "type": "Canvas",
             "height": 200,
             "width": 300,
             "items": [
                 {
-                    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/20efb073-a296-4593-a1dc-6762e2bb7c42/canvas/1/annotation-page",
+                    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/20efb073-a296-4593-a1dc-6762e2bb7c42/canvas/1/annotation-page",
                     "type": "AnnotationPage",
                     "items": [
                         {
                             "id": "https://dlc.services/iiif-img/v3/7/18/bc8db049-c232-4f87-a835-4aa6d572258c",
                             "type": "Annotation",
                             "motivation": "painting",
-                            "target": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/20efb073-a296-4593-a1dc-6762e2bb7c42/canvas/1",
+                            "target": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/20efb073-a296-4593-a1dc-6762e2bb7c42/canvas/1",
                             "body": {
                                 "id": "https://dlc.services/iiif-img/v3/7/18/bc8db049-c232-4f87-a835-4aa6d572258c/full/max/0/default.jpg",
                                 "type": "Image",

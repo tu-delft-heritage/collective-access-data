@@ -1,6 +1,6 @@
 {
     "@context": "http://iiif.io/api/presentation/3/context.json",
-    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/collections/64c2d30b-1002-4063-a4d0-299cb10c507e.json",
+    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/collections/64c2d30b-1002-4063-a4d0-299cb10c507e.json",
     "type": "Collection",
     "label": {
         "nl": [
@@ -14,7 +14,7 @@
     },
     "items": [
         {
-            "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/b644a121-1cde-4a28-98b2-92df4f41d6eb.json",
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/b644a121-1cde-4a28-98b2-92df4f41d6eb.json",
             "type": "Manifest",
             "label": {
                 "nl": [
@@ -23,7 +23,7 @@
             }
         },
         {
-            "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/1f5e8ccd-8582-47e0-b688-0894b98354a6.json",
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/1f5e8ccd-8582-47e0-b688-0894b98354a6.json",
             "type": "Manifest",
             "label": {
                 "nl": [
@@ -32,7 +32,7 @@
             }
         },
         {
-            "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/3a60b91e-5f73-4a6a-a3ff-6c572d9e317a.json",
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/3a60b91e-5f73-4a6a-a3ff-6c572d9e317a.json",
             "type": "Manifest",
             "label": {
                 "nl": [
@@ -41,7 +41,7 @@
             }
         },
         {
-            "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/7cdc6179-2168-48b9-8155-ade6144010a3.json",
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/7cdc6179-2168-48b9-8155-ade6144010a3.json",
             "type": "Manifest",
             "label": {
                 "nl": [
@@ -50,7 +50,7 @@
             }
         },
         {
-            "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/0cf03d4c-e9e5-4611-a2bb-7ce0d432c7e1.json",
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/0cf03d4c-e9e5-4611-a2bb-7ce0d432c7e1.json",
             "type": "Manifest",
             "label": {
                 "nl": [
@@ -59,7 +59,7 @@
             }
         },
         {
-            "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/79ad29dc-864d-4f39-95bb-908243d7ebe8.json",
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/79ad29dc-864d-4f39-95bb-908243d7ebe8.json",
             "type": "Manifest",
             "label": {
                 "nl": [
