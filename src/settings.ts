@@ -1,17 +1,18 @@
 import type { Vocabulary } from "./types";
 
-export const outputDir = "output/collective-access/";
+export const outputDir = "iiif/collective-access/";
 export const cacheDir = ".cache/";
 export const OAIBaseUrl =
   "https://cms.collectiveaccess.tudelft.nl/service.php/OAI/";
 export const dlcsImageBase = "https://dlc.services/iiif-img/v3/7/";
 export const dlcsSpace = "18";
 export const manifestUriBase =
-  "http://localhost:5500/output/collective-access/";
+  "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/";
 
 export const types: Vocabulary = {
   objects: "dc_obj_erfgoed",
   collections: "dc_collection",
+  media: "dc_media",
 };
 
 export const verbs = [
@@ -23,7 +24,7 @@ export const verbs = [
   "GetRecord",
 ];
 
-export const labels = {
+export const objectLabels = {
   "dc:title": {
     en: ["Title"],
     nl: ["Titel"],
@@ -39,10 +40,6 @@ export const labels = {
   "dc:date": {
     en: ["Dating"],
     nl: ["Datering"],
-  },
-  "dc:contributor": {
-    en: ["Maker"],
-    nl: ["Maker"],
   },
   "dc:creator": {
     en: ["Maker"],
@@ -79,5 +76,16 @@ export const labels = {
   "dc:relation": {
     en: ["Related object"],
     nl: ["Gerelateerd object"],
+  },
+};
+
+export const collectionLabels = {
+  "dc:creator": {
+    en: ["Managing institution"],
+    nl: ["Beherende instelling"],
+  },
+  "dc:contributor": {
+    en: ["Curator"],
+    nl: ["Conservator"],
   },
 };

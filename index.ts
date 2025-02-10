@@ -21,7 +21,7 @@ const objects = (await fetchRecords("objects")) as Record[];
 // Write IIIF Object Manifests
 console.log("Generating IIIF Manifests...");
 const multibar = new cliProgress.MultiBar(
-  { hideCursor: true },
+  {},
   cliProgress.Presets.shades_classic
 );
 const bar = multibar.create(objects.length, 0);
@@ -81,10 +81,16 @@ for (const collection of collections) {
     }
   });
   if (records && records.length) {
-    const collection = createCollection(records, label, uuid);
+    const collection = createCollection(records, metadata, uuid);
     saveJson(collection, uuid, outputDir + "collections/");
   } else {
     console.log(`${label} (${uuid}) has no parts`);
   }
 }
 console.log(`${recordsInCollections.length} records in collections`);
+
+// Request does not accept qdc param
+// Ask Libis
+// Also to filter list for public records
+// And to add collection metadata to records overview
+// const media = (await fetchRecords("media")) as Record[];

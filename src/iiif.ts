@@ -1,9 +1,10 @@
 import { IIIFBuilder } from "@iiif/builder";
 import he from "he";
-import { manifestUriBase, labels } from "./settings";
+import { manifestUriBase, objectLabels, collectionLabels } from "./settings";
 import type { Metadata, IIIFImageInformation, Part } from "./types";
 
-function parseMetadata(props: Metadata) {
+function parseMetadata(props: Metadata, type?: string) {
+  const labels = type === "collection" ? collectionLabels : objectLabels;
   const metadata = new Array();
   for (const [key, label] of Object.entries(labels)) {
     const value = props[key] as string[];
@@ -20,8 +21,8 @@ function parseMetadata(props: Metadata) {
   return metadata;
 }
 
-function decodeLabel(label: string[]) {
-  return label.map((i) => he.decode(i));
+function decodeValue(value: string[]) {
+  return value.map((i) => (i ? he.decode(i) : i));
 }
 
 export function createManifest(
@@ -32,8 +33,8 @@ export function createManifest(
   const builder = new IIIFBuilder();
   const uri = manifestUriBase + "manifests/" + uuid;
   const manifest = builder.createManifest(uri + ".json", (manifest) => {
-    manifest.setLabel({ nl: decodeLabel(metadata["dc:title"]) });
-    manifest.setMetadata(parseMetadata(metadata));
+    manifest.setLabel({ nl: decodeValue(metadata["dc:title"]) });
+    manifest.setMetadata(parseMetadata(metadata, "object"));
     if (images.length) {
       for (const [index, item] of images.entries()) {
         manifest.createCanvas(uri + "/canvas/" + index, (canvas) => {
@@ -66,18 +67,24 @@ export function createManifest(
   return builder.toPresentation3(manifest);
 }
 
-export function createCollection(records: Part[], label: string, id: string) {
+export function createCollection(
+  records: Part[],
+  metadata: Metadata,
+  uuid: string
+) {
   const builder = new IIIFBuilder();
-  const uri = manifestUriBase + id;
+  const uri = manifestUriBase + uuid;
   const collection = builder.createCollection(uri + ".json", (collection) => {
-    collection.setLabel({ nl: [label] });
+    collection.setLabel({ nl: decodeValue(metadata["dc:title"]) });
+    collection.setSummary({ nl: decodeValue(metadata["dc:description"]) });
+    collection.setMetadata(parseMetadata(metadata, "collection"));
     if (records.length) {
       for (const item of records) {
         const uuid = item["dc:isVersionOf"][0];
         collection.createManifest(
           manifestUriBase + "manifests/" + uuid + ".json",
           (manifest) => {
-            manifest.setLabel({ nl: decodeLabel(item["dc:type"]) });
+            manifest.setLabel({ nl: decodeValue(item["dc:type"]) });
           }
         );
       }
