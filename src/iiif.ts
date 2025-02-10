@@ -1,6 +1,12 @@
 import { IIIFBuilder } from "@iiif/builder";
 import he from "he";
-import { manifestUriBase, objectLabels, collectionLabels } from "./settings";
+import {
+  manifestUriBase,
+  objectLabels,
+  collectionLabels,
+  objectsFolder,
+  collectionsFolder,
+} from "./settings";
 import type { Metadata, IIIFImageInformation, Part } from "./types";
 
 function parseMetadata(props: Metadata, type?: string) {
@@ -31,7 +37,7 @@ export function createManifest(
   uuid: string
 ) {
   const builder = new IIIFBuilder();
-  const uri = manifestUriBase + "manifests/" + uuid;
+  const uri = manifestUriBase + objectsFolder + uuid;
   const manifest = builder.createManifest(uri + ".json", (manifest) => {
     manifest.setLabel({ nl: decodeValue(metadata["dc:title"]) });
     manifest.setMetadata(parseMetadata(metadata, "object"));
@@ -73,7 +79,7 @@ export function createCollection(
   uuid: string
 ) {
   const builder = new IIIFBuilder();
-  const uri = manifestUriBase + uuid;
+  const uri = manifestUriBase + collectionsFolder + uuid;
   const collection = builder.createCollection(uri + ".json", (collection) => {
     collection.setLabel({ nl: decodeValue(metadata["dc:title"]) });
     collection.setSummary({ nl: decodeValue(metadata["dc:description"]) });
@@ -82,7 +88,7 @@ export function createCollection(
       for (const item of records) {
         const uuid = item["dc:isVersionOf"][0];
         collection.createManifest(
-          manifestUriBase + "manifests/" + uuid + ".json",
+          manifestUriBase + objectsFolder + uuid + ".json",
           (manifest) => {
             manifest.setLabel({ nl: decodeValue(item["dc:type"]) });
           }

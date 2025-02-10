@@ -5,7 +5,7 @@ import {
   saveJson,
 } from "./src/fetches";
 import { createManifest, createCollection } from "./src/iiif";
-import { outputDir } from "./src/settings";
+import { outputDir, objectsFolder, collectionsFolder } from "./src/settings";
 
 import type { Record, Image, IIIFImageInformation } from "./src/types";
 
@@ -46,7 +46,7 @@ for (const [index, record] of objects.entries()) {
     )) as IIIFImageInformation[];
     if (imageInformation.length) {
       const manifest = createManifest(imageInformation, metadata, uuid);
-      await saveJson(manifest, uuid, outputDir + "/manifests");
+      await saveJson(manifest, uuid, outputDir + objectsFolder);
       bar.update(index + 1);
       manifestsOnDisk.push(uuid);
     }
@@ -82,15 +82,12 @@ for (const collection of collections) {
   });
   if (records && records.length) {
     const collection = createCollection(records, metadata, uuid);
-    saveJson(collection, uuid, outputDir + "collections/");
+    saveJson(collection, uuid, outputDir + collectionsFolder);
   } else {
     console.log(`${label} (${uuid}) has no parts`);
   }
 }
 console.log(`${recordsInCollections.length} records in collections`);
 
-// Request does not accept qdc param
-// Ask Libis
-// Also to filter list for public records
-// And to add collection metadata to records overview
+// Todo: media check
 // const media = (await fetchRecords("media")) as Record[];
