@@ -1,0 +1,155 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/c8abafa5-3267-409e-b94b-f9db1d8fe768.json",
+    "type": "Manifest",
+    "label": {
+        "nl": [
+            "Basisafstandmetingbaak in een leren foedraal"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Basisafstandmetingbaak in een leren foedraal"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Object name"
+                ],
+                "nl": [
+                    "Objectnaam"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "baak"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Inventory number"
+                ],
+                "nl": [
+                    "Inventarisnummer"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "2000.0363.GEO"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dating"
+                ],
+                "nl": [
+                    "Datering"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1925 – 1950"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dimensions"
+                ],
+                "nl": [
+                    "Afmetingen"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "150,0 mm (h) x 1.150,0 mm (b) x 150,0 mm (d)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Material"
+                ],
+                "nl": [
+                    "Materiaal"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "metaal",
+                    "leer"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Instrument voor afstandmeting in de mijnbouw. Basisafstandmetingbaak in een leren foedraal. De baak bestaat uit drie rood-witte, aan elkaar te schuiven metalen onderdelen, een richtkijker en een niveau. Lengte baak is 2,00 meter."
+                ]
+            }
+        }
+    ],
+    "items": [
+        {
+            "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/c8abafa5-3267-409e-b94b-f9db1d8fe768/canvas/0",
+            "type": "Canvas",
+            "height": 2048,
+            "width": 3072,
+            "items": [
+                {
+                    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/c8abafa5-3267-409e-b94b-f9db1d8fe768/canvas/0/annotation-page",
+                    "type": "AnnotationPage",
+                    "items": [
+                        {
+                            "id": "https://dlc.services/iiif-img/v3/7/18/de65fbff-4ee0-4b8e-ae7d-d6d2cb0745ab",
+                            "type": "Annotation",
+                            "motivation": "painting",
+                            "target": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/c8abafa5-3267-409e-b94b-f9db1d8fe768/canvas/0",
+                            "body": {
+                                "id": "https://dlc.services/iiif-img/v3/7/18/de65fbff-4ee0-4b8e-ae7d-d6d2cb0745ab/full/max/0/default.jpg",
+                                "type": "Image",
+                                "format": "image/jpeg",
+                                "height": 2048,
+                                "width": 3072,
+                                "service": [
+                                    {
+                                        "@context": "http://iiif.io/api/image/3/context.json",
+                                        "id": "https://dlc.services/iiif-img/v3/7/18/de65fbff-4ee0-4b8e-ae7d-d6d2cb0745ab",
+                                        "type": "ImageService3",
+                                        "profile": "level2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

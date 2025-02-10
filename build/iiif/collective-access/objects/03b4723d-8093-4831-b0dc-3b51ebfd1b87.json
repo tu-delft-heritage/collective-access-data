@@ -1,0 +1,155 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/03b4723d-8093-4831-b0dc-3b51ebfd1b87.json",
+    "type": "Manifest",
+    "label": {
+        "nl": [
+            "Twee houten kisten met barogrammen"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Twee houten kisten met barogrammen"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Object name"
+                ],
+                "nl": [
+                    "Objectnaam"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "barogram"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Inventory number"
+                ],
+                "nl": [
+                    "Inventarisnummer"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "2000.0863.GEO"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dating"
+                ],
+                "nl": [
+                    "Datering"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1900 – 1925"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dimensions"
+                ],
+                "nl": [
+                    "Afmetingen"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "120,0 mm (h) x 330,0 mm (b) x 100,0 mm (d)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Material"
+                ],
+                "nl": [
+                    "Materiaal"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "papier",
+                    "hout"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Twee houten kisten met barogrammen van de periodes van 2 april 1900 tot 31 oktober 1909, en 1 november 1909 tot 29 december 1919. Barogrammen registreren de wisseling in de luchtdruk ter ondersteuning bij hoogtemetingen."
+                ]
+            }
+        }
+    ],
+    "items": [
+        {
+            "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/03b4723d-8093-4831-b0dc-3b51ebfd1b87/canvas/0",
+            "type": "Canvas",
+            "height": 2048,
+            "width": 3072,
+            "items": [
+                {
+                    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/03b4723d-8093-4831-b0dc-3b51ebfd1b87/canvas/0/annotation-page",
+                    "type": "AnnotationPage",
+                    "items": [
+                        {
+                            "id": "https://dlc.services/iiif-img/v3/7/18/d424e396-68d5-4437-a38e-4b4c7ea8dc05",
+                            "type": "Annotation",
+                            "motivation": "painting",
+                            "target": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/03b4723d-8093-4831-b0dc-3b51ebfd1b87/canvas/0",
+                            "body": {
+                                "id": "https://dlc.services/iiif-img/v3/7/18/d424e396-68d5-4437-a38e-4b4c7ea8dc05/full/max/0/default.jpg",
+                                "type": "Image",
+                                "format": "image/jpeg",
+                                "height": 2048,
+                                "width": 3072,
+                                "service": [
+                                    {
+                                        "@context": "http://iiif.io/api/image/3/context.json",
+                                        "id": "https://dlc.services/iiif-img/v3/7/18/d424e396-68d5-4437-a38e-4b4c7ea8dc05",
+                                        "type": "ImageService3",
+                                        "profile": "level2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

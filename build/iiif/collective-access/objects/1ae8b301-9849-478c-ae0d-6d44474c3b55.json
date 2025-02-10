@@ -1,0 +1,171 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/1ae8b301-9849-478c-ae0d-6d44474c3b55.json",
+    "type": "Manifest",
+    "label": {
+        "nl": [
+            "Heliotroop volgens Adolph Steinheil"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Heliotroop volgens Adolph Steinheil"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Object name"
+                ],
+                "nl": [
+                    "Objectnaam"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "heliotroopspiegel"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Inventory number"
+                ],
+                "nl": [
+                    "Inventarisnummer"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "2000.0024.GEO"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dating"
+                ],
+                "nl": [
+                    "Datering"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1850 – 1875"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Maker"
+                ],
+                "nl": [
+                    "Maker"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Steinheil, Adolph  (ontwerper)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dimensions"
+                ],
+                "nl": [
+                    "Afmetingen"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "280,0 mm (h) x 55,0 mm (b) x 230,0 mm (d)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Material"
+                ],
+                "nl": [
+                    "Materiaal"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "metaal",
+                    "glas",
+                    "hout"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Heliotroopspiegel volgens Adolph Steinheil, bedoeld om op een richtpunt zonlicht te laten spiegelen in de richting van het richtingsmeetinstrument. Gebruikt bij triangulatie. Met een dergelijke \"zonne-\"spiegel werd het richtpunt voor een theodoliet of ander meetinstrument zichtbaar gemaakt."
+                ]
+            }
+        }
+    ],
+    "items": [
+        {
+            "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/1ae8b301-9849-478c-ae0d-6d44474c3b55/canvas/0",
+            "type": "Canvas",
+            "height": 2048,
+            "width": 3072,
+            "items": [
+                {
+                    "id": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/1ae8b301-9849-478c-ae0d-6d44474c3b55/canvas/0/annotation-page",
+                    "type": "AnnotationPage",
+                    "items": [
+                        {
+                            "id": "https://dlc.services/iiif-img/v3/7/18/fff28bb8-d37e-4fd9-a137-80e3d860117d",
+                            "type": "Annotation",
+                            "motivation": "painting",
+                            "target": "http://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/1ae8b301-9849-478c-ae0d-6d44474c3b55/canvas/0",
+                            "body": {
+                                "id": "https://dlc.services/iiif-img/v3/7/18/fff28bb8-d37e-4fd9-a137-80e3d860117d/full/max/0/default.jpg",
+                                "type": "Image",
+                                "format": "image/jpeg",
+                                "height": 2048,
+                                "width": 3072,
+                                "service": [
+                                    {
+                                        "@context": "http://iiif.io/api/image/3/context.json",
+                                        "id": "https://dlc.services/iiif-img/v3/7/18/fff28bb8-d37e-4fd9-a137-80e3d860117d",
+                                        "type": "ImageService3",
+                                        "profile": "level2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
