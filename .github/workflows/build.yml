@@ -19,7 +19,7 @@ jobs:
         path: .cache/dlcs
         key: dlcs-${{ runner.os }}-${{ github.run_id }} # Can use time based key as well
         restore-keys: |
-          primes-${{ runner.os }}
+          dlcs-${{ runner.os }}
 
     - name: Install Bun
       uses: oven-sh/setup-bun@v2
