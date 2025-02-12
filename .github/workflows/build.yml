@@ -24,7 +24,9 @@ jobs:
         bun-version: latest
 
     - name: Generate Manifests
-      run: bun run index.ts
+      run: |
+        bun i
+        bun run index.ts
 
     - name: Commit changes
       run: |
