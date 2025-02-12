@@ -109,17 +109,14 @@ export async function fetchImageInformationWithCache(
 ) {
   if (useCache) {
     const cache = await getCache(uuid, "dlcs");
-    if (cache) {
-      return cache;
-    }
+    if (cache) return cache;
   }
   const url = dlcsImageBase + dlcsSpace + "/" + uuid;
-  const resp = await fetch(url).then((resp) => resp.json());
-  if (resp?.status === 404) {
-    throw new Error(`Fetch failed for ${uuid}`);
-  }
-  await saveJson(resp, uuid, cacheDir + "dlcs/");
-  return resp;
+  let resp = await fetch(url);
+  if (!resp.ok) return { error: uuid };
+  const json = await resp.json();
+  await saveJson(json, uuid, cacheDir + "dlcs/");
+  return json;
 }
 
 export function saveJson(json: any, filename: string, path: string) {

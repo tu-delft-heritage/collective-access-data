@@ -33,6 +33,7 @@ const bar = new cliProgress.Bar({}, cliProgress.Presets.shades_classic);
 bar.start(objects.length, 0);
 const manifestsOnDisk = new Array();
 const recordsWithoutImages = new Array();
+const failedImages = new Array();
 for (const [index, record] of objects.entries()) {
   const metadata = record.metadata[0]["qdc:dc"][0];
   const uuid = metadata["dc:isVersionOf"][0];
@@ -46,11 +47,18 @@ for (const [index, record] of objects.entries()) {
     // Filter for public images
     .filter((i: ImageImproved) => i.access === "public_access")
     // Sort the images
-    .sort((a: ImageImproved, b: ImageImproved) => a.sort - +b.sort);
+    .sort((a: ImageImproved, b: ImageImproved) => a.sort - b.sort);
   if (images?.length) {
-    const imageInformation = (await Promise.all(
-      images.map((i: any) => fetchImageInformationWithCache(i.uuid))
-    )) as IIIFImageInformation[];
+    const imageInformation = (
+      await Promise.all(
+        images.map((i) => fetchImageInformationWithCache(i.uuid))
+      )
+    ).filter((resp) => {
+      if (resp.error) {
+        failedImages.push(resp.error);
+        return false;
+      } else return true;
+    }) as IIIFImageInformation[];
     if (imageInformation.length) {
       const manifest = createManifest(imageInformation, metadata, uuid);
       await saveJson(manifest, uuid, outputDir + objectsFolder);
@@ -64,10 +72,12 @@ for (const [index, record] of objects.entries()) {
 bar.stop();
 console.log(`${manifestsOnDisk.length} manifests created`);
 if (recordsWithoutImages.length) {
-  console.log(
-    `No public images were found for the following ${recordsWithoutImages.length} records`
-  );
+  console.log(`No images found for the following records:`);
   console.table(recordsWithoutImages);
+}
+if (failedImages.length) {
+  console.log(`Information for the following images could not be fetched:`);
+  console.table(failedImages);
 }
 
 // Get Collective Access collections
