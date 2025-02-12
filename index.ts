@@ -1,3 +1,4 @@
+import fs from "node:fs/promises";
 import cliProgress from "cli-progress";
 import {
   fetchRecords,
@@ -7,7 +8,12 @@ import {
 import { createManifest, createCollection } from "./src/iiif";
 import { outputDir, objectsFolder, collectionsFolder } from "./src/settings";
 
-import type { Record, Image, IIIFImageInformation } from "./src/types";
+import type {
+  Record,
+  Image,
+  IIIFImageInformation,
+  ImageImproved,
+} from "./src/types";
 
 // End process correctly
 process.on("SIGINT", () => {
@@ -15,32 +21,33 @@ process.on("SIGINT", () => {
   process.exit();
 });
 
+// Clean output directory
+await fs.rm("build", { recursive: true, force: true });
+
 // Get Collective Access objects
+console.log("Generating IIIF Object Manifests...");
 const objects = (await fetchRecords("objects")) as Record[];
 
 // Write IIIF Object Manifests
-console.log("Generating IIIF Manifests...");
-const multibar = new cliProgress.MultiBar(
-  {},
-  cliProgress.Presets.shades_classic
-);
-const bar = multibar.create(objects.length, 0);
+const bar = new cliProgress.Bar({}, cliProgress.Presets.shades_classic);
+bar.start(objects.length, 0);
 const manifestsOnDisk = new Array();
+const recordsWithoutImages = new Array();
 for (const [index, record] of objects.entries()) {
   const metadata = record.metadata[0]["qdc:dc"][0];
   const uuid = metadata["dc:isVersionOf"][0];
   const images = metadata["dc:image"]
     ?.map((i: Image) => ({
-      uuid: i["dc:isVersionOf"]?.[0],
-      name: i["dc:identifier"]?.[0],
-      sort: +i["dc:tableOfContents"]?.[0],
+      uuid: i["dc:isVersionOf"][0],
+      name: i["dc:identifier"][0],
+      sort: +i["dc:tableOfContents"][0],
       access: i["dc:accessRights"]?.[0],
     }))
     // Filter for public images
-    .filter((i: any) => i.access === "public_access")
+    .filter((i: ImageImproved) => i.access === "public_access")
     // Sort the images
-    .sort((a: any, b: any) => a.sort - +b.sort);
-  if (images && images.length) {
+    .sort((a: ImageImproved, b: ImageImproved) => a.sort - +b.sort);
+  if (images?.length) {
     const imageInformation = (await Promise.all(
       images.map((i: any) => fetchImageInformationWithCache(i.uuid))
     )) as IIIFImageInformation[];
@@ -51,15 +58,21 @@ for (const [index, record] of objects.entries()) {
       manifestsOnDisk.push(uuid);
     }
   } else {
-    multibar.log(`Record ${uuid} does not have any public images \n`);
+    recordsWithoutImages.push(uuid);
   }
 }
-multibar.stop();
+bar.stop();
 console.log(`${manifestsOnDisk.length} manifests created`);
+if (recordsWithoutImages.length) {
+  console.log(
+    `No public images were found for the following ${recordsWithoutImages.length} records`
+  );
+  console.table(recordsWithoutImages);
+}
 
 // Get Collective Access collections
+console.log("Generating IIIF Collection Manifests...");
 const collections = (await fetchRecords("collections")) as Record[];
-console.log(`${collections.length} collections found`);
 
 // Writing IIIF Collection Manifests
 const recordsInCollections = new Array();
@@ -70,24 +83,21 @@ for (const collection of collections) {
   const records = metadata["dc:hasPart"]?.filter((part) => {
     const access = part["dc:accessRights"][0];
     const uuid = part["dc:isVersionOf"][0];
-    if (access === "public_access") {
-      if (manifestsOnDisk.includes(uuid)) {
-        recordsInCollections.push(uuid);
-        return true;
-      } else {
-        // Already logged above
-        // console.log(`${uuid}) is not found on disk`);
-      }
+    if (access === "public_access" && manifestsOnDisk.includes(uuid)) {
+      recordsInCollections.push(uuid);
+      return true;
     }
   });
-  if (records && records.length) {
+  if (records?.length) {
     const collection = createCollection(records, metadata, uuid);
     saveJson(collection, uuid, outputDir + collectionsFolder);
   } else {
-    console.log(`${label} (${uuid}) has no parts`);
+    console.log(`No parts found for ${label} (${uuid})`);
   }
 }
-console.log(`${recordsInCollections.length} records in collections`);
+console.log(
+  `${recordsInCollections.length} records have been added to collections`
+);
 
 // Todo: media check
 // const media = (await fetchRecords("media")) as Record[];

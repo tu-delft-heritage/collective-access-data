@@ -38,9 +38,16 @@ export interface Metadata {
 export interface Image {
   "dc:isVersionOf": string[];
   "dc:identifier": string[];
-  "dc:accessRights": string[];
+  "dc:accessRights"?: string[];
   "dc:tableOfContents": string[];
   "dc:hasVersion": string[];
+}
+
+export interface ImageImproved {
+  uuid: string;
+  name: string;
+  sort: number;
+  access: string | undefined;
 }
 
 export interface Part {
