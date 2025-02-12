@@ -3452,6 +3452,15 @@
             }
         },
         {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/1da03a31-f787-4640-bede-ba92ecf53fba.json",
+            "type": "Manifest",
+            "label": {
+                "nl": [
+                    "Verticale centimeterbaak door Wild"
+                ]
+            }
+        },
+        {
             "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/5c0dc2fe-ec28-4e69-9a6f-40032d940063.json",
             "type": "Manifest",
             "label": {
@@ -5000,6 +5009,15 @@
             }
         },
         {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/c5e4c8da-6b42-4e03-9f00-540cf63837e1.json",
+            "type": "Manifest",
+            "label": {
+                "nl": [
+                    "Precisie-schijfpoolplanimeter volgens F. Hohmann door G. Coradi"
+                ]
+            }
+        },
+        {
             "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/fabb1d6b-b32f-4d57-9802-65702c2f4f47.json",
             "type": "Manifest",
             "label": {
@@ -5059,6 +5077,33 @@
             "label": {
                 "nl": [
                     "Tachymeter Leica Scanstation C10/15"
+                ]
+            }
+        },
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/e1ba1907-49c5-4fc7-b2d4-dd250b9c9486.json",
+            "type": "Manifest",
+            "label": {
+                "nl": [
+                    "Zonneprisma volgens R. Roelofs door Van Leeuwen"
+                ]
+            }
+        },
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/bfa474f9-7f01-489f-80f6-1e854db42280.json",
+            "type": "Manifest",
+            "label": {
+                "nl": [
+                    "Theodoliet door Wild type T2"
+                ]
+            }
+        },
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/a25cec33-7fb5-42d1-8cf7-5ac410732556.json",
+            "type": "Manifest",
+            "label": {
+                "nl": [
+                    "Stereoscoop in houten kist"
                 ]
             }
         }

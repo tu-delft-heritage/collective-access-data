@@ -1482,41 +1482,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/a3394e36-0bb1-408c-bcbc-5c4f9ab75ebe/canvas/39",
-            "type": "Canvas",
-            "height": 4016,
-            "width": 6016,
-            "items": [
-                {
-                    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/a3394e36-0bb1-408c-bcbc-5c4f9ab75ebe/canvas/39/annotation-page",
-                    "type": "AnnotationPage",
-                    "items": [
-                        {
-                            "id": "https://dlc.services/iiif-img/v3/7/18/62672e99-25cb-4abd-9e5a-5081a59c317f",
-                            "type": "Annotation",
-                            "motivation": "painting",
-                            "target": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/a3394e36-0bb1-408c-bcbc-5c4f9ab75ebe/canvas/39",
-                            "body": {
-                                "id": "https://dlc.services/iiif-img/v3/7/18/62672e99-25cb-4abd-9e5a-5081a59c317f/full/max/0/default.jpg",
-                                "type": "Image",
-                                "format": "image/jpeg",
-                                "height": 4016,
-                                "width": 6016,
-                                "service": [
-                                    {
-                                        "@context": "http://iiif.io/api/image/3/context.json",
-                                        "id": "https://dlc.services/iiif-img/v3/7/18/62672e99-25cb-4abd-9e5a-5081a59c317f",
-                                        "type": "ImageService3",
-                                        "profile": "level2"
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            ]
         }
     ]
 }

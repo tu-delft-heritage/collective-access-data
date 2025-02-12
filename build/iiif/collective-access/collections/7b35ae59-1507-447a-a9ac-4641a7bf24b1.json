@@ -478,6 +478,24 @@
             }
         },
         {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/83ee6b70-74c8-4c21-afd8-30c0a84645be.json",
+            "type": "Manifest",
+            "label": {
+                "nl": [
+                    "Stenen plaquette van prof. C.B. Biezeno"
+                ]
+            }
+        },
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/ed22be3d-d741-4540-bdd1-671675ab1f1f.json",
+            "type": "Manifest",
+            "label": {
+                "nl": [
+                    "Bronzen plaquette met portret van prof. P. Landberg "
+                ]
+            }
+        },
+        {
             "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/objects/52d84cce-1656-4bb9-896a-f1ec1010d1a0.json",
             "type": "Manifest",
             "label": {
