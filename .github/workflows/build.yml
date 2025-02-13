@@ -22,8 +22,10 @@ jobs:
             dlcs-${{ runner.os }}
 
       - name: Delete previous cache
-        run: |
-          gh cache delete dlcs-${{ runner.os }}
+        run: gh cache delete dlcs-${{ runner.os }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
 
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
