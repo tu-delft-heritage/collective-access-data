@@ -10,34 +10,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Cache DLCS Image Information
-      id: dlcs-cache
-      uses: actions/cache@v4
-      with:
-        path: .cache/dlcs
-        key: dlcs-${{ runner.os }}-${{ github.run_id }} # Can use time based key as well
-        restore-keys: |
-          dlcs-${{ runner.os }}
+      - name: Cache DLCS Image Information
+        id: dlcs-cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/dlcs
+          key: dlcs-${{ runner.os }}-${{ github.run_id }} # Can use time based key as well
+          restore-keys: |
+            dlcs-${{ runner.os }}
 
-    - name: Install Bun
-      uses: oven-sh/setup-bun@v2
-      with:
-        bun-version: latest
+      - name: Delete previous cache
+        run: |
+          gh cache delete dlcs-${{ runner.os }}
 
-    - name: Install dependencies
-      run: |
-        bun i
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
 
-    - name: Generate Manifests
-      run: |
-        bun run index.ts
+      - name: Install dependencies
+        run: bun i
 
-    - name: Commit & push changes
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add .
-        git diff-index --quiet HEAD || git commit -m "generated with github action"
-        git push
+      - name: Generate Manifests
+        run: bun run index.ts
+
+      - name: Commit & push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "generated with github action"
+          git push
