@@ -2,7 +2,9 @@ name: Build IIIF Manifests
 
 on: workflow_dispatch
 
-permissions: write-all
+permissions:
+  contents: write
+  actions: write
 
 jobs:
   build:
