@@ -24,7 +24,7 @@ jobs:
       - name: Delete previous cache
         run: gh cache delete dlcs-${{ runner.os }}
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
 
       - name: Install Bun
