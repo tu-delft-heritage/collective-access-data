@@ -23,7 +23,8 @@ jobs:
             dlcs-${{ runner.os }}
 
       - name: Delete previous cache
-        run: gh cache list --key dlcs-${{ runner.os }} || gh cache delete dlcs-${{ runner.os }}
+        run: gh cache delete dlcs-${{ runner.os }}
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
