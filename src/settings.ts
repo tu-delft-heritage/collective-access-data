@@ -1,6 +1,6 @@
 import type { Vocabulary } from "./types";
 
-export const outputDir = "build/iiif/collective-access/";
+export const outputDir = "build/iiif/";
 export const objectsFolder = "objects/";
 export const collectionsFolder = "collections/";
 export const cacheDir = ".cache/";
@@ -9,7 +9,7 @@ export const OAIBaseUrl =
 export const dlcsImageBase = "https://dlc.services/iiif-img/v3/7/";
 export const dlcsSpace = "18";
 export const manifestUriBase =
-  "https://tu-delft-heritage.github.io/collective-access-data/iiif/collective-access/";
+  "https://tu-delft-heritage.github.io/collective-access-data/iiif/";
 
 export const types: Vocabulary = {
   objects: "dc_obj_erfgoed",
