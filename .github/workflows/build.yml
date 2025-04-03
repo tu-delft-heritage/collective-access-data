@@ -1,6 +1,11 @@
 name: Build IIIF Manifests
 
-on: workflow_dispatch
+on:
+  schedule:
+    # Daily schedule
+    - cron: "0 0 * * *"
+
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -24,6 +29,7 @@ jobs:
 
       - name: Delete previous cache
         run: gh cache delete dlcs-${{ runner.os }}
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}

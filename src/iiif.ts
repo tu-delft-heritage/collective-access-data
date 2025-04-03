@@ -47,6 +47,25 @@ export function createManifest(
         manifest.createCanvas(uri + "/canvas/" + index, (canvas) => {
           canvas.height = item.height;
           canvas.width = item.width;
+          const thumbnail = {
+            id:
+              item.id.replace("iiif-img", "thumbs") + "/full/max/0/default.jpg",
+            type: "Image",
+            format: "image/jpeg",
+            service: [
+              {
+                "@context": "http://iiif.io/api/image/3/context.json",
+                id: item.id.replace("iiif-img", "thumbs"),
+                type: "ImageService3",
+                profile: "level0",
+                sizes: item.sizes,
+              },
+            ],
+          };
+          if (index === 0) {
+            manifest.addThumbnail(thumbnail);
+          }
+          canvas.addThumbnail(thumbnail);
           canvas.createAnnotation(item.id, {
             id: item.id,
             type: "Annotation",
