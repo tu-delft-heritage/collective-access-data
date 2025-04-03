@@ -91,3 +91,25 @@ export const collectionLabels = {
     nl: ["Conservator"],
   },
 };
+
+// Hardcoded for now
+export const collectionMetadata = [
+  {
+    label: {
+      en: ["Managing institution"],
+      nl: ["Beherende instelling"],
+    },
+    value: {
+      en: ["TU Delft Library"],
+    },
+  },
+  {
+    label: {
+      en: ["Curator"],
+      nl: ["Conservator"],
+    },
+    value: {
+      none: ["Sylvia Nijhuis"],
+    },
+  },
+];

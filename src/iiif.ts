@@ -6,6 +6,7 @@ import {
   collectionLabels,
   objectsFolder,
   collectionsFolder,
+  collectionMetadata,
 } from "./settings";
 import type { Metadata, IIIFImageInformation, Part } from "./types";
 
@@ -83,7 +84,7 @@ export function createCollection(
   const collection = builder.createCollection(uri + ".json", (collection) => {
     collection.setLabel({ nl: decodeValue(metadata["dc:title"]) });
     collection.setSummary({ nl: decodeValue(metadata["dc:description"]) });
-    collection.setMetadata(parseMetadata(metadata, "collection"));
+    collection.setMetadata(collectionMetadata);
     if (records.length) {
       for (const item of records) {
         const uuid = item["dc:isVersionOf"][0];
