@@ -32,6 +32,33 @@ function decodeValue(value: string[]) {
   return value.map((i) => (i ? he.decode(i) : i));
 }
 
+function createNavDate(metadata: Metadata) {
+  const date = metadata["dc:date"]?.[0];
+  const uuid = metadata["dc:isVersionOf"][0];
+  try {
+    let isoString = null;
+    if (date) {
+      if (date === "mid 19th century") {
+        isoString = new Date(Date.parse("1850")).toISOString();
+      } else if (date.includes("–")) {
+        // Use start year of period
+        const firstYear = date.split("–")[0].trim();
+        isoString = new Date(Date.parse(firstYear)).toISOString();
+      } else if (date.includes("after")) {
+        const year = date.split("after ")[1].trim();
+        isoString = new Date(Date.parse(year)).toISOString();
+      } else {
+        // To remove trailing s of 1870s
+        const year = date.slice(0, 4);
+        isoString = new Date(Date.parse(year)).toISOString();
+      }
+    }
+    return isoString;
+  } catch (err) {
+    console.log(`Could not process date for ${uuid} ${date}`);
+  }
+}
+
 export function createManifest(
   images: IIIFImageInformation[],
   metadata: Metadata,
@@ -42,6 +69,10 @@ export function createManifest(
   const manifest = builder.createManifest(uri + ".json", (manifest) => {
     manifest.setLabel({ nl: decodeValue(metadata["dc:title"]) });
     manifest.setMetadata(parseMetadata(metadata, "object"));
+    const navDate = createNavDate(metadata);
+    if (navDate) {
+      manifest.entity.navDate = navDate;
+    }
     if (images.length) {
       for (const [index, item] of images.entries()) {
         manifest.createCanvas(uri + "/canvas/" + index, (canvas) => {
@@ -94,7 +125,7 @@ export function createManifest(
 }
 
 export function createCollection(
-  records: Part[],
+  records: Metadata[],
   metadata: Metadata,
   uuid: string
 ) {
@@ -110,7 +141,11 @@ export function createCollection(
         collection.createManifest(
           manifestUriBase + objectsFolder + uuid + ".json",
           (manifest) => {
-            manifest.setLabel({ nl: decodeValue(item["dc:type"]) });
+            manifest.setLabel({ nl: decodeValue(item["dc:title"]) });
+            const navDate = createNavDate(item);
+            if (navDate) {
+              manifest.entity.navDate = navDate;
+            }
           }
         );
       }

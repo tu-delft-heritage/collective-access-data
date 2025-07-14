@@ -90,19 +90,28 @@ for (const collection of collections) {
   const metadata = collection.metadata[0]["qdc:dc"][0];
   const label = metadata["dc:title"][0];
   const uuid = metadata["dc:isVersionOf"][0];
-  const records = metadata["dc:hasPart"]?.filter((part) => {
-    const access = part["dc:accessRights"][0];
-    const uuid = part["dc:isVersionOf"][0];
-    if (access === "public_access" && manifestsOnDisk.includes(uuid)) {
-      recordsInCollections.push(uuid);
-      return true;
-    }
-  });
+  const records = metadata["dc:hasPart"]
+    ?.filter((part) => {
+      const access = part["dc:accessRights"][0];
+      const uuid = part["dc:isVersionOf"][0];
+      if (access === "public_access" && manifestsOnDisk.includes(uuid)) {
+        recordsInCollections.push(uuid);
+        return true;
+      }
+    })
+    .map((part) => {
+      const uuid = part["dc:isVersionOf"][0];
+      const object = objects.find(
+        (object) =>
+          object.metadata[0]["qdc:dc"][0]["dc:isVersionOf"][0] === uuid
+      );
+      return object?.metadata[0]["qdc:dc"][0];
+    });
   if (records?.length) {
     const collection = createCollection(records, metadata, uuid);
     saveJson(collection, uuid, outputDir + collectionsFolder);
   } else {
-    console.log(`No parts found for ${label} (${uuid})`);
+    console.log(`No records found for ${label} (${uuid})`);
   }
 }
 console.log(
