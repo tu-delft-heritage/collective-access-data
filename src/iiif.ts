@@ -35,22 +35,23 @@ function decodeValue(value: string[]) {
 function createNavDate(metadata: Metadata) {
   const date = metadata["dc:date"]?.[0];
   const uuid = metadata["dc:isVersionOf"][0];
+  const parseDate = (s: string) => new Date(Date.parse(s)).toISOString();
   try {
-    let isoString = null;
+    let isoString: null | string = null;
     if (date) {
       if (date === "mid 19th century") {
-        isoString = new Date(Date.parse("1850")).toISOString();
+        isoString = parseDate("1850");
       } else if (date.includes("–")) {
         // Use start year of period
         const firstYear = date.split("–")[0].trim();
-        isoString = new Date(Date.parse(firstYear)).toISOString();
+        isoString = parseDate(firstYear);
       } else if (date.includes("after")) {
         const year = date.split("after ")[1].trim();
-        isoString = new Date(Date.parse(year)).toISOString();
+        isoString = parseDate(year);
       } else {
         // To remove trailing s of 1870s
         const year = date.slice(0, 4);
-        isoString = new Date(Date.parse(year)).toISOString();
+        isoString = parseDate(year);
       }
     }
     return isoString;
