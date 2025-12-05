@@ -41,12 +41,14 @@ function createNavDate(metadata: Metadata) {
     if (date) {
       if (date === "mid 19th century") {
         isoString = parseDate("1850");
+      } else if (date === "early 20th century") {
+        isoString = parseDate("1910");
       } else if (date.includes("–")) {
         // Use start year of period
         const firstYear = date.split("–")[0].trim();
         isoString = parseDate(firstYear);
-      } else if (date.includes("after")) {
-        const year = date.split("after ")[1].trim();
+      } else if (date.includes("after") || date.includes("circa")) {
+        const year = date.split(" ")[1].trim();
         isoString = parseDate(year);
       } else {
         // To remove trailing s of 1870s
