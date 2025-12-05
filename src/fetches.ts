@@ -75,7 +75,8 @@ export async function fetchRecords(
   // Fetch additional records if needed
   if (token && count) {
     let index = 0;
-    let pageCount = Math.ceil(+count / 100);
+    const pageSize = records.length;
+    let pageCount = Math.ceil(+count / pageSize);
     console.log(`Multiple pages found...`);
 
     while (index < pageCount) {

@@ -92,9 +92,9 @@ for (const collection of collections) {
   const uuid = metadata["dc:isVersionOf"][0];
   const records = metadata["dc:hasPart"]
     ?.filter((part) => {
-      const access = part["dc:accessRights"][0];
+      const isPublic = part["dc:accessRights"][0] === "public_access";
       const uuid = part["dc:isVersionOf"][0];
-      if (access === "public_access" && manifestsOnDisk.includes(uuid)) {
+      if (isPublic && manifestsOnDisk.includes(uuid)) {
         recordsInCollections.push(uuid);
         return true;
       }
