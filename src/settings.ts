@@ -12,8 +12,8 @@ export const manifestUriBase =
   "https://tu-delft-heritage.github.io/collective-access-data/iiif/";
 
 export const types: Vocabulary = {
-  objects: "dc_obj_erfgoed",
-  collections: "dc_collection",
+  objects: "schema_org",
+  collections: "col_schema_org",
   media: "dc_media",
 };
 

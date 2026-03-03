@@ -1,4 +1,6 @@
 import { Parser } from "xml2js";
+// const { XMLParser, XMLBuilder, XMLValidator } from "fast-xml-parser"
+import { stripPrefix, parseNumbers } from "xml2js/lib/processors";
 import {
   OAIBaseUrl,
   types,
@@ -11,7 +13,7 @@ async function fetchXML(
   type: string = "objects",
   resumptionToken: undefined | string = undefined,
   verb = "ListRecords",
-  identifier: undefined | string = undefined
+  identifier: undefined | string = undefined,
 ) {
   const url = new URL(OAIBaseUrl + types[type] + "/request");
 
@@ -27,11 +29,16 @@ async function fetchXML(
   if (resumptionToken) {
     searchParams.append("resumptionToken", resumptionToken);
   } else {
-    searchParams.append("metadataPrefix", "qdc");
+    searchParams.append("metadataPrefix", "rdf");
   }
 
   // Fetch data and parse XML
-  const parser = new Parser();
+  // https://www.npmjs.com/package/xml2js
+  const parser = new Parser({
+    mergeAttrs: true,
+    emptyTag: undefined,
+    explicitArray: false,
+  });
   return fetch(url.toString())
     .then((response) => response.text())
     .then((text) => parser.parseStringPromise(text))
@@ -41,19 +48,19 @@ async function fetchXML(
 }
 
 function getResumptionToken(resp: any) {
-  const tokenObj = resp?.["OAI-PMH"]?.ListRecords?.[0]?.resumptionToken?.[0];
-  const count: string | undefined = tokenObj?.$?.completeListSize;
+  const tokenObj = resp?.["OAI-PMH"]?.ListRecords?.resumptionToken;
+  const count: string | undefined = tokenObj?.completeListSize;
   const resumptionToken: string | undefined = tokenObj?._;
   return [resumptionToken, count];
 }
 
 function getRecords(resp: any) {
-  return resp?.["OAI-PMH"]?.ListRecords?.[0]?.record;
+  return resp?.["OAI-PMH"]?.ListRecords?.record;
 }
 
 export async function fetchRecords(
   type: string = "objects",
-  useCache: boolean = true
+  useCache: boolean = true,
 ) {
   // Get cache
   const cache = Bun.file(cacheDir + "collective-access/" + type + ".json");
@@ -91,7 +98,7 @@ export async function fetchRecords(
   // Write cache
   Bun.write(
     `${cacheDir + "collective-access/" + type}.json`,
-    JSON.stringify(records, null, 2)
+    JSON.stringify(records, null, 2),
   );
   console.log(`${records.length} ${type} fetched`);
   return records;
@@ -106,7 +113,7 @@ async function getCache(id: string, type: string) {
 
 export async function fetchImageInformationWithCache(
   uuid: string,
-  useCache: boolean = true
+  useCache: boolean = true,
 ) {
   if (useCache) {
     const cache = await getCache(uuid, "dlcs");
