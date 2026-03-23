@@ -6,6 +6,7 @@ import {
   saveJson,
 } from "./src/fetches";
 import { createManifest, createCollection } from "./src/iiif";
+import { getUuid } from "./src/schema";
 import { outputDir, objectsFolder, collectionsFolder } from "./src/settings";
 
 import type {
@@ -13,7 +14,11 @@ import type {
   Image,
   IIIFImageInformation,
   ImageImproved,
+  SchemaObjectMetadata,
+  SchemaImageObject,
+  SchemaRecord,
 } from "./src/types";
+import { normalizeSchemaRecord } from "./src/schema";
 
 // End process correctly
 process.on("SIGINT", () => {
@@ -24,12 +29,12 @@ process.on("SIGINT", () => {
 // Clean output directory
 await fs.rm("build", { recursive: true, force: true });
 
-const buildManifests = false;
+const buildManifests = true;
 const buildCollections = false;
 
 // Get Collective Access objects
 console.log("Generating IIIF Object Manifests...");
-const objects = (await fetchRecords("objects")) as Record[];
+const objects = (await fetchRecords("objects")) as SchemaRecord<"object">[];
 
 if (buildManifests) {
   // Write IIIF Object Manifests
@@ -39,10 +44,18 @@ if (buildManifests) {
   const recordsWithoutImages = new Array();
   const failedImages = new Array();
   for (const [index, record] of objects.entries()) {
-    const metadata = record.metadata[0]["qdc:dc"][0];
-    const uuid = metadata["dc:isVersionOf"][0];
-    const images = metadata["dc:image"]
-      ?.map((i: Image) => ({
+    let metadata;
+    try {
+      metadata = record.metadata["rdf:RDF"]["schema:CreativeWork"];
+    } catch {
+      continue;
+    }
+    const uuid = getUuid(metadata["rdf:id"]);
+    const schemaRecord = normalizeSchemaRecord(metadata);
+    await saveJson(schemaRecord, uuid + "/schema", outputDir + objectsFolder);
+    continue;
+    const images = record["schema:image"]
+      ?.map((i: SchemaImageObject) => ({
         uuid: i["dc:isVersionOf"][0],
         name: i["dc:identifier"][0],
         sort: +i["dc:tableOfContents"][0],

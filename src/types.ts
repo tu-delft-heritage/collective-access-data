@@ -2,7 +2,7 @@ export interface Vocabulary {
   [key: string]: string;
 }
 
-type OneOrMany<T> = T | T[];
+export type OneOrMany<T> = T | T[];
 
 type SchemaMetadataByKind = {
   object: SchemaObjectMetadata;
@@ -61,8 +61,7 @@ export interface SchemaProduct {
 type SchemaRoleKind = "Creator" | "Contributor";
 
 type SchemaRole<K extends SchemaRoleKind> = {
-  // Should be roleName!
-  "schema:RoleName": string;
+  "schema:roleName": string;
 } & {
   [P in `schema:${K}`]: SchemaPerson | SchemaOrganization;
 };
@@ -111,7 +110,7 @@ export interface SchemaObjectMetadata {
   "schema:height": SchemaQuantitativeValue;
   "schema:width": SchemaQuantitativeValue;
   "schema:depth": SchemaQuantitativeValue;
-  "schema:citation": string;
+  "schema:citation": OneOrMany<string>;
   "schema:isRelatedTo": OneOrMany<SchemaProduct>;
   "schema:image": OneOrMany<SchemaImageObject>;
 }
