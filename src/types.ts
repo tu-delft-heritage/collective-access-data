@@ -1,12 +1,169 @@
+import * as z from "zod";
+
+const SchemaImageObject = z.preprocess(
+  (val: any) => ({
+    "@type": "ImageObject",
+    ...val.ImageObject,
+  }),
+  z.object({
+    "@type": z.literal("ImageObject"),
+    contentUrl: z.object({
+      context: z.url(),
+      id: z.url(),
+      type: z.literal("Image"),
+    }),
+    thumbnailUrl: z.url(),
+    encodingFormat: z.literal("https://iiif.io/api/image/3.0/"),
+    caption: z.string().optional(),
+    width: z.coerce.number(),
+    height: z.coerce.number(),
+    position: z.coerce.number(),
+  }),
+);
+
+const SchemaQuantitativeValue = z.object({
+  type: z.literal("QuantativeValue"),
+  unitCode: z.string(),
+  value: z.coerce.number().optional(),
+});
+
+const preprocessSameAs = (val: any) => {
+  const sameAsVal = val.sameAs?.resource;
+  if (sameAsVal) {
+    val.sameAs = sameAsVal;
+  } else if (val.sameAs) {
+    delete val.sameAs;
+  }
+};
+
+const SchemaPlace = z.preprocess(
+  (val: any) => {
+    preprocessSameAs(val.Place);
+    return {
+      "@type": "Place",
+      ...val.Place,
+    };
+  },
+  z.object({
+    "@type": z.literal("Place"),
+    address: z.string(),
+    latitude: z.coerce.number(),
+    longitude: z.coerce.number(),
+    sameAs: z.url().optional(),
+  }),
+);
+
+const SchemaEntity = z.preprocess(
+  (val: any) => {
+    try {
+      const type = Object.keys(val).shift() as string;
+      preprocessSameAs(val[type]);
+      return {
+        "@type": type,
+        ...val[type],
+      };
+    } catch {
+      return undefined;
+    }
+  },
+  z.object({
+    "@type": z.string(),
+    name: z.string(),
+    sameAs: z.url().optional(),
+    identifier: z.string().optional(),
+    // image: SchemaImageObject.optional(),
+  }),
+);
+
+const SchemaRoleContributor = z.preprocess(
+  (val: any) => ({
+    "@type": "Role",
+    roleName: val.Role.roleName,
+    contributor: val.Role.Contributor,
+  }),
+  z.object({
+    "@type": z.literal("Role"),
+    roleName: z.string(),
+    contributor: SchemaEntity,
+  }),
+);
+
+const SchemaRoleCreator = z.preprocess(
+  (val: any) => ({
+    "@type": "Role",
+    roleName: val.Role?.roleName,
+    creator: val.Role?.Creator,
+  }),
+  z.object({
+    "@type": z.literal("Role"),
+    roleName: z.string(),
+    creator: SchemaEntity,
+  }),
+);
+
+export const SchemaMetadata = z.preprocess(
+  (val: any) => ({
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    ...val,
+  }),
+  z.object({
+    "@context": z.literal("https://schema.org"),
+    "@type": z.literal("CreativeWork"),
+    id: z.url(),
+    name: z.string(),
+    description: z.string().optional(),
+    identifier: z.string(),
+    temporalCoverage: z.string().optional(),
+    exampleOfWork: SchemaEntity,
+    material: SchemaEntity.or(z.array(SchemaEntity)).optional(),
+    creator: SchemaRoleCreator.or(z.array(SchemaRoleCreator)).optional(),
+    contributor: SchemaRoleContributor.or(
+      z.array(SchemaRoleContributor),
+    ).optional(),
+    about: SchemaEntity.optional(),
+    locationCreated: SchemaPlace.optional(),
+    height: SchemaQuantitativeValue,
+    width: SchemaQuantitativeValue,
+    depth: SchemaQuantitativeValue,
+    citation: z
+      .preprocess((val) => {
+        if (Array.isArray(val)) {
+          return val.filter(Boolean);
+        } else {
+          return val;
+        }
+      }, z.array(z.string()).or(z.string()))
+      .optional(),
+    isRelatedTo: SchemaEntity.or(z.array(SchemaEntity)).optional(),
+    image: SchemaImageObject.or(z.array(SchemaImageObject)),
+  }),
+);
+
+export const SchemaCollectionMetadata = z.preprocess(
+  (val: any) => ({
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    ...val,
+  }),
+  z.object({
+    id: z.url(),
+    name: z.string(),
+    description: z.string(),
+    identifier: z.string(),
+    creator: SchemaRoleCreator.or(z.array(SchemaRoleCreator)),
+    contributor: SchemaRoleContributor.or(z.array(SchemaRoleContributor)),
+    hasPart: SchemaEntity.or(z.array(SchemaEntity)),
+  }),
+);
+
 export interface Vocabulary {
   [key: string]: string;
 }
 
-export type OneOrMany<T> = T | T[];
-
 type SchemaMetadataByKind = {
-  object: SchemaObjectMetadata;
-  collection: SchemaCollectionMetadata;
+  object: z.input<typeof SchemaMetadata>;
+  collection: z.input<typeof SchemaCollectionMetadata>;
 };
 
 export type SchemaRecord<K extends keyof SchemaMetadataByKind> = {
@@ -15,115 +172,13 @@ export type SchemaRecord<K extends keyof SchemaMetadataByKind> = {
     datestamp: string;
   };
   metadata: {
-    "rdf:RDF": {
-      "xmlns:schema": string;
-      "xmlns:rdf": string;
-      "schema:CreativeWork": SchemaMetadataByKind[K];
+    RDF: {
+      schema: string;
+      rdf: string;
+      CreativeWork: SchemaMetadataByKind[K];
     };
   };
 };
-
-export interface SchemaSameAs {
-  "rdf:resource": string;
-}
-
-export interface SchemaPerson {
-  "schema:Person": {
-    "schema:name": string;
-    "schema:sameAs"?: SchemaSameAs;
-  };
-}
-
-export interface SchemaOrganization {
-  "schema:Organization": {
-    "schema:name": string;
-    "schema:sameAs"?: SchemaSameAs;
-  };
-}
-
-export interface SchemaCreativeWork {
-  "schema:CreativeWork": {
-    "schema:name": string;
-    "schema:sameAs": SchemaSameAs;
-    "schema:identifier"?: string;
-    "schema:image"?: Partial<SchemaImageObject>;
-  };
-}
-
-export interface SchemaProduct {
-  "schema:Product": {
-    "schema:name": string;
-    "schema:sameAs": SchemaSameAs;
-    "schema:identifier"?: string;
-  };
-}
-
-type SchemaRoleKind = "Creator" | "Contributor";
-
-type SchemaRole<K extends SchemaRoleKind> = {
-  "schema:roleName": string;
-} & {
-  [P in `schema:${K}`]: SchemaPerson | SchemaOrganization;
-};
-
-export interface SchemaQuantitativeValue {
-  "rdf:type": string;
-  "schema:unitCode": string;
-  "schema:value": string;
-}
-
-export interface SchemaImageObject {
-  "schema:ImageObject": {
-    "schema:contentUrl": {
-      "rdf:context": string;
-      "rdf:id": string;
-      "rdf:type": string;
-    };
-    "schema:thumbnailUrl": string;
-    "schema:encodingFormat": string;
-    "schema:caption": string;
-    "schema:width": string;
-    "schema:height": string;
-    "schema:position": string;
-  };
-}
-
-export interface SchemaPlace {
-  "schema:address": string;
-  "schema:latitude": string;
-  "schema:longitude": string;
-  "schema:sameAs": SchemaSameAs;
-}
-
-export interface SchemaObjectMetadata {
-  "rdf:id": string;
-  "schema:name": string;
-  "schema:description": string;
-  "schema:identifier": string;
-  "schema:temporalCoverage": string;
-  "schema:exampleOfWork": OneOrMany<SchemaCreativeWork>;
-  "schema:material": OneOrMany<SchemaProduct>;
-  "schema:creator": OneOrMany<SchemaRole<"Creator">>;
-  "schema:contributor": OneOrMany<SchemaRole<"Contributor">>;
-  "schema:about": SchemaPerson;
-  "schema:locationCreated": SchemaPlace;
-  "schema:height": SchemaQuantitativeValue;
-  "schema:width": SchemaQuantitativeValue;
-  "schema:depth": SchemaQuantitativeValue;
-  "schema:citation": OneOrMany<string>;
-  "schema:isRelatedTo": OneOrMany<SchemaProduct>;
-  "schema:image": OneOrMany<SchemaImageObject>;
-}
-
-export interface SchemaCollectionMetadata {
-  "rdf:id": string;
-  "schema:name": string;
-  "schema:description": string;
-  "schema:identifier": string;
-  "schema:creator": OneOrMany<SchemaRole<"Creator">>;
-  "schema:contributor": OneOrMany<SchemaRole<"Contributor">>;
-  "schema:hasPart": OneOrMany<SchemaCreativeWork>;
-}
 
 export interface DublinCoreRecord {
   header: {

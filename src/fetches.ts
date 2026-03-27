@@ -1,4 +1,6 @@
 import { Parser } from "xml2js";
+import he from "he";
+
 // const { XMLParser, XMLBuilder, XMLValidator } from "fast-xml-parser"
 import { stripPrefix, parseNumbers } from "xml2js/lib/processors";
 import {
@@ -32,12 +34,29 @@ async function fetchXML(
     searchParams.append("metadataPrefix", "rdf");
   }
 
+  // To decode values like &amp; in CDATA and remove trailing spaces
+  function decodeValue(value: string, name: string) {
+    return he.decode(value).trim();
+  }
+
+  function removePrefix(tag: string) {
+    if (tag.includes(":")) {
+      return tag.split(":").pop();
+    } else {
+      return tag;
+    }
+  }
+
   // Fetch data and parse XML
   // https://www.npmjs.com/package/xml2js
   const parser = new Parser({
     mergeAttrs: true,
     emptyTag: undefined,
     explicitArray: false,
+    attrValueProcessors: [decodeValue],
+    attrNameProcessors: [removePrefix],
+    valueProcessors: [decodeValue],
+    tagNameProcessors: [removePrefix],
   });
   return fetch(url.toString())
     .then((response) => response.text())

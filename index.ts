@@ -8,6 +8,7 @@ import {
 import { createManifest, createCollection } from "./src/iiif";
 import { getUuid } from "./src/schema";
 import { outputDir, objectsFolder, collectionsFolder } from "./src/settings";
+import { SchemaMetadata } from "./src/types";
 
 import type {
   Record,
@@ -45,14 +46,21 @@ if (buildManifests) {
   const failedImages = new Array();
   for (const [index, record] of objects.entries()) {
     let metadata;
+    let uuid;
     try {
-      metadata = record.metadata["rdf:RDF"]["schema:CreativeWork"];
+      metadata = record.metadata.RDF.CreativeWork;
     } catch {
+      console.log("No metadata for", record.header.identifier);
       continue;
     }
-    const uuid = getUuid(metadata["rdf:id"]);
-    const schemaRecord = normalizeSchemaRecord(metadata);
-    await saveJson(schemaRecord, uuid + "/schema", outputDir + objectsFolder);
+    try {
+      uuid = getUuid(metadata.id);
+      metadata = SchemaMetadata.parse(metadata);
+    } catch (err) {
+      console.log(`Parser failed for ${uuid}`, err);
+      continue;
+    }
+    await saveJson(metadata, uuid + "/schema", outputDir + objectsFolder);
     continue;
     const images = record["schema:image"]
       ?.map((i: SchemaImageObject) => ({
