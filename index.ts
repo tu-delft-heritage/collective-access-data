@@ -11,6 +11,7 @@ import { outputDir, objectsFolder, collectionsFolder } from "./src/settings";
 import { SchemaMetadata } from "./src/types";
 import { date, writer } from "./src/log.ts";
 import * as z from "zod";
+import { join } from "node:path";
 
 import type { IIIFImageInformation, SchemaRecord } from "./src/types";
 
@@ -34,48 +35,63 @@ if (buildManifests) {
   // Write IIIF Object Manifests
   const bar = new cliProgress.Bar({}, cliProgress.Presets.shades_classic);
   bar.start(objects.length, 0);
+
   const manifestsOnDisk = new Array();
   const recordsWithoutImages = new Array();
   const failedImages = new Array();
+
   for (const [index, record] of objects.entries()) {
     const metadata = record.metadata?.RDF?.CreativeWork;
     const identifier = record.header?.identifier;
+
     if (!metadata) {
       writer.write(`No metadata found for record ${identifier}\n---\n`);
       continue;
     }
+
     const result = SchemaMetadata.safeParse(metadata);
+
     if (!result.success) {
       const error = z.prettifyError(result.error);
       const url = getUrlForObject(identifier);
       writer.write(`Parser failed for ${identifier}:\n${error}\n${url}\n---\n`);
       continue;
     }
-    const parsedMetadata = result.data;
-    const uuid = getUuid(parsedMetadata["@id"]) as string;
 
-    await saveJson(parsedMetadata, uuid + "/schema", outputDir + objectsFolder);
-    continue;
+    const parsedMetadata = result.data;
+    const uuid = z.uuid().parse(getUuid(parsedMetadata["@id"]));
+
+    await saveJson(
+      parsedMetadata,
+      "schema",
+      join(outputDir, objectsFolder, uuid),
+    );
+
     const images = getValueAsArray(parsedMetadata.image);
-    if (images?.length) {
-      const imageInformation = (
-        await Promise.all(
-          images.map((i) => fetchImageInformationWithCache(i.uuid)),
-        )
-      ).filter((resp) => {
-        if (resp.error) {
-          failedImages.push(resp.error);
-          return false;
-        } else return true;
-      }) as IIIFImageInformation[];
-      if (imageInformation.length) {
-        const manifest = createManifest(imageInformation, metadata, uuid);
-        await saveJson(manifest, uuid, outputDir + objectsFolder);
-        bar.update(index + 1);
-        manifestsOnDisk.push(uuid);
-      }
-    } else {
+
+    if (!images.length) {
       recordsWithoutImages.push(uuid);
+      continue;
+    }
+
+    const imageInformation = (
+      await Promise.all(
+        images.map((image) => {
+          const uuid = z.uuid().parse(getUuid(image.contentUrl["@id"]));
+          return fetchImageInformationWithCache(uuid);
+        }),
+      )
+    ).filter((resp) => {
+      if (resp.error) {
+        failedImages.push(resp.error);
+        return false;
+      } else return true;
+    }) as IIIFImageInformation[];
+    if (imageInformation.length) {
+      // const manifest = createManifest(imageInformation, metadata, uuid);
+      // await saveJson(manifest, uuid, join(outputDir, objectsFolder));
+      bar.update(index + 1);
+      manifestsOnDisk.push(uuid);
     }
   }
   bar.stop();

@@ -7,6 +7,7 @@ import {
   dlcsImageBase,
   dlcsSpace,
 } from "./settings";
+import { join } from "node:path";
 
 async function fetchXML(
   type: string = "objects",
@@ -83,7 +84,7 @@ export async function fetchRecords(
   useCache: boolean = true,
 ) {
   // Get cache
-  const cache = Bun.file(cacheDir + "collective-access/" + type + ".json");
+  const cache = Bun.file(join(cacheDir, "collective-access", `${type}.json`));
   if (useCache && (await cache.exists())) {
     console.log(`Using cache`);
     return await cache.json();
@@ -117,7 +118,7 @@ export async function fetchRecords(
 
   // Write cache
   Bun.write(
-    `${cacheDir + "collective-access/" + type}.json`,
+    join(cacheDir, "collective-access", `${type}.json`),
     JSON.stringify(records, null, 2),
   );
   console.log(`${records.length} ${type} fetched`);
@@ -125,7 +126,7 @@ export async function fetchRecords(
 }
 
 async function getCache(id: string, type: string) {
-  const file = Bun.file(`${cacheDir + type}/${id}.json`);
+  const file = Bun.file(join(cacheDir, type, `${id}.json`));
   if (await file.exists()) {
     return file.json();
   } else return null;
@@ -139,14 +140,17 @@ export async function fetchImageInformationWithCache(
     const cache = await getCache(uuid, "dlcs");
     if (cache) return cache;
   }
-  const url = dlcsImageBase + dlcsSpace + "/" + uuid;
+  const url = `${dlcsImageBase}${dlcsSpace}/${uuid}`;
   let resp = await fetch(url);
   if (!resp.ok) return { error: uuid };
   const json = await resp.json();
-  await saveJson(json, uuid, cacheDir + "dlcs/");
+  await saveJson(json, uuid, join(cacheDir, "dlcs"));
   return json;
 }
 
 export function saveJson(json: any, filename: string, path: string) {
-  return Bun.write(`${path}/${filename}.json`, JSON.stringify(json, null, 4));
+  return Bun.write(
+    join(path, `${filename}.json`),
+    JSON.stringify(json, null, 4),
+  );
 }

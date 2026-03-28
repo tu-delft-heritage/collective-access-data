@@ -1,5 +1,4 @@
 import { IIIFBuilder } from "@iiif/builder";
-import he from "he";
 import {
   manifestUriBase,
   objectLabels,
@@ -8,7 +7,11 @@ import {
   collectionsFolder,
   collectionMetadata,
 } from "./settings";
-import type { Metadata, IIIFImageInformation, Part } from "./types";
+import type { IIIFImageInformation } from "./types";
+import { SchemaMetadata } from "./types";
+import * as z from "zod";
+
+type Metadata = z.input<typeof SchemaMetadata>;
 
 function parseMetadata(props: Metadata, type?: string) {
   const labels = type === "collection" ? collectionLabels : objectLabels;
@@ -19,17 +22,12 @@ function parseMetadata(props: Metadata, type?: string) {
       metadata.push({
         label,
         value: {
-          // Decoding because of encoded ampersands in string
-          nl: value.map((i) => he.decode(i)),
+          nl: value,
         },
       });
     }
   }
   return metadata;
-}
-
-function decodeValue(value: string[]) {
-  return value.map((i) => (i ? he.decode(i) : i));
 }
 
 function createNavDate(metadata: Metadata) {
@@ -65,12 +63,12 @@ function createNavDate(metadata: Metadata) {
 export function createManifest(
   images: IIIFImageInformation[],
   metadata: Metadata,
-  uuid: string
+  uuid: string,
 ) {
   const builder = new IIIFBuilder();
   const uri = manifestUriBase + objectsFolder + uuid;
   const manifest = builder.createManifest(uri + ".json", (manifest) => {
-    manifest.setLabel({ nl: decodeValue(metadata["dc:title"]) });
+    manifest.setLabel({ nl: metadata["dc:title"] });
     manifest.setMetadata(parseMetadata(metadata, "object"));
     const navDate = createNavDate(metadata);
     if (navDate) {
@@ -130,13 +128,13 @@ export function createManifest(
 export function createCollection(
   records: Metadata[],
   metadata: Metadata,
-  uuid: string
+  uuid: string,
 ) {
   const builder = new IIIFBuilder();
   const uri = manifestUriBase + collectionsFolder + uuid;
   const collection = builder.createCollection(uri + ".json", (collection) => {
-    collection.setLabel({ nl: decodeValue(metadata["dc:title"]) });
-    collection.setSummary({ nl: decodeValue(metadata["dc:description"]) });
+    collection.setLabel({ nl: metadata["dc:title"] });
+    collection.setSummary({ nl: metadata["dc:description"] });
     collection.setMetadata(collectionMetadata);
     if (records.length) {
       for (const item of records) {
@@ -144,12 +142,12 @@ export function createCollection(
         collection.createManifest(
           manifestUriBase + objectsFolder + uuid + ".json",
           (manifest) => {
-            manifest.setLabel({ nl: decodeValue(item["dc:title"]) });
+            manifest.setLabel({ nl: item["dc:title"] });
             const navDate = createNavDate(item);
             if (navDate) {
               manifest.entity.navDate = navDate;
             }
-          }
+          },
         );
       }
     }

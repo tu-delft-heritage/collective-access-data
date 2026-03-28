@@ -1,9 +1,9 @@
 import type { Vocabulary } from "./types";
 
-export const outputDir = "build/iiif/";
-export const objectsFolder = "objects/";
-export const collectionsFolder = "collections/";
-export const cacheDir = ".cache/";
+export const outputDir = "build/iiif";
+export const objectsFolder = "objects";
+export const collectionsFolder = "collections";
+export const cacheDir = ".cache";
 export const OAIBaseUrl =
   "https://cms.collectiveaccess.tudelft.nl/service.php/OAI/";
 export const dlcsImageBase = "https://dlc.services/iiif-img/v3/7/";

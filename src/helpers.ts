@@ -1,11 +1,19 @@
 import { OAIBaseUrl, types } from "./settings";
 
 export function getUuid(id: string) {
-  return id.match(/manifests\/(.+?)\/schema.json/)?.[1];
+  if (id.startsWith("https://heritage.tudelft.nl")) {
+    return id.match(/manifests\/(.+?)\/schema.json/)?.[1];
+  } else if (id.startsWith("https://dlc.services")) {
+    return id.match(/iiif-img\/7\/18\/(.+)/)?.[1];
+  }
 }
 
-export function getValueAsArray(prop: object | Array<object>) {
-  return Array.isArray(prop) ? prop : new Array(prop);
+export function getValueAsArray<T>(prop: T | T[] | undefined) {
+  return Array.isArray(prop)
+    ? prop
+    : prop === undefined
+      ? new Array()
+      : new Array(prop);
 }
 
 export function getUrlForObject(identifier: string, type: string = "objects") {
