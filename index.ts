@@ -6,20 +6,13 @@ import {
   saveJson,
 } from "./src/fetches";
 import { createManifest, createCollection } from "./src/iiif";
-import { getUuid } from "./src/schema";
+import { getUuid, getValueAsArray, getUrlForObject } from "./src/helpers.ts";
 import { outputDir, objectsFolder, collectionsFolder } from "./src/settings";
 import { SchemaMetadata } from "./src/types";
+import { date, writer } from "./src/log.ts";
+import * as z from "zod";
 
-import type {
-  Record,
-  Image,
-  IIIFImageInformation,
-  ImageImproved,
-  SchemaObjectMetadata,
-  SchemaImageObject,
-  SchemaRecord,
-} from "./src/types";
-import { normalizeSchemaRecord } from "./src/schema";
+import type { IIIFImageInformation, SchemaRecord } from "./src/types";
 
 // End process correctly
 process.on("SIGINT", () => {
@@ -45,34 +38,25 @@ if (buildManifests) {
   const recordsWithoutImages = new Array();
   const failedImages = new Array();
   for (const [index, record] of objects.entries()) {
-    let metadata;
-    let uuid;
-    try {
-      metadata = record.metadata.RDF.CreativeWork;
-    } catch {
-      console.log("No metadata for", record.header.identifier);
+    const metadata = record.metadata?.RDF?.CreativeWork;
+    const identifier = record.header?.identifier;
+    if (!metadata) {
+      writer.write(`No metadata found for record ${identifier}\n---\n`);
       continue;
     }
-    try {
-      uuid = getUuid(metadata.id);
-      metadata = SchemaMetadata.parse(metadata);
-    } catch (err) {
-      console.log(`Parser failed for ${uuid}`, err);
+    const result = SchemaMetadata.safeParse(metadata);
+    if (!result.success) {
+      const error = z.prettifyError(result.error);
+      const url = getUrlForObject(identifier);
+      writer.write(`Parser failed for ${identifier}:\n${error}\n${url}\n---\n`);
       continue;
     }
-    await saveJson(metadata, uuid + "/schema", outputDir + objectsFolder);
+    const parsedMetadata = result.data;
+    const uuid = getUuid(parsedMetadata["@id"]) as string;
+
+    await saveJson(parsedMetadata, uuid + "/schema", outputDir + objectsFolder);
     continue;
-    const images = record["schema:image"]
-      ?.map((i: SchemaImageObject) => ({
-        uuid: i["dc:isVersionOf"][0],
-        name: i["dc:identifier"][0],
-        sort: +i["dc:tableOfContents"][0],
-        access: i["dc:accessRights"]?.[0],
-      }))
-      // Filter for public images
-      .filter((i: ImageImproved) => i.access === "public_access")
-      // Sort the images
-      .sort((a: ImageImproved, b: ImageImproved) => a.sort - b.sort);
+    const images = getValueAsArray(parsedMetadata.image);
     if (images?.length) {
       const imageInformation = (
         await Promise.all(
@@ -108,7 +92,9 @@ if (buildManifests) {
 
 // Get Collective Access collections
 console.log("Generating IIIF Collection Manifests...");
-const collections = (await fetchRecords("collections")) as Record[];
+const collections = (await fetchRecords(
+  "collections",
+)) as SchemaRecord<"collection">[];
 
 if (buildCollections) {
   // Writing IIIF Collection Manifests
@@ -145,6 +131,10 @@ if (buildCollections) {
     `${recordsInCollections.length} records have been added to collections`,
   );
 }
+
+// Write log
+writer.flush();
+writer.end();
 
 // Todo: media check
 // const media = (await fetchRecords("media")) as Record[];

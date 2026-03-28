@@ -8,9 +8,9 @@ const SchemaImageObject = z.preprocess(
   z.object({
     "@type": z.literal("ImageObject"),
     contentUrl: z.object({
-      context: z.url(),
-      id: z.url(),
-      type: z.literal("Image"),
+      "@context": z.url(),
+      "@id": z.url(),
+      "@type": z.literal("Image"),
     }),
     thumbnailUrl: z.url(),
     encodingFormat: z.literal("https://iiif.io/api/image/3.0/"),
@@ -22,7 +22,7 @@ const SchemaImageObject = z.preprocess(
 );
 
 const SchemaQuantitativeValue = z.object({
-  type: z.literal("QuantativeValue"),
+  "@type": z.literal("QuantativeValue"),
   unitCode: z.string(),
   value: z.coerce.number().optional(),
 });
@@ -55,16 +55,12 @@ const SchemaPlace = z.preprocess(
 
 const SchemaEntity = z.preprocess(
   (val: any) => {
-    try {
-      const type = Object.keys(val).shift() as string;
-      preprocessSameAs(val[type]);
-      return {
-        "@type": type,
-        ...val[type],
-      };
-    } catch {
-      return undefined;
-    }
+    const type = Object.keys(val).shift() as string;
+    preprocessSameAs(val[type]);
+    return {
+      "@type": type,
+      ...val[type],
+    };
   },
   z.object({
     "@type": z.string(),
@@ -110,17 +106,18 @@ export const SchemaMetadata = z.preprocess(
   z.object({
     "@context": z.literal("https://schema.org"),
     "@type": z.literal("CreativeWork"),
-    id: z.url(),
+    "@id": z.url(),
     name: z.string(),
     description: z.string().optional(),
     identifier: z.string(),
     temporalCoverage: z.string().optional(),
     exampleOfWork: SchemaEntity,
-    material: SchemaEntity.or(z.array(SchemaEntity)).optional(),
-    creator: SchemaRoleCreator.or(z.array(SchemaRoleCreator)).optional(),
-    contributor: SchemaRoleContributor.or(
-      z.array(SchemaRoleContributor),
-    ).optional(),
+    material: z.array(SchemaEntity).or(SchemaEntity).optional(),
+    creator: z.array(SchemaRoleCreator).or(SchemaRoleCreator).optional(),
+    contributor: z
+      .array(SchemaRoleContributor)
+      .or(SchemaRoleContributor)
+      .optional(),
     about: SchemaEntity.optional(),
     locationCreated: SchemaPlace.optional(),
     height: SchemaQuantitativeValue,
@@ -136,7 +133,17 @@ export const SchemaMetadata = z.preprocess(
       }, z.array(z.string()).or(z.string()))
       .optional(),
     isRelatedTo: SchemaEntity.or(z.array(SchemaEntity)).optional(),
-    image: SchemaImageObject.or(z.array(SchemaImageObject)),
+    image: z
+      .array(SchemaImageObject)
+      .or(SchemaImageObject)
+      .transform((val) => {
+        if (Array.isArray(val)) {
+          return val.sort((a, b) => {
+            return a.position - b.position;
+          });
+        } else return val;
+      })
+      .optional(),
   }),
 );
 

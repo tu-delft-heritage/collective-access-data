@@ -1,8 +1,5 @@
 import { Parser } from "xml2js";
 import he from "he";
-
-// const { XMLParser, XMLBuilder, XMLValidator } from "fast-xml-parser"
-import { stripPrefix, parseNumbers } from "xml2js/lib/processors";
 import {
   OAIBaseUrl,
   types,
@@ -41,7 +38,11 @@ async function fetchXML(
 
   function removePrefix(tag: string) {
     if (tag.includes(":")) {
-      return tag.split(":").pop();
+      const tagName = tag.split(":").pop();
+      const addAtSign = ["type", "id", "context"];
+      if (tagName && addAtSign.includes(tagName)) {
+        return `@${tagName}`;
+      } else return tagName;
     } else {
       return tag;
     }
