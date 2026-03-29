@@ -1,26 +1,33 @@
 import { IIIFBuilder } from "@iiif/builder";
-import he from "he";
 import {
   manifestUriBase,
-  objectLabels,
-  collectionLabels,
+  objectMapping,
+  collectionMapping,
   objectsFolder,
   collectionsFolder,
   collectionMetadata,
 } from "./settings";
-import type { Metadata, IIIFImageInformation, Part } from "./types";
+import { getUuid } from "./helpers";
+import type {
+  IIIFImageInformation,
+  SchemaMetadata,
+  SchemaCollectionMetadata,
+  SchemaEntity,
+} from "./types";
+import * as z from "zod";
 
-function parseMetadata(props: Metadata, type?: string) {
-  const labels = type === "collection" ? collectionLabels : objectLabels;
+type Metadata = z.input<typeof SchemaMetadata>;
+
+function parseMetadata(props: SchemaMetadata, type?: string) {
+  const labels = type === "collection" ? collectionMapping : objectMapping;
   const metadata = new Array();
-  for (const [key, label] of Object.entries(labels)) {
-    const value = props[key] as string[];
+  for (const { label, getValue } of labels) {
+    const value = getValue(props);
     if (value) {
       metadata.push({
         label,
         value: {
-          // Decoding because of encoded ampersands in string
-          nl: value.map((i) => he.decode(i)),
+          nl: value,
         },
       });
     }
@@ -28,33 +35,15 @@ function parseMetadata(props: Metadata, type?: string) {
   return metadata;
 }
 
-function decodeValue(value: string[]) {
-  return value.map((i) => (i ? he.decode(i) : i));
-}
-
-function createNavDate(metadata: Metadata) {
-  const date = metadata["dc:date"]?.[0];
-  const uuid = metadata["dc:isVersionOf"][0];
+function getNavDateValue(metadata: SchemaMetadata) {
+  const date = metadata.temporalCoverage;
+  const uuid = getUuid(metadata["@id"]);
   const parseDate = (s: string) => new Date(Date.parse(s)).toISOString();
   try {
     let isoString: null | string = null;
     if (date) {
-      if (date === "mid 19th century") {
-        isoString = parseDate("1850");
-      } else if (date === "early 20th century") {
-        isoString = parseDate("1910");
-      } else if (date.includes("–")) {
-        // Use start year of period
-        const firstYear = date.split("–")[0].trim();
-        isoString = parseDate(firstYear);
-      } else if (date.includes("after") || date.includes("circa")) {
-        const year = date.split(" ")[1].trim();
-        isoString = parseDate(year);
-      } else {
-        // To remove trailing s of 1870s
-        const year = date.slice(0, 4);
-        isoString = parseDate(year);
-      }
+      const firstYear = date.slice(0, 4);
+      isoString = parseDate(firstYear);
     }
     return isoString;
   } catch (err) {
@@ -64,21 +53,21 @@ function createNavDate(metadata: Metadata) {
 
 export function createManifest(
   images: IIIFImageInformation[],
-  metadata: Metadata,
-  uuid: string
+  metadata: SchemaMetadata,
+  uuid: string,
 ) {
   const builder = new IIIFBuilder();
-  const uri = manifestUriBase + objectsFolder + uuid;
-  const manifest = builder.createManifest(uri + ".json", (manifest) => {
-    manifest.setLabel({ nl: decodeValue(metadata["dc:title"]) });
+  const uri = `${manifestUriBase}${objectsFolder}/${uuid}`;
+  const manifest = builder.createManifest(`${uri}.json`, (manifest) => {
+    manifest.setLabel({ nl: [metadata.name] });
     manifest.setMetadata(parseMetadata(metadata, "object"));
-    const navDate = createNavDate(metadata);
+    const navDate = getNavDateValue(metadata);
     if (navDate) {
       manifest.entity.navDate = navDate;
     }
     if (images.length) {
       for (const [index, item] of images.entries()) {
-        manifest.createCanvas(uri + "/canvas/" + index, (canvas) => {
+        manifest.createCanvas(`${uri}/canvas/${index}`, (canvas) => {
           canvas.height = item.height;
           canvas.width = item.width;
           const thumbnail = {
@@ -128,28 +117,28 @@ export function createManifest(
 }
 
 export function createCollection(
-  records: Metadata[],
-  metadata: Metadata,
-  uuid: string
+  records: SchemaMetadata[],
+  metadata: SchemaCollectionMetadata,
+  uuid: string,
 ) {
   const builder = new IIIFBuilder();
-  const uri = manifestUriBase + collectionsFolder + uuid;
-  const collection = builder.createCollection(uri + ".json", (collection) => {
-    collection.setLabel({ nl: decodeValue(metadata["dc:title"]) });
-    collection.setSummary({ nl: decodeValue(metadata["dc:description"]) });
+  const uri = `${manifestUriBase}${collectionsFolder}/${uuid}`;
+  const collection = builder.createCollection(`${uri}.json`, (collection) => {
+    collection.setLabel({ nl: [metadata.name] });
+    collection.setSummary({ nl: [metadata.description] });
     collection.setMetadata(collectionMetadata);
     if (records.length) {
       for (const item of records) {
-        const uuid = item["dc:isVersionOf"][0];
+        const uuid = getUuid(item["@id"]);
         collection.createManifest(
-          manifestUriBase + objectsFolder + uuid + ".json",
+          `${manifestUriBase}${objectsFolder}/${uuid}.json`,
           (manifest) => {
-            manifest.setLabel({ nl: decodeValue(item["dc:title"]) });
-            const navDate = createNavDate(item);
+            manifest.setLabel({ nl: [item.name] });
+            const navDate = getNavDateValue(item);
             if (navDate) {
               manifest.entity.navDate = navDate;
             }
-          }
+          },
         );
       }
     }

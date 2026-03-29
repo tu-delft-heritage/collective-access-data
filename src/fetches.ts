@@ -1,4 +1,5 @@
 import { Parser } from "xml2js";
+import he from "he";
 import {
   OAIBaseUrl,
   types,
@@ -6,12 +7,13 @@ import {
   dlcsImageBase,
   dlcsSpace,
 } from "./settings";
+import { join } from "node:path";
 
 async function fetchXML(
   type: string = "objects",
   resumptionToken: undefined | string = undefined,
   verb = "ListRecords",
-  identifier: undefined | string = undefined
+  identifier: undefined | string = undefined,
 ) {
   const url = new URL(OAIBaseUrl + types[type] + "/request");
 
@@ -27,11 +29,37 @@ async function fetchXML(
   if (resumptionToken) {
     searchParams.append("resumptionToken", resumptionToken);
   } else {
-    searchParams.append("metadataPrefix", "qdc");
+    searchParams.append("metadataPrefix", "rdf");
+  }
+
+  // To decode values like &amp; in CDATA and remove trailing spaces
+  function decodeValue(value: string, name: string) {
+    return he.decode(value).trim();
+  }
+
+  function removePrefix(tag: string) {
+    if (tag.includes(":")) {
+      const tagName = tag.split(":").pop();
+      const addAtSign = ["type", "id", "context"];
+      if (tagName && addAtSign.includes(tagName)) {
+        return `@${tagName}`;
+      } else return tagName;
+    } else {
+      return tag;
+    }
   }
 
   // Fetch data and parse XML
-  const parser = new Parser();
+  // https://www.npmjs.com/package/xml2js
+  const parser = new Parser({
+    mergeAttrs: true,
+    emptyTag: undefined,
+    explicitArray: false,
+    attrValueProcessors: [decodeValue],
+    attrNameProcessors: [removePrefix],
+    valueProcessors: [decodeValue],
+    tagNameProcessors: [removePrefix],
+  });
   return fetch(url.toString())
     .then((response) => response.text())
     .then((text) => parser.parseStringPromise(text))
@@ -41,22 +69,22 @@ async function fetchXML(
 }
 
 function getResumptionToken(resp: any) {
-  const tokenObj = resp?.["OAI-PMH"]?.ListRecords?.[0]?.resumptionToken?.[0];
-  const count: string | undefined = tokenObj?.$?.completeListSize;
+  const tokenObj = resp?.["OAI-PMH"]?.ListRecords?.resumptionToken;
+  const count: string | undefined = tokenObj?.completeListSize;
   const resumptionToken: string | undefined = tokenObj?._;
   return [resumptionToken, count];
 }
 
 function getRecords(resp: any) {
-  return resp?.["OAI-PMH"]?.ListRecords?.[0]?.record;
+  return resp?.["OAI-PMH"]?.ListRecords?.record;
 }
 
 export async function fetchRecords(
   type: string = "objects",
-  useCache: boolean = true
+  useCache: boolean = true,
 ) {
   // Get cache
-  const cache = Bun.file(cacheDir + "collective-access/" + type + ".json");
+  const cache = Bun.file(join(cacheDir, "collective-access", `${type}.json`));
   if (useCache && (await cache.exists())) {
     console.log(`Using cache`);
     return await cache.json();
@@ -90,15 +118,15 @@ export async function fetchRecords(
 
   // Write cache
   Bun.write(
-    `${cacheDir + "collective-access/" + type}.json`,
-    JSON.stringify(records, null, 2)
+    join(cacheDir, "collective-access", `${type}.json`),
+    JSON.stringify(records, null, 2),
   );
   console.log(`${records.length} ${type} fetched`);
   return records;
 }
 
 async function getCache(id: string, type: string) {
-  const file = Bun.file(`${cacheDir + type}/${id}.json`);
+  const file = Bun.file(join(cacheDir, type, `${id}.json`));
   if (await file.exists()) {
     return file.json();
   } else return null;
@@ -106,20 +134,23 @@ async function getCache(id: string, type: string) {
 
 export async function fetchImageInformationWithCache(
   uuid: string,
-  useCache: boolean = true
+  useCache: boolean = true,
 ) {
   if (useCache) {
     const cache = await getCache(uuid, "dlcs");
     if (cache) return cache;
   }
-  const url = dlcsImageBase + dlcsSpace + "/" + uuid;
+  const url = `${dlcsImageBase}${dlcsSpace}/${uuid}`;
   let resp = await fetch(url);
   if (!resp.ok) return { error: uuid };
   const json = await resp.json();
-  await saveJson(json, uuid, cacheDir + "dlcs/");
+  await saveJson(json, uuid, join(cacheDir, "dlcs"));
   return json;
 }
 
 export function saveJson(json: any, filename: string, path: string) {
-  return Bun.write(`${path}/${filename}.json`, JSON.stringify(json, null, 4));
+  return Bun.write(
+    join(path, `${filename}.json`),
+    JSON.stringify(json, null, 4),
+  );
 }
