@@ -23,7 +23,7 @@ const SchemaImageObject = z.preprocess(
 
 const SchemaQuantitativeValue = z.object({
   "@type": z.literal("QuantativeValue"),
-  unitCode: z.string(),
+  unitCode: z.literal("MMT"),
   value: z.coerce.number().optional(),
 });
 

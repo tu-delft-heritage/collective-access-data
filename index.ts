@@ -6,7 +6,7 @@ import {
   saveJson,
 } from "./src/fetches";
 import { createManifest, createCollection } from "./src/iiif";
-import { getUuid, getValueAsArray, getUrlForObject } from "./src/helpers.ts";
+import { getUuid, getValueAsArray, getOaiUrl } from "./src/helpers.ts";
 import { outputDir, objectsFolder, collectionsFolder } from "./src/settings";
 import { SchemaMetadata, SchemaCollectionMetadata } from "./src/types";
 import { date, writer } from "./src/log.ts";
@@ -53,7 +53,7 @@ if (buildManifests) {
 
     if (!result.success) {
       const error = z.prettifyError(result.error);
-      const url = getUrlForObject(identifier);
+      const url = getOaiUrl(identifier, "objects");
       writer.write(
         `Parser failed for object ${identifier}:\n${error}\n${url}\n---\n`,
       );
@@ -125,7 +125,7 @@ if (buildCollections) {
 
     if (!result.success) {
       const error = z.prettifyError(result.error);
-      const url = getUrlForObject(identifier);
+      const url = getOaiUrl(identifier, "collections");
       writer.write(
         `Parser failed for collection ${identifier}:\n${error}\n${url}\n---\n`,
       );

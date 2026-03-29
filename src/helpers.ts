@@ -12,7 +12,7 @@ export function getValueAsArray<T>(prop: T | T[] | undefined): T[] {
   return Array.isArray(prop) ? prop : prop === undefined ? [] : [prop];
 }
 
-export function getUrlForObject(identifier: string, type: string = "objects") {
+export function getOaiUrl(identifier: string, type: string = "objects") {
   const url = new URL(OAIBaseUrl + types[type] + "/request");
   const searchParams = url.searchParams;
   searchParams.append("verb", "GetRecord");
