@@ -1,3 +1,4 @@
+import fs from "node:fs/promises";
 import { OAIBaseUrl, types } from "./settings";
 
 export function getUuid(id: string) {
@@ -20,3 +21,14 @@ export function getOaiUrl(identifier: string, type: string = "objects") {
   searchParams.append("metadataPrefix", "rdf");
   return url.toString();
 }
+
+export const date = new Date().toISOString().slice(0, -5).replaceAll(":", ".");
+
+export const createWriter = async () => {
+  const dirExists = await fs.exists("logs");
+  if (!dirExists) {
+    await fs.mkdir("logs");
+  }
+  const log = Bun.file(`logs/${date}.txt`);
+  return log.writer();
+};

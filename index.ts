@@ -6,10 +6,14 @@ import {
   saveJson,
 } from "./src/fetches";
 import { createManifest, createCollection } from "./src/iiif";
-import { getUuid, getValueAsArray, getOaiUrl } from "./src/helpers.ts";
+import {
+  getUuid,
+  getValueAsArray,
+  getOaiUrl,
+  createWriter,
+} from "./src/helpers.ts";
 import { outputDir, objectsFolder, collectionsFolder } from "./src/settings";
 import { SchemaMetadata, SchemaCollectionMetadata } from "./src/types";
-import { date, writer } from "./src/log.ts";
 import * as z from "zod";
 import { join } from "node:path";
 
@@ -23,6 +27,8 @@ process.on("SIGINT", () => {
 
 // Clean output directory
 await fs.rm("build", { recursive: true, force: true });
+
+const writer = await createWriter();
 
 const buildManifests = true;
 const buildCollections = true;
