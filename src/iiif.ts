@@ -35,29 +35,15 @@ function parseMetadata(props: SchemaMetadata, type?: string) {
   return metadata;
 }
 
-function createNavDate(metadata: Metadata) {
-  const date = metadata["dc:date"]?.[0];
-  const uuid = metadata["dc:isVersionOf"][0];
+function getNavDateValue(metadata: SchemaMetadata) {
+  const date = metadata.temporalCoverage;
+  const uuid = getUuid(metadata["@id"]);
   const parseDate = (s: string) => new Date(Date.parse(s)).toISOString();
   try {
     let isoString: null | string = null;
     if (date) {
-      if (date === "mid 19th century") {
-        isoString = parseDate("1850");
-      } else if (date === "early 20th century") {
-        isoString = parseDate("1910");
-      } else if (date.includes("–")) {
-        // Use start year of period
-        const firstYear = date.split("–")[0].trim();
-        isoString = parseDate(firstYear);
-      } else if (date.includes("after") || date.includes("circa")) {
-        const year = date.split(" ")[1].trim();
-        isoString = parseDate(year);
-      } else {
-        // To remove trailing s of 1870s
-        const year = date.slice(0, 4);
-        isoString = parseDate(year);
-      }
+      const firstYear = date.slice(0, 4);
+      isoString = parseDate(firstYear);
     }
     return isoString;
   } catch (err) {
@@ -75,10 +61,10 @@ export function createManifest(
   const manifest = builder.createManifest(`${uri}.json`, (manifest) => {
     manifest.setLabel({ nl: [metadata.name] });
     manifest.setMetadata(parseMetadata(metadata, "object"));
-    // const navDate = createNavDate(metadata);
-    // if (navDate) {
-    //   manifest.entity.navDate = navDate;
-    // }
+    const navDate = getNavDateValue(metadata);
+    if (navDate) {
+      manifest.entity.navDate = navDate;
+    }
     if (images.length) {
       for (const [index, item] of images.entries()) {
         manifest.createCanvas(`${uri}/canvas/${index}`, (canvas) => {
@@ -131,7 +117,7 @@ export function createManifest(
 }
 
 export function createCollection(
-  records: SchemaEntity[],
+  records: SchemaMetadata[],
   metadata: SchemaCollectionMetadata,
   uuid: string,
 ) {
@@ -143,16 +129,15 @@ export function createCollection(
     collection.setMetadata(collectionMetadata);
     if (records.length) {
       for (const item of records) {
-        const uuid = item.sameAs ? getUuid(item.sameAs) : undefined;
-        if (!uuid) continue;
+        const uuid = getUuid(item["@id"]);
         collection.createManifest(
           `${manifestUriBase}${objectsFolder}/${uuid}.json`,
           (manifest) => {
             manifest.setLabel({ nl: [item.name] });
-            // const navDate = createNavDate(item);
-            // if (navDate) {
-            //   manifest.entity.navDate = navDate;
-            // }
+            const navDate = getNavDateValue(item);
+            if (navDate) {
+              manifest.entity.navDate = navDate;
+            }
           },
         );
       }

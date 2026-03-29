@@ -31,9 +31,9 @@ const buildCollections = true;
 console.log("Generating IIIF Object Manifests...");
 const objects = (await fetchRecords("objects")) as SchemaRecord<"object">[];
 
-const manifestsOnDisk = new Array();
-const recordsWithoutImages = new Array();
-const failedImages = new Array();
+const manifestsOnDisk: Map<string, SchemaMetadata> = new Map();
+const recordsWithoutImages: Map<string, SchemaMetadata> = new Map();
+const failedImages: string[] = new Array();
 
 if (buildManifests) {
   // Write IIIF Object Manifests
@@ -72,7 +72,10 @@ if (buildManifests) {
     const images = getValueAsArray(parsedMetadata.image);
 
     if (!images.length) {
-      recordsWithoutImages.push(uuid);
+      if (recordsWithoutImages.has(uuid)) {
+        writer.write(`Duplicate record exported for: ${uuid}\n---\n`);
+      }
+      recordsWithoutImages.set(uuid, parsedMetadata);
       continue;
     }
 
@@ -93,14 +96,17 @@ if (buildManifests) {
       const manifest = createManifest(imageInformation, parsedMetadata, uuid);
       await saveJson(manifest, uuid, join(outputDir, objectsFolder));
       bar.update(index + 1);
-      manifestsOnDisk.push(uuid);
+      if (manifestsOnDisk.has(uuid)) {
+        writer.write(`Duplicate record exported for: ${uuid}\n---\n`);
+      }
+      manifestsOnDisk.set(uuid, parsedMetadata);
     }
   }
   bar.stop();
-  console.log(`${manifestsOnDisk.length} manifests created`);
-  if (recordsWithoutImages.length) {
+  console.log(`${manifestsOnDisk.size} manifests created`);
+  if (recordsWithoutImages.size) {
     console.log(`No images found for the following records:`);
-    console.table(recordsWithoutImages);
+    console.table([...recordsWithoutImages.keys()]);
   }
   if (failedImages.length) {
     console.log(`Information for the following images could not be fetched:`);
@@ -136,17 +142,19 @@ if (buildCollections) {
     const uuid = z.uuid().parse(getUuid(parsedMetadata["@id"]));
 
     const label = parsedMetadata.name;
-    const records = getValueAsArray(parsedMetadata.hasPart).filter((entity) => {
-      if (entity.sameAs) {
-        const uuid = z.uuid().parse(getUuid(entity.sameAs));
-        if (manifestsOnDisk.includes(uuid)) {
-          recordsInCollections.push(uuid);
-          return true;
+    const records = getValueAsArray(parsedMetadata.hasPart)
+      .map((entity) => {
+        if (entity.sameAs) {
+          const uuid = z.uuid().parse(getUuid(entity.sameAs));
+          if (manifestsOnDisk.has(uuid)) {
+            recordsInCollections.push(uuid);
+            return manifestsOnDisk.get(uuid);
+          }
+        } else {
+          writer.write(`Can't find object manifest for ${uuid}:\n---\n`);
         }
-      } else {
-        writer.write(`Can't find object manifest for ${uuid}:\n---\n`);
-      }
-    });
+      })
+      .filter(Boolean) as SchemaMetadata[];
     if (records.length) {
       const collection = createCollection(records, parsedMetadata, uuid);
       saveJson(collection, uuid, join(outputDir, collectionsFolder));

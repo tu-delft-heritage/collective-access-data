@@ -99,6 +99,21 @@ const SchemaRoleCreator = z.preprocess(
   }),
 );
 
+const SchemaTemporal = z.preprocess(
+  (val: string) => {
+    // Remove trailing slash without end date
+    if (val.length === 5 && val.charAt(4) === "/") {
+      return val.slice(0, 4);
+    } else return val;
+  },
+  z.stringFormat("temporal-coverage", (val) => {
+    if (val.includes("/")) {
+      const [yeaFrom, yearTo] = val.split("/");
+      return Number(yeaFrom) && Number(yearTo);
+    } else return Number(val);
+  }),
+);
+
 export type SchemaMetadata = z.infer<typeof SchemaMetadata>;
 
 export const SchemaMetadata = z.preprocess(
@@ -114,7 +129,7 @@ export const SchemaMetadata = z.preprocess(
     name: z.string(),
     description: z.string().optional(),
     identifier: z.string(),
-    temporalCoverage: z.string().optional(),
+    temporalCoverage: SchemaTemporal.optional(),
     exampleOfWork: SchemaEntity,
     material: z.array(SchemaEntity).or(SchemaEntity).optional(),
     creator: z.array(SchemaRoleCreator).or(SchemaRoleCreator).optional(),
