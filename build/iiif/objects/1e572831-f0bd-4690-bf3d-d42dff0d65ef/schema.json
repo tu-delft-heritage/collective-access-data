@@ -1,0 +1,31 @@
+{
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": "https://heritage.tudelft.nl/iiif/manifests/1e572831-f0bd-4690-bf3d-d42dff0d65ef/schema.json",
+    "name": "11x glazen samengestelde lenzen van verschillende formaten",
+    "description": "11x glazen samengestelde lenzen van verschillende formaten. Gevonden binnen TNW.2024.0103",
+    "identifier": "2024.0105.TNW",
+    "temporalCoverage": "1920/1969",
+    "exampleOfWork": {
+        "@type": "CreativeWork",
+        "name": "lens",
+        "sameAs": "http://vocab.getty.edu/aat/300266807"
+    },
+    "material": {
+        "@type": "Product",
+        "name": "glas",
+        "sameAs": "http://vocab.getty.edu/aat/300010797"
+    },
+    "height": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT"
+    },
+    "width": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT"
+    },
+    "depth": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT"
+    }
+}

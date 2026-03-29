@@ -1,0 +1,31 @@
+{
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": "https://heritage.tudelft.nl/iiif/manifests/b4ce7ab8-6b47-4cf5-8ca1-d53fe6053e4b/schema.json",
+    "name": "Collectie lenzen uit de 19e eeuw in originele houten doos gelabeld \"Wiggen\"",
+    "description": "7x lenzen van verschillende formaten, 4x rond, 3x rechthoekig. 2x met handgeschreven tekst. Houten doos gevoerd met blauwe fluweel, met label geplakt op buitenkant \"Wiggen Toermalijn [Toermalijn doorgestreept]\"",
+    "identifier": "2024.0119.TNW",
+    "temporalCoverage": "1850/1900",
+    "exampleOfWork": {
+        "@type": "CreativeWork",
+        "name": "lens",
+        "sameAs": "http://vocab.getty.edu/aat/300266807"
+    },
+    "material": {
+        "@type": "Product",
+        "name": "glas",
+        "sameAs": "http://vocab.getty.edu/aat/300010797"
+    },
+    "height": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT"
+    },
+    "width": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT"
+    },
+    "depth": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT"
+    }
+}
