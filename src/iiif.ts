@@ -1,8 +1,8 @@
 import { IIIFBuilder } from "@iiif/builder";
 import {
   manifestUriBase,
-  objectLabels,
-  collectionLabels,
+  objectMapping,
+  collectionMapping,
   objectsFolder,
   collectionsFolder,
   collectionMetadata,
@@ -13,11 +13,11 @@ import * as z from "zod";
 
 type Metadata = z.input<typeof SchemaMetadata>;
 
-function parseMetadata(props: Metadata, type?: string) {
-  const labels = type === "collection" ? collectionLabels : objectLabels;
+function parseMetadata(props: SchemaMetadata, type?: string) {
+  const labels = type === "collection" ? collectionMapping : objectMapping;
   const metadata = new Array();
-  for (const [key, label] of Object.entries(labels)) {
-    const value = props[key] as string[];
+  for (const { label, getValue } of labels) {
+    const value = getValue(props);
     if (value) {
       metadata.push({
         label,
@@ -62,18 +62,18 @@ function createNavDate(metadata: Metadata) {
 
 export function createManifest(
   images: IIIFImageInformation[],
-  metadata: Metadata,
+  metadata: SchemaMetadata,
   uuid: string,
 ) {
   const builder = new IIIFBuilder();
   const uri = manifestUriBase + objectsFolder + uuid;
   const manifest = builder.createManifest(uri + ".json", (manifest) => {
-    manifest.setLabel({ nl: metadata["dc:title"] });
+    manifest.setLabel({ nl: [metadata.name] });
     manifest.setMetadata(parseMetadata(metadata, "object"));
-    const navDate = createNavDate(metadata);
-    if (navDate) {
-      manifest.entity.navDate = navDate;
-    }
+    // const navDate = createNavDate(metadata);
+    // if (navDate) {
+    //   manifest.entity.navDate = navDate;
+    // }
     if (images.length) {
       for (const [index, item] of images.entries()) {
         manifest.createCanvas(uri + "/canvas/" + index, (canvas) => {

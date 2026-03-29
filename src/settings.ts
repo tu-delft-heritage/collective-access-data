@@ -1,4 +1,6 @@
-import type { Vocabulary } from "./types";
+import { en } from "zod/locales";
+import { getValueAsArray } from "./helpers";
+import type { SchemaMetadata, SchemaEntity } from "./types";
 
 export const outputDir = "build/iiif";
 export const objectsFolder = "objects";
@@ -11,7 +13,7 @@ export const dlcsSpace = "18";
 export const manifestUriBase =
   "https://tu-delft-heritage.github.io/collective-access-data/iiif/";
 
-export const types: Vocabulary = {
+export const types: Record<string, string> = {
   objects: "schema_org",
   collections: "col_schema_org",
   media: "dc_media",
@@ -26,71 +28,225 @@ export const verbs = [
   "GetRecord",
 ];
 
-export const objectLabels = {
-  "dc:title": {
-    en: ["Title"],
-    nl: ["Titel"],
+export const objectMapping = [
+  {
+    props: ["name"],
+    label: {
+      en: ["Title"],
+      nl: ["Titel"],
+    },
+    getValue: (metadata: SchemaMetadata) => getValueAsArray(metadata.name),
   },
-  "dc:type": {
-    en: ["Object name"],
-    nl: ["Objectnaam"],
+  {
+    props: ["exampleOfWork"],
+    label: {
+      en: ["Object name"],
+      nl: ["Objectnaam"],
+    },
+    getValue: (metadata: SchemaMetadata) => {
+      if (metadata.exampleOfWork) {
+        return getValueAsArray(metadata.exampleOfWork).map(
+          (entity) => entity.name,
+        );
+      }
+    },
   },
-  "dc:identifier": {
-    en: ["Inventory number"],
-    nl: ["Inventarisnummer"],
+  {
+    props: ["identifier"],
+    label: {
+      en: ["Inventory number"],
+      nl: ["Inventarisnummer"],
+    },
+    getValue: (metadata: SchemaMetadata) =>
+      getValueAsArray(metadata.identifier),
   },
-  "dc:date": {
-    en: ["Dating"],
-    nl: ["Datering"],
+  {
+    props: ["temporalCoverage"],
+    label: {
+      en: ["Dating"],
+      nl: ["Datering"],
+    },
+    getValue: (metadata: SchemaMetadata) => {
+      if (metadata.temporalCoverage) {
+        const period = metadata.temporalCoverage.split("/");
+        if (period[1]) {
+          return [period.join(" - ")];
+        } else if (period) return [period[0]];
+      }
+    },
   },
-  "dc:creator": {
-    en: ["Maker"],
-    nl: ["Maker"],
+  {
+    props: ["creator", "contributor"],
+    label: {
+      en: ["Maker"],
+      nl: ["Maker"],
+    },
+    getValue: (metadata: SchemaMetadata) => {
+      let creators: string[] = [];
+      let contributors: string[] = [];
+      if (metadata.creator) {
+        creators = getValueAsArray(metadata.creator).map((role) => {
+          const roleName = role.roleName;
+          const name = role.creator.name;
+          return `${name} (${roleName})`;
+        });
+      }
+      if (metadata.contributor) {
+        contributors = getValueAsArray(metadata.contributor)
+          .map((role) => {
+            const roleName = role.roleName;
+            const name = role.contributor.name;
+            if (roleName !== "had in bezit") {
+              return `${name} (${roleName})`;
+            }
+          })
+          .filter(Boolean) as string[];
+      }
+      const makers = creators.concat(contributors);
+      if (makers.length) return makers;
+    },
   },
-  "dc:format": {
-    en: ["Dimensions"],
-    nl: ["Afmetingen"],
-  },
-  "dc:medium": {
-    en: ["Material"],
-    nl: ["Materiaal"],
-  },
-  "dc:coverage": {
-    en: ["Place of manufacture"],
-    nl: ["Plaats vervaardiging"],
-  },
-  "dc:description": {
-    en: ["Description"],
-    nl: ["Beschrijving"],
-  },
-  "dc:provenance": {
-    en: ["Provenance"],
-    nl: ["Herkomst"],
-  },
-  "dc:subject": {
-    en: ["Subject"],
-    nl: ["Voorstelling"],
-  },
-  "dc:bibliographicCitation": {
-    en: ["Documentation"],
-    nl: ["Documentatie"],
-  },
-  "dc:relation": {
-    en: ["Related object"],
-    nl: ["Gerelateerd object"],
-  },
-};
+  {
+    props: ["height, width, depth"],
+    label: {
+      en: ["Dimensions"],
+      nl: ["Afmetingen"],
+    },
+    getValue: (metadata: SchemaMetadata) => {
+      const dimensions = [];
+      if (metadata.height?.value) {
+        dimensions.push(`${metadata.height.value} mm (h)`);
+      }
+      if (metadata.width?.value) {
+        dimensions.push(`${metadata.width.value} mm (b)`);
+      }
 
-export const collectionLabels = {
-  "dc:creator": {
-    en: ["Managing institution"],
-    nl: ["Beherende instelling"],
+      if (metadata.depth?.value) {
+        dimensions.push(`${metadata.depth.value} mm (d)`);
+      }
+      if (dimensions.length) {
+        return [dimensions.join(" x ")];
+      }
+    },
   },
-  "dc:contributor": {
-    en: ["Curator"],
-    nl: ["Conservator"],
+  {
+    props: ["material"],
+    label: {
+      en: ["Material"],
+      nl: ["Materiaal"],
+    },
+    getValue: (metadata: SchemaMetadata) => {
+      if (metadata.material) {
+        return getValueAsArray(metadata.material).map(
+          (material) => material.name,
+        );
+      }
+    },
   },
-};
+  {
+    props: ["locationCreated"],
+    label: {
+      en: ["Place of manufacture"],
+      nl: ["Plaats vervaardiging"],
+    },
+    getValue: (metadata: SchemaMetadata) => {
+      if (metadata.locationCreated) {
+        return getValueAsArray(metadata.locationCreated.address);
+      }
+    },
+  },
+  {
+    props: ["description"],
+    label: {
+      en: ["Description"],
+      nl: ["Beschrijving"],
+    },
+    getValue: (metadata: SchemaMetadata) => {
+      if (metadata.description) {
+        return getValueAsArray(metadata.description);
+      }
+    },
+  },
+  {
+    props: ["contributor"],
+    label: {
+      en: ["Provenance"],
+      nl: ["Herkomst"],
+    },
+    getValue: (metadata: SchemaMetadata) => {
+      if (metadata.contributor) {
+        return getValueAsArray(metadata.contributor)
+          .filter((role) => role.roleName === "had in bezit")
+          .map((role) => {
+            const roleName = role.roleName;
+            const name = role.contributor.name;
+            return `${name} (${roleName})`;
+          });
+      }
+    },
+  },
+  {
+    props: ["about"],
+    label: {
+      en: ["Subject"],
+      nl: ["Voorstelling"],
+    },
+    getValue: (metadata: SchemaMetadata) => {
+      if (metadata.about) {
+        return getValueAsArray(metadata.about.name);
+      }
+    },
+  },
+  {
+    props: ["citation"],
+    label: {
+      en: ["Documentation"],
+      nl: ["Documentatie"],
+    },
+    getValue: (metadata: SchemaMetadata) => {
+      if (metadata.citation) {
+        return getValueAsArray(metadata.citation);
+      }
+    },
+  },
+  {
+    props: ["isRelatedTo"],
+    label: {
+      en: ["Related object"],
+      nl: ["Gerelateerd object"],
+    },
+    getValue: (metadata: SchemaMetadata) => {
+      if (metadata.isRelatedTo) {
+        return getValueAsArray(metadata.isRelatedTo).map((entity) => {
+          if (entity.identifier) {
+            return `${entity.name} (${entity.identifier})`;
+          } else {
+            return entity.name;
+          }
+        });
+      }
+    },
+  },
+];
+
+export const collectionMapping = [
+  {
+    props: ["creator"],
+    label: {
+      en: ["Managing institution"],
+      nl: ["Beherende instelling"],
+    },
+    getValue: (metadata: SchemaMetadata) => undefined,
+  },
+  {
+    props: ["contributor"],
+    label: {
+      en: ["Curator"],
+      nl: ["Conservator"],
+    },
+    getValue: (metadata: SchemaMetadata) => undefined,
+  },
+];
 
 // Hardcoded for now
 export const collectionMetadata = [

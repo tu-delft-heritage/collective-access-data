@@ -88,8 +88,8 @@ if (buildManifests) {
       } else return true;
     }) as IIIFImageInformation[];
     if (imageInformation.length) {
-      // const manifest = createManifest(imageInformation, metadata, uuid);
-      // await saveJson(manifest, uuid, join(outputDir, objectsFolder));
+      const manifest = createManifest(imageInformation, parsedMetadata, uuid);
+      await saveJson(manifest, uuid, join(outputDir, objectsFolder));
       bar.update(index + 1);
       manifestsOnDisk.push(uuid);
     }

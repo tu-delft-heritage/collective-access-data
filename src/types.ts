@@ -53,6 +53,8 @@ const SchemaPlace = z.preprocess(
   }),
 );
 
+export type SchemaEntity = z.infer<typeof SchemaEntity>;
+
 const SchemaEntity = z.preprocess(
   (val: any) => {
     const type = Object.keys(val).shift() as string;
@@ -96,6 +98,8 @@ const SchemaRoleCreator = z.preprocess(
     creator: SchemaEntity,
   }),
 );
+
+export type SchemaMetadata = z.infer<typeof SchemaMetadata>;
 
 export const SchemaMetadata = z.preprocess(
   (val: any) => ({
@@ -163,10 +167,6 @@ export const SchemaCollectionMetadata = z.preprocess(
     hasPart: SchemaEntity.or(z.array(SchemaEntity)),
   }),
 );
-
-export interface Vocabulary {
-  [key: string]: string;
-}
 
 type SchemaMetadataByKind = {
   object: z.input<typeof SchemaMetadata>;

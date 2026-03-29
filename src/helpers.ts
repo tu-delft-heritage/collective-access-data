@@ -8,12 +8,8 @@ export function getUuid(id: string) {
   }
 }
 
-export function getValueAsArray<T>(prop: T | T[] | undefined) {
-  return Array.isArray(prop)
-    ? prop
-    : prop === undefined
-      ? new Array()
-      : new Array(prop);
+export function getValueAsArray<T>(prop: T | T[] | undefined): T[] {
+  return Array.isArray(prop) ? prop : prop === undefined ? [] : [prop];
 }
 
 export function getUrlForObject(identifier: string, type: string = "objects") {
