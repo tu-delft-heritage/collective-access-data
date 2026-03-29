@@ -8,7 +8,7 @@ import {
 import { createManifest, createCollection } from "./src/iiif";
 import { getUuid, getValueAsArray, getUrlForObject } from "./src/helpers.ts";
 import { outputDir, objectsFolder, collectionsFolder } from "./src/settings";
-import { SchemaMetadata } from "./src/types";
+import { SchemaMetadata, SchemaCollectionMetadata } from "./src/types";
 import { date, writer } from "./src/log.ts";
 import * as z from "zod";
 import { join } from "node:path";
@@ -25,20 +25,20 @@ process.on("SIGINT", () => {
 await fs.rm("build", { recursive: true, force: true });
 
 const buildManifests = true;
-const buildCollections = false;
+const buildCollections = true;
 
 // Get Collective Access objects
 console.log("Generating IIIF Object Manifests...");
 const objects = (await fetchRecords("objects")) as SchemaRecord<"object">[];
 
+const manifestsOnDisk = new Array();
+const recordsWithoutImages = new Array();
+const failedImages = new Array();
+
 if (buildManifests) {
   // Write IIIF Object Manifests
   const bar = new cliProgress.Bar({}, cliProgress.Presets.shades_classic);
   bar.start(objects.length, 0);
-
-  const manifestsOnDisk = new Array();
-  const recordsWithoutImages = new Array();
-  const failedImages = new Array();
 
   for (const [index, record] of objects.entries()) {
     const metadata = record.metadata?.RDF?.CreativeWork;
@@ -54,7 +54,9 @@ if (buildManifests) {
     if (!result.success) {
       const error = z.prettifyError(result.error);
       const url = getUrlForObject(identifier);
-      writer.write(`Parser failed for ${identifier}:\n${error}\n${url}\n---\n`);
+      writer.write(
+        `Parser failed for object ${identifier}:\n${error}\n${url}\n---\n`,
+      );
       continue;
     }
 
@@ -116,29 +118,38 @@ if (buildCollections) {
   // Writing IIIF Collection Manifests
   const recordsInCollections = new Array();
   for (const collection of collections) {
-    const metadata = collection.metadata[0]["qdc:dc"][0];
-    const label = metadata["dc:title"][0];
-    const uuid = metadata["dc:isVersionOf"][0];
-    const records = metadata["dc:hasPart"]
-      ?.filter((part) => {
-        const isPublic = part["dc:accessRights"][0] === "public_access";
-        const uuid = part["dc:isVersionOf"][0];
-        if (isPublic && manifestsOnDisk.includes(uuid)) {
+    const metadata = collection.metadata.RDF.CreativeWork;
+    const identifier = collection.header.identifier;
+
+    const result = SchemaCollectionMetadata.safeParse(metadata);
+
+    if (!result.success) {
+      const error = z.prettifyError(result.error);
+      const url = getUrlForObject(identifier);
+      writer.write(
+        `Parser failed for collection ${identifier}:\n${error}\n${url}\n---\n`,
+      );
+      continue;
+    }
+
+    const parsedMetadata = result.data;
+    const uuid = z.uuid().parse(getUuid(parsedMetadata["@id"]));
+
+    const label = parsedMetadata.name;
+    const records = getValueAsArray(parsedMetadata.hasPart).filter((entity) => {
+      if (entity.sameAs) {
+        const uuid = z.uuid().parse(getUuid(entity.sameAs));
+        if (manifestsOnDisk.includes(uuid)) {
           recordsInCollections.push(uuid);
           return true;
         }
-      })
-      .map((part) => {
-        const uuid = part["dc:isVersionOf"][0];
-        const object = objects.find(
-          (object) =>
-            object.metadata[0]["qdc:dc"][0]["dc:isVersionOf"][0] === uuid,
-        );
-        return object?.metadata[0]["qdc:dc"][0];
-      });
-    if (records?.length) {
-      const collection = createCollection(records, metadata, uuid);
-      saveJson(collection, uuid, outputDir + collectionsFolder);
+      } else {
+        writer.write(`Can't find object manifest for ${uuid}:\n---\n`);
+      }
+    });
+    if (records.length) {
+      const collection = createCollection(records, parsedMetadata, uuid);
+      saveJson(collection, uuid, join(outputDir, collectionsFolder));
     } else {
       console.log(`No records found for ${label} (${uuid})`);
     }

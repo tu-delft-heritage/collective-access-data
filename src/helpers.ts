@@ -2,7 +2,7 @@ import { OAIBaseUrl, types } from "./settings";
 
 export function getUuid(id: string) {
   if (id.startsWith("https://heritage.tudelft.nl")) {
-    return id.match(/manifests\/(.+?)\/schema.json/)?.[1];
+    return id.match(/(manifests|collections)\/(.+?)\/schema.json/)?.[2];
   } else if (id.startsWith("https://dlc.services")) {
     return id.match(/iiif-img\/7\/18\/(.+)/)?.[1];
   }

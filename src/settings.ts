@@ -70,7 +70,7 @@ export const objectMapping = [
       if (metadata.temporalCoverage) {
         const period = metadata.temporalCoverage.split("/");
         if (period[1]) {
-          return [period.join(" - ")];
+          return [period.join(" – ")];
         } else if (period) return [period[0]];
       }
     },

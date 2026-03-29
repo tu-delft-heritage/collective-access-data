@@ -151,6 +151,8 @@ export const SchemaMetadata = z.preprocess(
   }),
 );
 
+export type SchemaCollectionMetadata = z.infer<typeof SchemaCollectionMetadata>;
+
 export const SchemaCollectionMetadata = z.preprocess(
   (val: any) => ({
     "@context": "https://schema.org",
@@ -158,13 +160,16 @@ export const SchemaCollectionMetadata = z.preprocess(
     ...val,
   }),
   z.object({
-    id: z.url(),
+    "@id": z.url(),
     name: z.string(),
     description: z.string(),
     identifier: z.string(),
-    creator: SchemaRoleCreator.or(z.array(SchemaRoleCreator)),
-    contributor: SchemaRoleContributor.or(z.array(SchemaRoleContributor)),
-    hasPart: SchemaEntity.or(z.array(SchemaEntity)),
+    creator: z.array(SchemaRoleCreator).or(SchemaRoleCreator).optional(),
+    contributor: z
+      .array(SchemaRoleContributor)
+      .or(SchemaRoleContributor)
+      .optional(),
+    hasPart: z.array(SchemaEntity).or(SchemaEntity).optional(),
   }),
 );
 

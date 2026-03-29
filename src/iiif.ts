@@ -7,8 +7,13 @@ import {
   collectionsFolder,
   collectionMetadata,
 } from "./settings";
-import type { IIIFImageInformation } from "./types";
-import { SchemaMetadata } from "./types";
+import { getUuid } from "./helpers";
+import type {
+  IIIFImageInformation,
+  SchemaMetadata,
+  SchemaCollectionMetadata,
+  SchemaEntity,
+} from "./types";
 import * as z from "zod";
 
 type Metadata = z.input<typeof SchemaMetadata>;
@@ -66,8 +71,8 @@ export function createManifest(
   uuid: string,
 ) {
   const builder = new IIIFBuilder();
-  const uri = manifestUriBase + objectsFolder + uuid;
-  const manifest = builder.createManifest(uri + ".json", (manifest) => {
+  const uri = `${manifestUriBase}${objectsFolder}/${uuid}`;
+  const manifest = builder.createManifest(`${uri}.json`, (manifest) => {
     manifest.setLabel({ nl: [metadata.name] });
     manifest.setMetadata(parseMetadata(metadata, "object"));
     // const navDate = createNavDate(metadata);
@@ -76,7 +81,7 @@ export function createManifest(
     // }
     if (images.length) {
       for (const [index, item] of images.entries()) {
-        manifest.createCanvas(uri + "/canvas/" + index, (canvas) => {
+        manifest.createCanvas(`${uri}/canvas/${index}`, (canvas) => {
           canvas.height = item.height;
           canvas.width = item.width;
           const thumbnail = {
@@ -126,27 +131,28 @@ export function createManifest(
 }
 
 export function createCollection(
-  records: Metadata[],
-  metadata: Metadata,
+  records: SchemaEntity[],
+  metadata: SchemaCollectionMetadata,
   uuid: string,
 ) {
   const builder = new IIIFBuilder();
-  const uri = manifestUriBase + collectionsFolder + uuid;
-  const collection = builder.createCollection(uri + ".json", (collection) => {
-    collection.setLabel({ nl: metadata["dc:title"] });
-    collection.setSummary({ nl: metadata["dc:description"] });
+  const uri = `${manifestUriBase}${collectionsFolder}/${uuid}`;
+  const collection = builder.createCollection(`${uri}.json`, (collection) => {
+    collection.setLabel({ nl: [metadata.name] });
+    collection.setSummary({ nl: [metadata.description] });
     collection.setMetadata(collectionMetadata);
     if (records.length) {
       for (const item of records) {
-        const uuid = item["dc:isVersionOf"][0];
+        const uuid = item.sameAs ? getUuid(item.sameAs) : undefined;
+        if (!uuid) continue;
         collection.createManifest(
-          manifestUriBase + objectsFolder + uuid + ".json",
+          `${manifestUriBase}${objectsFolder}/${uuid}.json`,
           (manifest) => {
-            manifest.setLabel({ nl: item["dc:title"] });
-            const navDate = createNavDate(item);
-            if (navDate) {
-              manifest.entity.navDate = navDate;
-            }
+            manifest.setLabel({ nl: [item.name] });
+            // const navDate = createNavDate(item);
+            // if (navDate) {
+            //   manifest.entity.navDate = navDate;
+            // }
           },
         );
       }
