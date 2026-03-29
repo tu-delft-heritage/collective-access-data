@@ -21,11 +21,19 @@ const SchemaImageObject = z.preprocess(
   }),
 );
 
-const SchemaQuantitativeValue = z.object({
-  "@type": z.literal("QuantativeValue"),
-  unitCode: z.literal("MMT"),
-  value: z.coerce.number().optional(),
-});
+const SchemaQuantitativeValue = z.preprocess(
+  (val: any) => {
+    if (val["@type"] === "QuantativeValue") {
+      val["@type"] = "QuantitativeValue";
+    }
+    return val;
+  },
+  z.object({
+    "@type": z.literal("QuantitativeValue"),
+    unitCode: z.literal("MMT"),
+    value: z.coerce.number().optional(),
+  }),
+);
 
 const preprocessSameAs = (val: any) => {
   const sameAsVal = val.sameAs?.resource;
