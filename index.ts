@@ -62,13 +62,6 @@ if (buildManifests) {
 
     const parsedMetadata = result.data;
     const uuid = z.uuid().parse(getUuid(parsedMetadata["@id"]));
-
-    await saveJson(
-      parsedMetadata,
-      "schema",
-      join(outputDir, objectsFolder, uuid),
-    );
-
     const images = getValueAsArray(parsedMetadata.image);
 
     if (!images.length) {
@@ -94,7 +87,14 @@ if (buildManifests) {
     }) as IIIFImageInformation[];
     if (imageInformation.length) {
       const manifest = createManifest(imageInformation, parsedMetadata, uuid);
+
+      // Save manifest & schema.json
       await saveJson(manifest, uuid, join(outputDir, objectsFolder));
+      await saveJson(
+        parsedMetadata,
+        "schema",
+        join(outputDir, objectsFolder, uuid),
+      );
       bar.update(index + 1);
       if (manifestsOnDisk.has(uuid)) {
         writer.write(`Duplicate record exported for: ${uuid}\n---\n`);
