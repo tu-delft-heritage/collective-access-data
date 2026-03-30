@@ -13,7 +13,7 @@ import type {
   SchemaMetadata,
   SchemaCollectionMetadata,
   SchemaEntity,
-} from "./types";
+} from "./schema";
 import * as z from "zod";
 
 type Metadata = z.input<typeof SchemaMetadata>;

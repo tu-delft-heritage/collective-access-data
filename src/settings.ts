@@ -1,6 +1,6 @@
 import { en } from "zod/locales";
 import { getValueAsArray } from "./helpers";
-import type { SchemaMetadata, SchemaEntity } from "./types";
+import type { SchemaMetadata, SchemaEntity } from "./schema";
 
 export const outputDir = "build/iiif";
 export const objectsFolder = "objects";

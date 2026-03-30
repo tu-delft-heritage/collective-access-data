@@ -13,11 +13,11 @@ import {
   createWriter,
 } from "./src/helpers.ts";
 import { outputDir, objectsFolder, collectionsFolder } from "./src/settings";
-import { SchemaMetadata, SchemaCollectionMetadata } from "./src/types";
+import { SchemaMetadata, SchemaCollectionMetadata } from "./src/schema.ts";
 import * as z from "zod";
 import { join } from "node:path";
 
-import type { IIIFImageInformation, SchemaRecord } from "./src/types";
+import type { IIIFImageInformation, SchemaRecord } from "./src/schema.ts";
 
 // End process correctly
 process.on("SIGINT", () => {
@@ -39,9 +39,10 @@ const objects = (await fetchRecords("objects")) as SchemaRecord<"object">[];
 
 const manifestsOnDisk: Map<string, SchemaMetadata> = new Map();
 const recordsWithoutImages: Map<string, SchemaMetadata> = new Map();
-const failedImages: string[] = new Array();
 
 if (buildManifests) {
+  writer.write("### OBJECTS ###\n---\n");
+
   // Write IIIF Object Manifests
   const bar = new cliProgress.Bar({}, cliProgress.Presets.shades_classic);
   bar.start(objects.length, 0);
@@ -71,6 +72,7 @@ if (buildManifests) {
     const images = getValueAsArray(parsedMetadata.image);
 
     if (!images.length) {
+      writer.write(`No images found for record: ${uuid}\n---\n`);
       if (recordsWithoutImages.has(uuid)) {
         writer.write(`Duplicate record exported for: ${uuid}\n---\n`);
       }
@@ -87,7 +89,7 @@ if (buildManifests) {
       )
     ).filter((resp) => {
       if (resp.error) {
-        failedImages.push(resp.error);
+        writer.write(`Image not found: ${resp.error}\n---\n`);
         return false;
       } else return true;
     }) as IIIFImageInformation[];
@@ -114,10 +116,6 @@ if (buildManifests) {
     console.log(`No images found for the following records:`);
     console.table([...recordsWithoutImages.keys()]);
   }
-  if (failedImages.length) {
-    console.log(`Information for the following images could not be fetched:`);
-    console.table(failedImages);
-  }
 }
 
 // Get Collective Access collections
@@ -127,8 +125,10 @@ const collections = (await fetchRecords(
 )) as SchemaRecord<"collection">[];
 
 if (buildCollections) {
+  writer.write("### COLLECTIONS ###\n---\n");
+
   // Writing IIIF Collection Manifests
-  const recordsInCollections = new Array();
+  const recordsInCollections: Set<string> = new Set();
   for (const collection of collections) {
     const metadata = collection.metadata.RDF.CreativeWork;
     const identifier = collection.header.identifier;
@@ -153,11 +153,17 @@ if (buildCollections) {
         if (entity.sameAs) {
           const uuid = z.uuid().parse(getUuid(entity.sameAs));
           if (manifestsOnDisk.has(uuid)) {
-            recordsInCollections.push(uuid);
+            if (recordsInCollections.has(uuid)) {
+              writer.write(
+                `Object is in multiple collections: ${uuid}:\n---\n`,
+              );
+            } else {
+              recordsInCollections.add(uuid);
+            }
             return manifestsOnDisk.get(uuid);
           }
         } else {
-          writer.write(`Can't find object manifest for ${uuid}:\n---\n`);
+          writer.write(`Can't find object manifest for: ${uuid}:\n---\n`);
         }
       })
       .filter(Boolean) as SchemaMetadata[];
@@ -165,11 +171,11 @@ if (buildCollections) {
       const collection = createCollection(records, parsedMetadata, uuid);
       saveJson(collection, uuid, join(outputDir, collectionsFolder));
     } else {
-      console.log(`No records found for ${label} (${uuid})`);
+      writer.write(`No objects found for collection: ${uuid}:\n---\n`);
     }
   }
   console.log(
-    `${recordsInCollections.length} records have been added to collections`,
+    `${recordsInCollections.size} records have been added to collections`,
   );
 }
 
