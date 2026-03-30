@@ -11,6 +11,7 @@ import {
   getValueAsArray,
   getOaiUrl,
   createWriter,
+  date,
 } from "./src/helpers.ts";
 import { outputDir, objectsFolder, collectionsFolder } from "./src/settings";
 import { SchemaMetadata, SchemaCollectionMetadata } from "./src/schema.ts";
@@ -182,6 +183,7 @@ if (buildCollections) {
 // Write log
 writer.flush();
 writer.end();
+console.log(`Written log: ./logs/${date}.txt`);
 
 // Todo: media check
 // const media = (await fetchRecords("media")) as Record[];
