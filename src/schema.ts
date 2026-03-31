@@ -23,8 +23,17 @@ const SchemaImageObject = z.preprocess(
 
 const SchemaQuantitativeValue = z.preprocess(
   (val: any) => {
-    if (val["@type"] === "QuantativeValue") {
-      val["@type"] = "QuantitativeValue";
+    const value = val.value;
+    if (value === undefined) {
+      delete val.value;
+    } else if (value.includes("mm")) {
+      val.value = val.value.replace(/mm.*/, "");
+    } else if (value.includes("cm")) {
+      const cmValue = val.value.replace(/cm.*/, "");
+      val.value = Number(cmValue) * 10;
+    } else if (value.includes("meter")) {
+      const mValue = val.value.replace(/meter.*/, "");
+      val.value = Number(mValue) * 1000;
     }
     return val;
   },
@@ -38,7 +47,12 @@ const SchemaQuantitativeValue = z.preprocess(
 const preprocessSameAs = (val: any) => {
   const sameAsVal = val.sameAs?.resource;
   if (sameAsVal) {
-    val.sameAs = sameAsVal;
+    const parsedValue = z.url().safeParse(sameAsVal);
+    if (parsedValue.success) {
+      val.sameAs = parsedValue.data;
+    } else {
+      delete val.sameAs;
+    }
   } else if (val.sameAs) {
     delete val.sameAs;
   }
