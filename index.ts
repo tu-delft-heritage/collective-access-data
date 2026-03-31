@@ -155,16 +155,14 @@ if (buildCollections) {
           const uuid = z.uuid().parse(getUuid(entity.sameAs));
           if (manifestsOnDisk.has(uuid)) {
             if (recordsInCollections.has(uuid)) {
-              writer.write(
-                `Object is in multiple collections: ${uuid}:\n---\n`,
-              );
+              writer.write(`Object is in multiple collections: ${uuid}\n---\n`);
             } else {
               recordsInCollections.add(uuid);
             }
             return manifestsOnDisk.get(uuid);
+          } else {
+            writer.write(`Can't find object manifest for: ${uuid}\n---\n`);
           }
-        } else {
-          writer.write(`Can't find object manifest for: ${uuid}:\n---\n`);
         }
       })
       .filter(Boolean) as SchemaMetadata[];
