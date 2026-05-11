@@ -26,20 +26,15 @@ const SchemaQuantitativeValue = z.preprocess(
     const value = val.value;
     if (value === undefined) {
       delete val.value;
-    } else if (value.includes("mm")) {
-      val.value = val.value.replace(/mm.*/, "");
-    } else if (value.includes("cm")) {
-      const cmValue = val.value.replace(/cm.*/, "");
-      val.value = Number(cmValue) * 10;
-    } else if (value.includes("meter")) {
-      const mValue = val.value.replace(/meter.*/, "");
-      val.value = Number(mValue) * 1000;
+    } else {
+      const parsableValue = value.replaceAll(".", "").replaceAll(",", ".");
+      val.value = Number(parsableValue);
     }
     return val;
   },
   z.object({
     "@type": z.literal("QuantitativeValue"),
-    unitCode: z.literal("MMT"),
+    unitCode: z.enum(["MMT", "CMT", "MTR"]).optional(),
     value: z.coerce.number().optional(),
   }),
 );
