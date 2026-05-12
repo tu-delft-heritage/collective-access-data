@@ -114,15 +114,23 @@ export const objectMapping = [
     },
     getValue: (metadata: SchemaMetadata) => {
       const dimensions = [];
-      if (metadata.height?.value) {
-        dimensions.push(`${metadata.height.value} mm (h)`);
+      const units = {
+        MMT: "mm",
+        CMT: "cm",
+        MTR: "m",
+      };
+      if (metadata.height?.value && metadata.height.unitCode) {
+        const unit = units[metadata.height.unitCode];
+        dimensions.push(`${metadata.height.value} ${unit} (h)`);
       }
-      if (metadata.width?.value) {
-        dimensions.push(`${metadata.width.value} mm (b)`);
+      if (metadata.width?.value && metadata.width.unitCode) {
+        const unit = units[metadata.width.unitCode];
+        dimensions.push(`${metadata.width.value} ${unit} (b)`);
       }
 
-      if (metadata.depth?.value) {
-        dimensions.push(`${metadata.depth.value} mm (d)`);
+      if (metadata.depth?.value && metadata.depth.unitCode) {
+        const unit = units[metadata.depth.unitCode];
+        dimensions.push(`${metadata.depth.value} ${unit} (d)`);
       }
       if (dimensions.length) {
         return [dimensions.join(" x ")];
