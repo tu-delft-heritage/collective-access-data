@@ -149,7 +149,18 @@ export const SchemaMetadata = z.preprocess(
     temporalCoverage: SchemaTemporal.optional(),
     exampleOfWork: SchemaEntity,
     material: z.array(SchemaEntity).or(SchemaEntity).optional(),
-    creator: z.array(SchemaRoleCreator).or(SchemaRoleCreator).optional(),
+    creator: z
+      .preprocess((val) => {
+        const hasCreatorProp = (obj: any) =>
+          obj?.Role?.Creator ? true : false;
+        if (Array.isArray(val)) {
+          const items = val.filter(hasCreatorProp);
+          return items.length ? items : undefined;
+        } else if (hasCreatorProp(val)) {
+          return val;
+        } else return undefined
+      }, z.array(SchemaRoleCreator).or(SchemaRoleCreator))
+      .optional(),
     contributor: z
       .array(SchemaRoleContributor)
       .or(SchemaRoleContributor)
