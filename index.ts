@@ -65,6 +65,7 @@ if (buildManifests) {
       writer.write(
         `Parser failed for object ${identifier}:\n${error}\n${url}\n---\n`,
       );
+      // writer.write(JSON.stringify(metadata, null ,2));      
       continue;
     }
 

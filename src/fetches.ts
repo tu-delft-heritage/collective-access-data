@@ -60,6 +60,9 @@ async function fetchXML(
     valueProcessors: [decodeValue],
     tagNameProcessors: [removePrefix],
   });
+
+  // console.log("URL used", url.toString())
+  
   return fetch(url.toString())
     .then((response) => response.text())
     .then((text) => parser.parseStringPromise(text))
@@ -104,7 +107,8 @@ export async function fetchRecords(
   if (token && count) {
     let index = 0;
     const pageSize = records.length;
-    let pageCount = Math.ceil(+count / pageSize);
+    // First pages already fetched
+    let pageCount = Math.ceil(+count / pageSize) - 1
     console.log(`Multiple pages found...`);
 
     while (index < pageCount) {

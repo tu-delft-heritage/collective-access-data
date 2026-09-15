@@ -173,12 +173,11 @@ export const SchemaMetadata = z.preprocess(
     citation: z
       .preprocess((val) => {
         if (Array.isArray(val)) {
-          return val.filter(Boolean);
-        } else {
+          return val.filter(i => i && typeof i === "string");
+        } else if (typeof val === "string") {
           return val;
-        }
-      }, z.array(z.string()).or(z.string()))
-      .optional(),
+        } else return undefined
+      }, z.array(z.string()).or(z.string()).optional()),
     isRelatedTo: SchemaEntity.or(z.array(SchemaEntity)).optional(),
     image: z
       .array(SchemaImageObject)

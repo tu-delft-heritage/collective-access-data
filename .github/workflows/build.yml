@@ -43,9 +43,11 @@ jobs:
         run: bun i
 
       - name: Generate Manifests
+        id: generate-manifests
         run: bun run index.ts
 
       - name: Commit & push changes
+        if: ${{ success() && steps.generate-manifests.outcome == 'success' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
