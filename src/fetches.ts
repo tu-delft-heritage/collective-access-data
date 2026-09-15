@@ -62,7 +62,7 @@ async function fetchXML(
   });
 
   // console.log("URL used", url.toString())
-  
+
   return fetch(url.toString())
     .then((response) => response.text())
     .then((text) => parser.parseStringPromise(text))
@@ -107,7 +107,7 @@ export async function fetchRecords(
   if (token && count) {
     let index = 0;
     const pageSize = records.length;
-    // First pages already fetched
+    // First page already fetched
     let pageCount = Math.ceil(+count / pageSize) - 1
     console.log(`Multiple pages found...`);
 
