@@ -44,7 +44,7 @@ jobs:
 
       - name: Generate Manifests
         id: generate-manifests
-        run: bun run index.ts
+        run: bun run generate
 
       - name: Commit & push changes
         if: ${{ success() && steps.generate-manifests.outcome == 'success' }}

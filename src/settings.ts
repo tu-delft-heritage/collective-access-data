@@ -10,8 +10,11 @@ export const OAIBaseUrl =
   "https://cms.collectiveaccess.tudelft.nl/service.php/OAI/";
 export const dlcsImageBase = "https://dlc.services/iiif-img/v3/7/";
 export const dlcsSpace = "18";
+export const dlcsPortalUrl = "https://portal.dlc.services/Images/18/"
 export const manifestUriBase =
   "https://tu-delft-heritage.github.io/collective-access-data/iiif/";
+export const collectiveAccessObjectBaseUrl = "https://collectiveaccess.tudelft.nl/ca_tudelft/admin/index.php/editor/objects/ObjectEditor/Edit/object_id/"
+export const collectiveAccessCollectionBaseUrl = "https://collectiveaccess.tudelft.nl/ca_tudelft/admin/index.php/editor/collections/CollectionEditor/Edit/collection_id/"
 
 export const types: Record<string, string> = {
   objects: "schema_org",

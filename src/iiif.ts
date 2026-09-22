@@ -37,7 +37,6 @@ function parseMetadata(props: SchemaMetadata, type?: string) {
 
 function getNavDateValue(metadata: SchemaMetadata) {
   const date = metadata.temporalCoverage;
-  const uuid = getUuid(metadata["@id"]);
   const parseDate = (s: string) => new Date(Date.parse(s)).toISOString();
   try {
     let isoString: null | string = null;
@@ -46,8 +45,8 @@ function getNavDateValue(metadata: SchemaMetadata) {
       isoString = parseDate(firstYear);
     }
     return isoString;
-  } catch (err) {
-    console.log(`Could not process date for ${uuid} ${date}`);
+  } catch {
+    return null;
   }
 }
 
@@ -73,13 +72,13 @@ export function createManifest(
           const thumbnail = {
             id:
               item.id.replace("iiif-img", "thumbs") + "/full/max/0/default.jpg",
-            type: "Image",
+            type: "Image" as const,
             format: "image/jpeg",
             service: [
               {
                 "@context": "http://iiif.io/api/image/3/context.json",
                 id: item.id.replace("iiif-img", "thumbs"),
-                type: "ImageService3",
+                type: "ImageService3" as const,
                 profile: "level0",
                 sizes: item.sizes,
               },
@@ -103,7 +102,7 @@ export function createManifest(
                 {
                   "@context": item["@context"],
                   id: item.id,
-                  type: item.type,
+                  type: "ImageService3" as const,
                   profile: item.profile,
                 },
               ],

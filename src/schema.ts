@@ -17,7 +17,7 @@ const SchemaImageObject = z.preprocess(
     caption: z.string().optional(),
     width: z.coerce.number(),
     height: z.coerce.number(),
-    position: z.coerce.number(),
+    position: z.preprocess((val: string | undefined) => val ? val.split(";")[0] : 0, z.coerce.number()),
   }),
 );
 
@@ -133,6 +133,16 @@ const SchemaTemporal = z.preprocess(
 
 export type SchemaMetadata = z.infer<typeof SchemaMetadata>;
 
+export type SchemaCollectionReference = {
+  "@id": string;
+  "@type": "Collection";
+};
+
+const SchemaCollectionReference = z.object({
+  "@id": z.url(),
+  "@type": z.literal("Collection"),
+});
+
 export const SchemaMetadata = z.preprocess(
   (val: any) => ({
     "@context": "https://schema.org",
@@ -158,7 +168,7 @@ export const SchemaMetadata = z.preprocess(
           return items.length ? items : undefined;
         } else if (hasCreatorProp(val)) {
           return val;
-        } else return undefined
+        } else return undefined;
       }, z.array(SchemaRoleCreator).or(SchemaRoleCreator))
       .optional(),
     contributor: z
@@ -170,15 +180,17 @@ export const SchemaMetadata = z.preprocess(
     height: SchemaQuantitativeValue,
     width: SchemaQuantitativeValue,
     depth: SchemaQuantitativeValue,
-    citation: z
-      .preprocess((val) => {
-        if (Array.isArray(val)) {
-          return val.filter(i => i && typeof i === "string");
-        } else if (typeof val === "string") {
-          return val;
-        } else return undefined
-      }, z.array(z.string()).or(z.string()).optional()),
+    citation: z.preprocess((val) => {
+      if (Array.isArray(val)) {
+        return val.filter((i) => i && typeof i === "string");
+      } else if (typeof val === "string") {
+        return val;
+      } else return undefined;
+    }, z.array(z.string()).or(z.string()).optional()),
     isRelatedTo: SchemaEntity.or(z.array(SchemaEntity)).optional(),
+    isPartOf: SchemaCollectionReference.or(
+      z.array(SchemaCollectionReference),
+    ).optional(),
     image: z
       .array(SchemaImageObject)
       .or(SchemaImageObject)
@@ -224,8 +236,9 @@ export type SchemaRecord<K extends keyof SchemaMetadataByKind> = {
   header: {
     identifier: string;
     datestamp: string;
+    status?: string;
   };
-  metadata: {
+  metadata?: {
     RDF: {
       schema: string;
       rdf: string;
@@ -294,8 +307,8 @@ export interface DublinCorePart {
 export type IIIFImageInformation = {
   "@context": string;
   id: string;
-  type: string;
-  profile: string;
+  type: "ImageService3";
+  profile: "level0" | "level1" | "level2";
   protocol: string;
   width: number;
   height: number;

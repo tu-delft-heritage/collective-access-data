@@ -1,4 +1,6 @@
 import fs from "node:fs/promises";
+import { join } from "node:path";
+import { json2csv } from "json-2-csv";
 import { OAIBaseUrl, types } from "./settings";
 
 export function getUuid(id: string) {
@@ -24,11 +26,18 @@ export function getOaiUrl(identifier: string, type: string = "objects") {
 
 export const date = new Date().toISOString().slice(0, -5).replaceAll(":", ".");
 
-export const createWriter = async () => {
-  const dirExists = await fs.exists("logs");
-  if (!dirExists) {
-    await fs.mkdir("logs");
-  }
-  const log = Bun.file(`logs/${date}.txt`);
-  return log.writer();
-};
+export async function writeCsvLog(
+  rows: object[],
+  keys: string[],
+  directory = "logs",
+) {
+  await fs.mkdir(directory, { recursive: true });
+  const path = join(directory, `${date}.csv`);
+  const csv = json2csv(rows, {
+    emptyFieldValue: "",
+    keys,
+    preventCsvInjection: true,
+  });
+  await Bun.write(path, csv.endsWith("\n") ? csv : `${csv}\n`);
+  return path;
+}
