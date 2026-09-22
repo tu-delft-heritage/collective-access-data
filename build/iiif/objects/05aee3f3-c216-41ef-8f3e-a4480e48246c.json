@@ -1,0 +1,239 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/05aee3f3-c216-41ef-8f3e-a4480e48246c.json",
+    "type": "Manifest",
+    "label": {
+        "nl": [
+            "\"Einfache und Präpariermikroskope\" microscoop van messing gemonteerd op houten doos met lenzen"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "\"Einfache und Präpariermikroskope\" microscoop van messing gemonteerd op houten doos met lenzen"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Object name"
+                ],
+                "nl": [
+                    "Objectnaam"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "microscoop"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Inventory number"
+                ],
+                "nl": [
+                    "Inventarisnummer"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "2024.0005.TNW"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dating"
+                ],
+                "nl": [
+                    "Datering"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1857 – 1858"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Maker"
+                ],
+                "nl": [
+                    "Maker"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Zeiss (producent)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dimensions"
+                ],
+                "nl": [
+                    "Afmetingen"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "15 cm (h) x 11 cm (b) x 11 cm (d)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Material"
+                ],
+                "nl": [
+                    "Materiaal"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "hout",
+                    "metaal",
+                    "messing",
+                    "ivoor"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Klein microscoop van messing, gemonteerd op klein houten doos. Microscoop heeft inscriptie \"417 Carl Zeiss Jena\"- dit komt overeen met een record in het Zeiss-archief dat het beschrijft als een \"Einfache und Präpariermikroskope\" verkocht in 1857. Doos heeft slot (sleutel ontbreekt), met vier lenzen van messing in met blauw fluweel bedekte sleuven. Een klein handvat van ivoor/been tilt het deksel van de houder op, zodat ruimte ontstaat voor een klein vergrootglas op een metaalen houder. Drie Duitstalige stukjes papier gevonden in object. Twee ogenschijnlijk origineel bij het object: een aanbevelingsbrief van Matthias Jakob Schleiden uit 1857, de overige gebruiksaanwijzingen met handgeschreven advies (?). Het derde stuk is een getypt Duitstalig advies voor het reinigen van de lenzen, vermoedelijk uit de eerste helft van de 20e eeuw."
+                ]
+            }
+        }
+    ],
+    "navDate": "1857-01-01T00:00:00.000Z",
+    "thumbnail": [
+        {
+            "id": "https://dlc.services/thumbs/v3/7/18/4d6bef41-039b-47fb-8704-374e0574d78a/full/max/0/default.jpg",
+            "type": "Image",
+            "format": "image/jpeg",
+            "service": [
+                {
+                    "@context": "http://iiif.io/api/image/3/context.json",
+                    "id": "https://dlc.services/thumbs/v3/7/18/4d6bef41-039b-47fb-8704-374e0574d78a",
+                    "type": "ImageService3",
+                    "profile": "level0",
+                    "sizes": [
+                        {
+                            "width": 768,
+                            "height": 1024
+                        },
+                        {
+                            "width": 300,
+                            "height": 400
+                        },
+                        {
+                            "width": 150,
+                            "height": 200
+                        },
+                        {
+                            "width": 75,
+                            "height": 100
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/05aee3f3-c216-41ef-8f3e-a4480e48246c/canvas/0",
+            "type": "Canvas",
+            "height": 4032,
+            "width": 3024,
+            "thumbnail": [
+                {
+                    "id": "https://dlc.services/thumbs/v3/7/18/4d6bef41-039b-47fb-8704-374e0574d78a/full/max/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "service": [
+                        {
+                            "@context": "http://iiif.io/api/image/3/context.json",
+                            "id": "https://dlc.services/thumbs/v3/7/18/4d6bef41-039b-47fb-8704-374e0574d78a",
+                            "type": "ImageService3",
+                            "profile": "level0",
+                            "sizes": [
+                                {
+                                    "width": 768,
+                                    "height": 1024
+                                },
+                                {
+                                    "width": 300,
+                                    "height": 400
+                                },
+                                {
+                                    "width": 150,
+                                    "height": 200
+                                },
+                                {
+                                    "width": 75,
+                                    "height": 100
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/05aee3f3-c216-41ef-8f3e-a4480e48246c/canvas/0/annotation-page",
+                    "type": "AnnotationPage",
+                    "items": [
+                        {
+                            "id": "https://dlc.services/iiif-img/v3/7/18/4d6bef41-039b-47fb-8704-374e0574d78a",
+                            "type": "Annotation",
+                            "motivation": "painting",
+                            "target": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/05aee3f3-c216-41ef-8f3e-a4480e48246c/canvas/0",
+                            "body": {
+                                "id": "https://dlc.services/iiif-img/v3/7/18/4d6bef41-039b-47fb-8704-374e0574d78a/full/max/0/default.jpg",
+                                "type": "Image",
+                                "format": "image/jpeg",
+                                "height": 4032,
+                                "width": 3024,
+                                "service": [
+                                    {
+                                        "@context": "http://iiif.io/api/image/3/context.json",
+                                        "id": "https://dlc.services/iiif-img/v3/7/18/4d6bef41-039b-47fb-8704-374e0574d78a",
+                                        "type": "ImageService3",
+                                        "profile": "level2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

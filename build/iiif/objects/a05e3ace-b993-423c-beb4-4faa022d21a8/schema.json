@@ -1,0 +1,79 @@
+{
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": "https://heritage.tudelft.nl/iiif/manifests/a05e3ace-b993-423c-beb4-4faa022d21a8/schema.json",
+    "name": "Theodoliet door Herman Wanschaff",
+    "description": "Theodoliet door Herman Wanschaff, voor astronomische plaats- azimuth- en tijd-bepaling. Deze theodoliet is ook te gebruiken als doorgangsinstrument (objectief zit aan de tweede as) voor het meten van horizontale en verticale richtingen naar sterren en de zon. Een doorgangsinstrument werd gebruikt voor de bepaling van de plaatselijke zonne- en sterrentijd. Het instrument is gebruikt voor azimut-bepalingen door de commissie t.b.v. het Rijksdriehoeksnet. Het instrument is voorzien van een los ruiterniveau (alhidade), een horizontale en verticale randen in het 360 graden stelsel met diametraal aflezing en elektrische bedrading voor nachtwaarnemingen.",
+    "identifier": "2000.0834.GEO",
+    "temporalCoverage": "1875/1925",
+    "exampleOfWork": {
+        "@type": "CreativeWork",
+        "name": "theodoliet",
+        "sameAs": "http://vocab.getty.edu/aat/300199711"
+    },
+    "material": [
+        {
+            "@type": "Product",
+            "name": "metaal",
+            "sameAs": "http://vocab.getty.edu/aat/300010900"
+        },
+        {
+            "@type": "Product",
+            "name": "glas",
+            "sameAs": "http://vocab.getty.edu/aat/300010797"
+        },
+        {
+            "@type": "Product",
+            "name": "textiel",
+            "sameAs": "http://vocab.getty.edu/aat/300231565"
+        },
+        {
+            "@type": "Product",
+            "name": "hout",
+            "sameAs": "http://vocab.getty.edu/aat/300011914"
+        }
+    ],
+    "creator": {
+        "@type": "Role",
+        "roleName": "maker",
+        "creator": {
+            "@type": "Person",
+            "name": "Hermann (Duits) Wanschaff"
+        }
+    },
+    "height": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 760
+    },
+    "width": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 680
+    },
+    "depth": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 450
+    },
+    "image": {
+        "@type": "ImageObject",
+        "contentUrl": {
+            "@context": "http://iiif.io/api/presentation/3/context.json",
+            "@id": "https://dlc.services/iiif-img/7/18/9e369aa4-c35c-45c5-ad54-6e68412bacf7",
+            "@type": "Image"
+        },
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/9e369aa4-c35c-45c5-ad54-6e68412bacf7/full/full/0/default.jpg",
+        "encodingFormat": "https://iiif.io/api/image/3.0/",
+        "caption": "2000.0834.GEO.JPG",
+        "width": 1600,
+        "height": 1200,
+        "position": 3156
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",
+            "@type": "Collection"
+        }
+    ]
+}

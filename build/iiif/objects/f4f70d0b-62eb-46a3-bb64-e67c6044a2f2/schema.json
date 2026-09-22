@@ -1,0 +1,53 @@
+{
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": "https://heritage.tudelft.nl/iiif/manifests/f4f70d0b-62eb-46a3-bb64-e67c6044a2f2/schema.json",
+    "name": "Transversaalschaal",
+    "description": "Een transversaalschaal voor overbrengen van gemeten afstanden op een kaart. Verdeling in een decimaal stelsel en in 64 delen. Tekenhulpmiddel voor (kadastraal) karteren.",
+    "identifier": "2000.0344.GEO",
+    "temporalCoverage": "1775/1825",
+    "exampleOfWork": {
+        "@type": "CreativeWork",
+        "name": "transversaalschaal"
+    },
+    "material": {
+        "@type": "Product",
+        "name": "metaal",
+        "sameAs": "http://vocab.getty.edu/aat/300010900"
+    },
+    "height": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 67
+    },
+    "width": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 207
+    },
+    "depth": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 10
+    },
+    "image": {
+        "@type": "ImageObject",
+        "contentUrl": {
+            "@context": "http://iiif.io/api/presentation/3/context.json",
+            "@id": "https://dlc.services/iiif-img/7/18/eda45871-effa-4e27-b92d-55c83869b17f",
+            "@type": "Image"
+        },
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/eda45871-effa-4e27-b92d-55c83869b17f/full/full/0/default.jpg",
+        "encodingFormat": "https://iiif.io/api/image/3.0/",
+        "caption": "2000.0344.GEO.a.jpg",
+        "width": 1600,
+        "height": 1200,
+        "position": 3397
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",
+            "@type": "Collection"
+        }
+    ]
+}

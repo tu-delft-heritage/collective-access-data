@@ -1,0 +1,81 @@
+{
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": "https://heritage.tudelft.nl/iiif/manifests/b3d0c2e3-cbf1-4c08-a7ef-5f19a41c8d29/schema.json",
+    "name": "Assemblage van 15 verschillende experimentele lenzen, waarschijnlijk  gemaakt door A.C.S. van Heel",
+    "description": "15 verschillende experimentele lenzen, waarschijnlijk  gemaakt door Van Heel. 5x van wijn kurken, karton en zilverfolie. 4x van messing. 1x verstelbaar lens houder van donker metaal en inscriptie 201038 op de onderkant. 3x flesjes chemicaliën: Methyleen blauw, monobromnaphthalin, en een flesje olie vanuit Carl Zeiss Jena. 2x losse lenzen, beide met beschrijvingen op de verpakking: een \"Demo Chromatische Polarisatie\", de andere \"Spath de Bertrand\".",
+    "identifier": "2024.0009.TNW",
+    "temporalCoverage": "1850/1966",
+    "exampleOfWork": {
+        "@type": "CreativeWork",
+        "name": "lens",
+        "sameAs": "http://vocab.getty.edu/aat/300266807"
+    },
+    "material": [
+        {
+            "@type": "Product",
+            "name": "hout",
+            "sameAs": "http://vocab.getty.edu/aat/300011914"
+        },
+        {
+            "@type": "Product",
+            "name": "glas",
+            "sameAs": "http://vocab.getty.edu/aat/300010797"
+        },
+        {
+            "@type": "Product",
+            "name": "kurk",
+            "sameAs": "http://vocab.getty.edu/aat/300011862"
+        },
+        {
+            "@type": "Product",
+            "name": "karton",
+            "sameAs": "http://vocab.getty.edu/aat/300014224"
+        },
+        {
+            "@type": "Product",
+            "name": "leer"
+        },
+        {
+            "@type": "Product",
+            "name": "messing",
+            "sameAs": "http://vocab.getty.edu/aat/300010946"
+        }
+    ],
+    "creator": {
+        "@type": "Role",
+        "roleName": "producent",
+        "creator": {
+            "@type": "Organization",
+            "name": "Zeiss"
+        }
+    },
+    "height": {
+        "@type": "QuantitativeValue"
+    },
+    "width": {
+        "@type": "QuantitativeValue"
+    },
+    "depth": {
+        "@type": "QuantitativeValue"
+    },
+    "image": {
+        "@type": "ImageObject",
+        "contentUrl": {
+            "@context": "http://iiif.io/api/presentation/3/context.json",
+            "@id": "https://dlc.services/iiif-img/7/18/d2dc57a8-8b20-4e65-b84b-4a8634faeb2a",
+            "@type": "Image"
+        },
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/d2dc57a8-8b20-4e65-b84b-4a8634faeb2a/full/full/0/default.jpg",
+        "encodingFormat": "https://iiif.io/api/image/3.0/",
+        "width": 1600,
+        "height": 1200,
+        "position": 11971
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/963be50d-c574-4abf-aa52-74e16b0482aa.json",
+            "@type": "Collection"
+        }
+    ]
+}

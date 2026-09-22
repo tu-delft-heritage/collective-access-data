@@ -1,0 +1,224 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/f8493e4a-19f9-49c3-a2ba-40ef54d7ba8f.json",
+    "type": "Manifest",
+    "label": {
+        "nl": [
+            "Fotoboek deel 2 gebouwen TU Delft"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Fotoboek deel 2 gebouwen TU Delft"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Object name"
+                ],
+                "nl": [
+                    "Objectnaam"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Fotoboek"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Inventory number"
+                ],
+                "nl": [
+                    "Inventarisnummer"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "2006.0019.TMD"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dating"
+                ],
+                "nl": [
+                    "Datering"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1925 – 1950"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dimensions"
+                ],
+                "nl": [
+                    "Afmetingen"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "260 mm (h) x 335 mm (b) x 40 mm (d)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Material"
+                ],
+                "nl": [
+                    "Materiaal"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "karton",
+                    "papier",
+                    "fotodrager",
+                    "leer"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Deel 2 van een driedelige serie met foto's van oude gebouwen van de TU Delft.\nBouwkunde (7 foto's) Huis Portugal (4 foto's) Werktuig- en Scheepsbouwkunde (15 foto's) Laboratorium voor Aero- en Hydrodynamica (2 foto's) Laboratorium voor toegepaste Mechanica \n(1 foto) De inrichtingen voor het onderwijs in de Mechanische Technologie (2 foto's) Scheepsbouwkunde (7 foto's) Elektrotechniek (8 foto's) Scheikunde (4 foto's)."
+                ]
+            }
+        }
+    ],
+    "navDate": "1925-01-01T00:00:00.000Z",
+    "thumbnail": [
+        {
+            "id": "https://dlc.services/thumbs/v3/7/18/0711e2fa-84ae-4ff5-acb6-752f65ca9a82/full/max/0/default.jpg",
+            "type": "Image",
+            "format": "image/jpeg",
+            "service": [
+                {
+                    "@context": "http://iiif.io/api/image/3/context.json",
+                    "id": "https://dlc.services/thumbs/v3/7/18/0711e2fa-84ae-4ff5-acb6-752f65ca9a82",
+                    "type": "ImageService3",
+                    "profile": "level0",
+                    "sizes": [
+                        {
+                            "width": 1024,
+                            "height": 683
+                        },
+                        {
+                            "width": 400,
+                            "height": 267
+                        },
+                        {
+                            "width": 200,
+                            "height": 133
+                        },
+                        {
+                            "width": 100,
+                            "height": 67
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/f8493e4a-19f9-49c3-a2ba-40ef54d7ba8f/canvas/0",
+            "type": "Canvas",
+            "height": 2048,
+            "width": 3072,
+            "thumbnail": [
+                {
+                    "id": "https://dlc.services/thumbs/v3/7/18/0711e2fa-84ae-4ff5-acb6-752f65ca9a82/full/max/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "service": [
+                        {
+                            "@context": "http://iiif.io/api/image/3/context.json",
+                            "id": "https://dlc.services/thumbs/v3/7/18/0711e2fa-84ae-4ff5-acb6-752f65ca9a82",
+                            "type": "ImageService3",
+                            "profile": "level0",
+                            "sizes": [
+                                {
+                                    "width": 1024,
+                                    "height": 683
+                                },
+                                {
+                                    "width": 400,
+                                    "height": 267
+                                },
+                                {
+                                    "width": 200,
+                                    "height": 133
+                                },
+                                {
+                                    "width": 100,
+                                    "height": 67
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/f8493e4a-19f9-49c3-a2ba-40ef54d7ba8f/canvas/0/annotation-page",
+                    "type": "AnnotationPage",
+                    "items": [
+                        {
+                            "id": "https://dlc.services/iiif-img/v3/7/18/0711e2fa-84ae-4ff5-acb6-752f65ca9a82",
+                            "type": "Annotation",
+                            "motivation": "painting",
+                            "target": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/f8493e4a-19f9-49c3-a2ba-40ef54d7ba8f/canvas/0",
+                            "body": {
+                                "id": "https://dlc.services/iiif-img/v3/7/18/0711e2fa-84ae-4ff5-acb6-752f65ca9a82/full/max/0/default.jpg",
+                                "type": "Image",
+                                "format": "image/jpeg",
+                                "height": 2048,
+                                "width": 3072,
+                                "service": [
+                                    {
+                                        "@context": "http://iiif.io/api/image/3/context.json",
+                                        "id": "https://dlc.services/iiif-img/v3/7/18/0711e2fa-84ae-4ff5-acb6-752f65ca9a82",
+                                        "type": "ImageService3",
+                                        "profile": "level2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

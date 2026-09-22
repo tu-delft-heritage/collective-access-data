@@ -1,0 +1,68 @@
+{
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": "https://heritage.tudelft.nl/iiif/manifests/b8020773-4abe-45ac-9759-7a1c39283346/schema.json",
+    "name": "Transversaalschaal door Haff & Haff",
+    "description": "Een transversaalschaal door Haff & Haff, voor de kartering van afstanden. Met de volgende schalen 1:1000, 1:2000, 1:2500 en 1:5000. Is ook voorzien van een centimeter verdeling. Tekenhulpmiddel voor het tekenen op kaarten van diverse schalen.",
+    "identifier": "2000.0420.GEO",
+    "temporalCoverage": "1925/1975",
+    "exampleOfWork": {
+        "@type": "CreativeWork",
+        "name": "transversaalschaal"
+    },
+    "material": {
+        "@type": "Product",
+        "name": "metaal",
+        "sameAs": "http://vocab.getty.edu/aat/300010900"
+    },
+    "creator": {
+        "@type": "Role",
+        "roleName": "producent",
+        "creator": {
+            "@type": "Organization",
+            "name": "Haff & Haff"
+        }
+    },
+    "locationCreated": {
+        "@type": "Place",
+        "address": "Pfronten, Duitsland",
+        "latitude": 47.5822,
+        "longitude": 10.54962,
+        "sameAs": "https://www.geonames.org/2853949"
+    },
+    "height": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 5
+    },
+    "width": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 55
+    },
+    "depth": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 245
+    },
+    "image": {
+        "@type": "ImageObject",
+        "contentUrl": {
+            "@context": "http://iiif.io/api/presentation/3/context.json",
+            "@id": "https://dlc.services/iiif-img/7/18/796934c7-a3f6-40a3-926b-b93e3062b621",
+            "@type": "Image"
+        },
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/796934c7-a3f6-40a3-926b-b93e3062b621/full/full/0/default.jpg",
+        "encodingFormat": "https://iiif.io/api/image/3.0/",
+        "caption": "2000.0420.GEO.a.jpg",
+        "width": 1600,
+        "height": 1200,
+        "position": 3017
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",
+            "@type": "Collection"
+        }
+    ]
+}

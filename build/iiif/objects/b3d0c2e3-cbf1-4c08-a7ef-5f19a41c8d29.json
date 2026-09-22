@@ -1,0 +1,226 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/b3d0c2e3-cbf1-4c08-a7ef-5f19a41c8d29.json",
+    "type": "Manifest",
+    "label": {
+        "nl": [
+            "Assemblage van 15 verschillende experimentele lenzen, waarschijnlijk  gemaakt door A.C.S. van Heel"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Assemblage van 15 verschillende experimentele lenzen, waarschijnlijk  gemaakt door A.C.S. van Heel"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Object name"
+                ],
+                "nl": [
+                    "Objectnaam"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "lens"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Inventory number"
+                ],
+                "nl": [
+                    "Inventarisnummer"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "2024.0009.TNW"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dating"
+                ],
+                "nl": [
+                    "Datering"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1850 – 1966"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Maker"
+                ],
+                "nl": [
+                    "Maker"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Zeiss (producent)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Material"
+                ],
+                "nl": [
+                    "Materiaal"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "hout",
+                    "glas",
+                    "kurk",
+                    "karton",
+                    "leer",
+                    "messing"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "15 verschillende experimentele lenzen, waarschijnlijk  gemaakt door Van Heel. 5x van wijn kurken, karton en zilverfolie. 4x van messing. 1x verstelbaar lens houder van donker metaal en inscriptie 201038 op de onderkant. 3x flesjes chemicaliën: Methyleen blauw, monobromnaphthalin, en een flesje olie vanuit Carl Zeiss Jena. 2x losse lenzen, beide met beschrijvingen op de verpakking: een \"Demo Chromatische Polarisatie\", de andere \"Spath de Bertrand\"."
+                ]
+            }
+        }
+    ],
+    "navDate": "1850-01-01T00:00:00.000Z",
+    "thumbnail": [
+        {
+            "id": "https://dlc.services/thumbs/v3/7/18/d2dc57a8-8b20-4e65-b84b-4a8634faeb2a/full/max/0/default.jpg",
+            "type": "Image",
+            "format": "image/jpeg",
+            "service": [
+                {
+                    "@context": "http://iiif.io/api/image/3/context.json",
+                    "id": "https://dlc.services/thumbs/v3/7/18/d2dc57a8-8b20-4e65-b84b-4a8634faeb2a",
+                    "type": "ImageService3",
+                    "profile": "level0",
+                    "sizes": [
+                        {
+                            "width": 896,
+                            "height": 1024
+                        },
+                        {
+                            "width": 350,
+                            "height": 400
+                        },
+                        {
+                            "width": 175,
+                            "height": 200
+                        },
+                        {
+                            "width": 88,
+                            "height": 100
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/b3d0c2e3-cbf1-4c08-a7ef-5f19a41c8d29/canvas/0",
+            "type": "Canvas",
+            "height": 2803,
+            "width": 2453,
+            "thumbnail": [
+                {
+                    "id": "https://dlc.services/thumbs/v3/7/18/d2dc57a8-8b20-4e65-b84b-4a8634faeb2a/full/max/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "service": [
+                        {
+                            "@context": "http://iiif.io/api/image/3/context.json",
+                            "id": "https://dlc.services/thumbs/v3/7/18/d2dc57a8-8b20-4e65-b84b-4a8634faeb2a",
+                            "type": "ImageService3",
+                            "profile": "level0",
+                            "sizes": [
+                                {
+                                    "width": 896,
+                                    "height": 1024
+                                },
+                                {
+                                    "width": 350,
+                                    "height": 400
+                                },
+                                {
+                                    "width": 175,
+                                    "height": 200
+                                },
+                                {
+                                    "width": 88,
+                                    "height": 100
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/b3d0c2e3-cbf1-4c08-a7ef-5f19a41c8d29/canvas/0/annotation-page",
+                    "type": "AnnotationPage",
+                    "items": [
+                        {
+                            "id": "https://dlc.services/iiif-img/v3/7/18/d2dc57a8-8b20-4e65-b84b-4a8634faeb2a",
+                            "type": "Annotation",
+                            "motivation": "painting",
+                            "target": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/b3d0c2e3-cbf1-4c08-a7ef-5f19a41c8d29/canvas/0",
+                            "body": {
+                                "id": "https://dlc.services/iiif-img/v3/7/18/d2dc57a8-8b20-4e65-b84b-4a8634faeb2a/full/max/0/default.jpg",
+                                "type": "Image",
+                                "format": "image/jpeg",
+                                "height": 2803,
+                                "width": 2453,
+                                "service": [
+                                    {
+                                        "@context": "http://iiif.io/api/image/3/context.json",
+                                        "id": "https://dlc.services/iiif-img/v3/7/18/d2dc57a8-8b20-4e65-b84b-4a8634faeb2a",
+                                        "type": "ImageService3",
+                                        "profile": "level2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,222 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/bfa474f9-7f01-489f-80f6-1e854db42280.json",
+    "type": "Manifest",
+    "label": {
+        "nl": [
+            "Theodoliet door Wild type T2"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Theodoliet door Wild type T2"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Object name"
+                ],
+                "nl": [
+                    "Objectnaam"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "theodoliet"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Inventory number"
+                ],
+                "nl": [
+                    "Inventarisnummer"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "2000.0889.GEO"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Maker"
+                ],
+                "nl": [
+                    "Maker"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Wild Heerbrugg (maker)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dimensions"
+                ],
+                "nl": [
+                    "Afmetingen"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "52 cm (h) x 40 cm (b) x 40 cm (d)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Material"
+                ],
+                "nl": [
+                    "Materiaal"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "metaal",
+                    "glas",
+                    "hout"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "T2 theodoliet door Wild Heerbrugg AG, uit Zwitserland. Het instrument zit ter bescherming in een metalen stolp, die wordt geplaatst in een houten kist waarvan de binnenzijde is gestoffeerd. Voorzien van handleiding voor \"Universal-Theodolit Wild T2 Modell 1956\"."
+                ]
+            }
+        }
+    ],
+    "thumbnail": [
+        {
+            "id": "https://dlc.services/thumbs/v3/7/18/892799e3-8bb0-40dd-9ae6-2da73628f980/full/max/0/default.jpg",
+            "type": "Image",
+            "format": "image/jpeg",
+            "service": [
+                {
+                    "@context": "http://iiif.io/api/image/3/context.json",
+                    "id": "https://dlc.services/thumbs/v3/7/18/892799e3-8bb0-40dd-9ae6-2da73628f980",
+                    "type": "ImageService3",
+                    "profile": "level0",
+                    "sizes": [
+                        {
+                            "width": 1024,
+                            "height": 740
+                        },
+                        {
+                            "width": 400,
+                            "height": 290
+                        },
+                        {
+                            "width": 200,
+                            "height": 145
+                        },
+                        {
+                            "width": 100,
+                            "height": 72
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/bfa474f9-7f01-489f-80f6-1e854db42280/canvas/0",
+            "type": "Canvas",
+            "height": 3388,
+            "width": 4688,
+            "thumbnail": [
+                {
+                    "id": "https://dlc.services/thumbs/v3/7/18/892799e3-8bb0-40dd-9ae6-2da73628f980/full/max/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "service": [
+                        {
+                            "@context": "http://iiif.io/api/image/3/context.json",
+                            "id": "https://dlc.services/thumbs/v3/7/18/892799e3-8bb0-40dd-9ae6-2da73628f980",
+                            "type": "ImageService3",
+                            "profile": "level0",
+                            "sizes": [
+                                {
+                                    "width": 1024,
+                                    "height": 740
+                                },
+                                {
+                                    "width": 400,
+                                    "height": 290
+                                },
+                                {
+                                    "width": 200,
+                                    "height": 145
+                                },
+                                {
+                                    "width": 100,
+                                    "height": 72
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/bfa474f9-7f01-489f-80f6-1e854db42280/canvas/0/annotation-page",
+                    "type": "AnnotationPage",
+                    "items": [
+                        {
+                            "id": "https://dlc.services/iiif-img/v3/7/18/892799e3-8bb0-40dd-9ae6-2da73628f980",
+                            "type": "Annotation",
+                            "motivation": "painting",
+                            "target": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/bfa474f9-7f01-489f-80f6-1e854db42280/canvas/0",
+                            "body": {
+                                "id": "https://dlc.services/iiif-img/v3/7/18/892799e3-8bb0-40dd-9ae6-2da73628f980/full/max/0/default.jpg",
+                                "type": "Image",
+                                "format": "image/jpeg",
+                                "height": 3388,
+                                "width": 4688,
+                                "service": [
+                                    {
+                                        "@context": "http://iiif.io/api/image/3/context.json",
+                                        "id": "https://dlc.services/iiif-img/v3/7/18/892799e3-8bb0-40dd-9ae6-2da73628f980",
+                                        "type": "ImageService3",
+                                        "profile": "level2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

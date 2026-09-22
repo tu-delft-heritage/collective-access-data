@@ -1,0 +1,239 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/fe10aa4e-f992-404d-93a5-a5fe46e510b4.json",
+    "type": "Manifest",
+    "label": {
+        "nl": [
+            "Zelfgemaakte verrekijker gemaakt van kartonnen kokers met houten steun, waarschijnlijk gemaakt door A.C.S. van Heel"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Zelfgemaakte verrekijker gemaakt van kartonnen kokers met houten steun, waarschijnlijk gemaakt door A.C.S. van Heel"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Object name"
+                ],
+                "nl": [
+                    "Objectnaam"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "binoculaire"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Inventory number"
+                ],
+                "nl": [
+                    "Inventarisnummer"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "2024.0013.TNW"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dating"
+                ],
+                "nl": [
+                    "Datering"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1920 – 1966"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Maker"
+                ],
+                "nl": [
+                    "Maker"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Abraham Cornelis Sebastiaan Van Heel (maker)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dimensions"
+                ],
+                "nl": [
+                    "Afmetingen"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "65 cm (h) x 115 cm (b) x 14 cm (d)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Material"
+                ],
+                "nl": [
+                    "Materiaal"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "karton",
+                    "piepschuim",
+                    "metaal",
+                    "hout"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Zelfgemaakte verrekijker gemaakt van kartonnen kokers, waarschijnlijk door A.C.S. van Heel. Houten frame. Lenzen van een ander instrument, op hun plaats gehouden met piepschuim en lijm."
+                ]
+            }
+        }
+    ],
+    "navDate": "1920-01-01T00:00:00.000Z",
+    "thumbnail": [
+        {
+            "id": "https://dlc.services/thumbs/v3/7/18/aeff6972-47db-4d9f-8c01-9160de91de43/full/max/0/default.jpg",
+            "type": "Image",
+            "format": "image/jpeg",
+            "service": [
+                {
+                    "@context": "http://iiif.io/api/image/3/context.json",
+                    "id": "https://dlc.services/thumbs/v3/7/18/aeff6972-47db-4d9f-8c01-9160de91de43",
+                    "type": "ImageService3",
+                    "profile": "level0",
+                    "sizes": [
+                        {
+                            "width": 739,
+                            "height": 1024
+                        },
+                        {
+                            "width": 289,
+                            "height": 400
+                        },
+                        {
+                            "width": 144,
+                            "height": 200
+                        },
+                        {
+                            "width": 72,
+                            "height": 100
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/fe10aa4e-f992-404d-93a5-a5fe46e510b4/canvas/0",
+            "type": "Canvas",
+            "height": 4032,
+            "width": 2910,
+            "thumbnail": [
+                {
+                    "id": "https://dlc.services/thumbs/v3/7/18/aeff6972-47db-4d9f-8c01-9160de91de43/full/max/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "service": [
+                        {
+                            "@context": "http://iiif.io/api/image/3/context.json",
+                            "id": "https://dlc.services/thumbs/v3/7/18/aeff6972-47db-4d9f-8c01-9160de91de43",
+                            "type": "ImageService3",
+                            "profile": "level0",
+                            "sizes": [
+                                {
+                                    "width": 739,
+                                    "height": 1024
+                                },
+                                {
+                                    "width": 289,
+                                    "height": 400
+                                },
+                                {
+                                    "width": 144,
+                                    "height": 200
+                                },
+                                {
+                                    "width": 72,
+                                    "height": 100
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/fe10aa4e-f992-404d-93a5-a5fe46e510b4/canvas/0/annotation-page",
+                    "type": "AnnotationPage",
+                    "items": [
+                        {
+                            "id": "https://dlc.services/iiif-img/v3/7/18/aeff6972-47db-4d9f-8c01-9160de91de43",
+                            "type": "Annotation",
+                            "motivation": "painting",
+                            "target": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/fe10aa4e-f992-404d-93a5-a5fe46e510b4/canvas/0",
+                            "body": {
+                                "id": "https://dlc.services/iiif-img/v3/7/18/aeff6972-47db-4d9f-8c01-9160de91de43/full/max/0/default.jpg",
+                                "type": "Image",
+                                "format": "image/jpeg",
+                                "height": 4032,
+                                "width": 2910,
+                                "service": [
+                                    {
+                                        "@context": "http://iiif.io/api/image/3/context.json",
+                                        "id": "https://dlc.services/iiif-img/v3/7/18/aeff6972-47db-4d9f-8c01-9160de91de43",
+                                        "type": "ImageService3",
+                                        "profile": "level2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

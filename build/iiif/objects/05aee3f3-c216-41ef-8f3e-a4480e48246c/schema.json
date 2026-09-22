@@ -1,0 +1,78 @@
+{
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": "https://heritage.tudelft.nl/iiif/manifests/05aee3f3-c216-41ef-8f3e-a4480e48246c/schema.json",
+    "name": "\"Einfache und Präpariermikroskope\" microscoop van messing gemonteerd op houten doos met lenzen",
+    "description": "Klein microscoop van messing, gemonteerd op klein houten doos. Microscoop heeft inscriptie \"417 Carl Zeiss Jena\"- dit komt overeen met een record in het Zeiss-archief dat het beschrijft als een \"Einfache und Präpariermikroskope\" verkocht in 1857. Doos heeft slot (sleutel ontbreekt), met vier lenzen van messing in met blauw fluweel bedekte sleuven. Een klein handvat van ivoor/been tilt het deksel van de houder op, zodat ruimte ontstaat voor een klein vergrootglas op een metaalen houder. Drie Duitstalige stukjes papier gevonden in object. Twee ogenschijnlijk origineel bij het object: een aanbevelingsbrief van Matthias Jakob Schleiden uit 1857, de overige gebruiksaanwijzingen met handgeschreven advies (?). Het derde stuk is een getypt Duitstalig advies voor het reinigen van de lenzen, vermoedelijk uit de eerste helft van de 20e eeuw.",
+    "identifier": "2024.0005.TNW",
+    "temporalCoverage": "1857/1858",
+    "exampleOfWork": {
+        "@type": "CreativeWork",
+        "name": "microscoop",
+        "sameAs": "http://vocab.getty.edu/aat/300024594"
+    },
+    "material": [
+        {
+            "@type": "Product",
+            "name": "hout",
+            "sameAs": "http://vocab.getty.edu/aat/300011914"
+        },
+        {
+            "@type": "Product",
+            "name": "metaal",
+            "sameAs": "http://vocab.getty.edu/aat/300010900"
+        },
+        {
+            "@type": "Product",
+            "name": "messing",
+            "sameAs": "http://vocab.getty.edu/aat/300010946"
+        },
+        {
+            "@type": "Product",
+            "name": "ivoor",
+            "sameAs": "http://vocab.getty.edu/aat/300011857"
+        }
+    ],
+    "creator": {
+        "@type": "Role",
+        "roleName": "producent",
+        "creator": {
+            "@type": "Organization",
+            "name": "Zeiss"
+        }
+    },
+    "height": {
+        "@type": "QuantitativeValue",
+        "unitCode": "CMT",
+        "value": 15
+    },
+    "width": {
+        "@type": "QuantitativeValue",
+        "unitCode": "CMT",
+        "value": 11
+    },
+    "depth": {
+        "@type": "QuantitativeValue",
+        "unitCode": "CMT",
+        "value": 11
+    },
+    "image": {
+        "@type": "ImageObject",
+        "contentUrl": {
+            "@context": "http://iiif.io/api/presentation/3/context.json",
+            "@id": "https://dlc.services/iiif-img/7/18/4d6bef41-039b-47fb-8704-374e0574d78a",
+            "@type": "Image"
+        },
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/4d6bef41-039b-47fb-8704-374e0574d78a/full/full/0/default.jpg",
+        "encodingFormat": "https://iiif.io/api/image/3.0/",
+        "width": 1600,
+        "height": 1200,
+        "position": 11955
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/963be50d-c574-4abf-aa52-74e16b0482aa.json",
+            "@type": "Collection"
+        }
+    ]
+}

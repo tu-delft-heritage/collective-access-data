@@ -1,0 +1,77 @@
+{
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": "https://heritage.tudelft.nl/iiif/manifests/72c97ad0-bd6f-47e3-bac1-49dbf4ae7ecd/schema.json",
+    "name": "Portret van prof. H ter Meulen door H. Luns",
+    "description": "Geschilderd portret van prof. dr. ir. Henri ter Meulen (1871-1942), hoogleraar analytische scheikunde en scheikunde der bouwstoffen van 1905 tot 1936. Het werk is geschilderd door Hubert Marie (Huib) Luns (1881-1942).",
+    "identifier": "2002.0015.CVB",
+    "temporalCoverage": "1936",
+    "exampleOfWork": {
+        "@type": "CreativeWork",
+        "name": "schilderij"
+    },
+    "material": [
+        {
+            "@type": "Product",
+            "name": "olieverf",
+            "sameAs": "http://vocab.getty.edu/aat/300015050"
+        },
+        {
+            "@type": "Product",
+            "name": "paneel",
+            "sameAs": "http://vocab.getty.edu/aat/300014657"
+        },
+        {
+            "@type": "Product",
+            "name": "eikenhout",
+            "sameAs": "http://vocab.getty.edu/aat/300012264"
+        }
+    ],
+    "creator": {
+        "@type": "Role",
+        "roleName": "maker",
+        "creator": {
+            "@type": "Person",
+            "name": "Huib Luns"
+        }
+    },
+    "about": {
+        "@type": "Person",
+        "name": "Henri ter  Meulen"
+    },
+    "height": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 1095
+    },
+    "width": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 918
+    },
+    "depth": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 50
+    },
+    "image": {
+        "@type": "ImageObject",
+        "contentUrl": {
+            "@context": "http://iiif.io/api/presentation/3/context.json",
+            "@id": "https://dlc.services/iiif-img/7/18/2d1f01c0-0f04-48b6-be9f-cacd3bc92bf6",
+            "@type": "Image"
+        },
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/2d1f01c0-0f04-48b6-be9f-cacd3bc92bf6/full/full/0/default.jpg",
+        "encodingFormat": "https://iiif.io/api/image/3.0/",
+        "caption": "2002.0015.CVB.jpg",
+        "width": 1600,
+        "height": 1200,
+        "position": 1752
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/7b35ae59-1507-447a-a9ac-4641a7bf24b1.json",
+            "@type": "Collection"
+        }
+    ]
+}

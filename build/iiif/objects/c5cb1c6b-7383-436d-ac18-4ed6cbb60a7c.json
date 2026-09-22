@@ -1,0 +1,268 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/c5cb1c6b-7383-436d-ac18-4ed6cbb60a7c.json",
+    "type": "Manifest",
+    "label": {
+        "nl": [
+            "Zelfportret van prof. H. Luns"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Zelfportret van prof. H. Luns"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Object name"
+                ],
+                "nl": [
+                    "Objectnaam"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "schilderij"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Inventory number"
+                ],
+                "nl": [
+                    "Inventarisnummer"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "2002.0011.CVB"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dating"
+                ],
+                "nl": [
+                    "Datering"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1930"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Maker"
+                ],
+                "nl": [
+                    "Maker"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Huib Luns (maker)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dimensions"
+                ],
+                "nl": [
+                    "Afmetingen"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1085 mm (h) x 903 mm (b) x 50 mm (d)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Material"
+                ],
+                "nl": [
+                    "Materiaal"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "olieverf",
+                    "linnen",
+                    "hout"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Place of manufacture"
+                ],
+                "nl": [
+                    "Plaats vervaardiging"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Delft, Nederland"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Geschilderd zelfportret van prof. Hubert Marie (Huib) Luns (1881-1942), hoogleraar handtekenen en geschiedenis der schilder- en beeldhouwkunst van 1931 tot 1942."
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Subject"
+                ],
+                "nl": [
+                    "Voorstelling"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Huib Luns"
+                ]
+            }
+        }
+    ],
+    "navDate": "1930-01-01T00:00:00.000Z",
+    "thumbnail": [
+        {
+            "id": "https://dlc.services/thumbs/v3/7/18/9c7299bd-1292-4e32-9535-cfd097ae8d6b/full/max/0/default.jpg",
+            "type": "Image",
+            "format": "image/jpeg",
+            "service": [
+                {
+                    "@context": "http://iiif.io/api/image/3/context.json",
+                    "id": "https://dlc.services/thumbs/v3/7/18/9c7299bd-1292-4e32-9535-cfd097ae8d6b",
+                    "type": "ImageService3",
+                    "profile": "level0",
+                    "sizes": [
+                        {
+                            "width": 867,
+                            "height": 1024
+                        },
+                        {
+                            "width": 339,
+                            "height": 400
+                        },
+                        {
+                            "width": 169,
+                            "height": 200
+                        },
+                        {
+                            "width": 85,
+                            "height": 100
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/c5cb1c6b-7383-436d-ac18-4ed6cbb60a7c/canvas/0",
+            "type": "Canvas",
+            "height": 4546,
+            "width": 3848,
+            "thumbnail": [
+                {
+                    "id": "https://dlc.services/thumbs/v3/7/18/9c7299bd-1292-4e32-9535-cfd097ae8d6b/full/max/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "service": [
+                        {
+                            "@context": "http://iiif.io/api/image/3/context.json",
+                            "id": "https://dlc.services/thumbs/v3/7/18/9c7299bd-1292-4e32-9535-cfd097ae8d6b",
+                            "type": "ImageService3",
+                            "profile": "level0",
+                            "sizes": [
+                                {
+                                    "width": 867,
+                                    "height": 1024
+                                },
+                                {
+                                    "width": 339,
+                                    "height": 400
+                                },
+                                {
+                                    "width": 169,
+                                    "height": 200
+                                },
+                                {
+                                    "width": 85,
+                                    "height": 100
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/c5cb1c6b-7383-436d-ac18-4ed6cbb60a7c/canvas/0/annotation-page",
+                    "type": "AnnotationPage",
+                    "items": [
+                        {
+                            "id": "https://dlc.services/iiif-img/v3/7/18/9c7299bd-1292-4e32-9535-cfd097ae8d6b",
+                            "type": "Annotation",
+                            "motivation": "painting",
+                            "target": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/c5cb1c6b-7383-436d-ac18-4ed6cbb60a7c/canvas/0",
+                            "body": {
+                                "id": "https://dlc.services/iiif-img/v3/7/18/9c7299bd-1292-4e32-9535-cfd097ae8d6b/full/max/0/default.jpg",
+                                "type": "Image",
+                                "format": "image/jpeg",
+                                "height": 4546,
+                                "width": 3848,
+                                "service": [
+                                    {
+                                        "@context": "http://iiif.io/api/image/3/context.json",
+                                        "id": "https://dlc.services/iiif-img/v3/7/18/9c7299bd-1292-4e32-9535-cfd097ae8d6b",
+                                        "type": "ImageService3",
+                                        "profile": "level2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

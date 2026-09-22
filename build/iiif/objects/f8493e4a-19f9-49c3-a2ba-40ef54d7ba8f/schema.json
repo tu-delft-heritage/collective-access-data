@@ -1,0 +1,62 @@
+{
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": "https://heritage.tudelft.nl/iiif/manifests/f8493e4a-19f9-49c3-a2ba-40ef54d7ba8f/schema.json",
+    "name": "Fotoboek deel 2 gebouwen TU Delft",
+    "description": "Deel 2 van een driedelige serie met foto's van oude gebouwen van de TU Delft.\nBouwkunde (7 foto's) Huis Portugal (4 foto's) Werktuig- en Scheepsbouwkunde (15 foto's) Laboratorium voor Aero- en Hydrodynamica (2 foto's) Laboratorium voor toegepaste Mechanica \n(1 foto) De inrichtingen voor het onderwijs in de Mechanische Technologie (2 foto's) Scheepsbouwkunde (7 foto's) Elektrotechniek (8 foto's) Scheikunde (4 foto's).",
+    "identifier": "2006.0019.TMD",
+    "temporalCoverage": "1925/1950",
+    "exampleOfWork": {
+        "@type": "CreativeWork",
+        "name": "Fotoboek"
+    },
+    "material": [
+        {
+            "@type": "Product",
+            "name": "karton",
+            "sameAs": "http://vocab.getty.edu/aat/300014224"
+        },
+        {
+            "@type": "Product",
+            "name": "papier",
+            "sameAs": "http://vocab.getty.edu/aat/300014109"
+        },
+        {
+            "@type": "Product",
+            "name": "fotodrager"
+        },
+        {
+            "@type": "Product",
+            "name": "leer"
+        }
+    ],
+    "height": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 260
+    },
+    "width": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 335
+    },
+    "depth": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 40
+    },
+    "image": {
+        "@type": "ImageObject",
+        "contentUrl": {
+            "@context": "http://iiif.io/api/presentation/3/context.json",
+            "@id": "https://dlc.services/iiif-img/7/18/0711e2fa-84ae-4ff5-acb6-752f65ca9a82",
+            "@type": "Image"
+        },
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/0711e2fa-84ae-4ff5-acb6-752f65ca9a82/full/full/0/default.jpg",
+        "encodingFormat": "https://iiif.io/api/image/3.0/",
+        "caption": "2006.0019.TMD.JPG",
+        "width": 1600,
+        "height": 1200,
+        "position": 1
+    }
+}

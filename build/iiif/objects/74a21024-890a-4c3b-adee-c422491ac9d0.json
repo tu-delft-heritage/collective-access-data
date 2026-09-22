@@ -1,0 +1,222 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/74a21024-890a-4c3b-adee-c422491ac9d0.json",
+    "type": "Manifest",
+    "label": {
+        "nl": [
+            "20x preparaten met handgeschreven Franstalige tekst, waarschijnlijk 19de eeuw"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "20x preparaten met handgeschreven Franstalige tekst, waarschijnlijk 19de eeuw"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Object name"
+                ],
+                "nl": [
+                    "Objectnaam"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "voorwerpglaasje"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Inventory number"
+                ],
+                "nl": [
+                    "Inventarisnummer"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "2024.0074.TNW"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dating"
+                ],
+                "nl": [
+                    "Datering"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1850 – 1900"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Maker"
+                ],
+                "nl": [
+                    "Maker"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "CH Bourgogne (producent)"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Material"
+                ],
+                "nl": [
+                    "Materiaal"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "glas",
+                    "papier"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Kunststof doos met 20 preparaten. Allemaal met handgeschreven Franstalige beschrijvingen. De meeste met fabrikant \"CH Bourgogne Préparateur. Doos met etiquette met getypt tekst \"antieke microscopische preparaten\""
+                ]
+            }
+        }
+    ],
+    "navDate": "1850-01-01T00:00:00.000Z",
+    "thumbnail": [
+        {
+            "id": "https://dlc.services/thumbs/v3/7/18/6b8b33a4-ef8d-44f9-bd1b-af3421fb802d/full/max/0/default.jpg",
+            "type": "Image",
+            "format": "image/jpeg",
+            "service": [
+                {
+                    "@context": "http://iiif.io/api/image/3/context.json",
+                    "id": "https://dlc.services/thumbs/v3/7/18/6b8b33a4-ef8d-44f9-bd1b-af3421fb802d",
+                    "type": "ImageService3",
+                    "profile": "level0",
+                    "sizes": [
+                        {
+                            "width": 1024,
+                            "height": 768
+                        },
+                        {
+                            "width": 400,
+                            "height": 300
+                        },
+                        {
+                            "width": 200,
+                            "height": 150
+                        },
+                        {
+                            "width": 100,
+                            "height": 75
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/74a21024-890a-4c3b-adee-c422491ac9d0/canvas/0",
+            "type": "Canvas",
+            "height": 3024,
+            "width": 4032,
+            "thumbnail": [
+                {
+                    "id": "https://dlc.services/thumbs/v3/7/18/6b8b33a4-ef8d-44f9-bd1b-af3421fb802d/full/max/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "service": [
+                        {
+                            "@context": "http://iiif.io/api/image/3/context.json",
+                            "id": "https://dlc.services/thumbs/v3/7/18/6b8b33a4-ef8d-44f9-bd1b-af3421fb802d",
+                            "type": "ImageService3",
+                            "profile": "level0",
+                            "sizes": [
+                                {
+                                    "width": 1024,
+                                    "height": 768
+                                },
+                                {
+                                    "width": 400,
+                                    "height": 300
+                                },
+                                {
+                                    "width": 200,
+                                    "height": 150
+                                },
+                                {
+                                    "width": 100,
+                                    "height": 75
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/74a21024-890a-4c3b-adee-c422491ac9d0/canvas/0/annotation-page",
+                    "type": "AnnotationPage",
+                    "items": [
+                        {
+                            "id": "https://dlc.services/iiif-img/v3/7/18/6b8b33a4-ef8d-44f9-bd1b-af3421fb802d",
+                            "type": "Annotation",
+                            "motivation": "painting",
+                            "target": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/74a21024-890a-4c3b-adee-c422491ac9d0/canvas/0",
+                            "body": {
+                                "id": "https://dlc.services/iiif-img/v3/7/18/6b8b33a4-ef8d-44f9-bd1b-af3421fb802d/full/max/0/default.jpg",
+                                "type": "Image",
+                                "format": "image/jpeg",
+                                "height": 3024,
+                                "width": 4032,
+                                "service": [
+                                    {
+                                        "@context": "http://iiif.io/api/image/3/context.json",
+                                        "id": "https://dlc.services/iiif-img/v3/7/18/6b8b33a4-ef8d-44f9-bd1b-af3421fb802d",
+                                        "type": "ImageService3",
+                                        "profile": "level2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

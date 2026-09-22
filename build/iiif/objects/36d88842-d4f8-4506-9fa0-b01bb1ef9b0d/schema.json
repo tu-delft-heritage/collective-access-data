@@ -1,0 +1,90 @@
+{
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": "https://heritage.tudelft.nl/iiif/manifests/36d88842-d4f8-4506-9fa0-b01bb1ef9b0d/schema.json",
+    "name": "Gravimeter door Defforges met bijbehorende slinger door Bianchi",
+    "description": "Slingerinstrument samengesteld door Defforges voor zwaartekrachtmeting, is voorzien van een losse manometer. De bijbehorende slinger door Bianchi is in een speciale kist geplaatst. Bij dit instrument behoort een klok (zie ook 2000.0537.GEO) die bedoeld was voor de meting van de slingertijd. De kap ontbreekt, deze is nodig om de zuil vacuüm te zuigen. Zie ook 2000.0900.GEO en 2007.0182.GEO voor testresultaten. Deze combinatie aangeschaft door de Rijkscommissie voor Graadmeting en Waterpassing heeft nooit naar behoren gewerkt en is later door Vening Meinesz vervangen door het door hem ontwikkelde instrument (zie ook 2000.0535.GEO).",
+    "identifier": "2000.0536.GEO",
+    "temporalCoverage": "1875/1910",
+    "exampleOfWork": {
+        "@type": "CreativeWork",
+        "name": "gravimeter",
+        "sameAs": "http://vocab.getty.edu/aat/300197563"
+    },
+    "material": [
+        {
+            "@type": "Product",
+            "name": "ijzer",
+            "sameAs": "http://vocab.getty.edu/aat/300011002"
+        },
+        {
+            "@type": "Product",
+            "name": "koper",
+            "sameAs": "http://vocab.getty.edu/aat/300011020"
+        },
+        {
+            "@type": "Product",
+            "name": "kwik",
+            "sameAs": "http://vocab.getty.edu/aat/300011026"
+        }
+    ],
+    "creator": [
+        {
+            "@type": "Role",
+            "roleName": "maker",
+            "creator": {
+                "@type": "Person",
+                "name": "Defforges"
+            }
+        },
+        {
+            "@type": "Role",
+            "roleName": "maker",
+            "creator": {
+                "@type": "Person",
+                "name": "Bianchi"
+            }
+        }
+    ],
+    "height": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 900
+    },
+    "width": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 680
+    },
+    "depth": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": 380
+    },
+    "isRelatedTo": {
+        "@type": "CreativeWork",
+        "name": "Uurwerk door Strasser & Rohde No. 277",
+        "sameAs": "https://heritage.tudelft.nl/iiif/manifests/686d7823-6545-432a-a5f2-179d95df2f5a/schema.json",
+        "identifier": "2000.0537.GEO"
+    },
+    "image": {
+        "@type": "ImageObject",
+        "contentUrl": {
+            "@context": "http://iiif.io/api/presentation/3/context.json",
+            "@id": "https://dlc.services/iiif-img/7/18/872d6178-d593-4b61-8f1e-06c941eb7b57",
+            "@type": "Image"
+        },
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/872d6178-d593-4b61-8f1e-06c941eb7b57/full/full/0/default.jpg",
+        "encodingFormat": "https://iiif.io/api/image/3.0/",
+        "caption": "2000.0536.GEO.jpg",
+        "width": 1600,
+        "height": 1200,
+        "position": 3105
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",
+            "@type": "Collection"
+        }
+    ]
+}
