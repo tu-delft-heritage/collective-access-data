@@ -45,6 +45,16 @@ describe("OAI XML cache", () => {
       fetcher,
       useCache: true,
     });
+    const snapshotPath = join(
+      directory,
+      "collective-access",
+      "objects.json",
+    );
+    expect(JSON.parse(await fs.readFile(snapshotPath, "utf8"))).toEqual(
+      first.records,
+    );
+    await fs.writeFile(snapshotPath, "[]", "utf8");
+
     const second = await fetchRecords("objects", {
       cacheDirectory: directory,
       fetcher,
@@ -56,6 +66,9 @@ describe("OAI XML cache", () => {
     expect(second.records).toEqual(first.records);
     expect(second.usedCachedResponse).toBe(true);
     expect(fetchCount).toBe(1);
+    expect(JSON.parse(await fs.readFile(snapshotPath, "utf8"))).toEqual(
+      second.records,
+    );
     const cachedFiles = await fs.readdir(
       join(directory, "collective-access", "xml"),
     );

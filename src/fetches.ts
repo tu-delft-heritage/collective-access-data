@@ -78,6 +78,16 @@ async function writeCachedXml(path: string, xml: string) {
   await fs.writeFile(path, xml, "utf8");
 }
 
+async function writeRecordsSnapshot(
+  type: string,
+  records: readonly unknown[],
+  directory: string,
+) {
+  const path = join(directory, "collective-access", `${type}.json`);
+  await fs.mkdir(dirname(path), { recursive: true });
+  await fs.writeFile(path, `${JSON.stringify(records, null, 2)}\n`, "utf8");
+}
+
 export async function fetchXML(
   type: string = "objects",
   resumptionToken: string | undefined = undefined,
@@ -196,6 +206,11 @@ export async function fetchRecords(
     page++;
   }
 
+  await writeRecordsSnapshot(
+    type,
+    records,
+    normalizedOptions.cacheDirectory ?? cacheDir,
+  );
   console.log(`${records.length} ${type} fetched`);
   return { records, usedCachedResponse };
 }

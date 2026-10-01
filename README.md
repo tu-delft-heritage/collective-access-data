@@ -27,7 +27,7 @@ bun run index.ts generate --help
 
 ## Caching
 
-The generator caches each raw OAI XML response under `.cache/collective-access/xml` using the complete request URL as its cache key. DLCS image information remains cached under `.cache/dlcs`.
+The generator caches each raw OAI XML response under `.cache/collective-access/xml` using the complete request URL as its cache key. After a complete harvest, it also writes the parsed records to `.cache/collective-access/objects.json` and `.cache/collective-access/collections.json` for troubleshooting. These readable JSON snapshots are always regenerated from the XML harvest and are never used as cache inputs. DLCS image information remains cached under `.cache/dlcs`.
 
 Use `--no-cache` when the source has changed and a fresh response is required:
 
