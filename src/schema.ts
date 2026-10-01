@@ -17,7 +17,10 @@ const SchemaImageObject = z.preprocess(
     caption: z.string().optional(),
     width: z.coerce.number(),
     height: z.coerce.number(),
-    position: z.preprocess((val: string | undefined) => val ? val.split(";")[0] : 0, z.coerce.number()),
+    position: z.preprocess(
+      (val: string | undefined) => (val ? val.split(";")[0] : 0),
+      z.coerce.number(),
+    ),
   }),
 );
 
@@ -180,13 +183,28 @@ export const SchemaMetadata = z.preprocess(
     height: SchemaQuantitativeValue,
     width: SchemaQuantitativeValue,
     depth: SchemaQuantitativeValue,
-    citation: z.preprocess((val) => {
-      if (Array.isArray(val)) {
-        return val.filter((i) => i && typeof i === "string");
-      } else if (typeof val === "string") {
-        return val;
-      } else return undefined;
-    }, z.array(z.string()).or(z.string()).optional()),
+    citation: z
+      .preprocess(
+        (val) => {
+          // Remove undefined and convert string values to objects
+          const convertString = (value: any) => {
+            if (typeof value === "string") {
+              return {
+                CreativeWork: {
+                  name: value,
+                },
+              };
+            } else return value;
+          };
+          if (Array.isArray(val)) {
+            return val.filter(Boolean).map(convertString);
+          } else return convertString(val);
+        },
+        z
+          .array(SchemaEntity)
+          .or(SchemaEntity),
+      )
+      .optional(),
     isRelatedTo: SchemaEntity.or(z.array(SchemaEntity)).optional(),
     isPartOf: SchemaCollectionReference.or(
       z.array(SchemaCollectionReference),

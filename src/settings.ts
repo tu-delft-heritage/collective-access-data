@@ -216,7 +216,7 @@ export const objectMapping = [
     },
     getValue: (metadata: SchemaMetadata) => {
       if (metadata.citation) {
-        return getValueAsArray(metadata.citation);
+        return getValueAsArray(metadata.citation).map(value => value.name)
       }
     },
   },
