@@ -51,7 +51,15 @@
         "value": 205
     },
     "citation": [
-        "Stampfer, S., \"Theoret. u. prakt. Anleitung zum Nivelliren: Mit einem Anhange üb. d. Ausstecken u. Kreisbogen\", Wien: C. Gerold, 1877, p.38 fig.17."
+        {
+            "@type": "CreativeWork",
+            "name": "Stampfer, S., \"Theoret. u. prakt. Anleitung zum Nivelliren: Mit einem Anhange üb. d. Ausstecken u. Kreisbogen\", Wien: C. Gerold, 1877, p.38 fig.17."
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Theoret. u. prakt. Anleitung zum Nivelliren : Mit einem Anhange üb. d. Ausstecken u. Kreisbogen, S. Stampfer, 1877",
+            "sameAs": "https://tudelft.on.worldcat.org/oclc/162271259"
+        }
     ],
     "image": {
         "@type": "ImageObject",

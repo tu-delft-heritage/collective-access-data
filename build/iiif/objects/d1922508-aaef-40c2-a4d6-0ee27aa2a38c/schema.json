@@ -67,9 +67,18 @@
         "value": 380
     },
     "citation": [
-        "Bogaerts M.J.M., \"A self-reducing range-finder with an automatic registration system\", Delft: Meinema, 1969.",
-        "\"Een vergelijkend onderzoek tussen de meetlijnenmethode en de voerstraatmethode in vlak land. (Proef Dinther-Suawoude) Automatisering bij de voerstraalmethode. Voordrachten gehouden op de Geodetische Studiedag der Nederlandse Landmeetkundige Federatie\", Delft, 20 mei 1966.",
-        "Witt, G.F., \"Automatisering bij de verwerking van waarnemingen, verkregen met optische afstandmeters\", in: Tijdschrift voor Kadaster en Landmeetkunde, 1, 1965."
+        {
+            "@type": "CreativeWork",
+            "name": "Bogaerts M.J.M., \"A self-reducing range-finder with an automatic registration system\", Delft: Meinema, 1969."
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "\"Een vergelijkend onderzoek tussen de meetlijnenmethode en de voerstraatmethode in vlak land. (Proef Dinther-Suawoude) Automatisering bij de voerstraalmethode. Voordrachten gehouden op de Geodetische Studiedag der Nederlandse Landmeetkundige Federatie\", Delft, 20 mei 1966."
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Witt, G.F., \"Automatisering bij de verwerking van waarnemingen, verkregen met optische afstandmeters\", in: Tijdschrift voor Kadaster en Landmeetkunde, 1, 1965."
+        }
     ],
     "isRelatedTo": [
         {

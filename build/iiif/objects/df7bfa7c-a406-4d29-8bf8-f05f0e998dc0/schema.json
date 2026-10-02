@@ -62,7 +62,10 @@
         "unitCode": "MMT",
         "value": 180
     },
-    "citation": "Haasbroek, N.D., \"Geodesie: Planimeters\", TH Delft, Afdeling Geodesie, 1957.",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Haasbroek, N.D., \"Geodesie: Planimeters\", TH Delft, Afdeling Geodesie, 1957."
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

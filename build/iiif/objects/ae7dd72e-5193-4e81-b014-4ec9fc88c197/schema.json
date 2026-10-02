@@ -50,7 +50,10 @@
         "unitCode": "MMT",
         "value": 65
     },
-    "citation": "Er is een ijkverklaring",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Er is een ijkverklaring"
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

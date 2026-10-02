@@ -49,7 +49,15 @@
         "@type": "QuantitativeValue"
     },
     "citation": [
-        "H. Baudet, \"De lange weg naar de Technische Universiteit Delft\", Den Haag, 1992, p. 421."
+        {
+            "@type": "CreativeWork",
+            "name": "H. Baudet, \"De lange weg naar de Technische Universiteit Delft\", Den Haag, 1992, p. 421."
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "De lange weg naar de Technische Universiteit Delft, H. Baudet, 1992",
+            "sameAs": "https://tudelft.on.worldcat.org/oclc/843427881"
+        }
     ],
     "isRelatedTo": {
         "@type": "CreativeWork",

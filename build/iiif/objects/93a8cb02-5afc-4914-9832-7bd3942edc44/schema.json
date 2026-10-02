@@ -64,8 +64,24 @@
         "value": 240
     },
     "citation": [
-        "Moinot, I., \"Levés de plans à la stadia: notes pratiques pour études de traces\", 2e druk, Périgueux, 1874.",
-        "Buysman, H.J., \"Landmeten En Waterpassen\" 2e druk, Haarlem: Bohn, 1921."
+        {
+            "@type": "CreativeWork",
+            "name": "Moinot, I., \"Levés de plans à la stadia: notes pratiques pour études de traces\", 2e druk, Périgueux, 1874."
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Buysman, H.J., \"Landmeten En Waterpassen\" 2e druk, Haarlem: Bohn, 1921."
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Landmeten en waterpassen, H.J. Buysman, 1921",
+            "sameAs": "https://tudelft.on.worldcat.org/oclc/1308785000"
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Levés de plans à la stadia : notes pratiques pour études de tracés, I. Moinot, 1874",
+            "sameAs": "https://tudelft.on.worldcat.org/oclc/907712363"
+        }
     ],
     "isRelatedTo": {
         "@type": "CreativeWork",

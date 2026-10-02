@@ -52,7 +52,10 @@
         "unitCode": "MMT",
         "value": 60
     },
-    "citation": "Publicaties NCG",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Publicaties NCG"
+    },
     "isRelatedTo": {
         "@type": "CreativeWork",
         "name": "Bronzen NAP bout",

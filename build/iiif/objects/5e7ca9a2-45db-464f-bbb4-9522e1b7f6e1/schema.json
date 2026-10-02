@@ -58,7 +58,15 @@
         "value": 300
     },
     "citation": [
-        "Borda, Jean-Charles de, \"Description et usage du cercle de réflexion: avec différentes méthodes pour calculer les observations nautiques\", Paris: Didot, 1816."
+        {
+            "@type": "CreativeWork",
+            "name": "Borda, Jean-Charles de, \"Description et usage du cercle de réflexion: avec différentes méthodes pour calculer les observations nautiques\", Paris: Didot, 1816."
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Description et usage du cercle de réflexion, avec différentes méthodes pour calculer les observations nautiques, par le chevalier de Borda .., Jean-Charles Borda, 1816",
+            "sameAs": "https://tudelft.on.worldcat.org/oclc/457100745"
+        }
     ],
     "isRelatedTo": {
         "@type": "CreativeWork",

@@ -63,7 +63,10 @@
         "unitCode": "MMT",
         "value": 225
     },
-    "citation": "Rijkscommissie van Graadmeting en Waterpassing (NCG)",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Rijkscommissie van Graadmeting en Waterpassing (NCG)"
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

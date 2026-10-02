@@ -56,7 +56,10 @@
         "unitCode": "CMT",
         "value": 29.5
     },
-    "citation": "NCG",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "NCG"
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

@@ -52,7 +52,10 @@
         "unitCode": "MMT",
         "value": 23
     },
-    "citation": "http://www.antiquetools.com/levels/davistallform.html",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "http://www.antiquetools.com/levels/davistallform.html"
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

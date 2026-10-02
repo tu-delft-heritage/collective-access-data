@@ -61,7 +61,10 @@
         "unitCode": "MMT",
         "value": 60
     },
-    "citation": "C.M. Schols. Landmeten en Waterpassen Atlas (achtste druk) fig 92a en 92b",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "C.M. Schols. Landmeten en Waterpassen Atlas (achtste druk) fig 92a en 92b"
+    },
     "isRelatedTo": {
         "@type": "CreativeWork",
         "name": "Spiegelinstrument door J. Raschke",

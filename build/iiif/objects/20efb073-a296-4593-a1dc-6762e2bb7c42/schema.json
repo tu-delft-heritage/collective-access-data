@@ -46,7 +46,10 @@
         "unitCode": "MMT",
         "value": 70
     },
-    "citation": "NCG publicaties",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "NCG publicaties"
+    },
     "isRelatedTo": {
         "@type": "CreativeWork",
         "name": "Eikenhouten piket",

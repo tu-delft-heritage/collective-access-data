@@ -51,7 +51,10 @@
         "unitCode": "MMT",
         "value": 20
     },
-    "citation": "NCG publicaties",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "NCG publicaties"
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

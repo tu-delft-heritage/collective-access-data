@@ -66,8 +66,14 @@
         "value": 230
     },
     "citation": [
-        "Zie voor referenties, het documentatieveld bij 2000.0085.GEO",
-        "Haasbroek, N.D., \"Geodesie: Planimeters\", TH Delft, Afdeling Geodesie, 1957."
+        {
+            "@type": "CreativeWork",
+            "name": "Zie voor referenties, het documentatieveld bij 2000.0085.GEO"
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Haasbroek, N.D., \"Geodesie: Planimeters\", TH Delft, Afdeling Geodesie, 1957."
+        }
     ],
     "image": {
         "@type": "ImageObject",

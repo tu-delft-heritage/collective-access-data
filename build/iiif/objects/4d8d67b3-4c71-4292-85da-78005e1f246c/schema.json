@@ -63,7 +63,10 @@
         "unitCode": "MMT",
         "value": 310
     },
-    "citation": "Rijkscommissie van Graadmeting en Waterpassing (thans NCG)",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Rijkscommissie van Graadmeting en Waterpassing (thans NCG)"
+    },
     "isRelatedTo": {
         "@type": "CreativeWork",
         "name": "Theodoliet door Julius Wanschaff type W21 nr 6",

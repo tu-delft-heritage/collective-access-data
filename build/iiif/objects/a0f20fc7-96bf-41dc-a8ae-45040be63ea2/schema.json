@@ -43,7 +43,10 @@
         "unitCode": "MMT",
         "value": 350
     },
-    "citation": "NCG publicaties",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "NCG publicaties"
+    },
     "isRelatedTo": {
         "@type": "CreativeWork",
         "name": "Gravimeter door Van Rest",

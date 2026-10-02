@@ -47,8 +47,14 @@
         "value": 195
     },
     "citation": [
-        "Zeitschrift für Vermessungskunde 1888 blz 162 Die Planimeter Coradi 1912 blz 18 e.v.zie ook fig 17. Het beschreven model is enigszins afwijkend van die van fig. 17.",
-        "Haasbroek, N.D., \"Geodesie: Planimeters\", TH Delft, Afdeling Geodesie, 1957."
+        {
+            "@type": "CreativeWork",
+            "name": "Zeitschrift für Vermessungskunde 1888 blz 162 Die Planimeter Coradi 1912 blz 18 e.v.zie ook fig 17. Het beschreven model is enigszins afwijkend van die van fig. 17."
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Haasbroek, N.D., \"Geodesie: Planimeters\", TH Delft, Afdeling Geodesie, 1957."
+        }
     ],
     "isRelatedTo": {
         "@type": "CreativeWork",

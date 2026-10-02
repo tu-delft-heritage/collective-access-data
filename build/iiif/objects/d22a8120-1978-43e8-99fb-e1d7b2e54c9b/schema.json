@@ -61,7 +61,10 @@
         "unitCode": "MMT",
         "value": 243
     },
-    "citation": "Documentatie TMD",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Documentatie TMD"
+    },
     "isRelatedTo": [
         {
             "@type": "CreativeWork",

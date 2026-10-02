@@ -57,7 +57,10 @@
         "unitCode": "MMT",
         "value": 40
     },
-    "citation": "W. Schermerhorn & H.J. van Steenis. Leerboek der Landmeetkunde derde druk blz 133",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "W. Schermerhorn & H.J. van Steenis. Leerboek der Landmeetkunde derde druk blz 133"
+    },
     "isRelatedTo": {
         "@type": "CreativeWork",
         "name": "Pentagoonprisma door Kern & Co. AG",

@@ -55,7 +55,10 @@
         "unitCode": "MMT",
         "value": 410
     },
-    "citation": "Schermerhorn & van Steenis. Leerboek der Landmeetkunde hoofdstuk XX.",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Schermerhorn & van Steenis. Leerboek der Landmeetkunde hoofdstuk XX."
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

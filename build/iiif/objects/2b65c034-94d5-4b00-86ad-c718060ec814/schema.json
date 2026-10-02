@@ -56,7 +56,10 @@
         "unitCode": "CMT",
         "value": 32.5
     },
-    "citation": "Scriptie naar aanleiding van een opdracht tot vervaardiging van een model van de Askania-Zeegravimeter Gss 2.",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Scriptie naar aanleiding van een opdracht tot vervaardiging van een model van de Askania-Zeegravimeter Gss 2."
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

@@ -52,7 +52,10 @@
         "unitCode": "MMT",
         "value": 165
     },
-    "citation": "Automatisch Waterpasinstrument Ni 007 aus Jena",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Automatisch Waterpasinstrument Ni 007 aus Jena"
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

@@ -58,7 +58,10 @@
         "unitCode": "MMT",
         "value": 200
     },
-    "citation": "Publicaties Nederlandse Commissie voor Geodesie.",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Publicaties Nederlandse Commissie voor Geodesie."
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

@@ -52,7 +52,10 @@
         "unitCode": "MMT",
         "value": 210
     },
-    "citation": "http://www.profsurv.com/ps_scripts/article.idc?id=107",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "http://www.profsurv.com/ps_scripts/article.idc?id=107"
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

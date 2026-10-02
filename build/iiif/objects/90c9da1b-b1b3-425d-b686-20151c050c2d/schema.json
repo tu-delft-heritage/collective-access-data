@@ -43,7 +43,10 @@
         "unitCode": "MMT",
         "value": 430
     },
-    "citation": "zie NCG publicaties",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "zie NCG publicaties"
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

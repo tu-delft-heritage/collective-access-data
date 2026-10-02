@@ -53,8 +53,14 @@
         "value": 200
     },
     "citation": [
-        "Kerkwijk, G.A. van, \"Geodesie, Voor De Kadetten Van Alle Wapenen\" , Breda: Van Broese, 1860, pp.196-199.",
-        "Schols, C.M., \"Landmeten en Waterpassen\", Breda: K.M.A., 1899, tekstband p.20, atlasband fig.169."
+        {
+            "@type": "CreativeWork",
+            "name": "Kerkwijk, G.A. van, \"Geodesie, Voor De Kadetten Van Alle Wapenen\" , Breda: Van Broese, 1860, pp.196-199."
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Schols, C.M., \"Landmeten en Waterpassen\", Breda: K.M.A., 1899, tekstband p.20, atlasband fig.169."
+        }
     ],
     "image": {
         "@type": "ImageObject",

@@ -57,7 +57,10 @@
         "unitCode": "MMT",
         "value": 150
     },
-    "citation": "Zeitschrift für Instrumenten. November 1928 blz 559-561",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Zeitschrift für Instrumenten. November 1928 blz 559-561"
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

@@ -62,7 +62,10 @@
         "unitCode": "MMT",
         "value": 50
     },
-    "citation": "http://www.g.coradi.com/",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "http://www.g.coradi.com/"
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

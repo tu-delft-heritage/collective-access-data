@@ -53,9 +53,18 @@
         "value": 384
     },
     "citation": [
-        "Zeitschrift für Vermessung 1888 blz 176.",
-        "J.Y. Wheatley, \"The polar planimeter and its use in engineering calculations...\", 1903 [zie online referentie]",
-        "Haasbroek, N.D., \"Geodesie: Planimeters\", TH Delft, Afdeling Geodesie, 1957."
+        {
+            "@type": "CreativeWork",
+            "name": "Zeitschrift für Vermessung 1888 blz 176."
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "J.Y. Wheatley, \"The polar planimeter and its use in engineering calculations...\", 1903 [zie online referentie]"
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Haasbroek, N.D., \"Geodesie: Planimeters\", TH Delft, Afdeling Geodesie, 1957."
+        }
     ],
     "image": {
         "@type": "ImageObject",

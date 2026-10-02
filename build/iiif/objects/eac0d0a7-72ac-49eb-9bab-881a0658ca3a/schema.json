@@ -39,8 +39,14 @@
         "value": 40
     },
     "citation": [
-        "C.M. Schols. Landmeten en waterpassen 5e druk 1894 blz 171 t/m 173 en de bijbehorende atlas (1895) plaat 12 fig 110.",
-        "Jan Stehouwer, \"De transformateur\", in: De Hollandse Cirkel, jaargang 11, nr. 3, september 2011, p. 95"
+        {
+            "@type": "CreativeWork",
+            "name": "C.M. Schols. Landmeten en waterpassen 5e druk 1894 blz 171 t/m 173 en de bijbehorende atlas (1895) plaat 12 fig 110."
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Jan Stehouwer, \"De transformateur\", in: De Hollandse Cirkel, jaargang 11, nr. 3, september 2011, p. 95"
+        }
     ],
     "image": {
         "@type": "ImageObject",

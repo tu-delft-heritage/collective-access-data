@@ -46,9 +46,28 @@
         "value": 140
     },
     "citation": [
-        "Pouls, H.C., \"De landmeter: inleiding in de geschiedenis van de Nederlandse landmeetkunde van de Romeinse tot de Franse tijd\", Alphen aan de Rijn: Canaletto/Repro-Holland, 1997, pp.279-280 en pp.347-348.",
-        "Onderdewijngaart Canzius, J.H. (Delft), \"Catalogus van mathematische, physische, anatomische, chirurgische en andere instrumenten, te bekomen in de fabricq van Mr. J.h. Onderdewyngaart Canzius. s.n\", 1804.",
-        "Waalewijn, A., \"Drie eeuwen Normaal Amsterdams Peil\", Rijkswaterstaat-Serie, 's-Gravenhage, 1987."
+        {
+            "@type": "CreativeWork",
+            "name": "Pouls, H.C., \"De landmeter: inleiding in de geschiedenis van de Nederlandse landmeetkunde van de Romeinse tot de Franse tijd\", Alphen aan de Rijn: Canaletto/Repro-Holland, 1997, pp.279-280 en pp.347-348."
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Onderdewijngaart Canzius, J.H. (Delft), \"Catalogus van mathematische, physische, anatomische, chirurgische en andere instrumenten, te bekomen in de fabricq van Mr. J.h. Onderdewyngaart Canzius. s.n\", 1804."
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Waalewijn, A., \"Drie eeuwen Normaal Amsterdams Peil\", Rijkswaterstaat-Serie, 's-Gravenhage, 1987."
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "J.H. Onderdewijngaart Canzius, instrument manufacturer and museum director, Peter de Clercq, 1996",
+            "sameAs": "https://tudelft.on.worldcat.org/oclc/812892909"
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Drie eeuwen Normaal Amsterdams Peil, A. Waalewijn, 1987",
+            "sameAs": "https://tudelft.on.worldcat.org/oclc/64499555"
+        }
     ],
     "image": {
         "@type": "ImageObject",

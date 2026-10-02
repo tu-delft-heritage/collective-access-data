@@ -53,7 +53,10 @@
         "unitCode": "MMT",
         "value": 150
     },
-    "citation": "Haupt Catalog 1904 Ludwig Tesdorpf blz. 29",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Haupt Catalog 1904 Ludwig Tesdorpf blz. 29"
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

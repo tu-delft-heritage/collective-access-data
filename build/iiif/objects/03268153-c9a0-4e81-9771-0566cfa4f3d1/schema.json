@@ -51,7 +51,10 @@
         "unitCode": "MMT",
         "value": 680
     },
-    "citation": "zie NCG publicaties de film en de koffer 2000900.",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "zie NCG publicaties de film en de koffer 2000900."
+    },
     "isRelatedTo": [
         {
             "@type": "CreativeWork",

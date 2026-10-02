@@ -60,7 +60,10 @@
         "unitCode": "MMT",
         "value": 900
     },
-    "citation": "Z.A. Description of Aga geodimeter type NASM-1 Bergstrand system.",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Z.A. Description of Aga geodimeter type NASM-1 Bergstrand system."
+    },
     "isRelatedTo": [
         {
             "@type": "CreativeWork",
