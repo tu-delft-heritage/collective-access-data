@@ -52,20 +52,6 @@
         "unitCode": "MMT",
         "value": 240
     },
-    "citation": [
-        {
-            "@type": "CreativeWork",
-            "name": "J.Y. Wheatley, \"The polar planimeter and its use in engineering calculations...\", 1903"
-        },
-        {
-            "@type": "CreativeWork",
-            "name": "Zwitsers patent CH7303, Duits patent DE74288"
-        },
-        {
-            "@type": "CreativeWork",
-            "name": "Haasbroek, N.D., \"Geodesie: Planimeters\", TH Delft, Afdeling Geodesie, 1957."
-        }
-    ],
     "image": {
         "@type": "ImageObject",
         "contentUrl": {
@@ -79,5 +65,11 @@
         "width": 1600,
         "height": 1200,
         "position": 2868
-    }
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",
+            "@type": "Collection"
+        }
+    ]
 }

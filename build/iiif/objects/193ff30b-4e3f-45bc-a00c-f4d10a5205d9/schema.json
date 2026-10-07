@@ -38,10 +38,6 @@
         "unitCode": "MMT",
         "value": 300
     },
-    "citation": {
-        "@type": "CreativeWork",
-        "name": "http://www.faculty.fairfield.edu/jmac/sj/scientists/scheiner.htm Wybter &Turner"
-    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {
@@ -55,5 +51,11 @@
         "width": 1600,
         "height": 1200,
         "position": 2857
-    }
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",
+            "@type": "Collection"
+        }
+    ]
 }

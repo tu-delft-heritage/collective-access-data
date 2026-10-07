@@ -58,21 +58,11 @@
         "unitCode": "MMT",
         "value": 460
     },
-    "citation": [
-        {
-            "@type": "CreativeWork",
-            "name": "Ermert, Jürgen, and Christian Pfeiffer-Belli, \"Präzisionspendeluhren 3 in Deutschland von 1730 Bis 1940\", Grevenbroich: JE-Verlag, 2013, pp 282-288."
-        },
-        {
-            "@type": "CreativeWork",
-            "name": "Nationaal Archief, Den Haag, Rijkscommissie voor Geodesie en taakvoorganger Rijkscommissie voor Geodesie, nummer toegang 2.14.120, inventarisnummer 195."
-        },
-        {
-            "@type": "CreativeWork",
-            "name": "Präzisionspendeluhren : in Deutschland von 1730 bis 1940 : Observatorien, Astronomen, Zeitdienststellen und ihre Uhren, Jürgen Ermert, 2013",
-            "sameAs": "https://tudelft.on.worldcat.org/oclc/1040857162"
-        }
-    ],
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Präzisionspendeluhren : in Deutschland von 1730 bis 1940 : Observatorien, Astronomen, Zeitdienststellen und ihre Uhren, Jürgen Ermert, 2013",
+        "sameAs": "https://tudelft.on.worldcat.org/oclc/1040857162"
+    },
     "isRelatedTo": {
         "@type": "CreativeWork",
         "name": "Uurwerk door Strasser & Rohde No. 277",
@@ -92,5 +82,11 @@
         "width": 1600,
         "height": 1200,
         "position": 3204
-    }
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",
+            "@type": "Collection"
+        }
+    ]
 }

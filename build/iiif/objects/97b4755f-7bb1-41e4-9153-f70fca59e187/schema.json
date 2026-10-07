@@ -48,17 +48,11 @@
         "unitCode": "MMT",
         "value": 160
     },
-    "citation": [
-        {
-            "@type": "CreativeWork",
-            "name": "De referentie verwijst naar een artikel in Der Mechaniker (1904), waarin het patent DRGM 226817 \"Universalglastafel naar Heptner patent\" vermeld staat."
-        },
-        {
-            "@type": "CreativeWork",
-            "name": "Der Mechaniker Zeitschrift zur Förderung der Präzisionsmechanik und Optik sowie verwandter Gebiete, , 1893",
-            "sameAs": "https://tudelft.on.worldcat.org/oclc/631722316"
-        }
-    ],
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Der Mechaniker Zeitschrift zur Förderung der Präzisionsmechanik und Optik sowie verwandter Gebiete, , 1893",
+        "sameAs": "https://tudelft.on.worldcat.org/oclc/631722316"
+    },
     "isRelatedTo": {
         "@type": "CreativeWork",
         "name": "Grafische planimeter van glas",
@@ -78,5 +72,11 @@
         "width": 1600,
         "height": 1200,
         "position": 3256
-    }
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",
+            "@type": "Collection"
+        }
+    ]
 }

@@ -48,10 +48,6 @@
     "citation": [
         {
             "@type": "CreativeWork",
-            "name": "Wetering M. van der, 'Studenten streden en leden', in: Delta, nummer 64, pagina 16, 1995."
-        },
-        {
-            "@type": "CreativeWork",
             "name": "De lange weg naar de Technische Universiteit Delft. 1. De Delftse ingenieursschool en haar voorgeschiedenis, H. Baudet, 1992",
             "sameAs": "https://tudelft.on.worldcat.org/oclc/839739559"
         },
@@ -94,5 +90,11 @@
         "width": 1600,
         "height": 1200,
         "position": 10650
-    }
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/7b35ae59-1507-447a-a9ac-4641a7bf24b1.json",
+            "@type": "Collection"
+        }
+    ]
 }

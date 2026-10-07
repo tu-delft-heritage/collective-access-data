@@ -39,10 +39,6 @@
         "unitCode": "MMT",
         "value": 40
     },
-    "citation": {
-        "@type": "CreativeWork",
-        "name": "Jaarverslagen Nederlandse Commissie voor Geodesie (NCG) vanaf 1906.\n\n L. Aardoom, Over het drie-slingertoestel van professor F.A. Vening Meinesz De Hollandse Cirkel 2007-3 p. 91"
-    },
     "isRelatedTo": [
         {
             "@type": "CreativeWork",
@@ -82,5 +78,11 @@
         "width": 1600,
         "height": 1200,
         "position": 9116
-    }
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",
+            "@type": "Collection"
+        }
+    ]
 }

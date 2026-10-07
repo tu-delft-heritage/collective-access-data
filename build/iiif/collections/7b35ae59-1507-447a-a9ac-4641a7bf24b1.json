@@ -285,6 +285,26 @@
             "navDate": "1916-01-01T00:00:00.000Z"
         },
         {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/215f5072-1dc9-42a2-812c-a4dc1d638b3f.json",
+            "type": "Manifest",
+            "label": {
+                "nl": [
+                    "Delfts blauwe vaas met ronde deksel"
+                ]
+            },
+            "navDate": "1880-01-01T00:00:00.000Z"
+        },
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/5cf522b7-b5b8-4d0c-922e-74abd3bb560e.json",
+            "type": "Manifest",
+            "label": {
+                "nl": [
+                    "Delfts blauwe vaas met achtkantige deksel"
+                ]
+            },
+            "navDate": "1880-01-01T00:00:00.000Z"
+        },
+        {
             "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/a279ba87-afcc-4020-919f-71a52dd08bfd.json",
             "type": "Manifest",
             "label": {

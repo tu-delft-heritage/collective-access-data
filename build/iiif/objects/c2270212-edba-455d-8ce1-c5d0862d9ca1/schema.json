@@ -56,17 +56,11 @@
         "unitCode": "MMT",
         "value": 65
     },
-    "citation": [
-        {
-            "@type": "CreativeWork",
-            "name": "Zinner, Ernst, \"Deutsche und niederländische astronomische Instrumente des 11.-18. Jahrhunderts\", München: C.H. Beck'sche Verlagsbuchhandlung, 1967, pp.454-455."
-        },
-        {
-            "@type": "CreativeWork",
-            "name": "Deutsche und niederländische astronomische Instrumente des 11.-18. Jahrhunderts, Ernst Zinner, 1979",
-            "sameAs": "https://tudelft.on.worldcat.org/oclc/635822777"
-        }
-    ],
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Deutsche und niederländische astronomische Instrumente des 11.-18. Jahrhunderts, Ernst Zinner, 1979",
+        "sameAs": "https://tudelft.on.worldcat.org/oclc/635822777"
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {
@@ -80,5 +74,11 @@
         "width": 1600,
         "height": 1200,
         "position": 2738
-    }
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",
+            "@type": "Collection"
+        }
+    ]
 }

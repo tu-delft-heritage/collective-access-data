@@ -52,17 +52,11 @@
     "depth": {
         "@type": "QuantitativeValue"
     },
-    "citation": [
-        {
-            "@type": "CreativeWork",
-            "name": "Aanbieding portret wordt vermeld in: \"Jaarboek van de Technische Hoogeschool te Delft\", 1916-1917, p.40."
-        },
-        {
-            "@type": "CreativeWork",
-            "name": "Jaarboek van de Technische Hoogeschool te Delft. Uitgegeven door den Senaat in September 1940 [etc.], Technische Hogeschool te Delft (DELFT), 1940",
-            "sameAs": "https://tudelft.on.worldcat.org/oclc/560125591"
-        }
-    ],
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Jaarboek van de Technische Hoogeschool te Delft. Uitgegeven door den Senaat in September 1940 [etc.], Technische Hogeschool te Delft (DELFT), 1940",
+        "sameAs": "https://tudelft.on.worldcat.org/oclc/560125591"
+    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {
@@ -76,5 +70,11 @@
         "width": 1600,
         "height": 1200,
         "position": 9016
-    }
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/7b35ae59-1507-447a-a9ac-4641a7bf24b1.json",
+            "@type": "Collection"
+        }
+    ]
 }

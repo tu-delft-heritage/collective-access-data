@@ -38,16 +38,6 @@
         "unitCode": "MMT",
         "value": 40
     },
-    "citation": [
-        {
-            "@type": "CreativeWork",
-            "name": "C.M. Schols. Landmeten en waterpassen 5e druk 1894 blz 171 t/m 173 en de bijbehorende atlas (1895) plaat 12 fig 110."
-        },
-        {
-            "@type": "CreativeWork",
-            "name": "Jan Stehouwer, \"De transformateur\", in: De Hollandse Cirkel, jaargang 11, nr. 3, september 2011, p. 95"
-        }
-    ],
     "image": {
         "@type": "ImageObject",
         "contentUrl": {
@@ -61,5 +51,11 @@
         "width": 1600,
         "height": 1200,
         "position": 2774
-    }
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",
+            "@type": "Collection"
+        }
+    ]
 }

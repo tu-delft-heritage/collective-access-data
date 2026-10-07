@@ -57,10 +57,6 @@
         "unitCode": "MMT",
         "value": 210
     },
-    "citation": {
-        "@type": "CreativeWork",
-        "name": "http://www.dvw-bayern.de/mitteilungsblatt/einzelbeitraege/heft1_2003/wild_1_2003.pdf blz 55 en 56"
-    },
     "isRelatedTo": {
         "@type": "CreativeWork",
         "name": "Uitklapbare verticale E baak",
@@ -80,5 +76,11 @@
         "width": 1600,
         "height": 1200,
         "position": 2839
-    }
+    },
+    "isPartOf": [
+        {
+            "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",
+            "@type": "Collection"
+        }
+    ]
 }
