@@ -57,20 +57,36 @@
         "unitCode": "MMT",
         "value": 170
     },
-    "image": {
-        "@type": "ImageObject",
-        "contentUrl": {
-            "@context": "http://iiif.io/api/presentation/3/context.json",
-            "@id": "https://dlc.services/iiif-img/7/18/dbc26f2f-a10d-41dd-a3ff-72e3000301b5",
-            "@type": "Image"
+    "image": [
+        {
+            "@type": "ImageObject",
+            "contentUrl": {
+                "@context": "http://iiif.io/api/presentation/3/context.json",
+                "@id": "https://dlc.services/iiif-img/7/18/dbc26f2f-a10d-41dd-a3ff-72e3000301b5",
+                "@type": "Image"
+            },
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/dbc26f2f-a10d-41dd-a3ff-72e3000301b5/full/full/0/default.jpg",
+            "encodingFormat": "https://iiif.io/api/image/3.0/",
+            "caption": "2000.0345.GEO.a.jpg",
+            "width": 1600,
+            "height": 1200,
+            "position": 3400
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/dbc26f2f-a10d-41dd-a3ff-72e3000301b5/full/full/0/default.jpg",
-        "encodingFormat": "https://iiif.io/api/image/3.0/",
-        "caption": "2000.0345.GEO.a.jpg",
-        "width": 1600,
-        "height": 1200,
-        "position": 3400
-    },
+        {
+            "@type": "ImageObject",
+            "contentUrl": {
+                "@context": "http://iiif.io/api/presentation/3/context.json",
+                "@id": "https://dlc.services/iiif-img/7/18/a1b1c035-6a91-4675-9b0d-aff44ea79dfa",
+                "@type": "Image"
+            },
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/a1b1c035-6a91-4675-9b0d-aff44ea79dfa/full/full/0/default.jpg",
+            "encodingFormat": "https://iiif.io/api/image/3.0/",
+            "caption": "2000.0345.GEO.jpg",
+            "width": 1600,
+            "height": 1200,
+            "position": 3401
+        }
+    ],
     "isPartOf": [
         {
             "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",

@@ -63,20 +63,36 @@
         "sameAs": "https://heritage.tudelft.nl/iiif/manifests/fec35d4f-704e-4652-97e9-1ab1e6ee54ea/schema.json",
         "identifier": "2000.0505.GEO"
     },
-    "image": {
-        "@type": "ImageObject",
-        "contentUrl": {
-            "@context": "http://iiif.io/api/presentation/3/context.json",
-            "@id": "https://dlc.services/iiif-img/7/18/be5ae848-1310-4339-95b3-f1f7ba1319da",
-            "@type": "Image"
+    "image": [
+        {
+            "@type": "ImageObject",
+            "contentUrl": {
+                "@context": "http://iiif.io/api/presentation/3/context.json",
+                "@id": "https://dlc.services/iiif-img/7/18/be5ae848-1310-4339-95b3-f1f7ba1319da",
+                "@type": "Image"
+            },
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/be5ae848-1310-4339-95b3-f1f7ba1319da/full/full/0/default.jpg",
+            "encodingFormat": "https://iiif.io/api/image/3.0/",
+            "caption": "2000.0121.GEO.a.jpg",
+            "width": 1600,
+            "height": 1200,
+            "position": 2839
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/be5ae848-1310-4339-95b3-f1f7ba1319da/full/full/0/default.jpg",
-        "encodingFormat": "https://iiif.io/api/image/3.0/",
-        "caption": "2000.0121.GEO.a.jpg",
-        "width": 1600,
-        "height": 1200,
-        "position": 2839
-    },
+        {
+            "@type": "ImageObject",
+            "contentUrl": {
+                "@context": "http://iiif.io/api/presentation/3/context.json",
+                "@id": "https://dlc.services/iiif-img/7/18/a54051f4-7fe6-4d88-bded-89ea49db74b4",
+                "@type": "Image"
+            },
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/a54051f4-7fe6-4d88-bded-89ea49db74b4/full/full/0/default.jpg",
+            "encodingFormat": "https://iiif.io/api/image/3.0/",
+            "caption": "2000.0121.GEO.jpg",
+            "width": 1600,
+            "height": 1200,
+            "position": 2840
+        }
+    ],
     "isPartOf": [
         {
             "@id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",

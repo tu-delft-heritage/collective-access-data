@@ -57,18 +57,34 @@
         "name": "Inleiding tot het praktisch rekenen : cijfervaardigheid, het afronden en afbreken van getallen, verkorte bewerkingen, interpolatie, rekenhulpmiddelen, het rekenen met een machine, rekenautomaten, Ferdinandus Harkink, 1960",
         "sameAs": "https://tudelft.on.worldcat.org/oclc/1202598129"
     },
-    "image": {
-        "@type": "ImageObject",
-        "contentUrl": {
-            "@context": "http://iiif.io/api/presentation/3/context.json",
-            "@id": "https://dlc.services/iiif-img/7/18/24e91d3f-9c62-4a7a-aff6-e3b941fa90c0",
-            "@type": "Image"
+    "image": [
+        {
+            "@type": "ImageObject",
+            "contentUrl": {
+                "@context": "http://iiif.io/api/presentation/3/context.json",
+                "@id": "https://dlc.services/iiif-img/7/18/24e91d3f-9c62-4a7a-aff6-e3b941fa90c0",
+                "@type": "Image"
+            },
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/24e91d3f-9c62-4a7a-aff6-e3b941fa90c0/full/full/0/default.jpg",
+            "encodingFormat": "https://iiif.io/api/image/3.0/",
+            "caption": "2000.0033.SCR.JPG",
+            "width": 1600,
+            "height": 1200,
+            "position": 6970
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/24e91d3f-9c62-4a7a-aff6-e3b941fa90c0/full/full/0/default.jpg",
-        "encodingFormat": "https://iiif.io/api/image/3.0/",
-        "caption": "2000.0033.SCR.JPG",
-        "width": 1600,
-        "height": 1200,
-        "position": 6970
-    }
+        {
+            "@type": "ImageObject",
+            "contentUrl": {
+                "@context": "http://iiif.io/api/presentation/3/context.json",
+                "@id": "https://dlc.services/iiif-img/7/18/21f9b6fa-35bb-456c-86ea-5c8d9868b3b0",
+                "@type": "Image"
+            },
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/21f9b6fa-35bb-456c-86ea-5c8d9868b3b0/full/full/0/default.jpg",
+            "encodingFormat": "https://iiif.io/api/image/3.0/",
+            "caption": "2000.0033.SCR.a.JPG",
+            "width": 1600,
+            "height": 1200,
+            "position": 6971
+        }
+    ]
 }

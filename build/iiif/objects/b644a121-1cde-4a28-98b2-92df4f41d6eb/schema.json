@@ -93,15 +93,15 @@
         "@type": "ImageObject",
         "contentUrl": {
             "@context": "http://iiif.io/api/presentation/3/context.json",
-            "@id": "https://dlc.services/iiif-img/7/18/56077157-6d15-415e-9515-0dd1f36dac31",
+            "@id": "https://dlc.services/iiif-img/7/18/93a1fb8b-4b48-42dd-923f-c45887adb0b9",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/56077157-6d15-415e-9515-0dd1f36dac31/full/full/0/default.jpg",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/93a1fb8b-4b48-42dd-923f-c45887adb0b9/full/full/0/default.jpg",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
-        "caption": "2002.0052.CTG tiff adobeRGB.tif",
+        "caption": "2002.0052.CTG.JPG",
         "width": 1600,
         "height": 1200,
-        "position": 9686
+        "position": 1494
     },
     "isPartOf": [
         {
