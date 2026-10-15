@@ -89,6 +89,20 @@
             "width": 1600,
             "height": 1200,
             "position": 1738
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": {
+                "@context": "http://iiif.io/api/presentation/3/context.json",
+                "@id": "https://dlc.services/iiif-img/7/18/9c7299bd-1292-4e32-9535-cfd097ae8d6b",
+                "@type": "Image"
+            },
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/9c7299bd-1292-4e32-9535-cfd097ae8d6b/full/full/0/default.jpg",
+            "encodingFormat": "https://iiif.io/api/image/3.0/",
+            "caption": "2002.0011.CVB.jpg",
+            "width": 1600,
+            "height": 1200,
+            "position": 9026
         }
     ],
     "isPartOf": [

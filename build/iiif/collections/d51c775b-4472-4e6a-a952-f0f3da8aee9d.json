@@ -5586,6 +5586,16 @@
             "navDate": "1905-01-01T00:00:00.000Z"
         },
         {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/31263d9a-f9d5-4df2-8625-1eeed5981286.json",
+            "type": "Manifest",
+            "label": {
+                "nl": [
+                    "Kwikbarometer"
+                ]
+            },
+            "navDate": "1900-01-01T00:00:00.000Z"
+        },
+        {
             "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/c5e4c8da-6b42-4e03-9f00-540cf63837e1.json",
             "type": "Manifest",
             "label": {

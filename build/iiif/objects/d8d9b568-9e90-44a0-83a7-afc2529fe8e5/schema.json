@@ -85,6 +85,20 @@
             "width": 1600,
             "height": 1200,
             "position": 6971
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": {
+                "@context": "http://iiif.io/api/presentation/3/context.json",
+                "@id": "https://dlc.services/iiif-img/7/18/13e37ece-2671-4002-a737-58552e1c4718",
+                "@type": "Image"
+            },
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/13e37ece-2671-4002-a737-58552e1c4718/full/full/0/default.jpg",
+            "encodingFormat": "https://iiif.io/api/image/3.0/",
+            "caption": "2000.0033.SCR.b.jpg",
+            "width": 1600,
+            "height": 1200,
+            "position": 10489
         }
     ]
 }
