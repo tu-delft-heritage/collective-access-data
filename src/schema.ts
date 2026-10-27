@@ -141,10 +141,20 @@ export type SchemaCollectionReference = {
   "@type": "Collection";
 };
 
-const SchemaCollectionReference = z.object({
-  "@id": z.url(),
-  "@type": z.literal("Collection"),
-});
+const SchemaCollectionReference = z.preprocess(
+  (val: any) => {
+    const type = Object.keys(val).shift() as string;
+    preprocessSameAs(val[type]);
+    return {
+      "@type": type,
+      ...val[type],
+    };
+  },
+  z.object({
+    "@id": z.url(),
+    "@type": z.literal("Collection"),
+  }),
+);
 
 export const SchemaMetadata = z.preprocess(
   (val: any) => ({
@@ -184,26 +194,21 @@ export const SchemaMetadata = z.preprocess(
     width: SchemaQuantitativeValue,
     depth: SchemaQuantitativeValue,
     citation: z
-      .preprocess(
-        (val) => {
-          // Remove undefined and convert string values to objects
-          const convertString = (value: any) => {
-            if (typeof value === "string") {
-              return {
-                CreativeWork: {
-                  name: value,
-                },
-              };
-            } else return value;
-          };
-          if (Array.isArray(val)) {
-            return val.filter(Boolean).map(convertString);
-          } else return convertString(val);
-        },
-        z
-          .array(SchemaEntity)
-          .or(SchemaEntity),
-      )
+      .preprocess((val) => {
+        // Remove undefined and convert string values to objects
+        const convertString = (value: any) => {
+          if (typeof value === "string") {
+            return {
+              CreativeWork: {
+                name: value,
+              },
+            };
+          } else return value;
+        };
+        if (Array.isArray(val)) {
+          return val.filter(Boolean).map(convertString);
+        } else return convertString(val);
+      }, z.array(SchemaEntity).or(SchemaEntity))
       .optional(),
     isRelatedTo: SchemaEntity.or(z.array(SchemaEntity)).optional(),
     isPartOf: SchemaCollectionReference.or(
