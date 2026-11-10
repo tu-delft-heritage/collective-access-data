@@ -12,7 +12,11 @@ const SchemaImageObject = z.preprocess(
       "@id": z.url(),
       "@type": z.literal("Image"),
     }),
-    thumbnailUrl: z.url(),
+    // Temporary fix because of space in URL
+    thumbnailUrl: z.preprocess(
+      (val: string) => val.replaceAll(" ", ""),
+      z.url(),
+    ),
     encodingFormat: z.literal("https://iiif.io/api/image/3.0/"),
     caption: z.string().optional(),
     width: z.coerce.number(),
