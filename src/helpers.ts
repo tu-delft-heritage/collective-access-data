@@ -15,8 +15,37 @@ export function getValueAsArray<T>(prop: T | T[] | undefined): T[] {
   return Array.isArray(prop) ? prop : prop === undefined ? [] : [prop];
 }
 
-export function getOaiUrl(identifier: string, type: string = "objects") {
-  const url = new URL(OAIBaseUrl + types[type] + "/request");
+export function normalizeOaiBaseUrl(value = OAIBaseUrl) {
+  const url = URL.canParse(value) ? new URL(value) : undefined;
+  if (
+    !url ||
+    (url.protocol !== "https:" && url.protocol !== "http:") ||
+    url.username ||
+    url.password ||
+    url.search ||
+    url.hash
+  ) {
+    throw new Error(
+      "OAI base URL must be an absolute HTTP(S) URL without credentials, a query, or a fragment.",
+    );
+  }
+  url.pathname = `${url.pathname.replace(/\/+$/, "")}/`;
+  return url.toString();
+}
+
+export function getOaiRequestUrl(type: string, oaiBaseUrl?: string) {
+  if (!Object.hasOwn(types, type)) {
+    throw new Error(`Unknown CollectiveAccess record type: ${type}`);
+  }
+  return new URL(`${types[type]}/request`, normalizeOaiBaseUrl(oaiBaseUrl));
+}
+
+export function getOaiUrl(
+  identifier: string,
+  type: string = "objects",
+  oaiBaseUrl?: string,
+) {
+  const url = getOaiRequestUrl(type, oaiBaseUrl);
   const searchParams = url.searchParams;
   searchParams.append("verb", "GetRecord");
   searchParams.append("identifier", identifier);

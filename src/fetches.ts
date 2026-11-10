@@ -3,12 +3,11 @@ import fs from "node:fs/promises";
 import { dirname, join } from "node:path";
 import he from "he";
 import { Parser } from "xml2js";
+import { getOaiRequestUrl, normalizeOaiBaseUrl } from "./helpers";
 import {
-  OAIBaseUrl,
   cacheDir,
   dlcsImageBase,
   dlcsSpace,
-  types,
 } from "./settings";
 import type { IIIFImageInformation } from "./schema";
 
@@ -20,11 +19,12 @@ type Fetcher = (
 export type FetchRecordsOptions = {
   cacheDirectory?: string;
   fetcher?: Fetcher;
+  oaiBaseUrl?: string;
   useCache?: boolean;
 };
 
 type FetchXmlOptions = Required<Pick<FetchRecordsOptions, "useCache">> &
-  Pick<FetchRecordsOptions, "cacheDirectory" | "fetcher">;
+  Pick<FetchRecordsOptions, "cacheDirectory" | "fetcher" | "oaiBaseUrl">;
 
 export type FetchedRecords = {
   records: unknown[];
@@ -78,14 +78,17 @@ async function writeCachedXml(path: string, xml: string) {
   await fs.writeFile(path, xml, "utf8");
 }
 
-async function writeRecordsSnapshot(
+export function getRecordsSnapshotPath(
   type: string,
-  records: readonly unknown[],
-  directory: string,
+  directory = cacheDir,
+  oaiBaseUrl?: string,
 ) {
-  const path = join(directory, "collective-access", `${type}.json`);
-  await fs.mkdir(dirname(path), { recursive: true });
-  await fs.writeFile(path, `${JSON.stringify(records, null, 2)}\n`, "utf8");
+  const baseUrl = normalizeOaiBaseUrl(oaiBaseUrl);
+  const root = join(directory, "collective-access");
+  if (baseUrl === normalizeOaiBaseUrl()) return join(root, `${type}.json`);
+
+  const key = createHash("sha256").update(baseUrl).digest("hex");
+  return join(root, "sources", key, `${type}.json`);
 }
 
 export async function fetchXML(
@@ -95,10 +98,7 @@ export async function fetchXML(
   identifier: string | undefined = undefined,
   options: FetchXmlOptions = { useCache: true },
 ) {
-  const set = types[type];
-  if (!set) throw new Error(`Unknown CollectiveAccess record type: ${type}`);
-
-  const url = new URL(OAIBaseUrl + set + "/request");
+  const url = getOaiRequestUrl(type, options.oaiBaseUrl);
   url.searchParams.append("verb", verb);
 
   if (identifier) url.searchParams.append("identifier", identifier);
@@ -171,6 +171,7 @@ export async function fetchRecords(
   const xmlOptions: FetchXmlOptions = {
     cacheDirectory: normalizedOptions.cacheDirectory,
     fetcher: normalizedOptions.fetcher,
+    oaiBaseUrl: normalizedOptions.oaiBaseUrl,
     useCache: normalizedOptions.useCache ?? true,
   };
 
@@ -211,11 +212,13 @@ export async function fetchRecords(
     page++;
   }
 
-  await writeRecordsSnapshot(
+  const snapshotPath = getRecordsSnapshotPath(
     type,
-    records,
-    normalizedOptions.cacheDirectory ?? cacheDir,
+    normalizedOptions.cacheDirectory,
+    normalizedOptions.oaiBaseUrl,
   );
+  await fs.mkdir(dirname(snapshotPath), { recursive: true });
+  await fs.writeFile(snapshotPath, `${JSON.stringify(records, null, 2)}\n`, "utf8");
   console.log(`${records.length} ${type} fetched`);
   return { records, usedCachedResponse };
 }

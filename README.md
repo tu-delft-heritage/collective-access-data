@@ -25,9 +25,19 @@ bun run index.ts --help
 bun run index.ts generate --help
 ```
 
+Use `--oai-base-url` to harvest from another CollectiveAccess OAI endpoint:
+
+```bash
+bun run generate --oai-base-url https://example.org/service.php/OAI/ --no-delete
+```
+
+Supply the base URL before `schema_org/request` or `col_schema_org/request`. Both harvests and the OAI links in the CSV use that base. When testing a different export, `--no-delete` protects existing objects from being removed based on that export.
+
 ## Caching
 
 The generator caches each raw OAI XML response under `.cache/collective-access/xml` using the complete request URL as its cache key. After a complete harvest, it also writes the parsed records to `.cache/collective-access/objects.json` and `.cache/collective-access/collections.json` for troubleshooting. These readable JSON snapshots are always regenerated from the XML harvest and are never used as cache inputs. DLCS image information remains cached under `.cache/dlcs`.
+
+Alternate endpoints have separate snapshots under `.cache/collective-access/sources/<base-url-hash>/`.
 
 You can bypass either cache independently, or both together:
 

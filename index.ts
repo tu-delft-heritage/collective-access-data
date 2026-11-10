@@ -29,6 +29,7 @@ export function createProgram(
   program
     .command("generate")
     .description("Create or update IIIF manifests and collections.")
+    .option("--oai-base-url <url>", "override the CollectiveAccess OAI base URL")
     .option(
       "--no-cache",
       "fetch fresh OAI XML responses and DLCS image information",

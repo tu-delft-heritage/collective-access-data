@@ -5,6 +5,7 @@ import * as z from "zod";
 import {
   fetchImageInformationWithCache,
   fetchRecords,
+  getRecordsSnapshotPath,
   saveJson,
   type FetchedRecords,
 } from "./fetches";
@@ -13,11 +14,11 @@ import {
   getOaiUrl,
   getUuid,
   getValueAsArray,
+  normalizeOaiBaseUrl,
   writeCsvLog,
 } from "./helpers.ts";
 import {
   collectionsFolder,
-  cacheDir,
   collectiveAccessCollectionBaseUrl,
   collectiveAccessObjectBaseUrl,
   dlcsPortalUrl as dlcsPortalBaseUrl,
@@ -37,6 +38,7 @@ export type GenerateOptions = {
   collectiveAccessCache?: boolean;
   dlcsCache?: boolean;
   delete?: boolean;
+  oaiBaseUrl?: string;
 };
 
 export function resolveGenerateOptions(options: GenerateOptions = {}) {
@@ -45,6 +47,7 @@ export function resolveGenerateOptions(options: GenerateOptions = {}) {
       options.cache !== false && options.collectiveAccessCache !== false,
     dlcsCache: options.cache !== false && options.dlcsCache !== false,
     delete: options.delete !== false,
+    oaiBaseUrl: normalizeOaiBaseUrl(options.oaiBaseUrl),
   };
 }
 
@@ -141,13 +144,16 @@ function createRecordLogContext(
   identifier: unknown,
   oaiIdentifier: string | undefined,
   type: "objects" | "collections",
+  oaiBaseUrl?: string,
 ): RecordLogContext {
   return {
     type: type === "objects" ? "object" : "collection",
     uuid: readableValue(uuid),
     name: readableValue(name),
     identifier: type === "objects" ? readableValue(identifier) : "",
-    oaiUrl: oaiIdentifier ? getOaiUrl(oaiIdentifier, type) : unavailable,
+    oaiUrl: oaiIdentifier
+      ? getOaiUrl(oaiIdentifier, type, oaiBaseUrl)
+      : unavailable,
     collectiveAccessUrl: getCollectiveAccessUrl(oaiIdentifier, type),
   };
 }
@@ -155,6 +161,7 @@ function createRecordLogContext(
 export function getRecordLogContext(
   value: unknown,
   type: "objects" | "collections",
+  oaiBaseUrl?: string,
 ): RecordLogContext {
   const record = value as Partial<SchemaRecord<"object" | "collection">>;
   const metadata = record.metadata?.RDF?.CreativeWork as
@@ -168,6 +175,7 @@ export function getRecordLogContext(
     metadata?.identifier,
     record.header?.identifier,
     type,
+    oaiBaseUrl,
   );
 }
 
@@ -284,24 +292,24 @@ function writeRecordLog(
   writer.push(formatRecordLog(message, consequence, context, details, image));
 }
 
-function getObjectLogContexts(records: readonly unknown[]) {
+function getObjectLogContexts(records: readonly unknown[], oaiBaseUrl: string) {
   const contexts = new Map<string, RecordLogContext>();
   for (const record of records) {
-    const context = getRecordLogContext(record, "objects");
+    const context = getRecordLogContext(record, "objects", oaiBaseUrl);
     if (context.uuid !== unavailable) contexts.set(context.uuid, context);
   }
   return contexts;
 }
 
-async function readPreviousObjectLogContexts() {
+async function readPreviousObjectLogContexts(oaiBaseUrl: string) {
   try {
     const snapshot = await fs.readFile(
-      join(cacheDir, "collective-access", "objects.json"),
+      getRecordsSnapshotPath("objects", undefined, oaiBaseUrl),
       "utf8",
     );
     const records: unknown = JSON.parse(snapshot);
     if (!Array.isArray(records)) throw new Error("Expected an array of records");
-    return getObjectLogContexts(records);
+    return getObjectLogContexts(records, oaiBaseUrl);
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
       console.warn(
@@ -470,7 +478,7 @@ export async function reconcileUnavailableObjects(
   writer: LogWriter,
   manifestsOnDisk: Map<string, SchemaMetadata>,
   objectContexts: ReadonlyMap<string, RecordLogContext>,
-  options: { delete?: boolean; directory?: string } = {},
+  options: { delete?: boolean; directory?: string; oaiBaseUrl?: string } = {},
 ) {
   if (options.delete === false) {
     console.log("Object deletion disabled (--no-delete)");
@@ -488,7 +496,7 @@ export async function reconcileUnavailableObjects(
     for (const record of response.records) {
       const source = record as { header?: { status?: string } };
       if (source.header?.status === "deleted") continue;
-      const context = getRecordLogContext(record, "objects");
+      const context = getRecordLogContext(record, "objects", options.oaiBaseUrl);
       if (!validUuid(context.uuid)) {
         writeRecordLog(writer, message, "No generated objects deleted", context);
       }
@@ -571,6 +579,7 @@ async function generateObjects(
   manifestsOnDisk: Map<string, SchemaMetadata>,
   existingManifestUuids: ReadonlySet<string>,
   collectionMembership: Map<string, SchemaCollectionReference[]>,
+  oaiBaseUrl: string,
 ) {
   console.log("Generating IIIF Object Manifests...");
   const objects = objectResponse.records as SchemaRecord<"object">[];
@@ -582,7 +591,7 @@ async function generateObjects(
   bar.start(objects.length, 0);
 
   for (const [index, record] of objects.entries()) {
-    let context = getRecordLogContext(record, "objects");
+    let context = getRecordLogContext(record, "objects", oaiBaseUrl);
     let failedImages: FailedImageLog[] = [];
     const failureConsequence = () =>
       getObjectFailureConsequence(
@@ -624,6 +633,7 @@ async function generateObjects(
         parsedMetadata.identifier,
         record.header?.identifier,
         "objects",
+        oaiBaseUrl,
       );
       if (!validUuid(uuid)) throw new Error(`Invalid object UUID in ${parsedMetadata["@id"]}`);
 
@@ -747,13 +757,14 @@ function parsePublicCollections(
   collectionResponse: FetchedRecords,
   writer: LogWriter,
   existingCollectionUuids: ReadonlySet<string>,
+  oaiBaseUrl: string,
 ) {
   const collections = collectionResponse.records as SchemaRecord<"collection">[];
   const publicCollections: PublicCollection[] = [];
 
   for (const sourceCollection of collections) {
     const oaiIdentifier = sourceCollection.header?.identifier;
-    let context = getRecordLogContext(sourceCollection, "collections");
+    let context = getRecordLogContext(sourceCollection, "collections", oaiBaseUrl);
     try {
       if (sourceCollection.header?.status === "deleted") continue;
       const result = SchemaCollectionMetadata.safeParse(
@@ -777,6 +788,7 @@ function parsePublicCollections(
         result.data.identifier,
         oaiIdentifier,
         "collections",
+        oaiBaseUrl,
       );
       if (!validUuid(uuid)) {
         throw new Error(`Invalid collection UUID in ${result.data["@id"]}`);
@@ -806,6 +818,7 @@ async function generateCollections(
   manifestsOnDisk: Map<string, SchemaMetadata>,
   existingCollectionUuids: ReadonlySet<string>,
   loggedCollectionOmissionUuids: ReadonlySet<string>,
+  oaiBaseUrl: string,
 ) {
   console.log("Generating IIIF Collection Manifests...");
   const recordsInCollections = new Set<string>();
@@ -823,6 +836,7 @@ async function generateCollections(
       parsedMetadata.identifier,
       oaiIdentifier === unavailable ? undefined : oaiIdentifier,
       "collections",
+      oaiBaseUrl,
     );
     try {
       const records = getValueAsArray(parsedMetadata.hasPart)
@@ -888,19 +902,20 @@ async function generateCollections(
 
 export async function runGenerate(options: GenerateOptions = {}) {
   const resolvedOptions = resolveGenerateOptions(options);
+  const { oaiBaseUrl } = resolvedOptions;
   const writer: LogWriter = [];
 
   try {
     // Snapshot context is used only to identify records in deletion logs.
-    const previousObjectContexts = await readPreviousObjectLogContexts();
+    const previousObjectContexts = await readPreviousObjectLogContexts(oaiBaseUrl);
     console.log("Fetching public collection and object inventories...");
-    const collectionResponse = await fetchRecords("collections", {
+    const harvestOptions = {
+      oaiBaseUrl,
       useCache: resolvedOptions.collectiveAccessCache,
-    });
-    const objectResponse = await fetchRecords("objects", {
-      useCache: resolvedOptions.collectiveAccessCache,
-    });
-    const objectContexts = getObjectLogContexts(objectResponse.records);
+    };
+    const collectionResponse = await fetchRecords("collections", harvestOptions);
+    const objectResponse = await fetchRecords("objects", harvestOptions);
+    const objectContexts = getObjectLogContexts(objectResponse.records, oaiBaseUrl);
     const existingManifestUuids = await listGeneratedObjectManifestUuids(
       outputDir,
     );
@@ -915,6 +930,7 @@ export async function runGenerate(options: GenerateOptions = {}) {
       collectionResponse,
       writer,
       existingCollectionUuids,
+      oaiBaseUrl,
     );
     const collectionMembership = getCollectionMembership(publicCollections);
     await generateObjects(
@@ -924,13 +940,14 @@ export async function runGenerate(options: GenerateOptions = {}) {
       manifestsOnDisk,
       existingManifestUuids,
       collectionMembership,
+      oaiBaseUrl,
     );
     await reconcileUnavailableObjects(
       objectResponse,
       writer,
       manifestsOnDisk,
       new Map([...previousObjectContexts, ...objectContexts]),
-      { delete: resolvedOptions.delete },
+      { delete: resolvedOptions.delete, oaiBaseUrl },
     );
     const loggedCollectionOmissionUuids =
       getLoggedCollectionOmissionUuids(writer);
@@ -940,6 +957,7 @@ export async function runGenerate(options: GenerateOptions = {}) {
       manifestsOnDisk,
       existingCollectionUuids,
       loggedCollectionOmissionUuids,
+      oaiBaseUrl,
     );
   } finally {
     const logPath = await writeCsvLog(
