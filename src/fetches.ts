@@ -144,15 +144,20 @@ function getResumptionToken(resp: any) {
   return { count, token };
 }
 
-function getRecords(resp: any): unknown[] {
-  const records = resp?.["OAI-PMH"]?.ListRecords?.record;
+function getRecords(resp: any, allowNoRecordsMatch = false): unknown[] {
+  const envelope = resp?.["OAI-PMH"];
+  const error = envelope?.error;
+  if (error) {
+    if (allowNoRecordsMatch && error.code === "noRecordsMatch") return [];
+    const message = typeof error === "string" ? error : error._;
+    throw new Error(`CollectiveAccess OAI error: ${message ?? "unknown error"}`);
+  }
+  if (!envelope || !Object.hasOwn(envelope, "ListRecords")) {
+    throw new Error("Invalid CollectiveAccess OAI response: missing ListRecords");
+  }
+  const records = envelope.ListRecords?.record;
   if (records === undefined) {
-    const error = resp?.["OAI-PMH"]?.error;
-    if (error) {
-      const message = typeof error === "string" ? error : error._;
-      throw new Error(`CollectiveAccess OAI error: ${message ?? "unknown error"}`);
-    }
-    return [];
+    throw new Error("Invalid CollectiveAccess OAI response: missing records in ListRecords");
   }
   return Array.isArray(records) ? records : [records];
 }
@@ -177,7 +182,7 @@ export async function fetchRecords(
     undefined,
     xmlOptions,
   );
-  const records = getRecords(firstResponse.data);
+  const records = getRecords(firstResponse.data, true);
   let usedCachedResponse = firstResponse.fromCache;
   let { count, token } = getResumptionToken(firstResponse.data);
 

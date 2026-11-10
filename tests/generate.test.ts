@@ -14,10 +14,12 @@ import {
   getPublicObjectInventory,
   getRecordLogContext,
   pruneUnavailableObjects,
+  reconcileUnavailableObjects,
   recordLogColumns,
   sortRecordLogEntries,
   withCollectionMembership,
   type PublicCollection,
+  type RecordLogEntry,
 } from "../src/generate.ts";
 import { writeCsvLog } from "../src/helpers.ts";
 import type { SchemaMetadata } from "../src/schema.ts";
@@ -108,6 +110,71 @@ describe("public object reconciliation", () => {
     expect(inventory.complete).toBe(false);
     expect(result).toEqual([]);
     expect(await Bun.file(join(directory, "objects", `${uuid}.json`)).exists()).toBe(true);
+  });
+
+  test("logs deleted output with its previous source identifiers and keeps invalid public objects", async () => {
+    const directory = await fs.mkdtemp(join(tmpdir(), "collective-access-data-"));
+    temporaryDirectories.push(directory);
+    const retained = "11111111-1111-4111-8111-111111111111";
+    const removed = "22222222-2222-4222-8222-222222222222";
+    await createGeneratedObject(directory, retained);
+    await createGeneratedObject(directory, removed);
+    const previousContext = getRecordLogContext({
+      header: { identifier: "oai:oai.tudelft:42" },
+      metadata: { RDF: { CreativeWork: {
+        "@id": `https://heritage.tudelft.nl/iiif/manifests/${removed}/schema.json`,
+        name: "Unpublished object",
+        identifier: "2002.0052.CTG",
+      } } },
+    }, "objects");
+    const metadata = new Map<string, SchemaMetadata>([
+      [retained, { name: "Invalid public object" } as SchemaMetadata],
+      [removed, { name: "Unpublished object" } as SchemaMetadata],
+    ]);
+    const log: RecordLogEntry[] = [];
+
+    const result = await reconcileUnavailableObjects({
+      usedCachedResponse: false,
+      records: [{ metadata: { RDF: { CreativeWork: {
+        "@id": `https://heritage.tudelft.nl/iiif/manifests/${retained}/schema.json`,
+      } } } }],
+    }, log, metadata, new Map([[removed, previousContext]]), { directory });
+
+    expect(result).toEqual([removed]);
+    expect(log).toHaveLength(1);
+    expect(log[0]).toMatchObject({
+      ...previousContext,
+      message: "Object no longer present in CollectiveAccess export",
+      consequence: "Object manifest and generated data deleted",
+    });
+    expect(await Bun.file(join(directory, "objects", `${removed}.json`)).exists()).toBe(false);
+    expect(await Bun.file(join(directory, "objects", removed, "schema.json")).exists()).toBe(false);
+    expect(await Bun.file(join(directory, "objects", `${retained}.json`)).exists()).toBe(true);
+    expect(metadata.has(removed)).toBe(false);
+    expect(metadata.has(retained)).toBe(true);
+  });
+
+  test.each([
+    { reason: "deletion disabled", cached: false, delete: false },
+    { reason: "cached export", cached: true, delete: true },
+  ])("preserves generated output with $reason", async (scenario) => {
+    const directory = await fs.mkdtemp(join(tmpdir(), "collective-access-data-"));
+    temporaryDirectories.push(directory);
+    const uuid = "22222222-2222-4222-8222-222222222222";
+    await createGeneratedObject(directory, uuid);
+    const log: RecordLogEntry[] = [];
+    const metadata = new Map([[uuid, { name: "Retained object" } as SchemaMetadata]]);
+
+    const result = await reconcileUnavailableObjects({
+      records: [],
+      usedCachedResponse: scenario.cached,
+    }, log, metadata, new Map(), { directory, delete: scenario.delete });
+
+    expect(result).toEqual([]);
+    expect(log).toEqual([]);
+    expect(metadata.has(uuid)).toBe(true);
+    expect(await Bun.file(join(directory, "objects", `${uuid}.json`)).exists()).toBe(true);
+    expect(await Bun.file(join(directory, "objects", uuid, "schema.json")).exists()).toBe(true);
   });
 });
 

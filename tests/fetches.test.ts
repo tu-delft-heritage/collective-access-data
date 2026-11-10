@@ -74,5 +74,51 @@ describe("OAI XML cache", () => {
     );
     expect(cachedFiles).toHaveLength(1);
     expect(cachedFiles[0]).toEndWith(".xml");
+
+    const refreshed = await fetchRecords("objects", {
+      cacheDirectory: directory,
+      fetcher: async () => {
+        fetchCount++;
+        return new Response(xml.replace("oai:test:1", "oai:test:2"));
+      },
+      useCache: false,
+    });
+    expect(refreshed.usedCachedResponse).toBe(false);
+    expect(refreshed.records).not.toEqual(first.records);
+    expect(fetchCount).toBe(2);
+    expect(JSON.parse(await fs.readFile(snapshotPath, "utf8"))).toEqual(
+      refreshed.records,
+    );
+  });
+
+  test.each([
+    { xml: "<html>Service unavailable</html>", error: "missing ListRecords" },
+    { xml: "<OAI-PMH><ListRecords>Service unavailable</ListRecords></OAI-PMH>", error: "missing records" },
+  ])("rejects malformed exports: $error", async ({ xml, error }) => {
+    const directory = await fs.mkdtemp(join(tmpdir(), "collective-access-data-"));
+    temporaryDirectories.push(directory);
+
+    await expect(fetchRecords("objects", {
+      cacheDirectory: directory,
+      fetcher: async () => new Response(xml),
+      useCache: false,
+    })).rejects.toThrow(error);
+    expect(await Bun.file(join(directory, "collective-access", "objects.json")).exists()).toBe(false);
+  });
+
+  test("accepts an explicit noRecordsMatch response as an empty public export", async () => {
+    const directory = await fs.mkdtemp(join(tmpdir(), "collective-access-data-"));
+    temporaryDirectories.push(directory);
+
+    const response = await fetchRecords("objects", {
+      cacheDirectory: directory,
+      fetcher: async () => new Response(
+        '<OAI-PMH><error code="noRecordsMatch">No matching records</error></OAI-PMH>',
+      ),
+      useCache: false,
+    });
+
+    expect(response.records).toEqual([]);
+    expect(response.usedCachedResponse).toBe(false);
   });
 });

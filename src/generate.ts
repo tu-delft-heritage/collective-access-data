@@ -17,6 +17,7 @@ import {
 } from "./helpers.ts";
 import {
   collectionsFolder,
+  cacheDir,
   collectiveAccessCollectionBaseUrl,
   collectiveAccessObjectBaseUrl,
   dlcsPortalUrl as dlcsPortalBaseUrl,
@@ -32,8 +33,20 @@ import type {
 } from "./schema.ts";
 
 export type GenerateOptions = {
-  cache: boolean;
+  cache?: boolean;
+  collectiveAccessCache?: boolean;
+  dlcsCache?: boolean;
+  delete?: boolean;
 };
+
+export function resolveGenerateOptions(options: GenerateOptions = {}) {
+  return {
+    collectiveAccessCache:
+      options.cache !== false && options.collectiveAccessCache !== false,
+    dlcsCache: options.cache !== false && options.dlcsCache !== false,
+    delete: options.delete !== false,
+  };
+}
 
 export type PublicObjectInventory = {
   complete: boolean;
@@ -280,6 +293,25 @@ function getObjectLogContexts(records: readonly unknown[]) {
   return contexts;
 }
 
+async function readPreviousObjectLogContexts() {
+  try {
+    const snapshot = await fs.readFile(
+      join(cacheDir, "collective-access", "objects.json"),
+      "utf8",
+    );
+    const records: unknown = JSON.parse(snapshot);
+    if (!Array.isArray(records)) throw new Error("Expected an array of records");
+    return getObjectLogContexts(records);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
+      console.warn(
+        `Could not load previous object log context: ${errorMessage(error)}`,
+      );
+    }
+    return new Map<string, RecordLogContext>();
+  }
+}
+
 export function getPublicObjectInventory(
   records: readonly unknown[],
 ): PublicObjectInventory {
@@ -411,6 +443,7 @@ async function listGeneratedCollectionUuids(directory: string) {
 export async function pruneUnavailableObjects(
   inventory: PublicObjectInventory,
   directory: string = outputDir,
+  onRemoved?: (uuid: string) => void,
 ) {
   if (!inventory.complete) return [];
 
@@ -427,8 +460,64 @@ export async function pruneUnavailableObjects(
       }),
     ]);
     removed.push(uuid);
+    onRemoved?.(uuid);
   }
   return removed.sort();
+}
+
+export async function reconcileUnavailableObjects(
+  response: FetchedRecords,
+  writer: LogWriter,
+  manifestsOnDisk: Map<string, SchemaMetadata>,
+  objectContexts: ReadonlyMap<string, RecordLogContext>,
+  options: { delete?: boolean; directory?: string } = {},
+) {
+  if (options.delete === false) {
+    console.log("Object deletion disabled (--no-delete)");
+    return [];
+  }
+  if (response.usedCachedResponse) {
+    console.warn("Object pruning skipped because the OAI harvest used cached XML");
+    return [];
+  }
+
+  const inventory = getPublicObjectInventory(response.records);
+  if (!inventory.complete) {
+    const message = `Object pruning skipped because public UUIDs could not be determined for ${inventory.unmappedIdentifiers.length} active record(s)`;
+    console.warn(message);
+    for (const record of response.records) {
+      const source = record as { header?: { status?: string } };
+      if (source.header?.status === "deleted") continue;
+      const context = getRecordLogContext(record, "objects");
+      if (!validUuid(context.uuid)) {
+        writeRecordLog(writer, message, "No generated objects deleted", context);
+      }
+    }
+    return [];
+  }
+
+  const directory = options.directory ?? outputDir;
+  const removed = await pruneUnavailableObjects(inventory, directory, (uuid) => {
+    const metadata = manifestsOnDisk.get(uuid);
+    const context = objectContexts.get(uuid) ??
+      createRecordLogContext(
+        uuid,
+        metadata?.name,
+        metadata?.identifier,
+        undefined,
+        "objects",
+      );
+    writeRecordLog(
+      writer,
+      "Object no longer present in CollectiveAccess export",
+      "Object manifest and generated data deleted",
+      context,
+      `Deleted: ${join(directory, objectsFolder, `${uuid}.json`)} and ${join(directory, objectsFolder, uuid)}`,
+    );
+    manifestsOnDisk.delete(uuid);
+  });
+  console.log(`${removed.length} unpublished objects removed`);
+  return removed;
 }
 
 async function loadGeneratedMetadata(
@@ -485,7 +574,6 @@ async function generateObjects(
 ) {
   console.log("Generating IIIF Object Manifests...");
   const objects = objectResponse.records as SchemaRecord<"object">[];
-  const inventory = getPublicObjectInventory(objects);
   const recordsWithoutImages = new Set<string>();
   const encounteredUuids = new Set<string>();
   let generated = 0;
@@ -653,35 +741,6 @@ async function generateObjects(
   if (recordsWithoutImages.size) {
     console.log(`${recordsWithoutImages.size} public objects had no images`);
   }
-
-  if (objectResponse.usedCachedResponse) {
-    const message =
-      "Object pruning skipped because the OAI harvest used cached XML";
-    console.warn(message);
-    return;
-  }
-
-  if (!inventory.complete) {
-    const message = `Object pruning skipped because public UUIDs could not be determined for ${inventory.unmappedIdentifiers.length} active record(s)`;
-    console.warn(message);
-    for (const record of objects) {
-      if (record.header?.status === "deleted") continue;
-      const context = getRecordLogContext(record, "objects");
-      if (!validUuid(context.uuid)) {
-        writeRecordLog(
-          writer,
-          message,
-          "No generated objects deleted",
-          context,
-        );
-      }
-    }
-    return;
-  }
-
-  const removed = await pruneUnavailableObjects(inventory);
-  for (const uuid of removed) manifestsOnDisk.delete(uuid);
-  console.log(`${removed.length} unpublished objects removed`);
 }
 
 function parsePublicCollections(
@@ -827,16 +886,19 @@ async function generateCollections(
   );
 }
 
-export async function runGenerate(options: GenerateOptions) {
+export async function runGenerate(options: GenerateOptions = {}) {
+  const resolvedOptions = resolveGenerateOptions(options);
   const writer: LogWriter = [];
 
   try {
+    // Snapshot context is used only to identify records in deletion logs.
+    const previousObjectContexts = await readPreviousObjectLogContexts();
     console.log("Fetching public collection and object inventories...");
     const collectionResponse = await fetchRecords("collections", {
-      useCache: options.cache,
+      useCache: resolvedOptions.collectiveAccessCache,
     });
     const objectResponse = await fetchRecords("objects", {
-      useCache: options.cache,
+      useCache: resolvedOptions.collectiveAccessCache,
     });
     const objectContexts = getObjectLogContexts(objectResponse.records);
     const existingManifestUuids = await listGeneratedObjectManifestUuids(
@@ -857,11 +919,18 @@ export async function runGenerate(options: GenerateOptions) {
     const collectionMembership = getCollectionMembership(publicCollections);
     await generateObjects(
       objectResponse,
-      options.cache,
+      resolvedOptions.dlcsCache,
       writer,
       manifestsOnDisk,
       existingManifestUuids,
       collectionMembership,
+    );
+    await reconcileUnavailableObjects(
+      objectResponse,
+      writer,
+      manifestsOnDisk,
+      new Map([...previousObjectContexts, ...objectContexts]),
+      { delete: resolvedOptions.delete },
     );
     const loggedCollectionOmissionUuids =
       getLoggedCollectionOmissionUuids(writer);

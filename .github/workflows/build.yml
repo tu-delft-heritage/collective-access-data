@@ -44,13 +44,22 @@ jobs:
 
       - name: Generate Manifests
         id: generate-manifests
-        run: bun run generate
+        run: bun run generate --no-collective-access-cache
+
+      - name: Upload generation log
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: generation-log-${{ github.run_id }}-${{ github.run_attempt }}
+          path: logs/*.csv
+          if-no-files-found: ignore
+          retention-days: 30
 
       - name: Commit & push changes
         if: ${{ success() && steps.generate-manifests.outcome == 'success' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
+          git add -A -- build/iiif
           git diff-index --quiet HEAD || git commit -m "generated with github action"
           git push
