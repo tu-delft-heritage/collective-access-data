@@ -46,11 +46,6 @@
         "unitCode": "MMT",
         "value": 215
     },
-    "citation": {
-        "@type": "CreativeWork",
-        "name": "Zeitschrift fur Vermessungswesen : Organ des Deutschen Geometervereins, Deutscher Geometerverein, 1872-",
-        "sameAs": "https://tudelft.on.worldcat.org/oclc/889499019"
-    },
     "isRelatedTo": {
         "@type": "CreativeWork",
         "name": "Planimeter door M. Kloth",

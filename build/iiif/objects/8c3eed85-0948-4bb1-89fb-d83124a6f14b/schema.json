@@ -15,16 +15,14 @@
         "name": "metaal",
         "sameAs": "http://vocab.getty.edu/aat/300010900"
     },
-    "creator": [
-        {
-            "@type": "Role",
-            "roleName": "producent",
-            "creator": {
-                "@type": "Organization",
-                "name": "Bleeker Nedoptifa"
-            }
+    "creator": {
+        "@type": "Role",
+        "roleName": "producent",
+        "creator": {
+            "@type": "Organization",
+            "name": "Bleeker Nedoptifa"
         }
-    ],
+    },
     "height": {
         "@type": "QuantitativeValue",
         "unitCode": "CMT",

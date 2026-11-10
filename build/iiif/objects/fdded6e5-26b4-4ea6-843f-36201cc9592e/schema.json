@@ -57,11 +57,6 @@
         "unitCode": "MMT",
         "value": 270
     },
-    "citation": {
-        "@type": "CreativeWork",
-        "name": "Description et usage du cercle de réflexion : avec différentes méthodes par calculer les observations nautiques, Jean Charles Borda, 1816",
-        "sameAs": "https://tudelft.on.worldcat.org/oclc/634573324"
-    },
     "image": {
         "@type": "ImageObject",
         "contentUrl": {

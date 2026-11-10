@@ -48,11 +48,6 @@
         "unitCode": "MMT",
         "value": 170
     },
-    "citation": {
-        "@type": "CreativeWork",
-        "name": "Der Mechaniker Zeitschrift zur Förderung der Präzisionsmechanik und Optik sowie verwandter Gebiete, , 1893",
-        "sameAs": "https://tudelft.on.worldcat.org/oclc/631722316"
-    },
     "isRelatedTo": {
         "@type": "CreativeWork",
         "name": "Grafische planimeter van glas",

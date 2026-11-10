@@ -46,16 +46,6 @@
     },
     "items": [
         {
-            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/38bc8285-2b8c-426a-9382-50780d853055.json",
-            "type": "Manifest",
-            "label": {
-                "nl": [
-                    "Een 3-voudige vouwbare prisma op statief voor instructie doeleinden"
-                ]
-            },
-            "navDate": "1900-01-01T00:00:00.000Z"
-        },
-        {
             "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/132822c7-6755-4b19-baf2-fa2b142061b4.json",
             "type": "Manifest",
             "label": {
@@ -509,16 +499,6 @@
             "label": {
                 "nl": [
                     "Spectrograaf van glas gemonteerd op een houten plateau bedekt met zwart vilt"
-                ]
-            },
-            "navDate": "1920-01-01T00:00:00.000Z"
-        },
-        {
-            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/b7a86010-dfe2-44cc-88f8-b669269ffd5d.json",
-            "type": "Manifest",
-            "label": {
-                "nl": [
-                    "Zwart metalen goniometer met inscriptie \"Carl Zeiss Jena\""
                 ]
             },
             "navDate": "1920-01-01T00:00:00.000Z"

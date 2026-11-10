@@ -52,11 +52,6 @@
         "unitCode": "MMT",
         "value": 290
     },
-    "citation": {
-        "@type": "CreativeWork",
-        "name": "Inleiding tot het praktisch rekenen : cijfervaardigheid, het afronden en afbreken van getallen, verkorte bewerkingen, interpolatie, rekenhulpmiddelen, het rekenen met een machine, rekenautomaten, Ferdinandus Harkink, 1960",
-        "sameAs": "https://tudelft.on.worldcat.org/oclc/1202598129"
-    },
     "image": [
         {
             "@type": "ImageObject",

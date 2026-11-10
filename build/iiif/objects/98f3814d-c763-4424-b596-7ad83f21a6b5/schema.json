@@ -58,11 +58,6 @@
         "unitCode": "MMT",
         "value": 460
     },
-    "citation": {
-        "@type": "CreativeWork",
-        "name": "Präzisionspendeluhren : in Deutschland von 1730 bis 1940 : Observatorien, Astronomen, Zeitdienststellen und ihre Uhren, Jürgen Ermert, 2013",
-        "sameAs": "https://tudelft.on.worldcat.org/oclc/1040857162"
-    },
     "isRelatedTo": {
         "@type": "CreativeWork",
         "name": "Uurwerk door Strasser & Rohde No. 277",

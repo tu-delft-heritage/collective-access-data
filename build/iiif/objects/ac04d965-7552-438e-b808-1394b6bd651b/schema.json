@@ -48,11 +48,6 @@
     "depth": {
         "@type": "QuantitativeValue"
     },
-    "citation": {
-        "@type": "CreativeWork",
-        "name": "De lange weg naar de Technische Universiteit Delft, H. Baudet, 1992",
-        "sameAs": "https://tudelft.on.worldcat.org/oclc/843427881"
-    },
     "isRelatedTo": {
         "@type": "CreativeWork",
         "name": "Stempel van het grootzegel van de TH Delft",

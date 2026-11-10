@@ -56,11 +56,6 @@
         "unitCode": "MMT",
         "value": 65
     },
-    "citation": {
-        "@type": "CreativeWork",
-        "name": "Deutsche und niederländische astronomische Instrumente des 11.-18. Jahrhunderts, Ernst Zinner, 1979",
-        "sameAs": "https://tudelft.on.worldcat.org/oclc/635822777"
-    },
     "image": [
         {
             "@type": "ImageObject",

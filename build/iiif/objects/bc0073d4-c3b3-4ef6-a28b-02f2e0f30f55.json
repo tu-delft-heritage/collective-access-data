@@ -114,21 +114,6 @@
                     "Een grafische planimeter van glas, als rekenhulpmiddel bij oppervlaktebepaling van percelen op een kaart met schaal 1:2000."
                 ]
             }
-        },
-        {
-            "label": {
-                "en": [
-                    "Documentation"
-                ],
-                "nl": [
-                    "Documentatie"
-                ]
-            },
-            "value": {
-                "nl": [
-                    "Der Mechaniker Zeitschrift zur Förderung der Präzisionsmechanik und Optik sowie verwandter Gebiete, , 1893"
-                ]
-            }
         }
     ],
     "navDate": "1900-01-01T00:00:00.000Z",

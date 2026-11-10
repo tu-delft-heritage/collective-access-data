@@ -22,12 +22,12 @@
     "height": {
         "@type": "QuantitativeValue",
         "unitCode": "CMT",
-        "value": 65.5
+        "value": 65
     },
     "width": {
         "@type": "QuantitativeValue",
         "unitCode": "CMT",
-        "value": 48.5
+        "value": 48
     },
     "depth": {
         "@type": "QuantitativeValue",
