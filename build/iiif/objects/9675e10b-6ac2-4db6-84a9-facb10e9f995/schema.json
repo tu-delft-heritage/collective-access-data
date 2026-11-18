@@ -66,7 +66,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/fa809977-f8f8-4a5a-92c7-21eb36180b09",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/fa809977-f8f8-4a5a-92c7-21eb36180b09/full/full/0/default.jpg",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "2002.0370.EWI.jpg",
         "width": 1600,

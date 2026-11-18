@@ -45,7 +45,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/47e0e797-4512-4377-b486-9e10355ff918",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/47e0e797-4512-4377-b486-9e10355ff918/full/full/0/default.jpg",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "2002.0046.CVB.JPG",
         "width": 1600,
