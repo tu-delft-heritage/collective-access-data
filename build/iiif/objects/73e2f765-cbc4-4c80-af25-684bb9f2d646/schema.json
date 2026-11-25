@@ -70,7 +70,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/31d5a0bf-4956-4f85-814c-1b1d4dd5732e",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/31d5a0bf-4956-4f85-814c-1b1d4dd5732e/full/full/0/default.jpg",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "caption": "2000.0433.GEO.a.jpg",
             "width": 1600,
@@ -84,7 +84,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/2c7d98c2-d3a8-41c0-b1d2-dafe3c4f7835",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/2c7d98c2-d3a8-41c0-b1d2-dafe3c4f7835/full/full/0/default.jpg",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "caption": "2000.0433.GEO.b.jpg",
             "width": 1600,
@@ -98,7 +98,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/02d949ee-20ee-46e0-9f5a-74ff8099999b",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/02d949ee-20ee-46e0-9f5a-74ff8099999b/full/full/0/default.jpg",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "caption": "2000.0433.GEO.jpg",
             "width": 1600,

@@ -47,7 +47,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/b9d49044-9ef7-4c77-a52b-2f1d1f16cefa",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/b9d49044-9ef7-4c77-a52b-2f1d1f16cefa/full/full/0/default.jpg",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "width": 1600,
         "height": 1200,

@@ -60,7 +60,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/485f82c5-da31-416c-88b6-31d7c7596104",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/485f82c5-da31-416c-88b6-31d7c7596104/full/full/0/default.jpg",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "caption": "2012.0001.CVB.jpg",
             "width": 1600,
@@ -74,7 +74,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/3c0cf885-0961-49a3-96fc-bf77804b95c5",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/3c0cf885-0961-49a3-96fc-bf77804b95c5/full/full/0/default.jpg",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "caption": "2012.0001.CVB.jpg",
             "width": 1600,

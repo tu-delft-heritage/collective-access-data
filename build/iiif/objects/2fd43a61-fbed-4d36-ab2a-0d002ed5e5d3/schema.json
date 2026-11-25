@@ -87,7 +87,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/1aaf5535-aace-465e-aff5-067bd9ddbb37",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/1aaf5535-aace-465e-aff5-067bd9ddbb37/full/full/0/default.jpg",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "2000.0334.GEO.jpg",
         "width": 1600,
