@@ -79,22 +79,45 @@ const SchemaPlace = z.preprocess(
 
 export type SchemaEntity = z.infer<typeof SchemaEntity>;
 
-const SchemaEntity = z.preprocess(
-  (val: any) => {
-    const type = Object.keys(val).shift() as string;
-    preprocessSameAs(val[type]);
-    return {
-      "@type": type,
-      ...val[type],
-    };
-  },
-  z.object({
-    "@type": z.string(),
-    name: z.string(),
-    sameAs: z.url().optional(),
-    identifier: z.string().optional(),
-    // image: SchemaImageObject.optional(),
-  }),
+function unwrapSchemaEntity(value: unknown) {
+  if (!value || typeof value !== "object") return {};
+  const [type, details] = Object.entries(value)[0] ?? [];
+  if (!details || typeof details !== "object") return {};
+
+  const entity = { "@type": type, ...details };
+  preprocessSameAs(entity);
+  return entity;
+}
+
+const SchemaEntityFields = z.object({
+  "@type": z.string(),
+  name: z.string(),
+  sameAs: z.url().optional(),
+  identifier: z.string().optional(),
+});
+
+const SchemaEntity = z.preprocess(unwrapSchemaEntity, SchemaEntityFields);
+
+function isEmptyRdfValue(value: unknown): boolean {
+  // An empty XML element can leave a key with an undefined value.
+  if (value !== null && typeof value === "object") {
+    return Object.values(value).every(isEmptyRdfValue);
+  }
+  return value == null || (typeof value === "string" && value.trim() === "");
+}
+
+function normalizeCitations(value: unknown) {
+  const entries = Array.isArray(value) ? value : [value];
+  const citations = entries
+    .filter((entry) => !isEmptyRdfValue(entry))
+    .map((entry) => typeof entry === "string" ? { CreativeWork: { name: entry } } : entry);
+  if (!citations.length) return undefined;
+  return Array.isArray(value) ? citations : citations[0];
+}
+
+const SchemaCitation = z.preprocess(
+  normalizeCitations,
+  z.array(SchemaEntity).or(SchemaEntity).optional(),
 );
 
 const SchemaRoleContributor = z.preprocess(
@@ -197,23 +220,7 @@ export const SchemaMetadata = z.preprocess(
     height: SchemaQuantitativeValue,
     width: SchemaQuantitativeValue,
     depth: SchemaQuantitativeValue,
-    citation: z
-      .preprocess((val) => {
-        // Remove undefined and convert string values to objects
-        const convertString = (value: any) => {
-          if (typeof value === "string") {
-            return {
-              CreativeWork: {
-                name: value,
-              },
-            };
-          } else return value;
-        };
-        if (Array.isArray(val)) {
-          return val.filter(Boolean).map(convertString);
-        } else return convertString(val);
-      }, z.array(SchemaEntity).or(SchemaEntity))
-      .optional(),
+    citation: SchemaCitation,
     isRelatedTo: SchemaEntity.or(z.array(SchemaEntity)).optional(),
     isPartOf: SchemaCollectionReference.or(
       z.array(SchemaCollectionReference),
