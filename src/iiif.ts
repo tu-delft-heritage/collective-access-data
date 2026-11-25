@@ -5,34 +5,26 @@ import {
   collectionMapping,
   objectsFolder,
   collectionsFolder,
-  collectionMetadata,
+  getCollectionDescriptionLines,
 } from "./settings";
 import { getUuid } from "./helpers";
 import type {
   IIIFImageInformation,
   SchemaMetadata,
   SchemaCollectionMetadata,
-  SchemaEntity,
 } from "./schema";
-import * as z from "zod";
 
-type Metadata = z.input<typeof SchemaMetadata>;
-
-function parseMetadata(props: SchemaMetadata, type?: string) {
-  const labels = type === "collection" ? collectionMapping : objectMapping;
-  const metadata = new Array();
-  for (const { label, getValue } of labels) {
-    const value = getValue(props);
-    if (value) {
-      metadata.push({
-        label,
-        value: {
-          nl: value,
-        },
-      });
-    }
-  }
-  return metadata;
+function parseMetadata<T>(
+  props: T,
+  mapping: readonly {
+    label: { en: string[]; nl: string[] };
+    getValue: (props: T) => string[] | undefined;
+  }[],
+) {
+  return mapping.flatMap(({ label, getValue }) => {
+    const nl = getValue(props);
+    return nl?.length ? [{ label, value: { nl } }] : [];
+  });
 }
 
 function getNavDateValue(metadata: SchemaMetadata) {
@@ -59,7 +51,7 @@ export function createManifest(
   const uri = `${manifestUriBase}${objectsFolder}/${uuid}`;
   const manifest = builder.createManifest(`${uri}.json`, (manifest) => {
     manifest.setLabel({ nl: [metadata.name] });
-    manifest.setMetadata(parseMetadata(metadata, "object"));
+    manifest.setMetadata(parseMetadata(metadata, objectMapping));
     const navDate = getNavDateValue(metadata);
     if (navDate) {
       manifest.entity.navDate = navDate;
@@ -123,18 +115,15 @@ export function createCollection(
 ) {
   const builder = new IIIFBuilder();
   const uri = `${manifestUriBase}${collectionsFolder}/${uuid}`;
+  const summary = metadata.abstract?.trim()
+    ? metadata.abstract.split(/(?:\r?\n)+/)
+    : getCollectionDescriptionLines(metadata.description).slice(0, 1);
   const collection = builder.createCollection(`${uri}.json`, (collection) => {
     collection.setLabel({ nl: [metadata.name] });
-    if (metadata.abstract) {
-      collection.setSummary({ nl: metadata.abstract.split(/(?:\r?\n)+/) });
+    if (summary.length) {
+      collection.setSummary({ nl: summary });
     }
-    collection.setMetadata([
-      ...collectionMetadata,
-      {
-        label: { en: ["Description"], nl: ["Beschrijving"] },
-        value: { nl: metadata.description.split(/(?:\r?\n)+/) },
-      },
-    ]);
+    collection.setMetadata(parseMetadata(metadata, collectionMapping));
     for (const thumbnail of getCollectionThumbnails(metadata)) {
       collection.addThumbnail(thumbnail);
     }

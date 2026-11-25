@@ -1,6 +1,10 @@
-import { en } from "zod/locales";
+import he from "he";
 import { getValueAsArray } from "./helpers";
-import type { SchemaMetadata, SchemaEntity } from "./schema";
+import type {
+  SchemaCollectionMetadata,
+  SchemaEntity,
+  SchemaMetadata,
+} from "./schema";
 
 export const outputDir = "build/iiif";
 export const objectsFolder = "objects";
@@ -10,11 +14,13 @@ export const OAIBaseUrl =
   "https://cms.collectiveaccess.tudelft.nl/service.php/OAI/";
 export const dlcsImageBase = "https://dlc.services/iiif-img/v3/7/";
 export const dlcsSpace = "18";
-export const dlcsPortalUrl = "https://portal.dlc.services/Images/18/"
+export const dlcsPortalUrl = "https://portal.dlc.services/Images/18/";
 export const manifestUriBase =
   "https://tu-delft-heritage.github.io/collective-access-data/iiif/";
-export const collectiveAccessObjectBaseUrl = "https://collectiveaccess.tudelft.nl/ca_tudelft/admin/index.php/editor/objects/ObjectEditor/Edit/object_id/"
-export const collectiveAccessCollectionBaseUrl = "https://collectiveaccess.tudelft.nl/ca_tudelft/admin/index.php/editor/collections/CollectionEditor/Edit/collection_id/"
+export const collectiveAccessObjectBaseUrl =
+  "https://collectiveaccess.tudelft.nl/ca_tudelft/admin/index.php/editor/objects/ObjectEditor/Edit/object_id/";
+export const collectiveAccessCollectionBaseUrl =
+  "https://collectiveaccess.tudelft.nl/ca_tudelft/admin/index.php/editor/collections/CollectionEditor/Edit/collection_id/";
 
 export const types: Record<string, string> = {
   objects: "schema_org",
@@ -30,6 +36,36 @@ export const verbs = [
   "ListRecords",
   "GetRecord",
 ];
+
+const datingMapping = {
+  props: ["temporalCoverage"],
+  label: {
+    en: ["Dating"],
+    nl: ["Datering"],
+  },
+  getValue: ({ temporalCoverage }: { temporalCoverage?: string }) => {
+    if (temporalCoverage) {
+      const period = temporalCoverage.split("/");
+      return [period[1] ? period.join(" – ") : period[0]];
+    }
+  },
+};
+
+const documentationMapping = {
+  props: ["citation"],
+  label: {
+    en: ["Documentation"],
+    nl: ["Documentatie"],
+  },
+  getValue: ({ citation }: { citation?: SchemaEntity | SchemaEntity[] }) =>
+    getValueAsArray(citation).map(({ name, sameAs }) => {
+      const url = sameAs ? URL.parse(sameAs) : null;
+      if (url && ["http:", "https:", "mailto:"].includes(url.protocol)) {
+        return `<span><a href="${he.escape(url.href)}">${he.escape(name)}</a></span>`;
+      }
+      return name.includes("<") ? `<span>${he.escape(name)}</span>` : name;
+    }),
+};
 
 export const objectMapping = [
   {
@@ -63,21 +99,7 @@ export const objectMapping = [
     getValue: (metadata: SchemaMetadata) =>
       getValueAsArray(metadata.identifier),
   },
-  {
-    props: ["temporalCoverage"],
-    label: {
-      en: ["Dating"],
-      nl: ["Datering"],
-    },
-    getValue: (metadata: SchemaMetadata) => {
-      if (metadata.temporalCoverage) {
-        const period = metadata.temporalCoverage.split("/");
-        if (period[1]) {
-          return [period.join(" – ")];
-        } else if (period) return [period[0]];
-      }
-    },
-  },
+  datingMapping,
   {
     props: ["creator", "contributor"],
     label: {
@@ -208,18 +230,7 @@ export const objectMapping = [
       }
     },
   },
-  {
-    props: ["citation"],
-    label: {
-      en: ["Documentation"],
-      nl: ["Documentatie"],
-    },
-    getValue: (metadata: SchemaMetadata) => {
-      if (metadata.citation) {
-        return getValueAsArray(metadata.citation).map(value => value.name)
-      }
-    },
-  },
+  documentationMapping,
   {
     props: ["isRelatedTo"],
     label: {
@@ -240,43 +251,77 @@ export const objectMapping = [
   },
 ];
 
+export function getCollectionDescriptionLines(description?: string) {
+  return (description ?? "")
+    .split(/\r\n?|\n/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+}
+
+function getCollectionContributorNames(
+  metadata: SchemaCollectionMetadata,
+  roleName: string,
+) {
+  return getValueAsArray(metadata.contributor)
+    .filter((role) => role.roleName.trim().toLowerCase() === roleName)
+    .flatMap(({ contributor }) => getValueAsArray(contributor))
+    .map(({ name }) => name);
+}
+
 export const collectionMapping = [
+  {
+    props: ["name"],
+    label: { en: ["Title"], nl: ["Titel"] },
+    getValue: ({ name }: SchemaCollectionMetadata) => getValueAsArray(name),
+  },
+  // Currently not used
+  // {
+  //   props: ["identifier"],
+  //   label: { en: ["Collection identifier"], nl: ["Collectie-ID"] },
+  //   getValue: ({ identifier }: SchemaCollectionMetadata) => getValueAsArray(identifier),
+  // },
+  datingMapping,
+  {
+    props: ["materialExtent"],
+    label: { en: ["Extent"], nl: ["Omvang"] },
+    getValue: ({ materialExtent }: SchemaCollectionMetadata) =>
+      getValueAsArray(materialExtent),
+  },
   {
     props: ["creator"],
     label: {
       en: ["Managing institution"],
       nl: ["Beherende instelling"],
     },
-    getValue: (metadata: SchemaMetadata) => undefined,
+    getValue: ({ creator }: SchemaCollectionMetadata) =>
+      getValueAsArray(creator)
+        .filter(
+          ({ roleName }) =>
+            roleName.trim().toLowerCase() === "beherende instelling",
+        )
+        .flatMap(({ creator }) => getValueAsArray(creator))
+        .map(({ name }) => name),
+  },
+  {
+    props: ["contributor"],
+    label: { en: ["Curator"], nl: ["Conservator"] },
+    getValue: (metadata: SchemaCollectionMetadata) =>
+      getCollectionContributorNames(metadata, "collectieverantwoordelijke"),
+  },
+  {
+    props: ["description"],
+    label: { en: ["Description"], nl: ["Beschrijving"] },
+    getValue: ({ description }: SchemaCollectionMetadata) =>
+      getCollectionDescriptionLines(description),
   },
   {
     props: ["contributor"],
     label: {
-      en: ["Curator"],
-      nl: ["Conservator"],
+      en: ["Institutional provenance"],
+      nl: ["Institutionele herkomst"],
     },
-    getValue: (metadata: SchemaMetadata) => undefined,
+    getValue: (metadata: SchemaCollectionMetadata) =>
+      getCollectionContributorNames(metadata, "institutionele herkomst"),
   },
-];
-
-// Hardcoded for now
-export const collectionMetadata = [
-  {
-    label: {
-      en: ["Managing institution"],
-      nl: ["Beherende instelling"],
-    },
-    value: {
-      en: ["TU Delft Library"],
-    },
-  },
-  {
-    label: {
-      en: ["Curator"],
-      nl: ["Conservator"],
-    },
-    value: {
-      none: ["Sylvia Nijhuis"],
-    },
-  },
+  documentationMapping,
 ];

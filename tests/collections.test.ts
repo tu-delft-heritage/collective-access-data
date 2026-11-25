@@ -58,7 +58,8 @@ test("exports schema and IIIF for nested and empty collections", async () => {
   const directory = await mkdtemp(join(tmpdir(), "collective-access-collections-"));
   const log: RecordLogEntry[] = [];
   const abstract = "First summary line\n\nSecond summary line";
-  const description = "First description line\r\n\r\nSecond description line";
+  const description =
+    "First description line \r\n\t\r\n Second description line\rThird description line";
   const collectionDir = join(directory, "collections");
 
   try {
@@ -66,7 +67,10 @@ test("exports schema and IIIF for nested and empty collections", async () => {
       usedCachedResponse: false,
       records: [
         record(parentUuid, { abstract, description }),
-        record(secondParentUuid),
+        record(secondParentUuid, {
+          abstract: " \t",
+          description: "\n  Fallback summary \n\n More detail\n",
+        }),
         record(childUuid, {
           name: "Child",
           isPartOf: { Collection: [
@@ -78,7 +82,7 @@ test("exports schema and IIIF for nested and empty collections", async () => {
         }),
         record(emptyUuid),
         record(invalidUuid, {
-          description: undefined,
+          name: undefined,
           isPartOf: { Collection: parentReference(parentUuid) },
         }),
       ],
@@ -98,7 +102,9 @@ test("exports schema and IIIF for nested and empty collections", async () => {
     expect(parent.summary).toEqual({ nl: ["First summary line", "Second summary line"] });
     expect(parent.metadata).toContainEqual({
       label: { en: ["Description"], nl: ["Beschrijving"] },
-      value: { nl: ["First description line", "Second description line"] },
+      value: {
+        nl: ["First description line", "Second description line", "Third description line"],
+      },
     });
     expect(parent.items).toEqual([{
       id: collectionUrl(childUuid),
@@ -107,19 +113,22 @@ test("exports schema and IIIF for nested and empty collections", async () => {
       thumbnail: child.thumbnail,
     }]);
     expect(secondParent.items).toEqual(parent.items);
+    expect(secondParent.summary).toEqual({ nl: ["Fallback summary"] });
     expect(child.thumbnail).toEqual([1, 2].map((position) => ({
       id: image(position).thumbnailUrl,
       type: "Image",
       format: "image/jpeg",
     })));
     expect(empty.items).toEqual([]);
-    expect(empty.summary).toBeUndefined();
+    expect(empty.summary).toEqual({ nl: ["A collection description"] });
+    expect(empty.metadata).toHaveLength(2);
     expect(parentSchema).toMatchObject({
       "@context": "https://schema.org",
       "@type": "Collection",
       "@id": sourceUrl(parentUuid),
       abstract,
-      description,
+      description:
+        "First description line \n Second description line\nThird description line",
     });
     expect(childSchema.isPartOf[0].sameAs).toBe(sourceUrl(parentUuid));
     expect(childSchema.image.map(({ position }: { position: number }) => position)).toEqual([1, 2]);
@@ -127,6 +136,97 @@ test("exports schema and IIIF for nested and empty collections", async () => {
     expect(await Bun.file(join(collectionDir, `${invalidUuid}.json`)).exists()).toBe(false);
     expect(log).toHaveLength(1);
     expect(log[0]).toMatchObject({ uuid: invalidUuid, message: "Parser failed for collection" });
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
+
+test("exports collection roles, documentation, dates, extent, and member images from OAI", async () => {
+  const directory = await mkdtemp(join(tmpdir(), "collective-access-collection-metadata-"));
+  const log: RecordLogEntry[] = [];
+  const collectionDir = join(directory, "collections");
+  const institution = { name: "Example faculty" };
+  const curator = { name: "Example curator" };
+  const contributor = (roleName: string, entities: Record<string, unknown>) => ({
+    Role: { roleName, Contributor: entities },
+  });
+  const citationUrl = "https://example.test/catalogue?edition=1&language=nl";
+  const memberUrl = `https://heritage.tudelft.nl/iiif/manifests/${childUuid}/schema.json`;
+  const contentUrl = [image(1).contentUrl, image(2).contentUrl];
+
+  try {
+    const collections = parsePublicCollections({
+      usedCachedResponse: false,
+      records: [record(parentUuid, {
+        description: undefined,
+        identifier: "test-collection",
+        temporalCoverage: "1700/2010",
+        materialExtent: "630 objecten",
+        citation: [
+          { CreativeWork: { sameAs: undefined } },
+          { CreativeWork: { name: "Example catalogue", sameAs: { resource: citationUrl } } },
+        ],
+        creator: { Role: { roleName: "beherende instelling", Creator: { Organization: institution } } },
+        contributor: [
+          contributor("collectieverantwoordelijke", { Person: curator, Organization: institution }),
+          contributor("institutionele herkomst", { Person: curator }),
+          contributor("institutionele herkomst", { Organization: institution }),
+        ],
+        hasPart: {
+          CreativeWork: { name: "Example member", sameAs: { resource: memberUrl } },
+          image: { ImageObject: { contentUrl } },
+        },
+      })],
+    }, log, new Set(), OAIBaseUrl);
+
+    await generateCollections(
+      collections, log, new Map(), new Set(), new Set(), OAIBaseUrl, directory,
+    );
+
+    const collection = await Bun.file(join(collectionDir, `${parentUuid}.json`)).json();
+    const schema = await Bun.file(join(collectionDir, parentUuid, "schema.json")).json();
+    expect(collection.summary).toBeUndefined();
+    expect(collection.metadata).toEqual([
+      { label: { en: ["Title"], nl: ["Titel"] }, value: { nl: ["Test collection"] } },
+      { label: { en: ["Dating"], nl: ["Datering"] }, value: { nl: ["1700 – 2010"] } },
+      { label: { en: ["Extent"], nl: ["Omvang"] }, value: { nl: ["630 objecten"] } },
+      { label: { en: ["Managing institution"], nl: ["Beherende instelling"] }, value: { nl: [institution.name] } },
+      { label: { en: ["Curator"], nl: ["Conservator"] }, value: { nl: [curator.name, institution.name] } },
+      {
+        label: { en: ["Institutional provenance"], nl: ["Institutionele herkomst"] },
+        value: { nl: [curator.name, institution.name] },
+      },
+      {
+        label: { en: ["Documentation"], nl: ["Documentatie"] },
+        value: {
+          nl: [
+            '<span><a href="https://example.test/catalogue?edition=1&amp;language=nl">Example catalogue</a></span>',
+          ],
+        },
+      },
+    ]);
+    expect(schema).toMatchObject({
+      identifier: "test-collection",
+      temporalCoverage: "1700/2010",
+      materialExtent: "630 objecten",
+      citation: [{ "@type": "CreativeWork", name: "Example catalogue", sameAs: citationUrl }],
+      creator: {
+        "@type": "Role",
+        roleName: "beherende instelling",
+        creator: { "@type": "Organization", ...institution },
+      },
+      hasPart: {
+        "@type": "CreativeWork",
+        name: "Example member",
+        sameAs: memberUrl,
+        image: { "@type": "ImageObject", contentUrl },
+      },
+    });
+    expect(schema.contributor[0]).toEqual({
+      "@type": "Role",
+      roleName: "collectieverantwoordelijke",
+      contributor: [{ "@type": "Person", ...curator }, { "@type": "Organization", ...institution }],
+    });
   } finally {
     await rm(directory, { recursive: true, force: true });
   }

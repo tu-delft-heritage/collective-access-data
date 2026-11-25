@@ -1,5 +1,11 @@
 import * as z from "zod";
 
+const SchemaImageContentUrl = z.object({
+  "@context": z.url(),
+  "@id": z.url(),
+  "@type": z.literal("Image"),
+});
+
 const SchemaImageObject = z.preprocess(
   (val: any) => ({
     "@type": "ImageObject",
@@ -7,14 +13,10 @@ const SchemaImageObject = z.preprocess(
   }),
   z.object({
     "@type": z.literal("ImageObject"),
-    contentUrl: z.object({
-      "@context": z.url(),
-      "@id": z.url(),
-      "@type": z.literal("Image"),
-    }),
+    contentUrl: SchemaImageContentUrl,
     // Temporary fix because of space in URL
     thumbnailUrl: z.preprocess(
-      (val) => typeof val === "string" ? val.replaceAll(" ", "") : val,
+      (val) => (typeof val === "string" ? val.replaceAll(" ", "") : val),
       z.url(),
     ),
     encodingFormat: z.literal("https://iiif.io/api/image/3.0/"),
@@ -250,28 +252,94 @@ function expandRdfElements(value: unknown, element: string) {
   });
 }
 
+const SchemaCollectionRoleEntities = z.preprocess((value) => {
+  if (!value || typeof value !== "object") return value;
+  const entities = Object.entries(value).flatMap(([type, entries]) => {
+    const items = Array.isArray(entries) ? entries : [entries];
+    return items.map((item) => ({ [type]: item }));
+  });
+  return entities.length === 1 ? entities[0] : entities;
+}, SchemaEntity.or(z.array(SchemaEntity).min(1)));
+
+const SchemaCollectionCreator = z
+  .object({
+    Role: z.object({
+      roleName: z.string(),
+      Creator: SchemaCollectionRoleEntities,
+    }),
+  })
+  .transform(({ Role }) => ({
+    "@type": "Role" as const,
+    roleName: Role.roleName,
+    creator: Role.Creator,
+  }));
+
+const SchemaCollectionContributor = z
+  .object({
+    Role: z.object({
+      roleName: z.string(),
+      Contributor: SchemaCollectionRoleEntities,
+    }),
+  })
+  .transform(({ Role }) => ({
+    "@type": "Role" as const,
+    roleName: Role.roleName,
+    contributor: Role.Contributor,
+  }));
+
+const SchemaCollectionMemberImage = z
+  .object({
+    ImageObject: z.object({
+      contentUrl: SchemaImageContentUrl.or(z.array(SchemaImageContentUrl)),
+    }),
+  })
+  .transform(({ ImageObject }) => ({ "@type": "ImageObject" as const, ...ImageObject }));
+
+const SchemaCollectionMember = z.preprocess((value) => {
+  if (!value || typeof value !== "object") return value;
+  // OAI puts member images alongside CreativeWork in the hasPart wrapper.
+  const { image, ...entity } = value as Record<string, unknown>;
+  return {
+    ...unwrapSchemaEntity(entity),
+    image: isEmptyRdfValue(image) ? undefined : image,
+  };
+}, SchemaEntityFields.extend({ image: SchemaCollectionMemberImage.optional() }));
+
 export const SchemaCollectionMetadata = z.object({
   "@id": z.url(),
   name: z.string(),
   abstract: z.string().optional(),
-  description: z.string().min(1),
-  identifier: z.string(),
-  creator: z.array(SchemaRoleCreator).or(SchemaRoleCreator).optional(),
-  contributor: z
-    .array(SchemaRoleContributor)
-    .or(SchemaRoleContributor)
+  description: z
+    .string()
+    .min(1)
+    .transform((description) =>
+      description.replace(/\r\n?/g, "\n").replace(/\n(?:[^\S\n]*\n)+/g, "\n"),
+    )
     .optional(),
-  hasPart: z.array(SchemaEntity).or(SchemaEntity).optional(),
-  isPartOf: z.preprocess(
-    (value) => expandRdfElements(value, "Collection"),
-    z.array(SchemaEntity),
-  ).optional(),
-  image: z.preprocess(
-    (value) => expandRdfElements(value, "ImageObject"),
-    z.array(SchemaImageObject).transform((images) =>
-      images.sort((a, b) => a.position - b.position),
-    ),
-  ).optional(),
+  identifier: z.string(),
+  temporalCoverage: z.string().optional(),
+  materialExtent: z.string().optional(),
+  citation: SchemaCitation,
+  creator: z.array(SchemaCollectionCreator).or(SchemaCollectionCreator).optional(),
+  contributor: z
+    .array(SchemaCollectionContributor)
+    .or(SchemaCollectionContributor)
+    .optional(),
+  hasPart: z.array(SchemaCollectionMember).or(SchemaCollectionMember).optional(),
+  isPartOf: z
+    .preprocess(
+      (value) => expandRdfElements(value, "Collection"),
+      z.array(SchemaEntity),
+    )
+    .optional(),
+  image: z
+    .preprocess(
+      (value) => expandRdfElements(value, "ImageObject"),
+      z
+        .array(SchemaImageObject)
+        .transform((images) => images.sort((a, b) => a.position - b.position)),
+    )
+    .optional(),
 });
 
 type SchemaMetadataByKind = {
