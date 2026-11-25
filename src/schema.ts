@@ -14,7 +14,7 @@ const SchemaImageObject = z.preprocess(
     }),
     // Temporary fix because of space in URL
     thumbnailUrl: z.preprocess(
-      (val: string) => val.replaceAll(" ", ""),
+      (val) => typeof val === "string" ? val.replaceAll(" ", "") : val,
       z.url(),
     ),
     encodingFormat: z.literal("https://iiif.io/api/image/3.0/"),
@@ -234,25 +234,38 @@ export const SchemaMetadata = z.preprocess(
 
 export type SchemaCollectionMetadata = z.infer<typeof SchemaCollectionMetadata>;
 
-export const SchemaCollectionMetadata = z.preprocess(
-  (val: any) => ({
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    ...val,
-  }),
-  z.object({
-    "@id": z.url(),
-    name: z.string(),
-    description: z.string(),
-    identifier: z.string(),
-    creator: z.array(SchemaRoleCreator).or(SchemaRoleCreator).optional(),
-    contributor: z
-      .array(SchemaRoleContributor)
-      .or(SchemaRoleContributor)
-      .optional(),
-    hasPart: z.array(SchemaEntity).or(SchemaEntity).optional(),
-  }),
-);
+function expandRdfElements(value: unknown, element: string) {
+  return (Array.isArray(value) ? value : [value]).flatMap((entry) => {
+    const children = (entry as Record<string, unknown> | undefined)?.[element];
+    return Array.isArray(children)
+      ? children.map((child) => ({ [element]: child }))
+      : [entry];
+  });
+}
+
+export const SchemaCollectionMetadata = z.object({
+  "@id": z.url(),
+  name: z.string(),
+  abstract: z.string().optional(),
+  description: z.string().min(1),
+  identifier: z.string(),
+  creator: z.array(SchemaRoleCreator).or(SchemaRoleCreator).optional(),
+  contributor: z
+    .array(SchemaRoleContributor)
+    .or(SchemaRoleContributor)
+    .optional(),
+  hasPart: z.array(SchemaEntity).or(SchemaEntity).optional(),
+  isPartOf: z.preprocess(
+    (value) => expandRdfElements(value, "Collection"),
+    z.array(SchemaEntity),
+  ).optional(),
+  image: z.preprocess(
+    (value) => expandRdfElements(value, "ImageObject"),
+    z.array(SchemaImageObject).transform((images) =>
+      images.sort((a, b) => a.position - b.position),
+    ),
+  ).optional(),
+});
 
 type SchemaMetadataByKind = {
   object: z.input<typeof SchemaMetadata>;

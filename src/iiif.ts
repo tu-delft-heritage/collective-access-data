@@ -116,31 +116,63 @@ export function createManifest(
 }
 
 export function createCollection(
-  records: SchemaMetadata[],
+  records: readonly SchemaMetadata[],
   metadata: SchemaCollectionMetadata,
   uuid: string,
+  children: readonly { uuid: string; metadata: SchemaCollectionMetadata }[] = [],
 ) {
   const builder = new IIIFBuilder();
   const uri = `${manifestUriBase}${collectionsFolder}/${uuid}`;
   const collection = builder.createCollection(`${uri}.json`, (collection) => {
     collection.setLabel({ nl: [metadata.name] });
-    collection.setSummary({ nl: [metadata.description] });
-    collection.setMetadata(collectionMetadata);
-    if (records.length) {
-      for (const item of records) {
-        const uuid = getUuid(item["@id"]);
-        collection.createManifest(
-          `${manifestUriBase}${objectsFolder}/${uuid}.json`,
-          (manifest) => {
-            manifest.setLabel({ nl: [item.name] });
-            const navDate = getNavDateValue(item);
-            if (navDate) {
-              manifest.entity.navDate = navDate;
-            }
-          },
-        );
-      }
+    if (metadata.abstract) {
+      collection.setSummary({ nl: metadata.abstract.split(/(?:\r?\n)+/) });
+    }
+    collection.setMetadata([
+      ...collectionMetadata,
+      {
+        label: { en: ["Description"], nl: ["Beschrijving"] },
+        value: { nl: metadata.description.split(/(?:\r?\n)+/) },
+      },
+    ]);
+    for (const thumbnail of getCollectionThumbnails(metadata)) {
+      collection.addThumbnail(thumbnail);
+    }
+    for (const item of records) {
+      const uuid = getUuid(item["@id"]);
+      collection.createManifest(
+        `${manifestUriBase}${objectsFolder}/${uuid}.json`,
+        (manifest) => {
+          manifest.setLabel({ nl: [item.name] });
+          const navDate = getNavDateValue(item);
+          if (navDate) {
+            manifest.entity.navDate = navDate;
+          }
+        },
+      );
+    }
+    for (const child of children) {
+      collection.createCollection(
+        `${manifestUriBase}${collectionsFolder}/${child.uuid}.json`,
+        (reference) => {
+          reference.setLabel({ nl: [child.metadata.name] });
+          for (const thumbnail of getCollectionThumbnails(child.metadata)) {
+            reference.addThumbnail(thumbnail);
+          }
+        },
+      );
     }
   });
-  return builder.toPresentation3(collection);
+  const result = builder.toPresentation3(collection) as Record<string, unknown>;
+  // The builder omits empty arrays, but IIIF Collections require `items`.
+  result.items ??= [];
+  return result;
+}
+
+function getCollectionThumbnails(metadata: SchemaCollectionMetadata) {
+  return (metadata.image ?? []).map(({ thumbnailUrl }) => ({
+    id: thumbnailUrl,
+    type: "Image" as const,
+    format: "image/jpeg",
+  }));
 }

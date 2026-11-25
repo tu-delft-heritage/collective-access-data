@@ -753,7 +753,7 @@ async function generateObjects(
   }
 }
 
-function parsePublicCollections(
+export function parsePublicCollections(
   collectionResponse: FetchedRecords,
   writer: LogWriter,
   existingCollectionUuids: ReadonlySet<string>,
@@ -812,24 +812,47 @@ function parsePublicCollections(
   return publicCollections;
 }
 
-async function generateCollections(
+function getChildCollections(collections: readonly PublicCollection[]) {
+  const publicUuids = new Set(collections.map(({ uuid }) => uuid));
+  const childrenByParent = new Map<string, Map<string, PublicCollection>>();
+  for (const child of collections) {
+    for (const parent of child.metadata.isPartOf ?? []) {
+      if (parent["@type"] !== "Collection" || !parent.sameAs) continue;
+      const parentUuid = getUuid(parent.sameAs);
+      if (!parentUuid || parentUuid === child.uuid || !publicUuids.has(parentUuid)) continue;
+
+      const children = childrenByParent.get(parentUuid) ?? new Map();
+      children.set(child.uuid, child);
+      childrenByParent.set(parentUuid, children);
+    }
+  }
+  return childrenByParent;
+}
+
+export async function generateCollections(
   collections: readonly PublicCollection[],
   writer: LogWriter,
   manifestsOnDisk: Map<string, SchemaMetadata>,
   existingCollectionUuids: ReadonlySet<string>,
   loggedCollectionOmissionUuids: ReadonlySet<string>,
   oaiBaseUrl: string,
+  directory = outputDir,
 ) {
   console.log("Generating IIIF Collection Manifests...");
+  const childrenByParent = getChildCollections(collections);
+  const statuses = new Map<string, "visiting" | "available" | "failed">();
   const recordsInCollections = new Set<string>();
   let generated = 0;
 
-  for (const sourceCollection of collections) {
+  async function generateCollection(sourceCollection: PublicCollection) {
     const {
       metadata: parsedMetadata,
       oaiIdentifier,
       uuid,
     } = sourceCollection;
+    if (statuses.has(uuid)) return;
+    statuses.set(uuid, "visiting");
+
     const context = createRecordLogContext(
       uuid,
       parsedMetadata.name,
@@ -839,6 +862,33 @@ async function generateCollections(
       oaiBaseUrl,
     );
     try {
+      const children: PublicCollection[] = [];
+      for (const child of childrenByParent.get(uuid)?.values() ?? []) {
+        if (statuses.get(child.uuid) === "visiting") {
+          writeRecordLog(
+            writer,
+            "Circular collection membership",
+            "Child collection omitted",
+            context,
+            `Collection UUID: ${child.uuid}`,
+          );
+          continue;
+        }
+
+        await generateCollection(child);
+        if (statuses.get(child.uuid) === "available") {
+          children.push(child);
+        } else {
+          writeRecordLog(
+            writer,
+            "Child collection export is not available",
+            "Child collection omitted",
+            context,
+            `Collection UUID: ${child.uuid}`,
+          );
+        }
+      }
+
       const records = getValueAsArray(parsedMetadata.hasPart)
         .map((entity) => {
           if (!entity.sameAs) return undefined;
@@ -870,20 +920,17 @@ async function generateCollections(
         })
         .filter((record): record is SchemaMetadata => record !== undefined);
 
-      if (!records.length) {
-        writeRecordLog(
-          writer,
-          "No available object manifests found for collection",
-          getCollectionFailureConsequence(context, existingCollectionUuids),
-          context,
-        );
-        continue;
-      }
-
-      const collection = createCollection(records, parsedMetadata, uuid);
-      await saveJson(collection, uuid, join(outputDir, collectionsFolder));
+      const collection = createCollection(records, parsedMetadata, uuid, children);
+      await saveJson(
+        { "@context": "https://schema.org", "@type": "Collection", ...parsedMetadata },
+        "schema",
+        join(directory, collectionsFolder, uuid),
+      );
+      await saveJson(collection, uuid, join(directory, collectionsFolder));
+      statuses.set(uuid, "available");
       generated++;
     } catch (error) {
+      statuses.set(uuid, existingCollectionUuids.has(uuid) ? "available" : "failed");
       writeRecordLog(
         writer,
         "Generation failed for collection",
@@ -892,6 +939,10 @@ async function generateCollections(
         `Error: ${errorMessage(error)}`,
       );
     }
+  }
+
+  for (const collection of collections) {
+    await generateCollection(collection);
   }
 
   console.log(`${generated} collections created or updated`);
