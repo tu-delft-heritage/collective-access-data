@@ -14,6 +14,7 @@ import {
   getPublicObjectInventory,
   getRecordLogContext,
   pruneUnavailableObjects,
+  reconcileUnavailableCollections,
   reconcileUnavailableObjects,
   recordLogColumns,
   sortRecordLogEntries,
@@ -34,12 +35,16 @@ afterEach(async () => {
   );
 });
 
-async function createGeneratedObject(directory: string, uuid: string) {
-  const objectDirectory = join(directory, "objects", uuid);
-  await fs.mkdir(objectDirectory, { recursive: true });
+async function createGeneratedRecord(
+  directory: string,
+  uuid: string,
+  type: "objects" | "collections" = "objects",
+) {
+  const dataDirectory = join(directory, type, uuid);
+  await fs.mkdir(dataDirectory, { recursive: true });
   await Promise.all([
-    fs.writeFile(join(directory, "objects", `${uuid}.json`), "{}"),
-    fs.writeFile(join(objectDirectory, "schema.json"), "{}"),
+    fs.writeFile(join(directory, type, `${uuid}.json`), "{}"),
+    fs.writeFile(join(dataDirectory, "schema.json"), "{}"),
   ]);
 }
 
@@ -82,8 +87,8 @@ describe("public object reconciliation", () => {
     temporaryDirectories.push(directory);
     const retained = "11111111-1111-4111-8111-111111111111";
     const removed = "22222222-2222-4222-8222-222222222222";
-    await createGeneratedObject(directory, retained);
-    await createGeneratedObject(directory, removed);
+    await createGeneratedRecord(directory, retained);
+    await createGeneratedRecord(directory, removed);
 
     const result = await pruneUnavailableObjects(
       { complete: true, unmappedIdentifiers: [], uuids: new Set([retained]) },
@@ -100,7 +105,7 @@ describe("public object reconciliation", () => {
     const directory = await fs.mkdtemp(join(tmpdir(), "collective-access-data-"));
     temporaryDirectories.push(directory);
     const uuid = "22222222-2222-4222-8222-222222222222";
-    await createGeneratedObject(directory, uuid);
+    await createGeneratedRecord(directory, uuid);
     const inventory = getPublicObjectInventory([
       { header: { identifier: "oai:test:unmappable" }, metadata: {} },
     ]);
@@ -117,8 +122,8 @@ describe("public object reconciliation", () => {
     temporaryDirectories.push(directory);
     const retained = "11111111-1111-4111-8111-111111111111";
     const removed = "22222222-2222-4222-8222-222222222222";
-    await createGeneratedObject(directory, retained);
-    await createGeneratedObject(directory, removed);
+    await createGeneratedRecord(directory, retained);
+    await createGeneratedRecord(directory, removed);
     const previousContext = getRecordLogContext({
       header: { identifier: "oai:oai.tudelft:42" },
       metadata: { RDF: { CreativeWork: {
@@ -161,7 +166,7 @@ describe("public object reconciliation", () => {
     const directory = await fs.mkdtemp(join(tmpdir(), "collective-access-data-"));
     temporaryDirectories.push(directory);
     const uuid = "22222222-2222-4222-8222-222222222222";
-    await createGeneratedObject(directory, uuid);
+    await createGeneratedRecord(directory, uuid);
     const log: RecordLogEntry[] = [];
     const metadata = new Map([[uuid, { name: "Retained object" } as SchemaMetadata]]);
 
@@ -175,6 +180,82 @@ describe("public object reconciliation", () => {
     expect(metadata.has(uuid)).toBe(true);
     expect(await Bun.file(join(directory, "objects", `${uuid}.json`)).exists()).toBe(true);
     expect(await Bun.file(join(directory, "objects", uuid, "schema.json")).exists()).toBe(true);
+  });
+});
+
+describe("public collection reconciliation", () => {
+  test("removes absent and deleted collections while retaining invalid public records", async () => {
+    const directory = await fs.mkdtemp(join(tmpdir(), "collective-access-data-"));
+    temporaryDirectories.push(directory);
+    const retained = "11111111-1111-4111-8111-111111111111";
+    const absent = "22222222-2222-4222-8222-222222222222";
+    const deleted = "33333333-3333-4333-8333-333333333333";
+    for (const uuid of [retained, absent, deleted]) {
+      await createGeneratedRecord(directory, uuid, "collections");
+    }
+    await createGeneratedRecord(directory, absent, "objects");
+
+    const collectionsDirectory = join(directory, "collections");
+    await fs.rm(join(collectionsDirectory, `${deleted}.json`));
+    await fs.writeFile(join(collectionsDirectory, deleted, "schema.json"), '{"name":"Deleted collection"}');
+    const previousContext = getRecordLogContext({
+      header: { identifier: "oai:oai.tudelft:42" },
+      metadata: { RDF: { CreativeWork: {
+        "@id": `https://heritage.tudelft.nl/iiif/collections/${absent}/schema.json`,
+        name: "Unpublished collection",
+      } } },
+    }, "collections");
+    const log: RecordLogEntry[] = [];
+
+    const result = await reconcileUnavailableCollections({
+      usedCachedResponse: false,
+      records: [
+        { metadata: { RDF: { CreativeWork: {
+          "@id": `https://heritage.tudelft.nl/iiif/collections/${retained}/schema.json`,
+        } } } },
+        { header: { identifier: "oai:oai.tudelft:43", status: "deleted" } },
+      ],
+    }, log, new Map([[absent, previousContext]]), { directory });
+
+    expect(result).toEqual([absent, deleted]);
+    expect((await fs.readdir(collectionsDirectory)).sort()).toEqual([retained, `${retained}.json`]);
+    expect(await Bun.file(join(directory, "objects", `${absent}.json`)).exists()).toBe(true);
+    expect(log).toContainEqual(expect.objectContaining({
+      ...previousContext,
+      message: "Collection no longer present in CollectiveAccess export",
+      consequence: "Collection manifest and generated data deleted",
+    }));
+    expect(log).toContainEqual(expect.objectContaining({
+      uuid: deleted, name: "Deleted collection", type: "collection",
+    }));
+  });
+
+  test.each([
+    { reason: "deletion disabled", cached: false, delete: false, records: [], consequences: [] },
+    { reason: "cached export", cached: true, delete: true, records: [], consequences: [] },
+    {
+      reason: "unmappable active record",
+      cached: false,
+      delete: true,
+      records: [{ header: { identifier: "oai:test:unmappable" }, metadata: {} }],
+      consequences: ["No generated collections deleted"],
+    },
+  ])("preserves collection files with $reason", async (scenario) => {
+    const directory = await fs.mkdtemp(join(tmpdir(), "collective-access-data-"));
+    temporaryDirectories.push(directory);
+    const uuid = "22222222-2222-4222-8222-222222222222";
+    await createGeneratedRecord(directory, uuid, "collections");
+    const log: RecordLogEntry[] = [];
+
+    const result = await reconcileUnavailableCollections({
+      records: scenario.records,
+      usedCachedResponse: scenario.cached,
+    }, log, new Map(), { directory, delete: scenario.delete });
+
+    expect(result).toEqual([]);
+    expect(log.map(({ consequence }) => consequence)).toEqual(scenario.consequences);
+    expect(await Bun.file(join(directory, "collections", `${uuid}.json`)).exists()).toBe(true);
+    expect(await Bun.file(join(directory, "collections", uuid, "schema.json")).exists()).toBe(true);
   });
 });
 

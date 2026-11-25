@@ -51,11 +51,15 @@ export function resolveGenerateOptions(options: GenerateOptions = {}) {
   };
 }
 
-export type PublicObjectInventory = {
+type RecordType = typeof objectsFolder | typeof collectionsFolder;
+
+type PublicInventory = {
   complete: boolean;
   unmappedIdentifiers: string[];
   uuids: Set<string>;
 };
+
+export type PublicObjectInventory = PublicInventory;
 
 type LogWriter = RecordLogEntry[];
 
@@ -126,7 +130,7 @@ function readableValue(value: unknown) {
 
 function getCollectiveAccessUrl(
   oaiIdentifier: string | undefined,
-  type: "objects" | "collections",
+  type: RecordType,
 ) {
   const recordId = oaiIdentifier?.match(/:(\d+)$/)?.[1];
   if (!recordId) return unavailable;
@@ -143,7 +147,7 @@ function createRecordLogContext(
   name: unknown,
   identifier: unknown,
   oaiIdentifier: string | undefined,
-  type: "objects" | "collections",
+  type: RecordType,
   oaiBaseUrl?: string,
 ): RecordLogContext {
   return {
@@ -160,11 +164,11 @@ function createRecordLogContext(
 
 export function getRecordLogContext(
   value: unknown,
-  type: "objects" | "collections",
+  type: RecordType,
   oaiBaseUrl?: string,
 ): RecordLogContext {
-  const record = value as Partial<SchemaRecord<"object" | "collection">>;
-  const metadata = record.metadata?.RDF?.CreativeWork as
+  const record = value as Partial<SchemaRecord<"object" | "collection">> | undefined;
+  const metadata = record?.metadata?.RDF?.CreativeWork as
     | Record<string, unknown>
     | undefined;
   const id = metadata?.["@id"];
@@ -173,7 +177,7 @@ export function getRecordLogContext(
     uuid,
     metadata?.name,
     metadata?.identifier,
-    record.header?.identifier,
+    record?.header?.identifier,
     type,
     oaiBaseUrl,
   );
@@ -292,51 +296,51 @@ function writeRecordLog(
   writer.push(formatRecordLog(message, consequence, context, details, image));
 }
 
-function getObjectLogContexts(records: readonly unknown[], oaiBaseUrl: string) {
+function getRecordLogContexts(
+  records: readonly unknown[],
+  type: RecordType,
+  oaiBaseUrl: string,
+) {
   const contexts = new Map<string, RecordLogContext>();
   for (const record of records) {
-    const context = getRecordLogContext(record, "objects", oaiBaseUrl);
+    const context = getRecordLogContext(record, type, oaiBaseUrl);
     if (context.uuid !== unavailable) contexts.set(context.uuid, context);
   }
   return contexts;
 }
 
-async function readPreviousObjectLogContexts(oaiBaseUrl: string) {
+async function readPreviousLogContexts(type: RecordType, oaiBaseUrl: string) {
   try {
     const snapshot = await fs.readFile(
-      getRecordsSnapshotPath("objects", undefined, oaiBaseUrl),
+      getRecordsSnapshotPath(type, undefined, oaiBaseUrl),
       "utf8",
     );
     const records: unknown = JSON.parse(snapshot);
     if (!Array.isArray(records)) throw new Error("Expected an array of records");
-    return getObjectLogContexts(records, oaiBaseUrl);
+    return getRecordLogContexts(records, type, oaiBaseUrl);
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
       console.warn(
-        `Could not load previous object log context: ${errorMessage(error)}`,
+        `Could not load previous log context for ${type}: ${errorMessage(error)}`,
       );
     }
     return new Map<string, RecordLogContext>();
   }
 }
 
-export function getPublicObjectInventory(
-  records: readonly unknown[],
-): PublicObjectInventory {
-  const inventory: PublicObjectInventory = {
+function getPublicInventory(records: readonly unknown[]): PublicInventory {
+  const inventory: PublicInventory = {
     complete: true,
     unmappedIdentifiers: [],
     uuids: new Set(),
   };
 
   for (const value of records) {
-    const record = value as Partial<SchemaRecord<"object">> & {
-      header?: { identifier?: string; status?: string };
-    };
-    if (record.header?.status === "deleted") continue;
+    const record = value as Partial<SchemaRecord<"object" | "collection">> | undefined;
+    if (record?.header?.status === "deleted") continue;
 
-    const identifier = record.header?.identifier ?? "unknown record";
-    const id = record.metadata?.RDF?.CreativeWork?.["@id"];
+    const identifier = record?.header?.identifier ?? "unknown record";
+    const id = record?.metadata?.RDF?.CreativeWork?.["@id"];
     const uuid = typeof id === "string" ? getUuid(id) : undefined;
     if (validUuid(uuid)) {
       inventory.uuids.add(uuid);
@@ -348,6 +352,8 @@ export function getPublicObjectInventory(
 
   return inventory;
 }
+
+export { getPublicInventory as getPublicObjectInventory };
 
 export function getCollectionMembership(
   collections: readonly PublicCollection[],
@@ -384,11 +390,14 @@ export function withCollectionMembership(
   return { ...objectMetadata, isPartOf: collections } as SchemaMetadata;
 }
 
-async function listGeneratedObjectUuids(directory: string) {
-  const objectsPath = join(directory, objectsFolder);
+async function listGeneratedUuids(
+  directory: string,
+  type: RecordType,
+  includeDataDirectories = false,
+) {
   let entries: Awaited<ReturnType<typeof fs.readdir>>;
   try {
-    entries = await fs.readdir(objectsPath, { withFileTypes: true });
+    entries = await fs.readdir(join(directory, type), { withFileTypes: true });
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === "ENOENT") return new Set<string>();
     throw error;
@@ -396,7 +405,7 @@ async function listGeneratedObjectUuids(directory: string) {
 
   const uuids = new Set<string>();
   for (const entry of entries) {
-    const candidate = entry.isDirectory()
+    const candidate = includeDataDirectories && entry.isDirectory()
       ? entry.name
       : entry.isFile() && entry.name.endsWith(".json")
         ? entry.name.slice(0, -5)
@@ -406,46 +415,22 @@ async function listGeneratedObjectUuids(directory: string) {
   return uuids;
 }
 
-async function listGeneratedObjectManifestUuids(directory: string) {
-  const objectsPath = join(directory, objectsFolder);
-  let entries: Awaited<ReturnType<typeof fs.readdir>>;
-  try {
-    entries = await fs.readdir(objectsPath, { withFileTypes: true });
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === "ENOENT") return new Set<string>();
-    throw error;
-  }
+async function listUnavailableGeneratedUuids(
+  directory: string,
+  type: RecordType,
+  inventory: PublicInventory,
+) {
+  if (!inventory.complete) return [];
 
-  const uuids = new Set<string>();
-  for (const entry of entries) {
-    const candidate =
-      entry.isFile() && entry.name.endsWith(".json")
-        ? entry.name.slice(0, -5)
-        : undefined;
-    if (validUuid(candidate)) uuids.add(candidate);
-  }
-  return uuids;
+  const generatedUuids = await listGeneratedUuids(directory, type, true);
+  return [...generatedUuids].filter((uuid) => !inventory.uuids.has(uuid));
 }
 
-async function listGeneratedCollectionUuids(directory: string) {
-  const collectionsPath = join(directory, collectionsFolder);
-  let entries: Awaited<ReturnType<typeof fs.readdir>>;
-  try {
-    entries = await fs.readdir(collectionsPath, { withFileTypes: true });
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === "ENOENT") return new Set<string>();
-    throw error;
-  }
-
-  const uuids = new Set<string>();
-  for (const entry of entries) {
-    const candidate =
-      entry.isFile() && entry.name.endsWith(".json")
-        ? entry.name.slice(0, -5)
-        : undefined;
-    if (validUuid(candidate)) uuids.add(candidate);
-  }
-  return uuids;
+async function removeGeneratedRecord(resourcePath: string) {
+  await Promise.all([
+    fs.rm(`${resourcePath}.json`, { force: true }),
+    fs.rm(resourcePath, { force: true, recursive: true }),
+  ]);
 }
 
 export async function pruneUnavailableObjects(
@@ -453,79 +438,106 @@ export async function pruneUnavailableObjects(
   directory: string = outputDir,
   onRemoved?: (uuid: string) => void,
 ) {
-  if (!inventory.complete) return [];
-
-  const generatedUuids = await listGeneratedObjectUuids(directory);
-  const removed: string[] = [];
-  for (const uuid of generatedUuids) {
-    if (inventory.uuids.has(uuid)) continue;
-
-    await Promise.all([
-      fs.rm(join(directory, objectsFolder, `${uuid}.json`), { force: true }),
-      fs.rm(join(directory, objectsFolder, uuid), {
-        force: true,
-        recursive: true,
-      }),
-    ]);
-    removed.push(uuid);
+  const removed = await listUnavailableGeneratedUuids(directory, objectsFolder, inventory);
+  for (const uuid of removed) {
+    await removeGeneratedRecord(join(directory, objectsFolder, uuid));
     onRemoved?.(uuid);
   }
   return removed.sort();
 }
 
-export async function reconcileUnavailableObjects(
+type ReconcileOptions = { delete?: boolean; directory?: string; oaiBaseUrl?: string };
+
+async function readGeneratedSchema(resourcePath: string): Promise<unknown> {
+  const json = await fs.readFile(join(resourcePath, "schema.json"), "utf8");
+  return JSON.parse(json);
+}
+
+async function reconcileUnavailableRecords(
+  type: RecordType,
   response: FetchedRecords,
   writer: LogWriter,
-  manifestsOnDisk: Map<string, SchemaMetadata>,
-  objectContexts: ReadonlyMap<string, RecordLogContext>,
-  options: { delete?: boolean; directory?: string; oaiBaseUrl?: string } = {},
+  contexts: ReadonlyMap<string, RecordLogContext>,
+  options: ReconcileOptions,
+  manifestsOnDisk?: Map<string, SchemaMetadata>,
 ) {
+  const label = type === objectsFolder ? "Object" : "Collection";
   if (options.delete === false) {
-    console.log("Object deletion disabled (--no-delete)");
+    console.log(`${label} deletion disabled (--no-delete)`);
     return [];
   }
   if (response.usedCachedResponse) {
-    console.warn("Object pruning skipped because the OAI harvest used cached XML");
+    console.warn(`${label} pruning skipped because the OAI harvest used cached XML`);
     return [];
   }
 
-  const inventory = getPublicObjectInventory(response.records);
+  const inventory = getPublicInventory(response.records);
   if (!inventory.complete) {
-    const message = `Object pruning skipped because public UUIDs could not be determined for ${inventory.unmappedIdentifiers.length} active record(s)`;
+    const message = `${label} pruning skipped because public UUIDs could not be determined for ${inventory.unmappedIdentifiers.length} active record(s)`;
     console.warn(message);
     for (const record of response.records) {
-      const source = record as { header?: { status?: string } };
-      if (source.header?.status === "deleted") continue;
-      const context = getRecordLogContext(record, "objects", options.oaiBaseUrl);
+      const source = record as { header?: { status?: string } } | undefined;
+      if (source?.header?.status === "deleted") continue;
+      const context = getRecordLogContext(record, type, options.oaiBaseUrl);
       if (!validUuid(context.uuid)) {
-        writeRecordLog(writer, message, "No generated objects deleted", context);
+        writeRecordLog(writer, message, `No generated ${type} deleted`, context);
       }
     }
     return [];
   }
 
   const directory = options.directory ?? outputDir;
-  const removed = await pruneUnavailableObjects(inventory, directory, (uuid) => {
-    const metadata = manifestsOnDisk.get(uuid);
-    const context = objectContexts.get(uuid) ??
-      createRecordLogContext(
+  const removed = await listUnavailableGeneratedUuids(directory, type, inventory);
+  for (const uuid of removed) {
+    const resourcePath = join(directory, type, uuid);
+    let context = contexts.get(uuid);
+    if (!context) {
+      const metadata = (manifestsOnDisk
+        ? manifestsOnDisk.get(uuid)
+        : await readGeneratedSchema(resourcePath).catch(() => undefined)) as
+        | { name?: unknown; identifier?: unknown }
+        | undefined;
+      context = createRecordLogContext(
         uuid,
         metadata?.name,
         metadata?.identifier,
         undefined,
-        "objects",
+        type,
       );
+    }
+    await removeGeneratedRecord(resourcePath);
     writeRecordLog(
       writer,
-      "Object no longer present in CollectiveAccess export",
-      "Object manifest and generated data deleted",
+      `${label} no longer present in CollectiveAccess export`,
+      `${label} manifest and generated data deleted`,
       context,
-      `Deleted: ${join(directory, objectsFolder, `${uuid}.json`)} and ${join(directory, objectsFolder, uuid)}`,
+      `Deleted: ${resourcePath}.json and ${resourcePath}`,
     );
-    manifestsOnDisk.delete(uuid);
-  });
-  console.log(`${removed.length} unpublished objects removed`);
-  return removed;
+    manifestsOnDisk?.delete(uuid);
+  }
+  console.log(`${removed.length} unpublished ${type} removed`);
+  return removed.sort();
+}
+
+export function reconcileUnavailableObjects(
+  response: FetchedRecords,
+  writer: LogWriter,
+  manifestsOnDisk: Map<string, SchemaMetadata>,
+  objectContexts: ReadonlyMap<string, RecordLogContext>,
+  options: ReconcileOptions = {},
+) {
+  return reconcileUnavailableRecords(
+    objectsFolder, response, writer, objectContexts, options, manifestsOnDisk,
+  );
+}
+
+export function reconcileUnavailableCollections(
+  response: FetchedRecords,
+  writer: LogWriter,
+  collectionContexts: ReadonlyMap<string, RecordLogContext>,
+  options: ReconcileOptions = {},
+) {
+  return reconcileUnavailableRecords(collectionsFolder, response, writer, collectionContexts, options);
 }
 
 async function loadGeneratedMetadata(
@@ -534,15 +546,13 @@ async function loadGeneratedMetadata(
   directory: string = outputDir,
 ) {
   const metadataByUuid = new Map<string, SchemaMetadata>();
-  const uuids = await listGeneratedObjectUuids(directory);
+  const uuids = await listGeneratedUuids(directory, objectsFolder, true);
 
   for (const uuid of uuids) {
     try {
-      const json = await fs.readFile(
-        join(directory, objectsFolder, uuid, "schema.json"),
-        "utf8",
-      );
-      const metadata = JSON.parse(json) as Partial<SchemaMetadata>;
+      const metadata = (await readGeneratedSchema(
+        join(directory, objectsFolder, uuid),
+      )) as Partial<SchemaMetadata>;
       if (
         typeof metadata["@id"] === "string" &&
         typeof metadata.name === "string"
@@ -958,7 +968,10 @@ export async function runGenerate(options: GenerateOptions = {}) {
 
   try {
     // Snapshot context is used only to identify records in deletion logs.
-    const previousObjectContexts = await readPreviousObjectLogContexts(oaiBaseUrl);
+    const [previousObjectContexts, previousCollectionContexts] = await Promise.all([
+      readPreviousLogContexts(objectsFolder, oaiBaseUrl),
+      readPreviousLogContexts(collectionsFolder, oaiBaseUrl),
+    ]);
     console.log("Fetching public collection and object inventories...");
     const harvestOptions = {
       oaiBaseUrl,
@@ -966,13 +979,16 @@ export async function runGenerate(options: GenerateOptions = {}) {
     };
     const collectionResponse = await fetchRecords("collections", harvestOptions);
     const objectResponse = await fetchRecords("objects", harvestOptions);
-    const objectContexts = getObjectLogContexts(objectResponse.records, oaiBaseUrl);
-    const existingManifestUuids = await listGeneratedObjectManifestUuids(
-      outputDir,
+    const objectContexts = getRecordLogContexts(objectResponse.records, objectsFolder, oaiBaseUrl);
+    const collectionContexts = getRecordLogContexts(
+      collectionResponse.records,
+      collectionsFolder,
+      oaiBaseUrl,
     );
-    const existingCollectionUuids = await listGeneratedCollectionUuids(
-      outputDir,
-    );
+    const [existingManifestUuids, existingCollectionUuids] = await Promise.all([
+      listGeneratedUuids(outputDir, objectsFolder),
+      listGeneratedUuids(outputDir, collectionsFolder),
+    ]);
     const manifestsOnDisk = await loadGeneratedMetadata(
       writer,
       objectContexts,
@@ -1009,6 +1025,12 @@ export async function runGenerate(options: GenerateOptions = {}) {
       existingCollectionUuids,
       loggedCollectionOmissionUuids,
       oaiBaseUrl,
+    );
+    await reconcileUnavailableCollections(
+      collectionResponse,
+      writer,
+      new Map([...previousCollectionContexts, ...collectionContexts]),
+      { delete: resolvedOptions.delete, oaiBaseUrl },
     );
   } finally {
     const logPath = await writeCsvLog(

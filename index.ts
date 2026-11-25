@@ -39,7 +39,7 @@ export function createProgram(
       "fetch fresh CollectiveAccess OAI XML (permits deletion after a complete harvest)",
     )
     .option("--no-dlcs-cache", "fetch fresh DLCS image information")
-    .option("--no-delete", "keep generated objects absent from the public export")
+    .option("--no-delete", "keep generated objects and collections absent from the public export")
     .action((options: GenerateOptions) => runAction(() => generate(options)));
 
   return program;

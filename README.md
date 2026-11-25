@@ -31,7 +31,7 @@ Use `--oai-base-url` to harvest from another CollectiveAccess OAI endpoint:
 bun run generate --oai-base-url https://example.org/service.php/OAI/ --no-delete
 ```
 
-Supply the base URL before `schema_org/request` or `col_schema_org/request`. Both harvests and the OAI links in the CSV use that base. When testing a different export, `--no-delete` protects existing objects from being removed based on that export.
+Supply the base URL before `schema_org/request` or `col_schema_org/request`. Both harvests and the OAI links in the CSV use that base. When testing a different export, `--no-delete` protects existing objects and collections from being removed based on that export.
 
 ## Caching
 
@@ -52,19 +52,19 @@ bun run generate --no-dlcs-cache
 bun run generate --no-cache
 ```
 
-Fresh successful responses update the corresponding cache and JSON snapshots. Cache files are ignored by Git. Because a cached harvest may be older than the checked-out generated data, cached XML is never used to decide which objects to delete; use `--no-collective-access-cache` (or `--no-cache`) for a fresh reconciliation.
+Fresh successful responses update the corresponding cache and JSON snapshots. Cache files are ignored by Git. Use `--no-collective-access-cache` or `--no-cache` to reconcile generated objects and collections with a fresh export.
 
 ## Safe updates
 
-Generation updates files in place; it does not clear `build` first. Deletion is enabled by default: after a complete, fresh OAI harvest, objects absent from the public export are removed from `build/iiif/objects`, including both their manifest (`<uuid>.json`) and generated data directory (`<uuid>/`). Each removal is recorded in the CSV with the consequence `Object manifest and generated data deleted`. The previous JSON snapshot supplies source identifiers for deletion logs when available; otherwise, the generated schema supplies the name and inventory identifier, and missing source links are marked `unavailable`.
+Generation updates files in place. After a complete, fresh OAI harvest, the generator removes objects and collections that are absent from their respective public exports or marked as deleted. Each removal deletes the manifest (`<uuid>.json`) and generated data directory (`<uuid>/`) under `build/iiif/objects` or `build/iiif/collections`. The generator records each removal in the CSV. The previous JSON snapshot supplies record details when available. The generated schema supplies the name and, for objects, the inventory identifier as fallback. Missing source links are marked `unavailable`.
 
-Use `--no-delete` to retain objects that are no longer exported:
+Use `--no-delete` to retain objects and collections that are no longer exported.
 
 ```bash
 bun run generate --no-collective-access-cache --no-delete
 ```
 
-Deletion is also skipped when the harvest used cached XML or any active record cannot be mapped to a UUID. Invalid OAI responses fail the harvest instead of being treated as an empty export.
+Each export retains its generated files if its harvest used cached XML or any of its active records lack a usable UUID. Invalid OAI responses fail the harvest.
 
 A record that fails schema validation, image lookup, or manifest generation is logged and its previously generated files are left unchanged. Existing schema data is also loaded before collection generation so a temporarily invalid object can remain in its collection.
 
@@ -78,7 +78,7 @@ Each run writes a CSV log to `logs/`, with all object rows first and collection 
 
 ## GitHub Actions logs
 
-The scheduled build fetches fresh CollectiveAccess exports and reuses the DLCS cache, so unpublished objects can be deleted on every successful harvest. Each run uploads `logs/*.csv` as a `generation-log-<run-id>-<attempt>` artifact, available from the workflow run's **Artifacts** section for 30 days. Upload is attempted even if generation fails. Logs remain ignored by Git, and the workflow commits only `build/iiif` changes, including deletions.
+The scheduled build fetches fresh CollectiveAccess exports and reuses the DLCS cache, so unpublished objects and collections can be deleted on every successful harvest. Each run uploads `logs/*.csv` as a `generation-log-<run-id>-<attempt>` artifact, available from the workflow run's **Artifacts** section for 30 days. Upload is attempted even if generation fails. Logs remain ignored by Git, and the workflow commits only `build/iiif` changes, including deletions.
 
 Run the checks with:
 
