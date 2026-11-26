@@ -11,7 +11,7 @@ export const objectsFolder = "objects";
 export const collectionsFolder = "collections";
 export const cacheDir = ".cache";
 export const OAIBaseUrl =
-  "https://cms.collectiveaccess.tudelft.nl/service.php/OAI/";
+  "https://cms.collectiveaccess.tudelft.nl/admin/service.php/OAI/";
 export const dlcsImageBase = "https://dlc.services/iiif-img/v3/7/";
 export const dlcsSpace = "18";
 export const dlcsPortalUrl = "https://portal.dlc.services/Images/18/";
