@@ -1,0 +1,126 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/10e0010e-8218-47eb-97db-f9b4897f6118.json",
+    "type": "Collection",
+    "label": {
+        "nl": [
+            "Maquettecollectie"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Maquettecollectie"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Extent"
+                ],
+                "nl": [
+                    "Omvang"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "ca. 200"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Managing institution"
+                ],
+                "nl": [
+                    "Beherende instelling"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Faculteit Bouwkunde",
+                    "Faculteit Bouwkunde"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Curator"
+                ],
+                "nl": [
+                    "Conservator"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Tessa Wijtman-Berkman",
+                    "Tessa Wijtman-Berkman"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "De maquettes in deze collectie zijn gebouwd in de maquettewerkplaats van de faculteit Bouwkunde, vaak door studenten van de faculteit Bouwkunde. Binnen het onderwijs van de faculteit Architectuur wordt het fysieke model vaak gebruikt als ontwerp- en onderzoeksinstrument. Voor sommige studio's is het zelfs een essentieel onderdeel van hun ontwerp- en onderzoeksfilosofie. Daarom wordt de collectie nog steeds deels uitgebreid door onderwijsprojecten.",
+                    "De collectie kan worden onderverdeeld in drie groepen: individuele modellen die zijn geproduceerd als onderdeel van modelonderwijs; maquettes gemaakt in het kader van externe tentoonstellingen  en maquettes die zijn gebouwd als onderdeel van een onderzoeksproject. Op de website voor de collecties van Bouwkudne is per maquette in detail beschreven door wie en met welk doel hij gemaakt is.",
+                    "De maquettecollectie bestaat momenteel uit ca. 200 maquettes, waarvan er 120 te vinden zijn op de website voor de collecties van Bouwkunde. De maquettes staan in een gesloten depot in de faculteit, dat slechts met maximaal tien bezoekers en onder begeleiding toegankelijk is. Een deel is zichtbaar door het raam van het depot, een ander deel is onzichtbaar opgeslagen in de transportkisten.",
+                    "In 2005 formaliseerde de afdeling het beheer en behoud van het model. De inventaris, intensieve restauratie en uitgebreide documentatie van de modellen werd aangepakt. Naast beheer en behoud was het doel om de collectie te ontgrendelen, uit te breiden en beschikbaar te stellen voor onderwijs, onderzoek en bruiklenen.",
+                    "De resulterende collectie is afkomstig uit onderzoek en onderwijs aan de faculteit, en kan gebruikt worden voor onderwijs over architectuurgeschiedenis en -ontwerp. De collectie van belang is voor de faculteit, de universiteit en het vakgebied omdat hij in zijn diversiteit en kwaliteit een unieke collectie is binnen Nederland. Het is een gebruikscollectie die veel wordt gebruikt voor bruiklenen aan de grote nationale musea, en daarom bijdraagt aan het uitdragen van de identiteit van de faculteit en de universiteit."
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Documentation"
+                ],
+                "nl": [
+                    "Documentatie"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "<span><a href=\"https://collecties.bk.tudelft.nl/models\">De maquetttecollectie van de faculteit Bouwkunde</a></span>"
+                ]
+            }
+        }
+    ],
+    "summary": {
+        "nl": [
+            "Een collectie van maquettes gebouwd in de maquettewerkplaats van de faculteit Bouwkunde."
+        ]
+    },
+    "thumbnail": [
+        {
+            "id": "https://dlc.services/thumbs/7/18/87a97bc1-4082-4d47-819f-9d51f578f798/full/full/0/default.jpg",
+            "type": "Image",
+            "format": "image/jpeg"
+        },
+        {
+            "id": "https://dlc.services/thumbs/7/18/d4de069b-a8d2-4481-99ca-047723fec166/full/full/0/default.jpg",
+            "type": "Image",
+            "format": "image/jpeg"
+        }
+    ],
+    "items": []
+}

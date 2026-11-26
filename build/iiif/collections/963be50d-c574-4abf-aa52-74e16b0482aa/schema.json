@@ -1,0 +1,1296 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Collection",
+    "@id": "https://heritage.tudelft.nl/iiif/collections/963be50d-c574-4abf-aa52-74e16b0482aa/schema.json",
+    "name": "Van Heel Collectie",
+    "abstract": "De collectie Van Heel toont de totstandkoming en ontwikkeling van de Technische Optica als vakgebied aan de toenmalige TH Delft onder en rondom A.C.S (Bram) van Heel (1899-1966)",
+    "description": "De collectie Van Heel documenteert de totstandkoming en ontwikkeling van de Technische Optica als vakgebied aan de toenmalige TH Delft onder en rondom A.C.S. (Bram) van Heel (1899-1966). Van Heel geldt als een van de belangrijkste grondleggers van de technische optica in Nederland. Hij richtte zich op de praktische toepassing van optische kennis binnen een vakgebied dat destijds sterk theoretisch en wiskundig georiënteerd was. Vanaf zijn aanstelling als lector bouwde hij geleidelijk de optische afdeling op, waarbinnen hij in 1947 tot hoogleraar werd benoemd.\nGedurende zijn loopbaan ontwikkelde Van Heel samen met medewerkers en studenten bruikbare ontwerp-, meet- en analysemethoden voor optische systemen. Een bekend voorbeeld hiervan is de aligneermethode, die na de Tweede Wereldoorlog werd toegepast bij een versnelde herbouw van de brug bij Hedel. Daarnaast speelde Van Heel een belangrijke rol in de ontwikkeling van de Nederlandse optische industrie, onder meer door zijn betrokkenheid bij bedrijven als De Oude Delft en Nonius en bij de oprichting van de Technische Fysische Dienst van TNO. Ook was hij auteur van het invloedrijke leerboek Inleiding in de optica, dat jarenlang als standaardwerk binnen het vakgebied werd gebruikt.\nDe collectie is opgebouwd in de periode 1925-1966 en vormt een sterk samenhangend geheel van instrumenten, lenzen, spiegels en andere technische objecten, aangevuld met foto’s, dia’s, publicaties, correspondentie en notitieboeken. De kracht van de collectie ligt juist in dit gemengde karakter: de verschillende onderdelen kunnen niet los van elkaar worden gezien, maar versterken elkaar inhoudelijk. Samen geven zij inzicht in de verwevenheid van onderzoek, onderwijs, technologische ontwikkeling en industriële samenwerking.\nDe kern van de collectie bestaat uit materiaal dat direct betrekking heeft op Van Heels professionele leven, zijn onderwijs en zijn onderzoekslijnen. Hieronder vallen onderwerpen als lensontwerp, de aligneermethode, optische glasvezels en optische coatings. De collectie laat daarnaast de bredere context van de Optische Groep zien, waaronder onderwijs- en onderzoeksactiviteiten, productie in de eigen werkplaats, optische slijperij en opdamperij, contacten met de optische industrie en samenwerkingen met nationale en internationale collega-onderzoekers. Ook wordt zichtbaar hoe verschillende onderzoekslijnen na Van Heels overlijden werden voortgezet.\nDe collectie omvat niet het volledige archief of alle objecten van de latere Optics Research Group. Uitgesloten is voornamelijk recenter materiaal dat niet direct kan worden verbonden aan Van Heel, zijn onderwijsactiviteiten of zijn onderzoekswerk.\nDe functie van de collectie is meerledig. Een deel van de collectie fungeert nog steeds als studieverzameling en wordt gebruikt binnen onderwijs en onderzoek. Instrumenten en andere objecten worden ingezet in colleges, practica en proefopstellingen, voor zover dit geen schade toebrengt aan de objecten. Publicaties en documentatie zijn raadpleegbaar via de bibliotheek. Tegelijkertijd heeft de collectie een belangrijke erfgoedfunctie. Zij maakt studenten, onderzoekers en medewerkers bewust van de historische ontwikkeling van hun vakgebied en van de rol die Delft daarin heeft gespeeld.\nDe betekenis van de collectie overstijgt de faculteit Technische Natuurwetenschappen. Zo werkte Van Heel samen met W.L. van der Poel van Elektrotechniek en werd diens computer Testudo gebruikt voor het doorrekenen van lensontwerpen. Door de combinatie van objecten, documentatie en context biedt de collectie een uitzonderlijk gedetailleerd beeld van de ontwikkeling van de optica, de wetenschapsbeoefening en de wisselwerking tussen universiteit en industrie in Delft, Nederland en daarbuiten gedurende de twintigste eeuw.\nIn 2026 zijn de topstukken en andere erfgoedobjecten van bijzondere betekenis overgedragen aan de TU Delft Library. De studieobjecten zijn onder beheer gebleven van de afdeling Optica van de faculteit Technische Natuurwetenschappen. Hetgeen hier wordt getoond betreft slechts een selectie van de belangrijkste erfgoedobjecten uit de collectie. De collectie is op aanvraag toegankelijk binnen de universiteit en wordt beheerd met aandacht voor duurzaam behoud en toekomstig gebruik.",
+    "identifier": "Van_Heel_Collectie",
+    "temporalCoverage": "1899/1966",
+    "materialExtent": "Onbekend",
+    "creator": [
+        {
+            "@type": "Role",
+            "roleName": "beherende instelling",
+            "creator": [
+                {
+                    "@type": "Person",
+                    "name": "Faculteit Technische Natuurkunde"
+                },
+                {
+                    "@type": "Organization",
+                    "name": "Faculteit Technische Natuurkunde"
+                }
+            ]
+        },
+        {
+            "@type": "Role",
+            "roleName": "beherende instelling",
+            "creator": [
+                {
+                    "@type": "Person",
+                    "name": "TU Delft Library",
+                    "sameAs": "http://www.wikidata.org/entity/Q2541583"
+                },
+                {
+                    "@type": "Organization",
+                    "name": "TU Delft Library",
+                    "sameAs": "http://www.wikidata.org/entity/Q2541583"
+                }
+            ]
+        }
+    ],
+    "contributor": [
+        {
+            "@type": "Role",
+            "roleName": "collectieverantwoordelijke",
+            "contributor": [
+                {
+                    "@type": "Person",
+                    "name": "Thim Zuidwijk"
+                },
+                {
+                    "@type": "Organization",
+                    "name": "Thim Zuidwijk"
+                }
+            ]
+        },
+        {
+            "@type": "Role",
+            "roleName": "collectieverantwoordelijke",
+            "contributor": [
+                {
+                    "@type": "Person",
+                    "name": "Sylvia Nijhuis"
+                },
+                {
+                    "@type": "Organization",
+                    "name": "Sylvia Nijhuis"
+                }
+            ]
+        }
+    ],
+    "hasPart": [
+        {
+            "@type": "CreativeWork",
+            "name": "Een 3-voudige vouwbare prisma op statief voor instructie doeleinden",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/38bc8285-2b8c-426a-9382-50780d853055/schema.json",
+            "identifier": "2022.0004.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/ea75e965-3adb-4aa8-a4ad-2b2224bac4b9",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/994dfe8a-2863-49f5-9ac8-083f7fc3b42d",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "\"Spectrogard Laser Safety Goggles\" veiligheidsbril in houten kist",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/132822c7-6755-4b19-baf2-fa2b142061b4/schema.json",
+            "identifier": "2024.0118.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/b41c2f95-81dc-418e-a03a-02576ae9e55b",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/e2582e84-ec65-4c48-b325-2f5dc0d9689d",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/af626cf1-38b5-44f1-88d9-473aee92a3df",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "3x rechthoekige spiegels in originele houten doos",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/6cff6310-1860-46f9-b769-75c21b33cfd7/schema.json",
+            "identifier": "2024.0116.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/f23809bb-27a2-4c1a-87f0-90b2170b3450",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "4x rechthoekige fresnellenzen, elk afzonderlijk in vloeipapier verpakt",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/b6faab8d-c405-4c34-8b29-f3c07e188ab9/schema.json",
+            "identifier": "2024.0112.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/350ce322-545b-4ee6-9037-230414a66d2d",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Reflecterende replica tralie in een kartonnen koker, met instructies in een aparte koker",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/23cd3afe-66c0-47e9-a5ba-b8614f0ac58b/schema.json",
+            "identifier": "2024.0111.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/eb71be70-fb40-4300-96eb-d98a06be07ad",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/98b6bf95-f1f2-4350-a942-616402cc30de",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/13344b33-b585-47a5-9d10-288e9e95c747",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "\"Pioneer Polaroid Experimental Kit No. 426\" in doos",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/caa8d08e-a3b8-4f96-86d8-e3eeb3ea8fad/schema.json",
+            "identifier": "2024.0110.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/b9d49044-9ef7-4c77-a52b-2f1d1f16cefa",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Groothoekcamera en foto",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/feb4e481-e9de-4828-9963-fba34452dea2/schema.json",
+            "identifier": "2024.0109.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/6d87fd24-cf6a-44d4-b7f6-ad3fcf05cd8b",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "9x kunststof fresnellenzen van verschillende formaten",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/5da63322-56c4-4846-aab1-cc1f0c1c6202/schema.json",
+            "identifier": "2024.0108.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/a48327ff-83f7-438d-9523-caf03150e2e9",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Glazen 8 inch fresnel-lens, in originele verpakking",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/324c531b-ec71-4c45-adcb-33ae12c832a5/schema.json",
+            "identifier": "2024.0107.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/404f39f0-3954-42ad-aeac-fd81de331539",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "2x glazen trilholtes (\"optical cavity\") in aparte dozen",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/3ad2fd7e-6868-4849-a501-07dd53a1d7bd/schema.json",
+            "identifier": "2024.0099.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/a63b35e8-875f-4538-a40b-a057556f5bad",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Transmissie tralie in houten doos",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/55e8acb7-f747-480e-b71e-9cc1bcbc7123/schema.json",
+            "identifier": "2024.0098.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/6a735679-725e-40bb-8293-e3ec5c00835c",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Glazen trilholte (\"optical cavity\") in doos",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/acede8e4-353e-4bef-a860-dda6a837f6ab/schema.json",
+            "identifier": "2024.0097.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/465d9a3a-96d3-4173-be53-14a22a9c097d",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Apertometer van Carl Zeiss, in originele doos",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/5234fe14-f7e7-44ab-8261-88ca127d3f44/schema.json",
+            "identifier": "2024.0095.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/777f3838-986b-45e6-bda9-813290f4ecd3",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/e314bcbf-d3bf-488a-89d2-52699e827aec",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Glazen buis met houten houder",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/7eb63bd7-c533-4616-b16c-dd06cc5797d6/schema.json",
+            "identifier": "2024.0094.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/d4135938-ac0c-4a60-aa52-ad63d77d0cfa",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/90ebaaf3-a008-48c2-bd94-631e2567ad4c",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Glazen onderdelen om vloeistoffen onder een microscoop te kunnen bekijken, in twee dozen",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/86f92368-823b-4c07-b34a-b63336831547/schema.json",
+            "identifier": "2024.0088.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/9a333f79-0de8-4f54-8af1-4cd6ce1f1cd1",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/512949d0-696e-4cf3-a070-4603adbf40e5",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/c7d676c1-fdf5-47eb-b354-c44c29db9c40",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Gepolijste calsiet in moderne doos",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/59f7752d-12e1-4293-8a49-37b9caccb57c/schema.json",
+            "identifier": "2024.0087.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/44dd5e0a-b127-4285-bc84-5ade3dd88d4b",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/e9162367-948e-4bec-a96c-9d846ee39542",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Aluminium buigingstralie in houten doos, gebruikt door Van Heel",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/0380ba5c-c07b-45e8-b300-1ca63589c357/schema.json",
+            "identifier": "2024.0083.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/3d6e263e-a00a-4769-93e5-80da31f7ab77",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Tekenprisma van Carl Zeiss, in originele doos",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/64d506fb-f8f8-4112-a796-a98887ccaa3b/schema.json",
+            "identifier": "2024.0079.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/95d5beee-e16c-41d6-b354-a20c00332f4b",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/c9c711b6-7118-425e-b26d-7ff1e0a82483",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/aa8bd6ad-31d3-4f05-9833-4c433513966f",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/ed63c2c1-9da4-4f73-adf4-798ecc19087b",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Samengestelde microscoop van messing met onderdelen, waarschijnlijk 18e eeuw, in originele doos",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/a6532245-844c-45e1-b4b9-c287e364452d/schema.json",
+            "identifier": "2024.0075.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/3550e22e-5298-4a1c-876c-65b70dfb9803",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/97abd616-6c48-4e1d-b062-c13399d41499",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/ee1bec66-c5fc-4d21-bde1-09b9f4e6b819",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/1e6f341b-8222-42c2-bda7-45d6e5c33b2f",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "20x preparaten met handgeschreven Franstalige tekst, waarschijnlijk 19de eeuw",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/74a21024-890a-4c3b-adee-c422491ac9d0/schema.json",
+            "identifier": "2024.0074.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/6b8b33a4-ef8d-44f9-bd1b-af3421fb802d",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/82dddc36-1dad-49e6-9964-6b0675ad2585",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/0d64bb4d-1c3e-4e49-a3e3-7cbb57c0d044",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Vierkante glazen lens met tint, in papieren verpakking",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/66a5f20c-935b-472d-81fb-6c6144bd9838/schema.json",
+            "identifier": "2024.0070.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/7410b9ef-8e7e-4d72-9467-11524cee891a",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "2x gele glazen lenzen in brilvormige zwarte houders",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/c2337ac7-15f4-4e31-a9f3-f1afc912af25/schema.json",
+            "identifier": "2024.0069.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/a36d6e2b-861d-46bb-887c-2f75398b2419",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Bruin houten stereoscopische viewer met 4 glasdia's met verdubbelde beelden",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/b2427cc2-3b28-4cac-ae83-214958f0ac35/schema.json",
+            "identifier": "2024.0064.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/a05607a7-d9c3-4b14-abc9-9da1b4bd6e9c",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/b242176d-0f3c-4014-97d1-5bf6a95b114b",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/f25b620b-0511-407c-9330-f65b9e0f5d08",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/2a3ac57f-30ce-4631-81d3-95598d960a40",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/1418ed71-a84a-47a8-a2da-fcbadd2ac89b",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Groen metalen theodoliet door Wild, type T2",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/dc873c8d-5e1e-4618-9b45-451b30f93f8b/schema.json",
+            "identifier": "2024.0060.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/4bd43f4b-4e56-494e-b475-9461b6d466b2",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/619bea3b-9223-4150-8352-b7d2d54e993a",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/1f35a4dc-5a75-46e8-bf88-b6c8de41554d",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Groen metalen theodoliet door Wild, type T1",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/d9af8842-6b29-4498-ad8f-89e5313c6755/schema.json",
+            "identifier": "2024.0059.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/a534a900-feb0-4f5a-8ae0-1c4228394f2e",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/66d8d034-0563-4c4d-aee5-a7a1497d21b8",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/e041f62d-1b97-4b34-b395-b8d27ba5559b",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "7x Nörrenberg polarisatiemeters",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/33dcc961-56ce-4d59-8750-e84238ab9398/schema.json",
+            "identifier": "2024.0043.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/1a2cc6d8-0ccb-48d2-8d18-ad27b5b7a8d1",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/1e318908-2a42-44b2-a542-be3d8bb67f28",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "5x glazen bol lenzen, verschillende formaten",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/1bf6d840-ca54-49c9-9cb5-884327a486de/schema.json",
+            "identifier": "2024.0041.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/338f9f48-15a3-423b-acc0-4e043773426a",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Glazen polarisatie analysator in ronde zilveren houder",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/ad378735-893c-474c-b4ad-6d1723c730f6/schema.json",
+            "identifier": "2024.0040.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/bf90cd1c-02ee-4b79-9cb4-d1f44c4e6cfa",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Ronde glazen doublet lens met geschreven tekst \"0.005\"",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/330d4022-ec7d-4acf-9789-e4264adf31a4/schema.json",
+            "identifier": "2024.0039.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/bf88eb90-ccc4-4552-870d-e43b0c4786fc",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "2x vierkante glazen polarisatie prisma's in messing houders zwart geverfd",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/86092889-a03d-459a-a076-577fdf18f2de/schema.json",
+            "identifier": "2024.0037.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/b41589b1-9c5f-4a69-a3fb-1df8c427a0bf",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "40,5 cm coma lens van zwart en zilver metaal",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/c26282d2-72b3-4f50-b03c-65c19380d9ff/schema.json",
+            "identifier": "2024.0036.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/166e1626-6475-4df3-a875-f134a783fce7",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/506e1a32-77ad-4d33-838e-ebb8e22dd127",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Driehoekig prisma met drie gelijke hoeken in kartonnen doos, met aantekeningen door A.C.S van Heel",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/73055a18-d04b-4846-82d3-7195123b6b44/schema.json",
+            "identifier": "2024.0033.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/c0a0076b-7997-4299-90c2-758fef2af307",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/b7e8f949-f033-4a60-87e9-2b860a128dcb",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/f6852811-17a0-412f-a41d-ddfd3b1a1e5b",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/16956397-4943-470e-a97f-3ceae925b13e",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Metalen tralie van messing",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/8920c790-07b7-4fed-9699-2bf06c40d983/schema.json",
+            "identifier": "2024.0029.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/42d0d4a1-4475-4b74-9df1-c84946e78e65",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Metalen tralie van messing",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/d8daabbd-b63d-4c2e-a845-9a831faa72d9/schema.json",
+            "identifier": "2024.0028.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/b41b6f08-b69d-4277-842e-b1af9a86aa27",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Metalen tralie van messing",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/82e39abe-1ea6-4458-9ea2-8d35194be01e/schema.json",
+            "identifier": "2024.0027.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/7ea39a3e-c598-425d-b3bc-76e193aa3997",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Metalen tralie van messing",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/32f8d15b-9b6f-4579-ae11-1555dedf11fa/schema.json",
+            "identifier": "2024.0025.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/f85cc6d7-ae14-4e52-9dd8-94020ca7f252",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Metalen tralie van messing",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/a2de87b6-ab90-4aa7-9602-8aad575a9952/schema.json",
+            "identifier": "2024.0024.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/fa647dc8-757c-4ed2-b311-a560c52dd8a8",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "3x\"Basisset Optiek\" in houten kist",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/9ab18737-6c66-4a6c-940c-59e0868be3b7/schema.json",
+            "identifier": "2024.0021.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/f5d6e745-a666-47ff-8486-578df5b2a8e2",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/0327a824-8aed-426d-b906-e58cff5eceff",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Zwart metalen refractometer met inscriptie \"Carl Zeiss Jena\"",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/52593222-4000-4b3a-9872-05373ecf0fb6/schema.json",
+            "identifier": "2024.0017.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/5ce8b3a4-1492-4835-b1bc-39c74cd1adfe",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/cb75d0cb-5405-443f-9667-98b1b0970e69",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Zelfgemaakte lens gemaakt van kartonnen kokers, onwaarschijnlijk gemaakt door A.C.S. van Heel",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/c486d6bc-e033-4073-853d-093aacdb64bb/schema.json",
+            "identifier": "2024.0014.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/36f0f6af-131e-41ac-a723-eedcf280d3ca",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/17570e7f-5e58-4787-92ee-58c2c694673b",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/a0a64644-8a97-4271-b77f-98d78b1a2fba",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/f400c5cb-6b24-4e8e-a696-93dd37c1bb87",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Zelfgemaakte verrekijker gemaakt van kartonnen kokers met houten steun, waarschijnlijk gemaakt door A.C.S. van Heel",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/fe10aa4e-f992-404d-93a5-a5fe46e510b4/schema.json",
+            "identifier": "2024.0013.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/aeff6972-47db-4d9f-8c01-9160de91de43",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/7580568f-2415-4e5e-945f-b9777ab66117",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/5c05ba52-dc54-440c-8acc-839207afbd94",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Assemblage van 10 prisma's en lenzen",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/1858c435-b038-4390-8193-8f312a0ea29c/schema.json",
+            "identifier": "2024.0012.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/30e3c3fe-f9fa-48f8-8296-7e59d312d9a7",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/fca11f15-1257-4471-9d84-d1c2b3c82c4b",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Assemblage van 15 lenzen, inclusief doublet lenzen",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/ede1538d-5c07-4f38-8e44-433439c2f603/schema.json",
+            "identifier": "2024.0011.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/1094a59d-1a23-4875-b509-7e73ac16c2ca",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/02b3c5c0-1334-4378-9eee-7b7f7788ecde",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Zelfgemaakte stereoscoop met houten handvat en twee Zeiss-lenzen, waarschijnlijk gemaakt door A.C.S. van Heel",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/48324cbc-4f77-4955-9c21-fe5ef317a267/schema.json",
+            "identifier": "2024.0010.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/f934e621-f64f-40bb-9bd7-d9caf6555b17",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/64093fb5-be67-4bb9-8ed0-f48184c4b71d",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/88c42330-4cff-421f-9267-d817cb8280ec",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Assemblage van 15 verschillende experimentele lenzen, waarschijnlijk  gemaakt door A.C.S. van Heel",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/b3d0c2e3-cbf1-4c08-a7ef-5f19a41c8d29/schema.json",
+            "identifier": "2024.0009.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/d2dc57a8-8b20-4e65-b84b-4a8634faeb2a",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/77f10e23-a719-4cdd-a295-9417b60ca21b",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/96b70412-0661-4bf8-bdda-ccf42e6e293e",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/f3253651-b686-404f-94be-04b81c293b8f",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/043fa196-630a-461c-abd4-64d25f89af04",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/caa7e264-e39f-41a7-aae7-1b275374041c",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/77e2af65-7e31-4486-863d-beeac56ea277",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/d176f8bd-872b-4b11-bc13-1114136bcf55",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/e5395569-e1c4-406d-a8a6-31e0f54d0dfb",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/0e8e5ab5-2be2-4f21-9e1b-3fb268b3a9aa",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Glazen spiegel lens verzameling in houten dozen. met plaat met tekst \"r= 240\"",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/c61fb439-6b6e-476d-a722-911553379a87/schema.json",
+            "identifier": "2024.0007.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/532bfc52-7f35-4e92-ad53-87bd8d1d18dd",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/a59d1502-a117-47a1-8116-153dfbd3fb6a",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Spectrograaf van glas gemonteerd op een houten plateau bedekt met zwart vilt",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/7af4673e-c704-477a-8dcd-b6cf76b716ca/schema.json",
+            "identifier": "2024.0006.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/3dff1be8-9100-4e39-a908-1c70b01f9645",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/a87d1b13-e7d2-4a51-8dec-1ec025c2c719",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/54129fde-4641-4cfa-8e4d-3906390a2559",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Zwart metalen goniometer met inscriptie \"Carl Zeiss Jena\"",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/b7a86010-dfe2-44cc-88f8-b669269ffd5d/schema.json",
+            "identifier": "2024.0002.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/a750b6dc-7dc7-47ce-b418-7617dd472a4f",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/42f9543a-86e1-467b-9d07-4939b7c30463",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "2x glasnegatieven met tekst \" Mire Universelle\", in verpakking",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/48a6cd1d-206f-4c0b-834b-1bbce0b5b511/schema.json",
+            "identifier": "2024.4011.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/bbec5a56-59af-40f2-a602-f86d3ecbdb5b",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/76e3059d-dca8-41c0-a89c-8efe0b2213f9",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/c749cddc-92d2-4f60-8891-282af148b636",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/3073eecf-75a0-44d8-8e68-d8cbaa0658f4",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "24 zwart/wit foto's in lijst van hout",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/271bc738-6412-4485-be9e-88fa8be6b208/schema.json",
+            "identifier": ".;2024.4004.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/8962a2e2-bc4e-4528-b9f5-0ab1dff09eca",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/f261ca1b-6802-4bc3-9897-8726494cc098",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Zwart-wit foto van sliren, geplakt op rood hout",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/ea7df8c8-0841-489f-8337-c402732f61e6/schema.json",
+            "identifier": "2024.4053.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/c57be2e1-0e61-4a92-9ebf-109c1a7fce7b",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Zwart-wit foto van vergroting vanaf positief Waarnemingsboek, in houten lijst",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/144c8a72-ed25-4241-8fa2-9a435d4edf2d/schema.json",
+            "identifier": "2024.4056.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/efb2d565-1f06-463a-b150-528284979426",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Houten geschilderd diagram met Franse tekst en titel \"Appareil à Aligner\"",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/e495d578-01fa-468c-9e63-3dacbb9eca07/schema.json",
+            "identifier": "2024.3022.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/d4cd6e8c-5888-4649-8b73-abb4b110c671",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "10 metalen pinholes in houten doos",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/e8def50e-fb8a-4fad-9892-b3514af80882/schema.json",
+            "identifier": "2024.0003.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/578fc3a9-0dde-403e-89e6-41c6211d62e3",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/0038b21f-d649-4bd7-99ad-c8efc0afc373",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/92ab0aa1-1dff-4ab6-8ed4-87a020668888",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/c794648b-79e7-43dd-b491-16ccc1c116f1",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "6 metalen traliën in houten doos met geplakt papieren label aan de onderkant",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/a365635a-4ea0-49ab-b14c-0845d5313fd4/schema.json",
+            "identifier": "2024.0004.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/cae4c378-e10d-4e64-a127-e843d8d6ee62",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/881180e6-812e-4e3b-b4d3-3442924bb789",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/36a4fd5f-2d7c-4859-b785-8cceeef49326",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/f519786c-038e-4df9-8576-c71dc455ca3a",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "\"Einfache und Präpariermikroskope\" microscoop van messing gemonteerd op houten doos met lenzen",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/05aee3f3-c216-41ef-8f3e-a4480e48246c/schema.json",
+            "identifier": "2024.0005.TNW",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/4d6bef41-039b-47fb-8704-374e0574d78a",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/1ebc1be6-fd7a-4011-80af-f44e5c08ff33",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/aeb994e5-d31d-43ab-860f-b63a96b4e06a",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/0ef95c9d-4ea4-49f7-8e4d-653870ca1746",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/9d680c3e-2bfb-4475-9ba6-eda979c10067",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/2efc8523-c868-4e18-8732-0fa1e97aebf9",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/c8194457-607f-40e6-a887-fb78dd3a8045",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/db49bbea-1d28-4f3e-9579-cd42c9eb7a8d",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/3a289d5d-86a7-4dbc-b1e7-d5efd6cfd4f3",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        }
+    ],
+    "isPartOf": [
+        {
+            "@type": "Collection",
+            "name": "Faculteit Technische Natuurwetenschappen",
+            "sameAs": "https://heritage.tudelft.nl/iiif/collections/21c14ff7-60f8-4d0d-80f2-ac9313bb997c/schema.json",
+            "identifier": "TNW"
+        }
+    ]
+}

@@ -144,6 +144,21 @@
                     "Jan Elias Nicolaas Schimmelpenninck van der Oye van Hoevelaken"
                 ]
             }
+        },
+        {
+            "label": {
+                "en": [
+                    "Documentation"
+                ],
+                "nl": [
+                    "Documentatie"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "<span><a href=\"https://tudelft.on.worldcat.org/oclc/560125591\">Jaarboek van de Technische Hoogeschool te Delft. Uitgegeven door den Senaat in September 1940 [etc.], Technische Hogeschool te Delft (DELFT), 1940</a></span>"
+                ]
+            }
         }
     ],
     "navDate": "1908-01-01T00:00:00.000Z",

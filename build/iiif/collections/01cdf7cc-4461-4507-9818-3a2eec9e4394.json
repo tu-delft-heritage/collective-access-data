@@ -1,0 +1,155 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/01cdf7cc-4461-4507-9818-3a2eec9e4394.json",
+    "type": "Collection",
+    "label": {
+        "nl": [
+            "Faculteit Bouwkunde"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Faculteit Bouwkunde"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Managing institution"
+                ],
+                "nl": [
+                    "Beherende instelling"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Faculteit Bouwkunde",
+                    "Faculteit Bouwkunde"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "De (historische) collecties van Bouwkunde zijn over het algemeen  verworven voor of voortgekomen uit het onderwijs. Deze collecties liggen daardoor dicht bij de inhoudelijke praktijk van de faculteit. Medewerkers en studenten kunnen via de collecties geïnspireerd worden door diegene die hun voor gegaan zijn. Een belangrijk punt voor de collecties die bij de faculteit bewaard blijven is dat ze die band met educatie behouden, bijvoorbeeld doordat ze nog steeds worden gebruikt door studenten en docenten of doordat ze actief modern studentenwerk verzamelen.",
+                    "De academische collecties bieden medewerkers en studenten de kans op reflectie op het vakgebied, inspiratie voor hun ontwerp en onderzoek en verdieping van hun kennis. Ze kunnen, door zicht te bieden op historische ontwikkelingen in de maatschappelijke context van het vakgebied, van toegevoegde waarde zijn voor het opleiden van socially responsible engineers.1 Daarom hebben de collecties een plek in de dagelijkse ruimte en praktijk van de studenten en medewerkers van de faculteit gekregen. Door ze in het gebouw zichtbaar op te stellen, op een voor het behoud verantwoorde wijze, dragen de collecties bij aan de identiteit van de faculteit/afdeling, en daarmee aan het onderscheidend vermogen (merk) van de gehele universiteit."
+                ]
+            }
+        }
+    ],
+    "summary": {
+        "nl": [
+            "De collectie van de Faculteit Bouwkunde bestaat uit verschillende subcollecties die inspireren en inzicht geven in de ontwikkeling van het vakgebied."
+        ]
+    },
+    "items": [
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/801a8a0f-04af-4048-a459-67cad91d5f48.json",
+            "type": "Collection",
+            "label": {
+                "nl": [
+                    "Stoelencollectie"
+                ]
+            },
+            "thumbnail": [
+                {
+                    "id": "https://dlc.services/thumbs/7/18/f0e63fd4-75ec-4333-8762-4ca31878ee7d/full/full/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg"
+                },
+                {
+                    "id": "https://dlc.services/thumbs/7/18/8d3ad4a3-d207-41e8-84fb-468daed89556/full/full/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg"
+                }
+            ]
+        },
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/10e0010e-8218-47eb-97db-f9b4897f6118.json",
+            "type": "Collection",
+            "label": {
+                "nl": [
+                    "Maquettecollectie"
+                ]
+            },
+            "thumbnail": [
+                {
+                    "id": "https://dlc.services/thumbs/7/18/87a97bc1-4082-4d47-819f-9d51f578f798/full/full/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg"
+                },
+                {
+                    "id": "https://dlc.services/thumbs/7/18/d4de069b-a8d2-4481-99ca-047723fec166/full/full/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg"
+                }
+            ]
+        },
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/77b28b13-76fc-44af-9ec5-b44b29212998.json",
+            "type": "Collection",
+            "label": {
+                "nl": [
+                    "Handtekencollectie (BK)"
+                ]
+            },
+            "thumbnail": [
+                {
+                    "id": "https://dlc.services/thumbs/7/18/050a1c7f-d20e-4998-a6db-bac00b794748/full/full/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg"
+                },
+                {
+                    "id": "https://dlc.services/thumbs/7/18/05fec6b3-beff-4751-888f-45615935d1e7/full/full/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg"
+                },
+                {
+                    "id": "https://dlc.services/thumbs/7/18/75239d5e-e208-4967-ba09-a6d2520e69d2/full/full/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg"
+                }
+            ]
+        },
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/f595e5f3-dda5-491a-9b98-77d0756a0522.json",
+            "type": "Collection",
+            "label": {
+                "nl": [
+                    "Natuursteencollectie"
+                ]
+            },
+            "thumbnail": [
+                {
+                    "id": "https://dlc.services/thumbs/7/18/43174a9d-7113-49e1-8f75-0c6cef98c209/full/full/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg"
+                },
+                {
+                    "id": "https://dlc.services/thumbs/7/18/476ba6ec-6948-4989-9fcf-5fda06aa9dbc/full/full/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1076 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Collection",
+    "@id": "https://heritage.tudelft.nl/iiif/collections/7b35ae59-1507-447a-a9ac-4641a7bf24b1/schema.json",
+    "name": "Collectie Universiteitsgeschiedenis",
+    "description": "Een gevarieerde collectie van kunstvoorwerpen, bustes, plaquettes en portretten van hoogleraren en hoogwaardigheidsbekleders van de TU Delft en haar voorgangers: de TH Delft, de Polytechnische School en de Koninklijke Academie voor Civiel Ingenieurs. \nDe TU Delft is als Koninklijke Academie voor Civiel Ingenieurs opgericht in 1842. In 1864 werd het omgevormd tot Polytechnische School, behorende tot het middelbaar onderwijs en in 1905 tot Technische Hogeschool, behorende tot het hoger onderwijs. In 1986 werd het omgedoopt tot Technische Universiteit. Het is daarmee de oudste Technische Universiteit van Nederland.\nDe kern van de Collectie Universiteitsgeschiedenis is afkomstig uit de omgeving van de Senaat, het college van Curatoren en het College van bestuur. De objecten hebben de collegezalen of werkkamers opgeluisterd, of speelden een rol bij het bestuur van de universiteit. Deze is aangevuld met objecten uit faculteiten die geen specifieke relatie hadden met een bepaald onderzoek, of onderwijs, zoals diploma’s en bullen, foto’s en portretten, gedenkboeken en archieven. In Delft heeft geen echte traditie bestaan om hoogleraren te portretteren ten behoeve van de inrichting van een senaatzaal. De portretten in Delft hebben dan ook een zeer diverse achtergrond. Enkele portretten zijn geschonken door de kroonprins en beschermheer bij de oprichting van de Koninklijke Academie in 1842, maar de meeste schilderijen zijn gemaakt bij gelegenheid van het Rectoraat. De opdracht daartoe kwam van de Senaat, maar in andere gevallen was de hoogleraar zelf, de familie, de vakgroep waar de hoogleraar werkte, een studentenvereniging, of een studiefonds de opdrachtgever.",
+    "identifier": "16",
+    "creator": {
+        "@type": "Role",
+        "roleName": "beherende instelling",
+        "creator": [
+            {
+                "@type": "Person",
+                "name": "TU Delft Library",
+                "sameAs": "http://www.wikidata.org/entity/Q2541583"
+            },
+            {
+                "@type": "Organization",
+                "name": "TU Delft Library",
+                "sameAs": "http://www.wikidata.org/entity/Q2541583"
+            }
+        ]
+    },
+    "contributor": {
+        "@type": "Role",
+        "roleName": "collectieverantwoordelijke",
+        "contributor": [
+            {
+                "@type": "Person",
+                "name": "Sylvia Nijhuis"
+            },
+            {
+                "@type": "Organization",
+                "name": "Sylvia Nijhuis"
+            }
+        ]
+    },
+    "hasPart": [
+        {
+            "@type": "CreativeWork",
+            "name": "Leren aktetas van college van curatoren.",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/95499e2d-d517-4c12-899c-83e2d7c3e8ce/schema.json",
+            "identifier": "1992.0257.TMD",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/61d8907c-7c3f-47ae-9856-ba5ba9ebf9fa",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Briefopener",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/88426382-3cf5-4f16-a0b5-d40eff27858e/schema.json",
+            "identifier": "1992.0258.TMD",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/ea95ade3-818f-41c6-a620-938a651f5854",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Messing gedenkplaat Technische Natuurkunde",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/af4087ec-d172-4da0-accf-828a13d3fdcc/schema.json",
+            "identifier": "1995.0036.TMD",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/440f03bb-15de-4913-9fe0-e3dafb145678",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Gegoten miniatuur aambeeld als presse-papier door TU Delft",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/f1fb8e57-22ac-42c3-a659-f5f346f2aa07/schema.json",
+            "identifier": "1995.0045.TMD",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/72130f00-e59a-49a1-9050-d24ba2cdd8e6",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Chess Challenger schaakcomputer door Fidelity Electronics",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/9b913b20-63f7-4b59-b5dd-18c54e5b533e/schema.json",
+            "identifier": "1998.0011.TMD",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/7f5d8c2e-a78b-4ab1-8aa4-ef4ba3971bb4",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/9db0cd60-c64f-4a45-88be-b0502be8da85",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Rekencilinder door Laboratorium van Geodesie",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/c636f514-93e9-4367-b058-44c6ffaa6e26/schema.json",
+            "identifier": "2000.0149.GEO",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/115a0f4b-c9aa-457e-b0ed-d4dad426a7c7",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Twee boeken met handtekeningen studenten van prof. C.B. Biezeno",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/fca7cd95-3071-4f38-9cdf-c65144c28923/schema.json",
+            "identifier": "2000.0331.TMD",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/beced942-54e0-43bc-b7ea-fc34616b39e8",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Bronzen plaquette van prof. J.C. Dijxhoorn",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/78d5d473-8b5f-4ddc-85bd-c9ec3f1ab9bc/schema.json",
+            "identifier": "2000.0348.TMD",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/cb6976c5-3c5a-4d70-982d-81c5e0f5e282",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/6a0c1c02-9d1c-4513-9d32-2c14b1c96054",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van J.E.N. baron Schimmelpenninck van der Oye van Hoevelaken door J. Linge",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/4b12b161-e03a-4be3-9f54-a9af0fc82069/schema.json",
+            "identifier": "2002.0001.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/6891bff8-abe3-48b6-981c-0b720f2b5ab6",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/072822e7-37bd-43cb-9d3a-b34c6c191082",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/d93e6420-9343-4f26-be7a-160686e7f365",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/5d9955d5-a951-4de1-bfc4-cb02da9fc043",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. J.C. Dijxhoorn door A.F. Gips",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/49fe2202-c893-438b-b854-365dc9fac23c/schema.json",
+            "identifier": "2002.0002.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/f735bb22-83d3-444d-9b1a-0259de0ad3c4",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/96c932d7-f111-4a08-86c0-065a07529bfa",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/ebba67fb-15ae-4491-b40b-3515dee70a07",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. L. Cohen Stuart",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/55ca0cb0-2eaf-4559-95ba-f97c15d3fee6/schema.json",
+            "identifier": "2002.0005.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/0a41f921-4942-467e-a981-abbff7a2e1e7",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/7a62e8ef-1352-4e23-ae90-267650f95b9c",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/b9217855-9f80-4532-9c0b-5bfce640675e",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/b97aca4e-7afe-4814-ac38-785584c32969",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. J.M.Telders door H.J. Haverman",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/ebbe92f1-a427-43d4-afc7-c8c561611555/schema.json",
+            "identifier": "2002.0006.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/1e3f07ab-40fd-4d8b-ade3-b655c3879345",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/6209f37a-377a-4dee-8570-ee2b578f91d2",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/c5169a54-45c7-4ca9-afad-a7a2fd8a7d95",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van J.A. Keurenaer door H. Goovaerts",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/fb59072f-be4a-4d3d-8870-41c258b2e1aa/schema.json",
+            "identifier": "2002.0007.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/61f5a944-d288-4b87-bdf0-27dcbe4271ff",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/5aad8c92-6882-463a-9df5-1923e0eb0a98",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/5de31b96-d39a-472c-bf16-c8497d8cf5ec",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. G.H. de Vries Broekman door H. Luns",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/2ed7fe53-b441-48a2-86fa-c2413f07d2fe/schema.json",
+            "identifier": "2002.0008.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/9c91b261-40db-45d9-983e-a7f932fd9a2f",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/5a832054-ce3e-4e74-b280-6c206e4459e8",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van rector magnificus prof. G. Diehl door H. Luns",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/3dc52d11-ce5b-47a2-8dc7-2a73a6a5a828/schema.json",
+            "identifier": "2002.0010.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/d1434513-db45-4b7b-b505-d338b31cb0b2",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/952d6d52-2a42-4307-8dcd-24ef1d3fa8eb",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/221eecdd-4752-4cf8-bf89-453b01586ea3",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Zelfportret van prof. H. Luns",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/c5cb1c6b-7383-436d-ac18-4ed6cbb60a7c/schema.json",
+            "identifier": "2002.0011.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/9c7299bd-1292-4e32-9535-cfd097ae8d6b",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/16156db6-4308-41d2-a00d-0b9cebfd61d0",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/d470d825-4548-4397-bbc0-4e5a961750f1",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van ir. J.F. de Vogel door H. Luns",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/3e67505e-900c-470b-9f1a-ae4a9a2deea2/schema.json",
+            "identifier": "2002.0013.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/ab9dba50-d590-4ba9-bd6b-578f69f36471",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/202452a3-81c4-4a34-8b18-8969471dd4c3",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/8a5f234a-3b7d-407a-8063-e99a833588a0",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. H ter Meulen door H. Luns",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/72c97ad0-bd6f-47e3-bac1-49dbf4ae7ecd/schema.json",
+            "identifier": "2002.0015.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/2d1f01c0-0f04-48b6-be9f-cacd3bc92bf6",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/03467bc0-b629-4365-a42a-25955baf74a7",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/fc5f9966-749b-4b83-af10-ace40ef4b2d4",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. W.H.L. Janssen van Raaij door A.F. Gips",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/afbcde8e-6bd1-4778-a1df-d831cf4520f1/schema.json",
+            "identifier": "2002.0018.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/99fedee2-7ccd-4da4-9071-ace01aaa34ad",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/39ec8181-54e3-44df-b089-d2153e91a403",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/81416edf-ee4b-47ef-8b88-71387075c952",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Broomoliedruk van curator J.L. Cluysenaer",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/86d8f4f1-69f8-4602-9a03-68a52e08e6fe/schema.json",
+            "identifier": "2002.0019.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/28a81b3b-483c-4a10-8af6-2a7370ab89ef",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/86997bfc-6386-4536-a583-b49ce53cc306",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/4ab1a9a9-a682-433a-8d04-0d883548c100",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. B.H. Pekelharing door H.J. Haverman",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/a479b84f-2c21-4e3f-a321-2b303b4039f9/schema.json",
+            "identifier": "2002.0021.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/a064158c-8149-4c82-b920-cb2c8af27ff1",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/eb2e1f8d-2cc9-42d2-afa0-8eabf40b5992",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/d4f70004-5df7-4c69-a3ee-3b62efc82e1c",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. A.C. Oudemans door A. le Comte",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/89882c83-0434-4099-9001-bfddeafa2436/schema.json",
+            "identifier": "2002.0022.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/ad0194a6-6aab-451b-9545-feba2268551f",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/41ca01d8-255d-41dd-9499-b4dfe8db7543",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/00a71026-256a-4a17-8689-d49213a9e613",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/4933594d-cbb8-4810-9bef-b012042d8e77",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. G.J. Morre door P. Linde",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/c90e51e4-97d9-437d-9384-b36acc23a17b/schema.json",
+            "identifier": "2002.0024.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/8e6ec8e0-5774-4e43-b320-a6eb0b733825",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/befe794d-f2be-43c3-b7f8-f16d4862f182",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/208358c7-6063-42f0-889c-2372af68f5ea",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. G.A.F. Molengraaff door F. Arntzenius",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/3fc80112-fa1c-4b56-af8e-b7301ff77852/schema.json",
+            "identifier": "2002.0027.CTG",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/12ba3ea5-c251-42b7-8a1d-5d6d5f6e12c6",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Delfts blauwe vaas met ronde deksel",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/215f5072-1dc9-42a2-812c-a4dc1d638b3f/schema.json",
+            "identifier": "2002.0034.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/c70e5f42-41f0-46d1-bdb2-03a12bcc3338",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Delfts blauwe vaas met achtkantige deksel",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/5cf522b7-b5b8-4d0c-922e-74abd3bb560e/schema.json",
+            "identifier": "2002.0046.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/47e0e797-4512-4377-b486-9e10355ff918",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Boek met negen foto's van prof. G. van Iterson's laboratorium",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/16a99c49-5ea8-4ba7-86f1-5a09f424e539/schema.json",
+            "identifier": "2002.0527.TMD",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/2d176b84-4471-41bb-8fec-bad6990211a9",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/dd285cc8-3667-41d4-ab84-9ea21f1e5963",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/aa8884a9-a447-4ab5-be44-af189b0cdea8",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/a9351387-de3a-4457-848f-ff5d4c473dd8",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/86da4795-a804-4081-8de4-b4a305c78fb6",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/f08b916e-60de-4fd9-9be3-c48745854b28",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/37a5d677-fc20-439a-833f-e326f271e481",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/efaa55e5-1d37-4e6e-9001-8d2e734cc914",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/efe83544-366f-465e-b4d0-9c955449e08d",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/693a537b-f59b-4b36-9c42-51e2bfa29c84",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. T.K.L. Sluyterman door C.J. Mension",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/a279ba87-afcc-4020-919f-71a52dd08bfd/schema.json",
+            "identifier": "2003.0001.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/691be5ab-dd03-4aa8-b98a-10c63efec2a4",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/4549534c-d075-403f-99d5-4c5d35663de3",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Penning van prof. B.H. Pekelharing door J.M. Faddegon",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/07f7610c-f245-4e70-86b8-0b3850b59b3b/schema.json",
+            "identifier": "2003.0004.TMD",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/37bef74f-49c6-436e-8b4a-66a256e1f8d7",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Grootzegel van de TH Delft door L.O. Wenckebach",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/ac04d965-7552-438e-b808-1394b6bd651b/schema.json",
+            "identifier": "2003.0006.TMD",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/96007ced-c6a5-4ba6-be0f-1f53fa439654",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Zelfportret van prof. A.F. Gips",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/32664534-860a-46f4-991e-87791f511d6d/schema.json",
+            "identifier": "2003.0729.BKD",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/c1a5abc3-8df1-4d10-8a31-8aead61e9350",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/cb8d8f16-ec68-495b-bf51-0bb692716e9e",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van A. Lipkens door W.H. Schmidt",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/1b76db94-71a1-4fc3-bc51-7fa9246326d1/schema.json",
+            "identifier": "2006.0031.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/a5172ded-cd01-436b-903a-c50bccd7b5c6",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/95254959-f3bb-4b6a-bc68-9db15f9e437f",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van Koning Willem II door J.B. van der Hulst",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/f2048b5e-d2c4-45a6-80b0-e01d1658d636/schema.json",
+            "identifier": "2006.0032.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/92be346e-d7ae-404f-9bb1-caae0804aaf5",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/ae70da54-2759-4f8c-a20c-01412f540c58",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. G. Simons door B.H.A. Wittkamp",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/2df0f0cf-c1f7-4077-b979-a29c33213c43/schema.json",
+            "identifier": "2006.0033.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/ec3c772b-833a-4461-918f-6ff1cb8350f1",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Schilderij \"1940-1945 studenten streden en leden\" door prof. G. de Josselin de Jong",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/a991b854-e6b5-4403-936d-003ebd404356/schema.json",
+            "identifier": "2007.0103.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/d80d85a8-ebad-45d5-b6df-3d63860bfe5d",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. C.J. van Loon door A.F. Gips",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/54fb9f6e-c9a7-4be1-bd19-8c0fc06828ab/schema.json",
+            "identifier": "2008.0011.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/340fc20a-1ae3-4af0-b608-213e1299985f",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van kroonprins Willem Alexander Paul Frederik Lodewijk van Oranje Nassau door N. Pieneman",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/c8049ae8-efac-4e49-8448-75de968f6b79/schema.json",
+            "identifier": "2008.0029.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/b5218e9d-ff3c-4168-96e7-c53164e5246f",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Voorzittershamer 50 jaar TH Delft",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/8ff85cf3-119b-49f2-95a6-be1768025c45/schema.json",
+            "identifier": "2009.0013.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/b0750132-7682-4ea8-b2e8-daa74cd5106d",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Stempel van het grootzegel van de TH Delft",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/ec9c216a-4dc4-4e7b-acf1-dfd4759b3e96/schema.json",
+            "identifier": "2009.0014.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/78ec3efb-45fb-49e2-9b7b-1afb8a6946a9",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Buste van prof. J.F. Klinkhamer",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/173320d5-51c8-47ce-a103-9d54ef8606d7/schema.json",
+            "identifier": "2009.0654.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/3e7680c5-5334-4bd4-9f9c-be03a6042ad1",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. A.E. Korvezee door A. Kaat",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/adf7c898-8e4a-4774-807b-e37b9f506fc9/schema.json",
+            "identifier": "2011.0003.TBM",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/56df910e-ab94-4784-b696-6146405d7b40",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van Frans van Hasselt door M.L. van Hasselt",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/e605bf54-b5ac-4c33-aaec-3af71c4fa604/schema.json",
+            "identifier": "2011.0007.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/85a2e601-fd3c-41a2-ace4-94038d05f9fe",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Gedenksteen voor Frans van Hasselt",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/2e2ac04c-537f-44ee-9425-db5667bb5820/schema.json",
+            "identifier": "2011.0008.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/c33b4d73-ab2b-4f64-9e65-1e5befdfef74",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. M.W. Beijerinck",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/04dc7bba-87fb-4a73-adb7-c96f5bdc79c2/schema.json",
+            "identifier": "2011.0009.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/8bf2104d-b8cb-4828-b2c7-809489afd080",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Drie gedenkpenningen voor E.H. Gugel door L.F. Edema van der Tuuk",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/6d721284-4bad-4af8-a6f4-8088cf216a5e/schema.json",
+            "identifier": "2011.0011.BKD",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/54293075-efed-4c81-847c-481d66cd832a",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van prof. S.E.B. Hoogewerff door J.P. Veth",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/94663288-dac4-4f58-8941-a35a21ceb931/schema.json",
+            "identifier": "2011.0014.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/e3158163-fb53-4a23-a3a5-cdda7245b022",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Portret van W.A. baron Schimmelpenninck van der Oye van de Poll door Nicolaas Pieneman",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/a28293d8-031f-4c85-b69f-8b8b1384c736/schema.json",
+            "identifier": "2012.0001.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/3c0cf885-0961-49a3-96fc-bf77804b95c5",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/485f82c5-da31-416c-88b6-31d7c7596104",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Grootzegel van de Koninklijke Academie",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/c0740089-8cfa-4202-a7d6-ed200f049cf9/schema.json",
+            "identifier": "2016.0287.LIB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/964a5e8a-7a7a-4580-b13b-b653da76ad50",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/f7cdcd48-0718-459e-aef4-b401c611357e",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Koker met promotiebul van prof. A.E. Korvezee",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/dc434947-cd67-4361-8780-93cae5aa5688/schema.json",
+            "identifier": "2016.0290.LIB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/e76ce7df-b9c6-47d4-b5e0-8f1dc8fd1d51",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Stenen plaquette van prof. C.B. Biezeno",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/83ee6b70-74c8-4c21-afd8-30c0a84645be/schema.json",
+            "identifier": "2018.0001.3ME",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/db16d5e1-5d0c-49e6-9df7-4140924f45a2",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Bronzen plaquette met portret van prof. P. Landberg",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/ed22be3d-d741-4540-bdd1-671675ab1f1f/schema.json",
+            "identifier": "2018.0002.3ME",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": {
+                    "@context": "http://iiif.io/api/presentation/3/context.json",
+                    "@id": "https://dlc.services/iiif-img/7/18/3f7e964c-a861-4060-8dad-fe5efbb314dd",
+                    "@type": "Image"
+                }
+            }
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Herdenkingsplaquette voor gevallenen van WOII door prof. L.O. Wenckebach",
+            "sameAs": "https://heritage.tudelft.nl/iiif/manifests/52d84cce-1656-4bb9-896a-f1ec1010d1a0/schema.json",
+            "identifier": "2020.0001.CVB",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": [
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/f4c83934-63be-479f-aecf-573beec8058a",
+                        "@type": "Image"
+                    },
+                    {
+                        "@context": "http://iiif.io/api/presentation/3/context.json",
+                        "@id": "https://dlc.services/iiif-img/7/18/f6b5eafe-5844-48a6-85c6-2abc60c0aa04",
+                        "@type": "Image"
+                    }
+                ]
+            }
+        }
+    ],
+    "isPartOf": [
+        {
+            "@type": "Collection",
+            "name": "Centrale Erfgoedcollectie",
+            "sameAs": "https://heritage.tudelft.nl/iiif/collections/1ff41567-c05c-4207-9ea9-2033e6088e60/schema.json",
+            "identifier": "1"
+        }
+    ]
+}

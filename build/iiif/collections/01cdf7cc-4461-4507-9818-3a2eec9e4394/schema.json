@@ -1,0 +1,31 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Collection",
+    "@id": "https://heritage.tudelft.nl/iiif/collections/01cdf7cc-4461-4507-9818-3a2eec9e4394/schema.json",
+    "name": "Faculteit Bouwkunde",
+    "abstract": "De collectie van de Faculteit Bouwkunde bestaat uit verschillende subcollecties die inspireren en inzicht geven in de ontwikkeling van het vakgebied.",
+    "description": "De (historische) collecties van Bouwkunde zijn over het algemeen  verworven voor of voortgekomen uit het onderwijs. Deze collecties liggen daardoor dicht bij de inhoudelijke praktijk van de faculteit. Medewerkers en studenten kunnen via de collecties geïnspireerd worden door diegene die hun voor gegaan zijn. Een belangrijk punt voor de collecties die bij de faculteit bewaard blijven is dat ze die band met educatie behouden, bijvoorbeeld doordat ze nog steeds worden gebruikt door studenten en docenten of doordat ze actief modern studentenwerk verzamelen.  \nDe academische collecties bieden medewerkers en studenten de kans op reflectie op het vakgebied, inspiratie voor hun ontwerp en onderzoek en verdieping van hun kennis. Ze kunnen, door zicht te bieden op historische ontwikkelingen in de maatschappelijke context van het vakgebied, van toegevoegde waarde zijn voor het opleiden van socially responsible engineers.1 Daarom hebben de collecties een plek in de dagelijkse ruimte en praktijk van de studenten en medewerkers van de faculteit gekregen. Door ze in het gebouw zichtbaar op te stellen, op een voor het behoud verantwoorde wijze, dragen de collecties bij aan de identiteit van de faculteit/afdeling, en daarmee aan het onderscheidend vermogen (merk) van de gehele universiteit.",
+    "identifier": "BK",
+    "creator": {
+        "@type": "Role",
+        "roleName": "beherende instelling",
+        "creator": [
+            {
+                "@type": "Person",
+                "name": "Faculteit Bouwkunde"
+            },
+            {
+                "@type": "Organization",
+                "name": "Faculteit Bouwkunde"
+            }
+        ]
+    },
+    "isPartOf": [
+        {
+            "@type": "Collection",
+            "name": "Facultaire collecties",
+            "sameAs": "https://heritage.tudelft.nl/iiif/collections/db6ab528-0d80-4481-8762-eb0b6f6b3754/schema.json",
+            "identifier": "Facultair"
+        }
+    ]
+}

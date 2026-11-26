@@ -1,0 +1,54 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Collection",
+    "@id": "https://heritage.tudelft.nl/iiif/collections/9e9b7002-e4ad-477b-82f8-b9f88383dc78/schema.json",
+    "name": "Schakelklokken",
+    "abstract": "De collectie over schakelklokken toont de ontwikkeling van mechanica en elektrotechniek. De collectie werd verzameld en geschonken door vrijwilliger Rob Timmermans en biedt een samenhangend beeld van deze techniek.",
+    "description": "De focus van de deelverzameling ligt op schakelklokken, oorspronkelijk ontwikkeld in de 19e eeuw om ervoor te zorgen dat alle stationsklokken dezelfde tijd aangaven. Het gaat om ongeveer honderd veelal slinger aangedreven uurwerken (klokken) met allerhande tijdschakelfuncties. Het thema ligt op de grens tussen mechanica en elektrotechniek, waardoor (EWI) studenten aangemoedigd worden na te denken over “cross-disciplinary creativity” [Chris Verhoeven]. Deze collectie is verzameld, geregistreerd en vervolgens geschonken door wijlen Rob Timmermans, vrijwilliger, wat resulteerde in een collectie met een sterke interne logica en weinig duplicaten.  \nWat kan de deelverzameling betekenen voor studenten?  \nMoederklokken waren in de tijd vóór gps en internettijd de belangrijkste tijdreferenties in de industrie en bij publieke instellingen. Daarom zijn deze klokken geoptimaliseerd voor extreme nauwkeurigheid. Die compromisloze optimalisatie maakt ze voor studenten interessant, zowel op het gebied van bouwkwaliteit als de theoretische achtergrond.   \nEr zijn diverse strategieën en technische oplossingen te zien in de collectie. Er zijn schakelklokken- die signalen genereren- en tijdschakelaars die signalen leveren. Deze mechanische signalen worden nog steeds gebruikt, maar steeds vaker worden vervangen door elektronische systemen. Dit betekent dat er een sterke band is met de faculteit Elektrotechniek, maar ook met faculteiten met een focus op mechanische systemen omdat de verzameling zich bevindt op het grensvlak tussen mechanica en elektrotechniek. Studenten moeten zich bewust worden dat er in beide domeinen oplossingen bevinden, dat stimuleert “cross-disciplinary creativity”.  \nNaast historische voorbeelden heeft de collectie een sterke relevantie voor actueel onderzoek. De toepassing van tijdsdistributie is tegenwoordig wijdverspreid, van radio gestuurde klokken tot satellietnavigatiesystemen en tijd op internet. Kortom: hoewel de behoefte aan ‘altijd het juiste tijdstip op elke plaats’ door de jaren heen onverminderd is gebleven, zijn de onderliggende technieken voor de nauwkeurige bepaling en verspreiding van dat tijdstip de afgelopen decennia sterk veranderd.  \nWat heeft de deelverzameling nodig?  \nDe klokken zijn geregistreerd in een aparte lijst, maar staan nog niet in Collective Access.  De verzameling is een populair onderdeel van de tentoonstelling in de kelder, niet in de laatste plaats vanwege het functionele aspect: de meeste klokken worden door de collectiebeheerder en andere vrijwilligers in goede werkende staat gehouden. Hoewel er diverse publicaties zijn die de collectie toelichten, , is dit niet direct zichtbaar voor de bezoeker.   \nEen suggestie zou zijn om meer toelichtende teksten toe te voegen aan de bestaande tentoonstelling, bijvoorbeeld over de uitdagingen waar de ontwerpers voor stonden en de verschillende oplossingen die ze vonden. De tentoonstelling opnieuw in richten met een duidelijker verhaal/tijdlijn zou de verzameling ook toegankelijker maken en meer geschikt voor zelfstandig onderzoek door studenten.",
+    "identifier": "Schakelklokken",
+    "temporalCoverage": "1800/2000",
+    "materialExtent": "100 geregistreerde moeder-, dochter- en schakelklokken",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Op Tijd Schakelen: Catalogus thematentoonstelling binnen de Studieverzameling, Rob Timmermans, 2022",
+        "sameAs": "https://studieverzameling.ewi.tudelft.nl/index.php/expositie/schakelen-op-tijd?view=article&id=82:catalogus-klokken&catid=2"
+    },
+    "creator": {
+        "@type": "Role",
+        "roleName": "beherende instelling",
+        "creator": [
+            {
+                "@type": "Person",
+                "name": "Faculteit EWI"
+            },
+            {
+                "@type": "Organization",
+                "name": "Faculteit EWI"
+            }
+        ]
+    },
+    "isPartOf": [
+        {
+            "@type": "Collection",
+            "name": "Faculteit Elektrotechniek, Wiskunde en Informatica",
+            "sameAs": "https://heritage.tudelft.nl/iiif/collections/ab21b2a7-f103-4ba7-a2cb-6758a189ca1f/schema.json",
+            "identifier": "EWI"
+        }
+    ],
+    "image": [
+        {
+            "@type": "ImageObject",
+            "contentUrl": {
+                "@context": "http://iiif.io/api/presentation/3/context.json",
+                "@id": "https://dlc.services/iiif-img/7/18/5ed4eb21-858c-4a2e-8a92-04553611c98c",
+                "@type": "Image"
+            },
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/5ed4eb21-858c-4a2e-8a92-04553611c98c/full/full/0/default.jpg",
+            "encodingFormat": "https://iiif.io/api/image/3.0/",
+            "caption": "EWI2025-JSchwartz-L1060819.jpg",
+            "width": 1600,
+            "height": 1200,
+            "position": 12778
+        }
+    ]
+}

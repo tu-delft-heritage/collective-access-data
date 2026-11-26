@@ -133,6 +133,21 @@
         {
             "label": {
                 "en": [
+                    "Documentation"
+                ],
+                "nl": [
+                    "Documentatie"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "<span><a href=\"https://tudelft.on.worldcat.org/oclc/843427881\">De lange weg naar de Technische Universiteit Delft, H. Baudet, 1992</a></span>"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
                     "Related object"
                 ],
                 "nl": [

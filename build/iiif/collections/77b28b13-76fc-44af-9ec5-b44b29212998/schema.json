@@ -1,0 +1,90 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Collection",
+    "@id": "https://heritage.tudelft.nl/iiif/collections/77b28b13-76fc-44af-9ec5-b44b29212998/schema.json",
+    "name": "Handtekencollectie (BK)",
+    "abstract": "De collectie Handtekenen omvat tekeningen gemaakt door studenten en een verzameling historische objecten, van abstracte vormen tot gebruiksvoorwerpen, die als model dienen bij handtekenoefeningen.",
+    "description": "De tekeningen zijn voornamelijk in de tweede helft van de 20ste eeuw verzameld door de diverse docenten van Handtekenen. Zij bewaarden vaak kwalitatief goed studentenwerk, dat als voorbeeld kon dienen. De voorwerpen in de collectie zijn afkomstig uit de Handtekenkelder in het oude Bouwkunde gebouw aan de Berlageweg, en zijn daar na de brand in 2008 uit geëvacueerd. Het meerendeel van de voorwerpen in die kelder is daabij helaas verloren gegaan.  \nNet als de tekeningen zijn ook de voorwerpen in de loop der jaren verzameld door de docenten. De wens om de studenten verschillende vormen en texturen te laten tekenen was leidend bij de selectie. De tijd die in het curriculum voor Handtekenen is gereserveerd is in de loop der jaren afgenomen, daardoor worden de voorwerpen minder intensief gebruikt, maar de collectie is nog tot op heden actief als onderwijscollectie. \nDe deelcollectie Voorwerpen omvat allerhande voorwerpen, waaronder: \nAbstracte vormen, kubus-draadmodellen, houten kegels; \nGebruiksvoorwerpen, waaronder stoelen, lampen, glaswerk, gereedschap; \nEen gipsafgietsel van een paardenhoofd en een schelp. \nDe deelcollectie Tekeningen is onder te verdelen in verschillende groepen: \nSchetsen gemaakt tijdens excursies in Nederland of daarbuiten; \nStedenbouwkundige analysetekeningen; \nTekeningen gemaakt voor de presentatie van een studentenontwerp; \nTekeningen gemaakt tijdens oefeningen in verschillende vakken van Handtekenen;  \nHieronder ook: ‘Tekenen naar Waarneming’: Hierop zijn soms collectiestukken uit de museumcollectie of stoelencollectie te zien; \nStudentenwerk tot de jaren 1960; \nOverig studentenwerk van voor 1960; \nStudentenwerk uit jaren 1970 en ’80; \nEnkele portfolio’s met tekeningen van een heel jaar van een en dezelfde student. \nEen kern van de collectie zijn de oudste tekeningen gemaakt door studenten in de vroege 20ste eeuw. Die illustreren het verhaal van het bouwkundeonderwijs in die tijd. De oudste tekeningen zijn niet zozeer bruikbaar voor tekenonderwijs, maar wel voor onderzoek en presentaties door en voor studenten. In het HNI archief liggen ook tekeningen afkomstig van Handtekenen, de mogelijke overlap of juist aanvullingen zijn aanleiding voor nader onderzoek. Ook de recentere tekeningen zijn een neerslag van de veranderende inzichten in het onderwijs van de faculteit, en kunnen dienen als bron voor historisch onderzoek. Deels kunnen de tekeningen dienen als voorbeeld voor huidig tekenonderwijs, en het archief is al ingezet als bron in het scriptieonderwijs. \nDe tekeningen liggen in zuurvrije mappen opgeslagen in een afgesloten ladenblok in het tekenlokaal en zijn op afspraak te raadplegen. Een groot deel van de objecten staat in een permanente opstelling in een vitrine in de publiek toegankelijke centrale gang in het faculteitsgebouw.  \nDe collectie onderscheidt zich van andere vergelijkbare collecties omdat de faculteit Bouwkunde in Delft lange tijd de enige Architectuurfaculteit in Nederland was. De afdeling Handtekenen diende tot het begin van de 20ste eeuw bovendien alle studenten van de Polytechnische School en Technische Hoogeschool, niet alleen die van Bouwkunde.",
+    "identifier": "Handtekencollectie_BK",
+    "materialExtent": "ca. 1000 tekeningen; 40 objecten.",
+    "creator": {
+        "@type": "Role",
+        "roleName": "beherende instelling",
+        "creator": [
+            {
+                "@type": "Person",
+                "name": "Faculteit Bouwkunde"
+            },
+            {
+                "@type": "Organization",
+                "name": "Faculteit Bouwkunde"
+            }
+        ]
+    },
+    "contributor": {
+        "@type": "Role",
+        "roleName": "collectieverantwoordelijke",
+        "contributor": [
+            {
+                "@type": "Person",
+                "name": "Charlotte van Wijk"
+            },
+            {
+                "@type": "Organization",
+                "name": "Charlotte van Wijk"
+            }
+        ]
+    },
+    "isPartOf": [
+        {
+            "@type": "Collection",
+            "name": "Faculteit Bouwkunde",
+            "sameAs": "https://heritage.tudelft.nl/iiif/collections/01cdf7cc-4461-4507-9818-3a2eec9e4394/schema.json",
+            "identifier": "BK"
+        }
+    ],
+    "image": [
+        {
+            "@type": "ImageObject",
+            "contentUrl": {
+                "@context": "http://iiif.io/api/presentation/3/context.json",
+                "@id": "https://dlc.services/iiif-img/7/18/050a1c7f-d20e-4998-a6db-bac00b794748",
+                "@type": "Image"
+            },
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/050a1c7f-d20e-4998-a6db-bac00b794748/full/full/0/default.jpg",
+            "encodingFormat": "https://iiif.io/api/image/3.0/",
+            "caption": "JohannesSchwartz_Handtekenen_DSC0238.tif",
+            "width": 1600,
+            "height": 1200,
+            "position": 12783
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": {
+                "@context": "http://iiif.io/api/presentation/3/context.json",
+                "@id": "https://dlc.services/iiif-img/7/18/05fec6b3-beff-4751-888f-45615935d1e7",
+                "@type": "Image"
+            },
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/05fec6b3-beff-4751-888f-45615935d1e7/full/full/0/default.jpg",
+            "encodingFormat": "https://iiif.io/api/image/3.0/",
+            "caption": "JohannesSchwartz_Handtekenen_DSC0296.tif",
+            "width": 1600,
+            "height": 1200,
+            "position": 12784
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": {
+                "@context": "http://iiif.io/api/presentation/3/context.json",
+                "@id": "https://dlc.services/iiif-img/7/18/75239d5e-e208-4967-ba09-a6d2520e69d2",
+                "@type": "Image"
+            },
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/75239d5e-e208-4967-ba09-a6d2520e69d2/full/full/0/default.jpg",
+            "encodingFormat": "https://iiif.io/api/image/3.0/",
+            "caption": "BK2024-JSchwartz_Handtekenen_DSC0409.tif",
+            "width": 1600,
+            "height": 1200,
+            "position": 12785
+        }
+    ]
+}

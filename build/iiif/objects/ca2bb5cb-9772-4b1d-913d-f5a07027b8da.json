@@ -112,6 +112,21 @@
                     "Hellingmeter, meetinstrument voor de bouw. Voor het stellen van een vlak of het bepalen van een hellingshoek (zie ook quadrant). Dit voorwerp is een andere vorm van het timmermanswaterpas."
                 ]
             }
+        },
+        {
+            "label": {
+                "en": [
+                    "Documentation"
+                ],
+                "nl": [
+                    "Documentatie"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "<span><a href=\"https://tudelft.on.worldcat.org/oclc/603385444\">Geschichte der geodätischen Instrumente und Verfahren im Altertum und Mittelalter, Fritz Schmidt, 1935</a></span>"
+                ]
+            }
         }
     ],
     "navDate": "1700-01-01T00:00:00.000Z",

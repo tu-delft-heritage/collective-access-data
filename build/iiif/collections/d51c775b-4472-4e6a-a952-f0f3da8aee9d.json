@@ -11,6 +11,51 @@
         {
             "label": {
                 "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Collectie Geodesie"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dating"
+                ],
+                "nl": [
+                    "Datering"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1700 – 2010"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Extent"
+                ],
+                "nl": [
+                    "Omvang"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "630 objecten"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
                     "Managing institution"
                 ],
                 "nl": [
@@ -18,7 +63,8 @@
                 ]
             },
             "value": {
-                "en": [
+                "nl": [
+                    "TU Delft Library",
                     "TU Delft Library"
                 ]
             }
@@ -33,15 +79,33 @@
                 ]
             },
             "value": {
-                "none": [
+                "nl": [
+                    "Sylvia Nijhuis",
                     "Sylvia Nijhuis"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Een zwaartepunt binnen de Centrale Erfgoedcollectie is de deelcollectie Geodesie. Deze omvat een uitgebreide verzameling meetinstrumenten voor onder meer landmeten, kartering, waterpassen, navigatie en gravimetrie. Het merendeel van de objecten werd gebruikt door studenten van de Koninklijke Akademie (1842–1864) en de Polytechnische School (1864–1905). Bij deze voorlopers van de TU Delft vormde landmeetkunde een belangrijk onderdeel van de opleiding.",
+                    "De collectie bevat daarnaast instrumenten van de Rijkscommissie voor Graadmeting en Waterpassing, die in 1879 werd opgericht. De Rijkscommissie kreeg ook oudere instrumenten in beheer die waren gebruikt bij de eerste en tweede triangulatie van Nederland. Daarnaast maken zeer nauwkeurige instrumenten van de vermaarde instrumentenmaker Julius Wanschaff deel uit van de collectie. De Rijkscommissie zette deze in bij de derde triangulatie.",
+                    "De verzameling omvat circa 600 objecten en werd tot 2003 beheerd door de faculteit Geodesie. Na de opheffing van de faculteit werd de collectie opgenomen in de Centrale Erfgoedcollectie. In 2023 werd de verzameling uitgebreid met een overdracht van circa vijftig \"modernere\" objecten van na 1950, afkomstig uit het onderwijs van de faculteit Geodesie. Deze objecten waren in de tussenliggende periode beheerd door de stichting De Hollandse Cirkel."
                 ]
             }
         }
     ],
     "summary": {
         "nl": [
-            "Een zwaartepunt binnen de Centrale Erfgoedcollectie is de deelcollectie Geodesie. Deze omvat een uitgebreide verzameling meetinstrumenten voor onder meer landmeten, kartering, waterpassen, navigatie en gravimetrie. Het merendeel van de objecten werd gebruikt door studenten van de Koninklijke Akademie (1842–1864) en de Polytechnische School (1864–1905). Bij deze voorlopers van de TU Delft vormde landmeetkunde een belangrijk onderdeel van de opleiding.\nDe collectie bevat daarnaast instrumenten van de Rijkscommissie voor Graadmeting en Waterpassing, die in 1879 werd opgericht. De Rijkscommissie kreeg ook oudere instrumenten in beheer die waren gebruikt bij de eerste en tweede triangulatie van Nederland. Daarnaast maken zeer nauwkeurige instrumenten van de vermaarde instrumentenmaker Julius Wanschaff deel uit van de collectie. De Rijkscommissie zette deze in bij de derde triangulatie.\nDe verzameling omvat circa 600 objecten en werd tot 2003 beheerd door de faculteit Geodesie. Na de opheffing van de faculteit werd de collectie opgenomen in de Centrale Erfgoedcollectie. In 2023 werd de verzameling uitgebreid met een overdracht van circa vijftig \"modernere\" objecten van na 1950, afkomstig uit het onderwijs van de faculteit Geodesie. Deze objecten waren in de tussenliggende periode beheerd door de stichting De Hollandse Cirkel."
+            "Collectie van voornamelijk meetinstrumenten voor landmeten, kartering, waterpassen, navigatie en gravimetrie, afkomstig van de voormalige faculteit Geodesie."
         ]
     },
     "items": [

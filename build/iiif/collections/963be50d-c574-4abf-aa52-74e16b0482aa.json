@@ -11,6 +11,51 @@
         {
             "label": {
                 "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Van Heel Collectie"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dating"
+                ],
+                "nl": [
+                    "Datering"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1899 – 1966"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Extent"
+                ],
+                "nl": [
+                    "Omvang"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Onbekend"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
                     "Managing institution"
                 ],
                 "nl": [
@@ -18,7 +63,10 @@
                 ]
             },
             "value": {
-                "en": [
+                "nl": [
+                    "Faculteit Technische Natuurkunde",
+                    "Faculteit Technische Natuurkunde",
+                    "TU Delft Library",
                     "TU Delft Library"
                 ]
             }
@@ -33,18 +81,53 @@
                 ]
             },
             "value": {
-                "none": [
+                "nl": [
+                    "Thim Zuidwijk",
+                    "Thim Zuidwijk",
+                    "Sylvia Nijhuis",
                     "Sylvia Nijhuis"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "De collectie Van Heel documenteert de totstandkoming en ontwikkeling van de Technische Optica als vakgebied aan de toenmalige TH Delft onder en rondom A.C.S. (Bram) van Heel (1899-1966). Van Heel geldt als een van de belangrijkste grondleggers van de technische optica in Nederland. Hij richtte zich op de praktische toepassing van optische kennis binnen een vakgebied dat destijds sterk theoretisch en wiskundig georiënteerd was. Vanaf zijn aanstelling als lector bouwde hij geleidelijk de optische afdeling op, waarbinnen hij in 1947 tot hoogleraar werd benoemd.",
+                    "Gedurende zijn loopbaan ontwikkelde Van Heel samen met medewerkers en studenten bruikbare ontwerp-, meet- en analysemethoden voor optische systemen. Een bekend voorbeeld hiervan is de aligneermethode, die na de Tweede Wereldoorlog werd toegepast bij een versnelde herbouw van de brug bij Hedel. Daarnaast speelde Van Heel een belangrijke rol in de ontwikkeling van de Nederlandse optische industrie, onder meer door zijn betrokkenheid bij bedrijven als De Oude Delft en Nonius en bij de oprichting van de Technische Fysische Dienst van TNO. Ook was hij auteur van het invloedrijke leerboek Inleiding in de optica, dat jarenlang als standaardwerk binnen het vakgebied werd gebruikt.",
+                    "De collectie is opgebouwd in de periode 1925-1966 en vormt een sterk samenhangend geheel van instrumenten, lenzen, spiegels en andere technische objecten, aangevuld met foto’s, dia’s, publicaties, correspondentie en notitieboeken. De kracht van de collectie ligt juist in dit gemengde karakter: de verschillende onderdelen kunnen niet los van elkaar worden gezien, maar versterken elkaar inhoudelijk. Samen geven zij inzicht in de verwevenheid van onderzoek, onderwijs, technologische ontwikkeling en industriële samenwerking.",
+                    "De kern van de collectie bestaat uit materiaal dat direct betrekking heeft op Van Heels professionele leven, zijn onderwijs en zijn onderzoekslijnen. Hieronder vallen onderwerpen als lensontwerp, de aligneermethode, optische glasvezels en optische coatings. De collectie laat daarnaast de bredere context van de Optische Groep zien, waaronder onderwijs- en onderzoeksactiviteiten, productie in de eigen werkplaats, optische slijperij en opdamperij, contacten met de optische industrie en samenwerkingen met nationale en internationale collega-onderzoekers. Ook wordt zichtbaar hoe verschillende onderzoekslijnen na Van Heels overlijden werden voortgezet.",
+                    "De collectie omvat niet het volledige archief of alle objecten van de latere Optics Research Group. Uitgesloten is voornamelijk recenter materiaal dat niet direct kan worden verbonden aan Van Heel, zijn onderwijsactiviteiten of zijn onderzoekswerk.",
+                    "De functie van de collectie is meerledig. Een deel van de collectie fungeert nog steeds als studieverzameling en wordt gebruikt binnen onderwijs en onderzoek. Instrumenten en andere objecten worden ingezet in colleges, practica en proefopstellingen, voor zover dit geen schade toebrengt aan de objecten. Publicaties en documentatie zijn raadpleegbaar via de bibliotheek. Tegelijkertijd heeft de collectie een belangrijke erfgoedfunctie. Zij maakt studenten, onderzoekers en medewerkers bewust van de historische ontwikkeling van hun vakgebied en van de rol die Delft daarin heeft gespeeld.",
+                    "De betekenis van de collectie overstijgt de faculteit Technische Natuurwetenschappen. Zo werkte Van Heel samen met W.L. van der Poel van Elektrotechniek en werd diens computer Testudo gebruikt voor het doorrekenen van lensontwerpen. Door de combinatie van objecten, documentatie en context biedt de collectie een uitzonderlijk gedetailleerd beeld van de ontwikkeling van de optica, de wetenschapsbeoefening en de wisselwerking tussen universiteit en industrie in Delft, Nederland en daarbuiten gedurende de twintigste eeuw.",
+                    "In 2026 zijn de topstukken en andere erfgoedobjecten van bijzondere betekenis overgedragen aan de TU Delft Library. De studieobjecten zijn onder beheer gebleven van de afdeling Optica van de faculteit Technische Natuurwetenschappen. Hetgeen hier wordt getoond betreft slechts een selectie van de belangrijkste erfgoedobjecten uit de collectie. De collectie is op aanvraag toegankelijk binnen de universiteit en wordt beheerd met aandacht voor duurzaam behoud en toekomstig gebruik."
                 ]
             }
         }
     ],
     "summary": {
         "nl": [
-            "De collectie Van Heel is een gemengde verzameling die de ontwikkeling van de technische optica aan de toenmalige TH Delft documenteert, met A.C.S. (Bram) van Heel (1899–1966) als centrale figuur. De collectie omvat diverse objecten, zoals instrumenten, lenzen, spiegels, foto’s, publicaties, correspondentie en notitieboeken, die samen een inhoudelijk sterk verbonden geheel vormen. De focus ligt op de wisselwerking tussen onderwijs, onderzoek en praktische toepassingen binnen de faculteit Technische Natuurwetenschappen.\nDe collectie is opgebouwd in de periode 1925–1966, parallel aan Van Heels loopbaan als lector en later hoogleraar. Hij speelde een belangrijke rol in het ontwikkelen van technische optica als toegepast vakgebied en werkte aan praktische methoden, zoals de aligneermethode. Ook droeg hij bij aan de Nederlandse optische industrie en het onderwijs, onder meer met zijn leerboek Inleiding in de optica. De objecten zijn verzameld via onderwijs- en onderzoeksactiviteiten, eigen productie binnen de afdeling en samenwerkingen met industrie en collega’s.\nDe kern van de collectie bestaat uit materiaal dat direct verband houdt met Van Heels werk en onderzoekslijnen, zoals lensontwerp, optische glasvezels en coatings. Het bijzondere van de collectie is de samenhang tussen instrumenten en documentair materiaal, waardoor een gedetailleerd beeld ontstaat van de wetenschappelijke praktijk en netwerken van die tijd.\nDe collectie heeft zowel een onderwijs- als erfgoedfunctie. Instrumenten worden nog gebruikt in practica en colleges, terwijl publicaties raadpleegbaar zijn in de bibliotheek. Tegelijkertijd biedt de collectie inzicht in de historische ontwikkeling van het vakgebied en de rol van Delft binnen nationale en internationale optica. Hetgeen hier wordt getoond betreft slechts een selectie van highlights van de erfgoedobjecten. De collectie is op aanvraag toegankelijk binnen de universiteit en wordt beheerd met aandacht voor behoud."
+            "De collectie Van Heel toont de totstandkoming en ontwikkeling van de Technische Optica als vakgebied aan de toenmalige TH Delft onder en rondom A.C.S (Bram) van Heel (1899-1966)"
         ]
     },
     "items": [
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/38bc8285-2b8c-426a-9382-50780d853055.json",
+            "type": "Manifest",
+            "label": {
+                "nl": [
+                    "Een 3-voudige vouwbare prisma op statief voor instructie doeleinden"
+                ]
+            },
+            "navDate": "1900-01-01T00:00:00.000Z"
+        },
         {
             "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/132822c7-6755-4b19-baf2-fa2b142061b4.json",
             "type": "Manifest",
@@ -499,6 +582,16 @@
             "label": {
                 "nl": [
                     "Spectrograaf van glas gemonteerd op een houten plateau bedekt met zwart vilt"
+                ]
+            },
+            "navDate": "1920-01-01T00:00:00.000Z"
+        },
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/b7a86010-dfe2-44cc-88f8-b669269ffd5d.json",
+            "type": "Manifest",
+            "label": {
+                "nl": [
+                    "Zwart metalen goniometer met inscriptie \"Carl Zeiss Jena\""
                 ]
             },
             "navDate": "1920-01-01T00:00:00.000Z"

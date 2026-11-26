@@ -61,7 +61,7 @@
     "depth": {
         "@type": "QuantitativeValue",
         "unitCode": "CMT",
-        "value": 48
+        "value": 48.5
     },
     "image": {
         "@type": "ImageObject",

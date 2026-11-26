@@ -18,12 +18,12 @@
     "height": {
         "@type": "QuantitativeValue",
         "unitCode": "MMT",
-        "value": 205
+        "value": 460
     },
     "width": {
         "@type": "QuantitativeValue",
         "unitCode": "MMT",
-        "value": 460
+        "value": 205
     },
     "depth": {
         "@type": "QuantitativeValue",

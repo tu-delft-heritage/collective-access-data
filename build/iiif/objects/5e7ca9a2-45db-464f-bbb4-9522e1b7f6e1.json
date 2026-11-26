@@ -148,6 +148,21 @@
         {
             "label": {
                 "en": [
+                    "Documentation"
+                ],
+                "nl": [
+                    "Documentatie"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "<span><a href=\"https://tudelft.on.worldcat.org/oclc/457100745\">Description et usage du cercle de réflexion, avec différentes méthodes pour calculer les observations nautiques, par le chevalier de Borda .., Jean-Charles Borda, 1816</a></span>"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
                     "Related object"
                 ],
                 "nl": [

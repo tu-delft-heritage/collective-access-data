@@ -1,0 +1,147 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/1ff41567-c05c-4207-9ea9-2033e6088e60.json",
+    "type": "Collection",
+    "label": {
+        "nl": [
+            "Centrale Erfgoedcollectie"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Centrale Erfgoedcollectie"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Dating"
+                ],
+                "nl": [
+                    "Datering"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "1400 – 2015"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Extent"
+                ],
+                "nl": [
+                    "Omvang"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "ca. 6.500 objecten"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Managing institution"
+                ],
+                "nl": [
+                    "Beherende instelling"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "TU Delft Library",
+                    "TU Delft Library"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Curator"
+                ],
+                "nl": [
+                    "Conservator"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Sylvia Nijhuis",
+                    "Sylvia Nijhuis"
+                ]
+            }
+        },
+        {
+            "label": {
+                "en": [
+                    "Description"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "De Centrale Erfgoedcollectie omvat circa 6.500 objecten die verbonden zijn met de institutionele geschiedenis, het academisch onderwijs en het onderzoek van de TU Delft. De collectie bestaat onder meer uit meetinstrumenten, onderwijsmateriaal, onderzoeksobjecten, toegepaste kunst en portretten van hoogleraren.",
+                    "De collectie vindt haar oorsprong in de beginjaren van de universiteit, bij de oprichting van de Koninklijke Akademie in 1842. In de loop der tijd zijn bronnen, hulpmiddelen en resultaten van onderwijs en onderzoek bewaard gebleven. De objecten zijn afkomstig van uiteenlopende faculteiten en afdelingen, maar ook uit de omgeving van de Senaat, het College van Curatoren en het College van Bestuur.",
+                    "Het beheer van de erfgoedcollecties werd in 1975 ondergebracht bij het Technisch Tentoonstelling Centrum (TTC), later het Techniek Museum Delft (TMD). Een subsidie van het ministerie van Onderwijs, Cultuur en Wetenschappen in 1998 maakte het mogelijk de collecties centraal op te slaan en te registreren. Bestaande verzamelingen werden beoordeeld en een selectie werd officieel opgenomen in de collectie. Het streven was een representatief beeld te bieden van de geschiedenis van het onderwijs en onderzoek, de ontwikkeling van de TU Delft als instituut en het studentenleven.",
+                    "Met de beëindiging van het Techniek Museum Delft in 2008 werd de zorg voor de collectie ondergebracht bij de TU Delft Library onder de naam Museumcollectie. In 2026 werd deze naam gewijzigd in Centrale Erfgoedcollectie om de bredere betekenis van de collectie voor het academisch erfgoed van de TU Delft tot uitdrukking te brengen.",
+                    "De Centrale Erfgoedcollectie kent verschillende zwaartepunten. Zo omvat zij een deelcollectie op het gebied van landmeetkunde, waterpassing en gravimetrie, voorheen beheerd door de in 2003 opgeheven Faculteit Geodesie. Ook omvat de collectie een uitgebreide verzameling instrumenten, proefstukken en modellen die werden gebruikt voor het onderwijs en onderzoek in de elektrotechniek en tot 2003 deel uitmaakten van de Studieverzameling EWI.",
+                    "De toegepaste kunst uit de faculteit Bouwkunde vormt een ander belangrijk onderdeel. Deze verzameling werd door verschillende docenten bijeengebracht voor het onderwijs in kunstgeschiedenis, decoratieve kunsten en handtekenen. Daarnaast bevat de collectie objecten uit de voormalige ijkersopleiding, die tot 2001 werd beheerd door de Stichting NMi Museum IJkwezen.",
+                    "Tot de bijzondere deelcollecties behoort een omvangrijke verzameling mechanische, elektromechanische en elektronische rekenmachines, aangevuld met enkele van de vroegste computers van Nederland. Deze deelcollectie is mede tot stand gekomen door een uitruil met het voormalige museum Scryption. Hoewel deze objecten geen directe relatie hadden met de TU Delft, sloten ze aan bij de reeds aanwezige deelcollectie.",
+                    "Daarnaast omvat de collectie natuurlijke, voornamelijk tropische materialen en voorbeelden van hun technische toepassingen, bijeengebracht door Gerrit van Iterson jr., hoogleraar Technische Botanie en grondlegger van de Botanische Tuin.",
+                    "Naast deze gespecialiseerde deelcollecties omvat de Centrale Erfgoedcollectie uiteenlopende objecten uit verschillende afdelingen van de TU Delft, waaronder natuurkundige en scheikundige instrumenten die in de beginperiode van het TTC/TMD werden verzameld. Ook de institutionele geschiedenis is vertegenwoordigd, onder meer door portretten van hoogleraren in de vorm van schilderijen, bronzen plaquettes en bustes.",
+                    "De collectie is ondergebracht in de beveiligde depots van de TU Delft Library."
+                ]
+            }
+        }
+    ],
+    "summary": {
+        "nl": [
+            "De Centrale Erfgoedcollectie omvat circa 6.500 objecten die verbonden zijn met de institutionele geschiedenis, het academisch onderwijs en het onderzoek van de TU Delft."
+        ]
+    },
+    "items": [
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/d51c775b-4472-4e6a-a952-f0f3da8aee9d.json",
+            "type": "Collection",
+            "label": {
+                "nl": [
+                    "Collectie Geodesie"
+                ]
+            }
+        },
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/7b35ae59-1507-447a-a9ac-4641a7bf24b1.json",
+            "type": "Collection",
+            "label": {
+                "nl": [
+                    "Collectie Universiteitsgeschiedenis"
+                ]
+            }
+        },
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/64c2d30b-1002-4063-a4d0-299cb10c507e.json",
+            "type": "Collection",
+            "label": {
+                "nl": [
+                    "Schilderijen Waterstaatswerken"
+                ]
+            }
+        }
+    ]
+}

@@ -67,6 +67,11 @@
         "unitCode": "MMT",
         "value": 230
     },
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Entwicklungsgeschichte der optischen Entfernungsmesser mit Latte im Zielpunkt, Friedrich Wagner, 1969",
+        "sameAs": "https://tudelft.on.worldcat.org/oclc/630820509"
+    },
     "image": [
         {
             "@type": "ImageObject",

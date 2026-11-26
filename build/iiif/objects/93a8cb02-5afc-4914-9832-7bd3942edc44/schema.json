@@ -63,18 +63,11 @@
         "unitCode": "MMT",
         "value": 240
     },
-    "citation": [
-        {
-            "@type": "CreativeWork",
-            "name": "Landmeten en waterpassen, H.J. Buysman, 1921",
-            "sameAs": "https://tudelft.on.worldcat.org/oclc/1308785000"
-        },
-        {
-            "@type": "CreativeWork",
-            "name": "Levés de plans à la stadia : notes pratiques pour études de tracés, I. Moinot, 1874",
-            "sameAs": "https://tudelft.on.worldcat.org/oclc/907712363"
-        }
-    ],
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Landmeten en waterpassen;Levés de plans à la stadia : notes pratiques pour études de tracés, H.J. Buysman;I. Moinot, 1921;1874",
+        "sameAs": "https://tudelft.on.worldcat.org/oclc/1308785000;907712363"
+    },
     "isRelatedTo": {
         "@type": "CreativeWork",
         "name": "Tachymeter-theodoliet door Maison Richer Guyard Canary et Cie.",

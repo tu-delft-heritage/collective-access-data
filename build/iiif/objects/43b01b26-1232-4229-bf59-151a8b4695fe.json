@@ -129,6 +129,21 @@
                     "Waterpasinstrument door G.C. Starke, geschikt voor eenvoudige waterpassingen zoals doorgaande- en vlakte-waterpassingen. Het instrument is voorzien van een micrometer-hellingschroef voor het nauwkeurig horizontaal stellen. Het kan zowel op een stok als statief geplaatst worden."
                 ]
             }
+        },
+        {
+            "label": {
+                "en": [
+                    "Documentation"
+                ],
+                "nl": [
+                    "Documentatie"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "<span><a href=\"https://tudelft.on.worldcat.org/oclc/162271259\">Theoret. u. prakt. Anleitung zum Nivelliren : Mit einem Anhange üb. d. Ausstecken u. Kreisbogen, S. Stampfer, 1877</a></span>"
+                ]
+            }
         }
     ],
     "navDate": "1850-01-01T00:00:00.000Z",
