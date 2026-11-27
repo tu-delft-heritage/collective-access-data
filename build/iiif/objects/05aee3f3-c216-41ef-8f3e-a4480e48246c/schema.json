@@ -64,7 +64,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/1ebc1be6-fd7a-4011-80af-f44e5c08ff33",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/1ebc1be6-fd7a-4011-80af-f44e5c08ff33",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "width": 1600,
             "height": 1200,
@@ -77,7 +77,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/aeb994e5-d31d-43ab-860f-b63a96b4e06a",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/aeb994e5-d31d-43ab-860f-b63a96b4e06a",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "width": 1600,
             "height": 1200,
@@ -90,7 +90,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/0ef95c9d-4ea4-49f7-8e4d-653870ca1746",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/0ef95c9d-4ea4-49f7-8e4d-653870ca1746",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "width": 1600,
             "height": 1200,
@@ -103,7 +103,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/9d680c3e-2bfb-4475-9ba6-eda979c10067",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/9d680c3e-2bfb-4475-9ba6-eda979c10067",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "width": 1600,
             "height": 1200,
@@ -116,7 +116,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/2efc8523-c868-4e18-8732-0fa1e97aebf9",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/2efc8523-c868-4e18-8732-0fa1e97aebf9",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "width": 1600,
             "height": 1200,
@@ -129,7 +129,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/c8194457-607f-40e6-a887-fb78dd3a8045",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/c8194457-607f-40e6-a887-fb78dd3a8045",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "width": 1600,
             "height": 1200,
@@ -142,7 +142,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/db49bbea-1d28-4f3e-9579-cd42c9eb7a8d",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/db49bbea-1d28-4f3e-9579-cd42c9eb7a8d",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "width": 1600,
             "height": 1200,
@@ -155,7 +155,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/3a289d5d-86a7-4dbc-b1e7-d5efd6cfd4f3",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/3a289d5d-86a7-4dbc-b1e7-d5efd6cfd4f3",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "width": 1600,
             "height": 1200,
@@ -168,7 +168,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/4d6bef41-039b-47fb-8704-374e0574d78a",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/4d6bef41-039b-47fb-8704-374e0574d78a",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "width": 1600,
             "height": 1200,

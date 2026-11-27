@@ -57,11 +57,18 @@
         "unitCode": "MMT",
         "value": 160
     },
-    "citation": {
-        "@type": "CreativeWork",
-        "name": "Die Triangulation von Java;De bemoeiingen van het Instituut en de Akademie met het ijkwezen, Jean Abraham Chrétien Oudemans;K.M.C. Zevenboom, 1875-1900;1960",
-        "sameAs": "https://tudelft.on.worldcat.org/oclc/601686462;64265593"
-    },
+    "citation": [
+        {
+            "@type": "CreativeWork",
+            "name": "Die Triangulation von Java, Jean Abraham Chrétien Oudemans, 1875-1900",
+            "sameAs": "https://tudelft.on.worldcat.org/oclc/601686462"
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "De bemoeiingen van het Instituut en de Akademie met het ijkwezen, K.M.C. Zevenboom, 1960",
+            "sameAs": "https://tudelft.on.worldcat.org/oclc/64265593"
+        }
+    ],
     "image": {
         "@type": "ImageObject",
         "contentUrl": {
@@ -69,7 +76,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/8d977e37-8805-40be-a18d-d70b04681b6c",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/8d977e37-8805-40be-a18d-d70b04681b6c",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "2004.0010.GEO.JPG",
         "width": 1600,

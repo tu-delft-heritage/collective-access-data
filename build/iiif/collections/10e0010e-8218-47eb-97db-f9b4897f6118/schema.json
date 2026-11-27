@@ -7,38 +7,21 @@
     "description": "De maquettes in deze collectie zijn gebouwd in de maquettewerkplaats van de faculteit Bouwkunde, vaak door studenten van de faculteit Bouwkunde. Binnen het onderwijs van de faculteit Architectuur wordt het fysieke model vaak gebruikt als ontwerp- en onderzoeksinstrument. Voor sommige studio's is het zelfs een essentieel onderdeel van hun ontwerp- en onderzoeksfilosofie. Daarom wordt de collectie nog steeds deels uitgebreid door onderwijsprojecten.  \nDe collectie kan worden onderverdeeld in drie groepen: individuele modellen die zijn geproduceerd als onderdeel van modelonderwijs; maquettes gemaakt in het kader van externe tentoonstellingen  en maquettes die zijn gebouwd als onderdeel van een onderzoeksproject. Op de website voor de collecties van Bouwkudne is per maquette in detail beschreven door wie en met welk doel hij gemaakt is. \nDe maquettecollectie bestaat momenteel uit ca. 200 maquettes, waarvan er 120 te vinden zijn op de website voor de collecties van Bouwkunde. De maquettes staan in een gesloten depot in de faculteit, dat slechts met maximaal tien bezoekers en onder begeleiding toegankelijk is. Een deel is zichtbaar door het raam van het depot, een ander deel is onzichtbaar opgeslagen in de transportkisten.  \nIn 2005 formaliseerde de afdeling het beheer en behoud van het model. De inventaris, intensieve restauratie en uitgebreide documentatie van de modellen werd aangepakt. Naast beheer en behoud was het doel om de collectie te ontgrendelen, uit te breiden en beschikbaar te stellen voor onderwijs, onderzoek en bruiklenen. \nDe resulterende collectie is afkomstig uit onderzoek en onderwijs aan de faculteit, en kan gebruikt worden voor onderwijs over architectuurgeschiedenis en -ontwerp. De collectie van belang is voor de faculteit, de universiteit en het vakgebied omdat hij in zijn diversiteit en kwaliteit een unieke collectie is binnen Nederland. Het is een gebruikscollectie die veel wordt gebruikt voor bruiklenen aan de grote nationale musea, en daarom bijdraagt aan het uitdragen van de identiteit van de faculteit en de universiteit.",
     "identifier": "Maquettecollectie",
     "materialExtent": "ca. 200",
-    "citation": {
-        "@type": "CreativeWork",
-        "name": "De maquetttecollectie van de faculteit Bouwkunde",
-        "sameAs": "https://collecties.bk.tudelft.nl/models"
-    },
     "creator": {
         "@type": "Role",
         "roleName": "beherende instelling",
-        "creator": [
-            {
-                "@type": "Person",
-                "name": "Faculteit Bouwkunde"
-            },
-            {
-                "@type": "Organization",
-                "name": "Faculteit Bouwkunde"
-            }
-        ]
+        "creator": {
+            "@type": "Organization",
+            "name": "Faculteit Bouwkunde"
+        }
     },
     "contributor": {
         "@type": "Role",
         "roleName": "collectieverantwoordelijke",
-        "contributor": [
-            {
-                "@type": "Person",
-                "name": "Tessa Wijtman-Berkman"
-            },
-            {
-                "@type": "Organization",
-                "name": "Tessa Wijtman-Berkman"
-            }
-        ]
+        "contributor": {
+            "@type": "Person",
+            "name": "Tessa Wijtman-Berkman"
+        }
     },
     "isPartOf": [
         {

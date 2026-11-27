@@ -120,13 +120,13 @@
     "navDate": "1925-01-01T00:00:00.000Z",
     "thumbnail": [
         {
-            "id": "https://dlc.services/thumbs/v3/7/18/5ece7a79-fd07-4db6-8ad8-00b5ae0fe6fc/full/max/0/default.jpg",
+            "id": "https://dlc.services/thumbs/v3/7/18/02c99afc-fb09-4e90-85a8-e09e51708ae3/full/max/0/default.jpg",
             "type": "Image",
             "format": "image/jpeg",
             "service": [
                 {
                     "@context": "http://iiif.io/api/image/3/context.json",
-                    "id": "https://dlc.services/thumbs/v3/7/18/5ece7a79-fd07-4db6-8ad8-00b5ae0fe6fc",
+                    "id": "https://dlc.services/thumbs/v3/7/18/02c99afc-fb09-4e90-85a8-e09e51708ae3",
                     "type": "ImageService3",
                     "profile": "level0",
                     "sizes": [
@@ -159,13 +159,13 @@
             "width": 6016,
             "thumbnail": [
                 {
-                    "id": "https://dlc.services/thumbs/v3/7/18/5ece7a79-fd07-4db6-8ad8-00b5ae0fe6fc/full/max/0/default.jpg",
+                    "id": "https://dlc.services/thumbs/v3/7/18/02c99afc-fb09-4e90-85a8-e09e51708ae3/full/max/0/default.jpg",
                     "type": "Image",
                     "format": "image/jpeg",
                     "service": [
                         {
                             "@context": "http://iiif.io/api/image/3/context.json",
-                            "id": "https://dlc.services/thumbs/v3/7/18/5ece7a79-fd07-4db6-8ad8-00b5ae0fe6fc",
+                            "id": "https://dlc.services/thumbs/v3/7/18/02c99afc-fb09-4e90-85a8-e09e51708ae3",
                             "type": "ImageService3",
                             "profile": "level0",
                             "sizes": [
@@ -196,12 +196,12 @@
                     "type": "AnnotationPage",
                     "items": [
                         {
-                            "id": "https://dlc.services/iiif-img/v3/7/18/5ece7a79-fd07-4db6-8ad8-00b5ae0fe6fc",
+                            "id": "https://dlc.services/iiif-img/v3/7/18/02c99afc-fb09-4e90-85a8-e09e51708ae3",
                             "type": "Annotation",
                             "motivation": "painting",
                             "target": "https://tu-delft-heritage.github.io/collective-access-data/iiif/objects/f8493e4a-19f9-49c3-a2ba-40ef54d7ba8f/canvas/0",
                             "body": {
-                                "id": "https://dlc.services/iiif-img/v3/7/18/5ece7a79-fd07-4db6-8ad8-00b5ae0fe6fc/full/max/0/default.jpg",
+                                "id": "https://dlc.services/iiif-img/v3/7/18/02c99afc-fb09-4e90-85a8-e09e51708ae3/full/max/0/default.jpg",
                                 "type": "Image",
                                 "format": "image/jpeg",
                                 "height": 4016,
@@ -209,7 +209,7 @@
                                 "service": [
                                     {
                                         "@context": "http://iiif.io/api/image/3/context.json",
-                                        "id": "https://dlc.services/iiif-img/v3/7/18/5ece7a79-fd07-4db6-8ad8-00b5ae0fe6fc",
+                                        "id": "https://dlc.services/iiif-img/v3/7/18/02c99afc-fb09-4e90-85a8-e09e51708ae3",
                                         "type": "ImageService3",
                                         "profile": "level2"
                                     }

@@ -12,62 +12,37 @@
         {
             "@type": "Role",
             "roleName": "beherende instelling",
-            "creator": [
-                {
-                    "@type": "Person",
-                    "name": "Faculteit Technische Natuurkunde"
-                },
-                {
-                    "@type": "Organization",
-                    "name": "Faculteit Technische Natuurkunde"
-                }
-            ]
+            "creator": {
+                "@type": "Organization",
+                "name": "Faculteit Technische Natuurkunde"
+            }
         },
         {
             "@type": "Role",
             "roleName": "beherende instelling",
-            "creator": [
-                {
-                    "@type": "Person",
-                    "name": "TU Delft Library",
-                    "sameAs": "http://www.wikidata.org/entity/Q2541583"
-                },
-                {
-                    "@type": "Organization",
-                    "name": "TU Delft Library",
-                    "sameAs": "http://www.wikidata.org/entity/Q2541583"
-                }
-            ]
+            "creator": {
+                "@type": "Organization",
+                "name": "TU Delft Library",
+                "sameAs": "http://www.wikidata.org/entity/Q2541583"
+            }
         }
     ],
     "contributor": [
         {
             "@type": "Role",
             "roleName": "collectieverantwoordelijke",
-            "contributor": [
-                {
-                    "@type": "Person",
-                    "name": "Thim Zuidwijk"
-                },
-                {
-                    "@type": "Organization",
-                    "name": "Thim Zuidwijk"
-                }
-            ]
+            "contributor": {
+                "@type": "Person",
+                "name": "Thim Zuidwijk"
+            }
         },
         {
             "@type": "Role",
             "roleName": "collectieverantwoordelijke",
-            "contributor": [
-                {
-                    "@type": "Person",
-                    "name": "Sylvia Nijhuis"
-                },
-                {
-                    "@type": "Organization",
-                    "name": "Sylvia Nijhuis"
-                }
-            ]
+            "contributor": {
+                "@type": "Person",
+                "name": "Sylvia Nijhuis"
+            }
         }
     ],
     "hasPart": [

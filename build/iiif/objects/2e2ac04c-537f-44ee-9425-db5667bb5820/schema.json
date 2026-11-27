@@ -64,7 +64,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/c33b4d73-ab2b-4f64-9e65-1e5befdfef74",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/c33b4d73-ab2b-4f64-9e65-1e5befdfef74",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "_DSF1202.jpg",
         "width": 1600,

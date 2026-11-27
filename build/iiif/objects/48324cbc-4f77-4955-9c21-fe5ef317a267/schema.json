@@ -69,7 +69,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/64093fb5-be67-4bb9-8ed0-f48184c4b71d",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/64093fb5-be67-4bb9-8ed0-f48184c4b71d",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "width": 1600,
             "height": 1200,
@@ -82,7 +82,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/88c42330-4cff-421f-9267-d817cb8280ec",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/88c42330-4cff-421f-9267-d817cb8280ec",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "width": 1600,
             "height": 1200,
@@ -95,7 +95,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/f934e621-f64f-40bb-9bd7-d9caf6555b17",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/f934e621-f64f-40bb-9bd7-d9caf6555b17",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "width": 1600,
             "height": 1200,
