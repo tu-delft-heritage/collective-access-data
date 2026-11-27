@@ -10,30 +10,18 @@
     "creator": {
         "@type": "Role",
         "roleName": "beherende instelling",
-        "creator": [
-            {
-                "@type": "Person",
-                "name": "Faculteit Bouwkunde"
-            },
-            {
-                "@type": "Organization",
-                "name": "Faculteit Bouwkunde"
-            }
-        ]
+        "creator": {
+            "@type": "Organization",
+            "name": "Faculteit Bouwkunde"
+        }
     },
     "contributor": {
         "@type": "Role",
         "roleName": "collectieverantwoordelijke",
-        "contributor": [
-            {
-                "@type": "Person",
-                "name": "Charlotte van Wijk"
-            },
-            {
-                "@type": "Organization",
-                "name": "Charlotte van Wijk"
-            }
-        ]
+        "contributor": {
+            "@type": "Person",
+            "name": "Charlotte van Wijk"
+        }
     },
     "isPartOf": [
         {

@@ -77,7 +77,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/796fb615-9a02-4999-9c79-9f78f168e4fc",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/796fb615-9a02-4999-9c79-9f78f168e4fc",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "caption": "2008.0012.GEO.jpg",
             "width": 1600,
@@ -91,7 +91,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/f0045987-07da-479c-a972-1c2c49627358",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/f0045987-07da-479c-a972-1c2c49627358",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "caption": "2008.0012.GEO.JPG",
             "width": 1600,

@@ -36,7 +36,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/4af71b5c-0f4f-4c47-bbd8-4614f61a8839",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/4af71b5c-0f4f-4c47-bbd8-4614f61a8839",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "2016.0158.LIB.jpg",
         "width": 1600,

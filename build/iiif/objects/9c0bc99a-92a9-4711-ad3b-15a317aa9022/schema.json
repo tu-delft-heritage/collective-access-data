@@ -44,7 +44,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/f3d639c1-e1d7-434e-911b-4e6811f7002b",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/f3d639c1-e1d7-434e-911b-4e6811f7002b",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "1998.0096.TMD.JPG",
         "width": 1600,

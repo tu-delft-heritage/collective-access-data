@@ -64,7 +64,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/04f147f1-e063-442d-9e9f-e50d7c39ff9c",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/04f147f1-e063-442d-9e9f-e50d7c39ff9c",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "2005_0006_GEO.jpg",
         "width": 1600,

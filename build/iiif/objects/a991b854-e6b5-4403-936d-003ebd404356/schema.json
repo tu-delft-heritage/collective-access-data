@@ -45,11 +45,18 @@
         "unitCode": "MMT",
         "value": 50
     },
-    "citation": {
-        "@type": "CreativeWork",
-        "name": "De lange weg naar de Technische Universiteit Delft. 1. De Delftse ingenieursschool en haar voorgeschiedenis;Op herhaling, H. Baudet;Technische Universiteit (Delft), 1992;[cop. 2006]",
-        "sameAs": "https://tudelft.on.worldcat.org/oclc/839739559;150328685"
-    },
+    "citation": [
+        {
+            "@type": "CreativeWork",
+            "name": "De lange weg naar de Technische Universiteit Delft. 1. De Delftse ingenieursschool en haar voorgeschiedenis, H. Baudet, 1992",
+            "sameAs": "https://tudelft.on.worldcat.org/oclc/839739559"
+        },
+        {
+            "@type": "CreativeWork",
+            "name": "Op herhaling, Technische Universiteit (Delft), [cop. 2006]",
+            "sameAs": "https://tudelft.on.worldcat.org/oclc/150328685"
+        }
+    ],
     "isRelatedTo": [
         {
             "@type": "CreativeWork",
@@ -77,7 +84,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/d80d85a8-ebad-45d5-b6df-3d63860bfe5d",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/d80d85a8-ebad-45d5-b6df-3d63860bfe5d",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "_DSF1167 medium.jpg",
         "width": 1600,

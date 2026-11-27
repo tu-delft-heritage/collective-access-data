@@ -57,7 +57,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/7de5dd35-26a3-49e2-9ff5-6cb6694d357f",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/7de5dd35-26a3-49e2-9ff5-6cb6694d357f",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "2022.0105.CTG.jpg",
         "width": 1600,

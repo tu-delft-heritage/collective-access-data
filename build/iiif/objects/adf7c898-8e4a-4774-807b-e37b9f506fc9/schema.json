@@ -61,7 +61,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/56df910e-ab94-4784-b696-6146405d7b40",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/56df910e-ab94-4784-b696-6146405d7b40",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "2011.0003.TBM.jpg",
         "width": 1600,

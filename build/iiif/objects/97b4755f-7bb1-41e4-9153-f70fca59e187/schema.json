@@ -50,7 +50,7 @@
     },
     "citation": {
         "@type": "CreativeWork",
-        "name": "Der Mechaniker Zeitschrift zur Förderung der Präzisionsmechanik und Optik sowie verwandter Gebiete, , 1893",
+        "name": "Der Mechaniker Zeitschrift zur Förderung der Präzisionsmechanik und Optik sowie verwandter Gebiete, 1893",
         "sameAs": "https://tudelft.on.worldcat.org/oclc/631722316"
     },
     "isRelatedTo": {
@@ -66,7 +66,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/b66fe40f-2f01-4a3b-b15f-a4d6c26067cf",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/b66fe40f-2f01-4a3b-b15f-a4d6c26067cf",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "2000.0395.GEO.jpg",
         "width": 1600,
