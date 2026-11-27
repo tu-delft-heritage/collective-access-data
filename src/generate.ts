@@ -851,6 +851,7 @@ export async function generateCollections(
   console.log("Generating IIIF Collection Manifests...");
   const childrenByParent = getChildCollections(collections);
   const statuses = new Map<string, "visiting" | "available" | "failed">();
+  const generatedCollections: PublicCollection[] = [];
   const recordsInCollections = new Set<string>();
   let generated = 0;
 
@@ -931,13 +932,9 @@ export async function generateCollections(
         .filter((record): record is SchemaMetadata => record !== undefined);
 
       const collection = createCollection(records, parsedMetadata, uuid, children);
-      await saveJson(
-        { "@context": "https://schema.org", "@type": "Collection", ...parsedMetadata },
-        "schema",
-        join(directory, collectionsFolder, uuid),
-      );
       await saveJson(collection, uuid, join(directory, collectionsFolder));
       statuses.set(uuid, "available");
+      generatedCollections.push(sourceCollection);
       generated++;
     } catch (error) {
       statuses.set(uuid, existingCollectionUuids.has(uuid) ? "available" : "failed");
@@ -953,6 +950,60 @@ export async function generateCollections(
 
   for (const collection of collections) {
     await generateCollection(collection);
+  }
+
+  // Children can finish before their parents. Finalize schema relationships
+  // only once every collection's export (or fallback) outcome is known.
+  for (const { metadata, uuid, oaiIdentifier } of generatedCollections) {
+    const context = createRecordLogContext(
+      uuid,
+      metadata.name,
+      metadata.identifier,
+      oaiIdentifier === unavailable ? undefined : oaiIdentifier,
+      "collections",
+      oaiBaseUrl,
+    );
+    const { isPartOf, ...schemaMetadata } = metadata;
+    const retainedParents: NonNullable<SchemaCollectionMetadata["isPartOf"]> = [];
+    const removedParents: NonNullable<SchemaCollectionMetadata["isPartOf"]> = [];
+    for (const parent of isPartOf ?? []) {
+      const parentUuid = parent.sameAs ? getUuid(parent.sameAs) : undefined;
+      if (parentUuid && statuses.get(parentUuid) === "available") {
+        retainedParents.push(parent);
+      } else {
+        removedParents.push(parent);
+      }
+    }
+
+    try {
+      await saveJson(
+        {
+          "@context": "https://schema.org",
+          "@type": "Collection",
+          ...schemaMetadata,
+          ...(retainedParents.length ? { isPartOf: retainedParents } : {}),
+        },
+        "schema",
+        join(directory, collectionsFolder, uuid),
+      );
+      for (const parent of removedParents) {
+        writeRecordLog(
+          writer,
+          "Referenced parent collection is not exported",
+          "isPartOf reference removed from schema.json",
+          context,
+          `Parent collection: ${parent.name}; UUID: ${parent.sameAs ? getUuid(parent.sameAs) ?? unavailable : unavailable}; Reference: ${parent.sameAs ?? unavailable}`,
+        );
+      }
+    } catch (error) {
+      writeRecordLog(
+        writer,
+        "Schema export failed for collection",
+        "IIIF collection available; schema.json not updated",
+        context,
+        `Error: ${errorMessage(error)}`,
+      );
+    }
   }
 
   console.log(`${generated} collections created or updated`);

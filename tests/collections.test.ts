@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import { mkdtemp, rm } from "node:fs/promises";
+import { mkdir, mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import {
@@ -227,6 +227,103 @@ test("exports collection roles, documentation, dates, extent, and member images 
       roleName: "collectieverantwoordelijke",
       contributor: [{ "@type": "Person", ...curator }, { "@type": "Organization", ...institution }],
     });
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
+
+test("removes and logs unexported parents without changing valid relationships or source metadata", async () => {
+  const directory = await mkdtemp(join(tmpdir(), "collective-access-collection-parents-"));
+  const collectionDir = join(directory, "collections");
+  const log: RecordLogEntry[] = [];
+  const child = record(childUuid, {
+    name: "Child collection",
+    isPartOf: { Collection: [
+      parentReference(parentUuid),
+      parentReference(secondParentUuid),
+      parentReference(invalidUuid),
+    ] },
+  });
+  child.header.identifier = "oai:test:42";
+
+  try {
+    // A stale file retained on disk is not an export of the current source.
+    const staleExport = { id: collectionUrl(secondParentUuid), type: "Collection" };
+    await Bun.write(join(collectionDir, `${secondParentUuid}.json`), JSON.stringify(staleExport));
+    const collections = parsePublicCollections({
+      usedCachedResponse: false,
+      records: [
+        record(parentUuid),
+        child,
+        record(emptyUuid, { isPartOf: { Collection: parentReference(invalidUuid) } }),
+        record(invalidUuid, { name: undefined }),
+      ],
+    }, log, new Set([secondParentUuid]), OAIBaseUrl);
+
+    await generateCollections(
+      collections, log, new Map(), new Set([secondParentUuid]), new Set(), OAIBaseUrl, directory,
+    );
+
+    const schema = await Bun.file(join(collectionDir, childUuid, "schema.json")).json();
+    expect(schema.isPartOf.map((parent: { sameAs: string }) => parent.sameAs)).toEqual([
+      sourceUrl(parentUuid),
+    ]);
+    const noParents = await Bun.file(join(collectionDir, emptyUuid, "schema.json")).json();
+    expect(noParents).not.toHaveProperty("isPartOf");
+    expect(collections.find(({ uuid }) => uuid === childUuid)?.metadata.isPartOf).toHaveLength(3);
+    expect(await Bun.file(join(collectionDir, `${secondParentUuid}.json`)).json()).toEqual(staleExport);
+
+    const removals = log.filter(({ consequence }) => consequence === "isPartOf reference removed from schema.json");
+    expect(removals).toHaveLength(3);
+    const childRemovals = removals.filter(({ uuid }) => uuid === childUuid);
+    expect(childRemovals).toHaveLength(2);
+    for (const entry of childRemovals) {
+      expect(entry).toMatchObject({
+        type: "collection",
+        uuid: childUuid,
+        name: "Child collection",
+        identifier: "",
+        message: "Referenced parent collection is not exported",
+      });
+      expect(entry.oaiUrl).toContain("identifier=oai%3Atest%3A42");
+      expect(entry.collectiveAccessUrl).toEndWith("collection_id/42");
+    }
+    expect(childRemovals.some(({ details }) => details.includes(sourceUrl(secondParentUuid)))).toBe(true);
+    expect(childRemovals.some(({ details }) => details.includes(sourceUrl(invalidUuid)))).toBe(true);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
+
+test("removes a parent that fails after its child has been generated", async () => {
+  const directory = await mkdtemp(join(tmpdir(), "collective-access-collection-failed-parent-"));
+  const log: RecordLogEntry[] = [];
+  try {
+    const collections = parsePublicCollections({
+      usedCachedResponse: false,
+      records: [
+        record(parentUuid),
+        record(childUuid, { isPartOf: { Collection: parentReference(parentUuid) } }),
+      ],
+    }, log, new Set(), OAIBaseUrl);
+    // Force the parent's IIIF write to fail, after the child's write succeeds.
+    await mkdir(join(directory, "collections", `${parentUuid}.json`), { recursive: true });
+
+    await generateCollections(
+      collections, log, new Map(), new Set(), new Set(), OAIBaseUrl, directory,
+    );
+
+    const schema = await Bun.file(join(directory, "collections", childUuid, "schema.json")).json();
+    expect(schema).not.toHaveProperty("isPartOf");
+    expect(log).toContainEqual(expect.objectContaining({
+      uuid: parentUuid,
+      message: "Generation failed for collection",
+    }));
+    expect(log).toContainEqual(expect.objectContaining({
+      uuid: childUuid,
+      consequence: "isPartOf reference removed from schema.json",
+      details: expect.stringContaining(sourceUrl(parentUuid)),
+    }));
   } finally {
     await rm(directory, { recursive: true, force: true });
   }

@@ -24,6 +24,7 @@ import {
 } from "../src/generate.ts";
 import { writeCsvLog } from "../src/helpers.ts";
 import type { SchemaMetadata } from "../src/schema.ts";
+import { OAIBaseUrl } from "../src/settings.ts";
 
 const temporaryDirectories: string[] = [];
 
@@ -348,7 +349,7 @@ describe("record logging", () => {
       name: "Ceramic test object",
       identifier: "2002.0052.CTG",
       oaiUrl:
-        "https://cms.collectiveaccess.tudelft.nl/service.php/OAI/schema_org/request?verb=GetRecord&identifier=oai%3Aoai.tudelft%3A11&metadataPrefix=rdf",
+        `${OAIBaseUrl}schema_org/request?verb=GetRecord&identifier=oai%3Aoai.tudelft%3A11&metadataPrefix=rdf`,
       collectiveAccessUrl:
         "https://collectiveaccess.tudelft.nl/ca_tudelft/admin/index.php/editor/objects/ObjectEditor/Edit/object_id/11",
       details: "",
@@ -393,7 +394,7 @@ describe("record logging", () => {
     expect(row.name).toBe("unavailable");
     expect(row.identifier).toBe("unavailable");
     expect(row.oaiUrl).toBe(
-      "https://cms.collectiveaccess.tudelft.nl/service.php/OAI/schema_org/request?verb=GetRecord&identifier=oai%3Aoai.tudelft%3Abroken&metadataPrefix=rdf",
+      `${OAIBaseUrl}schema_org/request?verb=GetRecord&identifier=oai%3Aoai.tudelft%3Abroken&metadataPrefix=rdf`,
     );
     expect(row.collectiveAccessUrl).toBe("unavailable");
   });
