@@ -7,6 +7,11 @@
     "description": "In 1957 kwamen de architectuurstudenten Jelle Jelles, Gerrit Oorthuys en Kees Albers met het idee om stoelen te verzamelen die gebruikt konden worden tijdens het ontwerponderwijs. Met steun van de faculteit, met name de afdeling Interieur, werd binnen enkele jaren een collectie van meer dan honderd stukken samengesteld. Veel stoelen werden gekocht op Waterlooplein en andere vlooienmarkten. Er vonden ook rechtstreeks onderhandelingen plaats met fabrikanten en ontwerpers. Andere stoelen werden verkregen via donaties en vondsten bij het grofvuil. \nInmiddels bestaat de Stoelencollectie uit ca. 350 stoelen. In de collectie zijn uiteenlopende periodes en stijlen vertegenwoordigd. Zo zijn er 18e- en 19e-eeuwse zetels, waaronder bijvoorbeeld een Hepplewhite-stoel uit 1786 en een ensemble Russische folkloristische meubels die tot de mooiste in hun soort gerekend mogen worden. Het weergeven van een representatief beeld van periodes en stijlen behoort echter niet tot de missie van de collectie. Het verzamelen is tegenwoordig gericht op de 20ste en 21ste eeuw. Omdat de verzameling is bedoeld als ondersteuning van het ontwerpend onderwijs wordt deze doelstelling weerspiegeld in de verzamelcriteria: het materiaalgebruik, de constructie en de gebruikstypologie. Dit heeft ervoor gezorgd dat de collectie door de jaren heen een heel divers en uniek karakter heeft gekregen. Dat wil zeggen niet alleen toegespitst op grote namen uit de designgeschiedenis, maar ook met aandacht voor unieke objecten en anonieme gebruiksvoorwerpen die in de loop der jaren ook onder het grote publiek aftrek hebben gevonden, zoals een eenvoudige Brabantse knopstoel, een opvouwbaar viskrukje of een plastic kuipstoel. Daarnaast zijn er verschillende kinderstoelen, melkkrukjes, eenvoudige boerenstoelen en andere ‘hors categorie’-stoelen opgenomen. Kortom, genoeg voor de designliefhebber of ontwerper die eens wat meer wil weten van stoelen die je niet in alle musea tegenkomt, maar die de vormgeving van onze leefomgeving wel degelijk hebben beïnvloed.  \nIn 2003 hebben de beheerders een digitale registratie gemaakt, op basis van de kaartenbakken die tot dan toe in gebruik waren. In 2008 is een catalogus uitgegeven, en sinds 201X zijn de stoelen te zien via een website. De stoelen zijn grotendeels publiek toegankelijk opgesteld in het gebouw van de faculteit. Maar de stoelen van voor 1900 en de unica staan in het gesloten depot van de universitaire museumcollectie. \nDe stoelencollectie neemt een unieke positie in Nederland in, omdat het de enige studiecollectie van deze aard is. De culturele waarde wordt bepaald door het collectiebereik, dat breder is dan in veel musea, omdat een behoorlijk aantal anonieme stoelen met een interessante constructie is opgenomen. De collectie betreft stoelen van Nederlandse ontwerp of productie, aangevuld met ontwerpen uit het buitenland, die invloedrijk waren in Nederland. Technologische innovatie staat hierin centraal. Daarnaast zijn er ook bepaalde gebruiksvormen vertegenwoordigd, zoals: klapstoelen, werkstoelen en kinderstoelen, omdat deze hun eigen ontwikkeling hebben door de specifieke functionele eisen die aan hen worden gesteld. De activiteiten rondom de collectie betreffen vanzelfsprekend verzamelen, het behoud, restaureren, onderzoek en beschrijving van stoelen. Daarnaast draagt de collectie ook bij aan de opleiding van haar eigen faculteit en andere instellingen, aan tentoonstellingen en publicaties. Verder dient de collectie als bron voor onderzoek en bruiklenen aan musea.",
     "identifier": "Stoelencollectie",
     "materialExtent": "ca. 350",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "De stoelencollectie van de faculteit Bouwkunde",
+        "sameAs": "https://collecties.bk.tudelft.nl/chairs"
+    },
     "creator": {
         "@type": "Role",
         "roleName": "beherende instelling",
@@ -23,14 +28,6 @@
             "name": "Charlotte van Wijk"
         }
     },
-    "isPartOf": [
-        {
-            "@type": "Collection",
-            "name": "Faculteit Bouwkunde",
-            "sameAs": "https://heritage.tudelft.nl/iiif/collections/01cdf7cc-4461-4507-9818-3a2eec9e4394/schema.json",
-            "identifier": "BK"
-        }
-    ],
     "image": [
         {
             "@type": "ImageObject",
@@ -59,6 +56,14 @@
             "width": 1600,
             "height": 1200,
             "position": 12782
+        }
+    ],
+    "isPartOf": [
+        {
+            "@type": "Collection",
+            "name": "Faculteit Bouwkunde",
+            "sameAs": "https://heritage.tudelft.nl/iiif/collections/01cdf7cc-4461-4507-9818-3a2eec9e4394/schema.json",
+            "identifier": "BK"
         }
     ]
 }

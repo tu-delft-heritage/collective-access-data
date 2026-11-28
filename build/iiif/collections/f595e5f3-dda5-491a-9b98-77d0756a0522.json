@@ -92,6 +92,21 @@
                     "Deze deelcollecties, verschillen sterk van elkaar in betekenis. Voor Bouwkunde lijkt het deel van de collectie dat geschikt is voor opname in de Lithotheek, namelijk de bouwmaterialen, het meest waardevol. Dit sluit aan bij huidig onderzoek en is van waarde voor de restauratiepraktijk."
                 ]
             }
+        },
+        {
+            "label": {
+                "en": [
+                    "Documentation"
+                ],
+                "nl": [
+                    "Documentatie"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "<span><a href=\"https://www.monumentenkennis.nl/82/lithotheek\">De Natuursteencollectie van de faculteit Bouwkunde</a></span>"
+                ]
+            }
         }
     ],
     "summary": {

@@ -1,0 +1,38 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/db6ab528-0d80-4481-8762-eb0b6f6b3754.json",
+    "type": "Collection",
+    "label": {
+        "nl": [
+            "Facultaire collecties"
+        ]
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": [
+                    "Title"
+                ],
+                "nl": [
+                    "Titel"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "Facultaire collecties"
+                ]
+            }
+        }
+    ],
+    "items": [
+        {
+            "id": "https://tu-delft-heritage.github.io/collective-access-data/iiif/collections/01cdf7cc-4461-4507-9818-3a2eec9e4394.json",
+            "type": "Collection",
+            "label": {
+                "nl": [
+                    "Faculteit Bouwkunde"
+                ]
+            }
+        }
+    ]
+}

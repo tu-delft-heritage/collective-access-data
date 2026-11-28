@@ -55,7 +55,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/ea75e965-3adb-4aa8-a4ad-2b2224bac4b9",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/ea75e965-3adb-4aa8-a4ad-2b2224bac4b9",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/ea75e965-3adb-4aa8-a4ad-2b2224bac4b9/full/full/0/default.jpg",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "caption": "Instructie prisma_01.jpg",
             "width": 1600,
@@ -69,7 +69,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/994dfe8a-2863-49f5-9ac8-083f7fc3b42d",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/994dfe8a-2863-49f5-9ac8-083f7fc3b42d",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/994dfe8a-2863-49f5-9ac8-083f7fc3b42d/full/full/0/default.jpg",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "caption": "Instructie prisma_02.jpg",
             "width": 1600,

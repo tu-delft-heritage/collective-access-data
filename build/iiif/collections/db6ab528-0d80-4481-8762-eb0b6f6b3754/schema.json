@@ -1,0 +1,7 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Collection",
+    "@id": "https://heritage.tudelft.nl/iiif/collections/db6ab528-0d80-4481-8762-eb0b6f6b3754/schema.json",
+    "name": "Facultaire collecties",
+    "identifier": "Facultair"
+}

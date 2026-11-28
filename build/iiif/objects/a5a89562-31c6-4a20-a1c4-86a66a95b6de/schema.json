@@ -53,7 +53,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/7ecee576-3b0e-488a-8607-6227d5a60574",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/7ecee576-3b0e-488a-8607-6227d5a60574",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/7ecee576-3b0e-488a-8607-6227d5a60574/full/full/0/default.jpg",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "caption": "1997.0078.TMD.JPG",
             "width": 1600,
@@ -67,7 +67,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/abc9ccce-0c0b-42a1-a535-228c52aa2df8",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/abc9ccce-0c0b-42a1-a535-228c52aa2df8",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/abc9ccce-0c0b-42a1-a535-228c52aa2df8/full/full/0/default.jpg",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "caption": "1997.0078.TMD.JPG",
             "width": 1600,

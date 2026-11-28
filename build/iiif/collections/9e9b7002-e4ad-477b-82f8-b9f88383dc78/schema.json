@@ -8,6 +8,11 @@
     "identifier": "Schakelklokken",
     "temporalCoverage": "1800/2000",
     "materialExtent": "100 geregistreerde moeder-, dochter- en schakelklokken",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "Op Tijd Schakelen: Catalogus thematentoonstelling binnen de Studieverzameling, Rob Timmermans, 2022",
+        "sameAs": "https://studieverzameling.ewi.tudelft.nl/index.php/expositie/schakelen-op-tijd?view=article&id=82:catalogus-klokken&catid=2"
+    },
     "creator": {
         "@type": "Role",
         "roleName": "beherende instelling",
@@ -16,14 +21,6 @@
             "name": "Faculteit EWI"
         }
     },
-    "isPartOf": [
-        {
-            "@type": "Collection",
-            "name": "Faculteit Elektrotechniek, Wiskunde en Informatica",
-            "sameAs": "https://heritage.tudelft.nl/iiif/collections/ab21b2a7-f103-4ba7-a2cb-6758a189ca1f/schema.json",
-            "identifier": "EWI"
-        }
-    ],
     "image": [
         {
             "@type": "ImageObject",

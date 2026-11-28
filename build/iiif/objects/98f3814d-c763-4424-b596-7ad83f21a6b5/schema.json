@@ -77,7 +77,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/95e9a4e5-99fb-4680-997a-e20669d11dcc",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/95e9a4e5-99fb-4680-997a-e20669d11dcc",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/95e9a4e5-99fb-4680-997a-e20669d11dcc/full/full/0/default.jpg",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "caption": "2005.0007.GEO.JPG",
             "width": 1600,
@@ -91,7 +91,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/ee1c12ec-33a0-46f3-95fe-46fae95cdbd5",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/ee1c12ec-33a0-46f3-95fe-46fae95cdbd5",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/ee1c12ec-33a0-46f3-95fe-46fae95cdbd5/full/full/0/default.jpg",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "caption": "2005.0007.GEO.a.JPG",
             "width": 1600,
@@ -105,7 +105,7 @@
                 "@id": "https://dlc.services/iiif-img/7/18/73d05882-c54e-45dc-811a-89427178b683",
                 "@type": "Image"
             },
-            "thumbnailUrl": "https://dlc.services/thumbs/7/18/73d05882-c54e-45dc-811a-89427178b683",
+            "thumbnailUrl": "https://dlc.services/thumbs/7/18/73d05882-c54e-45dc-811a-89427178b683/full/full/0/default.jpg",
             "encodingFormat": "https://iiif.io/api/image/3.0/",
             "caption": "2005.0007.GEO.b.JPG",
             "width": 1600,

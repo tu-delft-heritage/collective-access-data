@@ -89,7 +89,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/ccb0adc3-b3b8-456a-9572-98c9c5f06115",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/ccb0adc3-b3b8-456a-9572-98c9c5f06115",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/ccb0adc3-b3b8-456a-9572-98c9c5f06115/full/full/0/default.jpg",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "2002.0055.CTG tiff adobeRGB.tif",
         "width": 1600,

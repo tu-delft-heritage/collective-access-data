@@ -59,7 +59,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/9bf3e365-4470-4c0b-9a17-618d9febfdc6",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/9bf3e365-4470-4c0b-9a17-618d9febfdc6",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/9bf3e365-4470-4c0b-9a17-618d9febfdc6/full/full/0/default.jpg",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "2000.0251.GEO.jpg",
         "width": 1600,

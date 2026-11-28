@@ -39,7 +39,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/43eb216f-17a4-4884-8723-0ec9ee6b6edf",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/43eb216f-17a4-4884-8723-0ec9ee6b6edf",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/43eb216f-17a4-4884-8723-0ec9ee6b6edf/full/full/0/default.jpg",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "2013.0048.CTG.jpg",
         "width": 1600,

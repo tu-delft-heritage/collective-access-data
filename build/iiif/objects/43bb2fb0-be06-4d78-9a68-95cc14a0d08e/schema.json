@@ -57,7 +57,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/ee59f15e-07a0-4902-9db5-3f056f64c521",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/ee59f15e-07a0-4902-9db5-3f056f64c521",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/ee59f15e-07a0-4902-9db5-3f056f64c521/full/full/0/default.jpg",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "1992.0384.TMD.JPG",
         "width": 1600,

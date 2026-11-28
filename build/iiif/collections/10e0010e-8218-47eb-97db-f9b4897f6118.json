@@ -86,6 +86,21 @@
                     "De resulterende collectie is afkomstig uit onderzoek en onderwijs aan de faculteit, en kan gebruikt worden voor onderwijs over architectuurgeschiedenis en -ontwerp. De collectie van belang is voor de faculteit, de universiteit en het vakgebied omdat hij in zijn diversiteit en kwaliteit een unieke collectie is binnen Nederland. Het is een gebruikscollectie die veel wordt gebruikt voor bruiklenen aan de grote nationale musea, en daarom bijdraagt aan het uitdragen van de identiteit van de faculteit en de universiteit."
                 ]
             }
+        },
+        {
+            "label": {
+                "en": [
+                    "Documentation"
+                ],
+                "nl": [
+                    "Documentatie"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "<span><a href=\"https://collecties.bk.tudelft.nl/models\">De maquetttecollectie van de faculteit Bouwkunde</a></span>"
+                ]
+            }
         }
     ],
     "summary": {

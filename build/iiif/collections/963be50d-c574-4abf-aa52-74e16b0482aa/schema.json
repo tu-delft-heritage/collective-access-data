@@ -1259,13 +1259,5 @@
                 ]
             }
         }
-    ],
-    "isPartOf": [
-        {
-            "@type": "Collection",
-            "name": "Faculteit Technische Natuurwetenschappen",
-            "sameAs": "https://heritage.tudelft.nl/iiif/collections/21c14ff7-60f8-4d0d-80f2-ac9313bb997c/schema.json",
-            "identifier": "TNW"
-        }
     ]
 }

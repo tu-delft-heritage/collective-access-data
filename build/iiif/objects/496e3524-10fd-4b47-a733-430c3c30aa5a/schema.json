@@ -37,7 +37,7 @@
             "@id": "https://dlc.services/iiif-img/7/18/97149638-9d4a-43f2-9243-d07861f04ce7",
             "@type": "Image"
         },
-        "thumbnailUrl": "https://dlc.services/thumbs/7/18/97149638-9d4a-43f2-9243-d07861f04ce7",
+        "thumbnailUrl": "https://dlc.services/thumbs/7/18/97149638-9d4a-43f2-9243-d07861f04ce7/full/full/0/default.jpg",
         "encodingFormat": "https://iiif.io/api/image/3.0/",
         "caption": "2010.0043.BKD.JPG",
         "width": 1600,

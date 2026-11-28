@@ -23,14 +23,6 @@
             "name": "Charlotte van Wijk"
         }
     },
-    "isPartOf": [
-        {
-            "@type": "Collection",
-            "name": "Faculteit Bouwkunde",
-            "sameAs": "https://heritage.tudelft.nl/iiif/collections/01cdf7cc-4461-4507-9818-3a2eec9e4394/schema.json",
-            "identifier": "BK"
-        }
-    ],
     "image": [
         {
             "@type": "ImageObject",
@@ -73,6 +65,14 @@
             "width": 1600,
             "height": 1200,
             "position": 12785
+        }
+    ],
+    "isPartOf": [
+        {
+            "@type": "Collection",
+            "name": "Faculteit Bouwkunde",
+            "sameAs": "https://heritage.tudelft.nl/iiif/collections/01cdf7cc-4461-4507-9818-3a2eec9e4394/schema.json",
+            "identifier": "BK"
         }
     ]
 }

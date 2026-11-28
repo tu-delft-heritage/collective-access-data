@@ -87,6 +87,21 @@
                     "Een suggestie zou zijn om meer toelichtende teksten toe te voegen aan de bestaande tentoonstelling, bijvoorbeeld over de uitdagingen waar de ontwerpers voor stonden en de verschillende oplossingen die ze vonden. De tentoonstelling opnieuw in richten met een duidelijker verhaal/tijdlijn zou de verzameling ook toegankelijker maken en meer geschikt voor zelfstandig onderzoek door studenten."
                 ]
             }
+        },
+        {
+            "label": {
+                "en": [
+                    "Documentation"
+                ],
+                "nl": [
+                    "Documentatie"
+                ]
+            },
+            "value": {
+                "nl": [
+                    "<span><a href=\"https://studieverzameling.ewi.tudelft.nl/index.php/expositie/schakelen-op-tijd?view=article&amp;id=82:catalogus-klokken&amp;catid=2\">Op Tijd Schakelen: Catalogus thematentoonstelling binnen de Studieverzameling, Rob Timmermans, 2022</a></span>"
+                ]
+            }
         }
     ],
     "summary": {

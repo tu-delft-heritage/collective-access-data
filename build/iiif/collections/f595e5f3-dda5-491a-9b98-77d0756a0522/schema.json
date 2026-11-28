@@ -7,6 +7,11 @@
     "description": "We kunnen de volgende deelcollecties onderscheiden: \nDeelcollectie Van der Kloes, 250 stuks;  \nDeelcollectie MGM, 500 stuks; \nDeelcollectie MGM, monsters in kistjes. \nDeelcollectie 1. Van der Kloes is afkomstig van Prof. Jacobus Alida van der Kloes (1845-1935). Van der Kloes was verbonden aan Bouwkunde van 1882 tot 1905, en aan Civiele Techniek van 1905 tot 1915. Hij was een zeer productieve en toonaangevende (ook internationaal) pionier op het gebied van bouwmaterialen. De deelcollectie bevat bouwstenen, straatstenen en decoratieve stenen. Verzameld vanaf het einde van de 19e eeuw door de leerstoel Bouwstoffen van professor Van der Kloes. Deze objecten zijn in 2013 opgenomen. \nDeelcollectie 2. en 3. MGM:  \n2. Deelcollectie MGM betreft stenen die zijn overgedragen uit de collectie van het Mineralogisch-Geologisch Museum van de voormalige faculteit Mijnbouwkunde van de TU Delft. Deze stenen zijn (vermoedelijk) verzameld tijdens studiereizen; niet al deze stenen zijn als bouwsteen gebruikt. In 2014 opgenomen. \n3. Deelcollectie MGM zit deels in kistjes: Houten kistjes met steenmonsters ca. 7 bij 7 cm., met informatie op kaartjes. Van dit deel weten we dat het bij veldwerk mee genomen door studenten, in Delft is de steen op maat gezaagd en gepolijst. Documentatie van de reizen is te vinden in de Jaarboekjes van de Mijnbouwkundige Vereniging. \nDe deelcollecties hebben met elkaar gemeen dat ze afkomstig zijn uit het onderwijs aan (voorlopers van) de TU Delft. Aan de hand van de steenmonsters leerden studenten steensoorten van elkaar onderscheiden. Een deel ervan werd verzameld door studenten Mijnbouwkunde, op excursie in het buitenland. Hierbij zijn nog excursiegidsen te vinden, waardoor dit deel met name voor de faculteit CiTG erfgoedwaarde lijkt te hebben. Bij CiTG en bij de Botanische Tuin zijn ook natuursteenmonsters met een vergelijkbare herkomst te vinden. \nDeelcollectie Van der Kloes staat in een permanente opstelling in de gang op de eerste etage. De andere deelcollecties zijn niet zichtbaar opgesteld. \n Deze deelcollecties, verschillen sterk van elkaar in betekenis. Voor Bouwkunde lijkt het deel van de collectie dat geschikt is voor opname in de Lithotheek, namelijk de bouwmaterialen, het meest waardevol. Dit sluit aan bij huidig onderzoek en is van waarde voor de restauratiepraktijk.",
     "identifier": "Natuursteencollectie_BK",
     "materialExtent": "ca. 1000",
+    "citation": {
+        "@type": "CreativeWork",
+        "name": "De Natuursteencollectie van de faculteit Bouwkunde",
+        "sameAs": "https://www.monumentenkennis.nl/82/lithotheek"
+    },
     "creator": {
         "@type": "Role",
         "roleName": "beherende instelling",
@@ -23,14 +28,6 @@
             "name": "Wido Quist"
         }
     },
-    "isPartOf": [
-        {
-            "@type": "Collection",
-            "name": "Faculteit Bouwkunde",
-            "sameAs": "https://heritage.tudelft.nl/iiif/collections/01cdf7cc-4461-4507-9818-3a2eec9e4394/schema.json",
-            "identifier": "BK"
-        }
-    ],
     "image": [
         {
             "@type": "ImageObject",
@@ -59,6 +56,14 @@
             "width": 1600,
             "height": 1200,
             "position": 12787
+        }
+    ],
+    "isPartOf": [
+        {
+            "@type": "Collection",
+            "name": "Faculteit Bouwkunde",
+            "sameAs": "https://heritage.tudelft.nl/iiif/collections/01cdf7cc-4461-4507-9818-3a2eec9e4394/schema.json",
+            "identifier": "BK"
         }
     ]
 }
